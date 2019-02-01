@@ -51,7 +51,7 @@ For those who don't want to fully customize their mapping, there are 2 convenien
 ## 常见问题
 
 ### 哪里去找XXX的ROM ?
-我们不提供链接，自己去用搜。
+我们不提供链接，自己去搜。
 
 ### XXX游戏不能启动 ?
 不是该游戏不支持，就是你的ROM有问题。先用clrmamepro重建一下ROM set吧。
@@ -83,5 +83,5 @@ FBA本身暂不支持，但是RA支持。
 ### Neogeo CD游戏模拟不正常 ?
 NGCD的模拟正在开发中，有些事情需要先说明一下 :
 * 需要两个BIOS：neocdz.zip和neogeo.zip，分别准备好放在libretro的系统目录下。
-* 需要在命令行里加上 `--subsystem neocd`。
-* 目前只能使用 `MODE1/2048`格式的镜像。
+* 需要在命令行里加上`--subsystem neocd`。
+* 目前只能使用`MODE1/2048`格式的镜像。
