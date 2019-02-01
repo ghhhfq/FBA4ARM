@@ -12235,6 +12235,9 @@ DRV		BurnDrvCpsDinowtw;
 DRV		BurnDrvCpsDinowj;
 DRV		BurnDrvCpsDinojds;
 DRV		BurnDrvGrdianslbs;
+DRV		BurnDrvKof97orh;
+DRV		BurnDrvmslug3g;
+DRV		BurnDrvmslug3c;
 
 #undef DRV
 
@@ -24474,4 +24477,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsDinowj,			// Cadillacs & Dinosaurs (Majin Ranbu 20190117)
 	&BurnDrvCpsDinojds,			// Cadillacs & Dinosaurs (Fighting God Version 20190114)
 	&BurnDrvGrdianslbs,			// Guardians / Denjin Makai II (Robust Version 20190111)
+	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20130203)
+	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
+	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
 };
