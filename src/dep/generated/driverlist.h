@@ -12221,6 +12221,21 @@ DRV		BurnSpecSpec128BIOS;
 DRV		BurnSpecSpectrumBIOS;
 DRV		BurnDrvZzyzzyxx;
 DRV		BurnDrvZzyzzyxx2;
+
+//extra hacks
+DRV		BurnDrvCpsWofdr;
+DRV		BurnDrvCpsCaptcommpjy;
+DRV		BurnDrvCpsCaptcommrds;
+DRV		BurnDrvCpsCaptcommr1bs;
+DRV		BurnDrvCpsCaptcommpzs;
+DRV		BurnDrvCpsCaptcommpwx;
+DRV		BurnDrvCpsDinoxzb;
+DRV		BurnDrvCpsDinojps;
+DRV		BurnDrvCpsDinowtw;
+DRV		BurnDrvCpsDinowj;
+DRV		BurnDrvCpsDinojds;
+DRV		BurnDrvGrdianslbs;
+
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24445,4 +24460,18 @@ static struct BurnDriver* pDriver[] = {
 	&BurnSpecSpectrumBIOS,		// ZX Spectrum [BIOS Only, NOT WORKING]
 	&BurnDrvZzyzzyxx,			// Zzyzzyxx (set 1)
 	&BurnDrvZzyzzyxx2,			// Zzyzzyxx (set 2)
+	
+//extra hacks
+	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
+	&BurnDrvCpsCaptcommpjy,		// Captain Commando (Elite Version 20181231)
+	&BurnDrvCpsCaptcommrds,		// Captain Commando (99 Beater Version 20190102)
+	&BurnDrvCpsCaptcommr1bs,	// Captain Commando (Shape Shifting Version 20190101)
+	&BurnDrvCpsCaptcommpzs,		// Captain Commando (Warlord Version 20190107)
+	&BurnDrvCpsCaptcommpwx,		// Captain Commando (Infinite Bullet 20190121)
+	&BurnDrvCpsDinoxzb,			// Cadillacs & Dinosaurs (Warlord Version 20190119)
+	&BurnDrvCpsDinojps,			// Cadillacs & Dinosaurs (Arena Version 20190123)
+	&BurnDrvCpsDinowtw,			// Cadillacs & Dinosaurs (Sky King 20190114)
+	&BurnDrvCpsDinowj,			// Cadillacs & Dinosaurs (Majin Ranbu 20190117)
+	&BurnDrvCpsDinojds,			// Cadillacs & Dinosaurs (Fighting God Version 20190114)
+	&BurnDrvGrdianslbs,			// Guardians / Denjin Makai II (Robust Version 20190111)
 };
