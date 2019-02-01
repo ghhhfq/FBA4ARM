@@ -1,15 +1,17 @@
 [![Build Status](https://travis-ci.org/libretro/fbalpha.svg?branch=master)](https://travis-ci.org/libretro/fbalpha)
 [![Build status](https://ci.appveyor.com/api/projects/status/bdj5xf7t3kgbk1p7/branch/master?svg=true)](https://ci.appveyor.com/project/bparker06/fbalpha/branch/master)
+# FBA4S905-libretro
 
-# FBAlpha-libretro
+# NEVER USE IT FOR COMMCERICAL PURPOSE.
+
+# 严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！
+
 https://www.fbalpha.com
 
 This is a fork of the official repository of the FB Alpha Emulator.
 
 Use of this program and it's source code is subject to the license conditions provided in the [license.txt](src/license.txt) file in the src folder.
 
-NEVER USE IT FOR COMMCERICAL PURPOSE.
-严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！
 
 ## Roms
 
