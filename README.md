@@ -2,9 +2,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/bdj5xf7t3kgbk1p7/branch/master?svg=true)](https://ci.appveyor.com/project/bparker06/fbalpha/branch/master)
 # FBA4S905-libretro
 
-# NEVER USE IT FOR COMMCERICAL PURPOSE.
+## NEVER USE IT FOR COMMCERICAL PURPOSE.
 
-# 严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！
+## 严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！
 
 https://www.fbalpha.com
 
