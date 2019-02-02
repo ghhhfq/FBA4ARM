@@ -22437,7 +22437,7 @@ STD_ROM_FN(Wofdr)
 struct BurnDriver BurnDrvCpsWofdr = {
 	"wofdr", "wof", NULL, NULL, "2019",
 	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)\0", NULL, "Bindi", "CPS1 / QSound",
-	L"\u5929\u5730\u3092\u55B0\u3089\u3046 II - \u8D64\u58C1\u306E\u6226\u3044\0Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)\0", NULL, NULL, NULL,
+	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, WofdrRomInfo, WofdrRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
@@ -22484,7 +22484,7 @@ struct BurnDriver BurnDrvCpsCaptcommpjy = {
 };
 
 static struct BurnRomInfo CaptcommrdsRomDesc[] = {
-	{ "mj.mj",    0x300000, 0x7ad37dcb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "mj.mj",    0x302532, 0x7ad37dcb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
 	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
 	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
@@ -22562,7 +22562,7 @@ struct BurnDriver BurnDrvCpsCaptcommr1bs = {
 };
 
 static struct BurnRomInfo CaptcommpzsRomDesc[] = {
-	{ "mj.mj",    0x300000, 0x9c6b0773, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "mj.mj",    0x302532, 0x9c6b0773, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
 	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
 	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
@@ -22601,7 +22601,7 @@ struct BurnDriver BurnDrvCpsCaptcommpzs = {
 };
 
 static struct BurnRomInfo CaptcommpwxRomDesc[] = {
-	{ "mj.mj",    0x300000, 0x9d863e1d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "mj.mj",    0x302532, 0x9d863e1d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },  //P ROM is a little larger than 3MB. Nasty protection!
 
 	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
 	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
