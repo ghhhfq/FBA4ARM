@@ -17504,8 +17504,8 @@ static struct BurnRomInfo kof97orhRomDesc[] = {
 	{ "232-c2.bin",    0x800000, 0x65b3b5b0, 3 | BRF_GRA },           //  4 
 	{ "232-c3.c3",     0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
 	{ "232-c4.c4",     0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
-	{ "232-c5.bin",    0x400000, 0xc70b8600, 3 | BRF_GRA },           //  7 
-	{ "232-c6.bin",    0x400000, 0x46840a83, 3 | BRF_GRA },           //  8 
+	{ "232-c5.bin",    0x800000, 0xc70b8600, 3 | BRF_GRA },           //  7 
+	{ "232-c6.bin",    0x800000, 0x46840a83, 3 | BRF_GRA },           //  8 
 
 	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
 
@@ -17537,8 +17537,10 @@ static struct BurnRomInfo mslug3gRomDesc[] = {
 	{ "256-c4.c4",    0x800000, 0xb755b4eb, 3 | BRF_GRA },           //  5 				/ TC5364202
 	{ "256-c5.c5",    0x800000, 0x7aacab47, 3 | BRF_GRA },           //  6 				/ TC5364202
 	{ "256-c6.c6",    0x800000, 0xc698fd5d, 3 | BRF_GRA },           //  7 				/ TC5364202
-	{ "ms3n_c7.rom",  0x800000, 0xed559fac, 3 | BRF_GRA },           //  8 				/ TC5364202
-	{ "ms3n_c8.rom",  0x800000, 0x1c52378b, 3 | BRF_GRA },           //  9 				/ TC5364202
+	{ "256-c7.c7",    0x800000, 0xcfceddd2, 3 | BRF_GRA },           //  8 				/ TC5364202
+	{ "256-c8.c8",    0x800000, 0x4d9be34c, 3 | BRF_GRA },           //  9 				/ TC5364202
+	//{ "ms3n_c7.rom",  0x800000, 0xed559fac, 3 | BRF_GRA },           //  8 				/ decrypted GFX?
+	//{ "ms3n_c8.rom",  0x800000, 0x1c52378b, 3 | BRF_GRA },           //  9 				/ decrypted GFX?
 
 	{ "256-m1.m1",    0x080000, 0xeaeec116, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code		/ mask rom TC534000
 
@@ -17571,8 +17573,10 @@ static struct BurnRomInfo mslug3cRomDesc[] = {
 	{ "256-c4.c4",    0x800000, 0xb755b4eb, 3 | BRF_GRA },           //  5 				/ TC5364202
 	{ "256-c5.c5",    0x800000, 0x7aacab47, 3 | BRF_GRA },           //  6 				/ TC5364202
 	{ "256-c6.c6",    0x800000, 0xc698fd5d, 3 | BRF_GRA },           //  7 				/ TC5364202
-	{ "ms3n_c7.rom",  0x800000, 0xed559fac, 3 | BRF_GRA },           //  8 				/ TC5364202
-	{ "ms3n_c8.rom",  0x800000, 0x1c52378b, 3 | BRF_GRA },           //  9 				/ TC5364202
+	{ "256-c7.c7",    0x800000, 0xcfceddd2, 3 | BRF_GRA },           //  8 				/ TC5364202
+	{ "256-c8.c8",    0x800000, 0x4d9be34c, 3 | BRF_GRA },           //  9 				/ TC5364202
+	//{ "ms3n_c7.rom",  0x800000, 0xed559fac, 3 | BRF_GRA },           //  8 				/ decrypted GFX?
+	//{ "ms3n_c8.rom",  0x800000, 0x1c52378b, 3 | BRF_GRA },           //  9 				/ decrypted GFX?
 
 	{ "256-m1.m1",    0x080000, 0xeaeec116, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code		/ mask rom TC534000
 
