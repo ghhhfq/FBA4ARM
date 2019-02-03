@@ -12238,6 +12238,13 @@ DRV		BurnDrvGrdianslbs;
 DRV		BurnDrvKof97orh;
 DRV		BurnDrvmslug3g;
 DRV		BurnDrvmslug3c;
+DRV		BurnDrvmslug4dr;
+DRV		BurnDrvmslug5dbj;
+DRV		BurnDrvmslug5c;
+DRV		BurnDrvkovshp1v4x;
+DRV		BurnDrvkovshpqxzq;
+DRV		BurnDrvKov2pcthl;
+DRV		BurnDrvKov2pswcq;
 
 #undef DRV
 
@@ -24480,4 +24487,12 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20130203)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
 	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
+	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190124)
+	&BurnDrvmslug5dbj,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
+	&BurnDrvmslug5c,			// Metal Slug 5 (Enemies Resetting Version 20190101)
+	&BurnDrvkovshp1v4x,			//Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Shaking God of War 20190130)
+	&BurnDrvkovshpqxzq,			//Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
+	&BurnDrvKov2pcthl,			//Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
+	&BurnDrvKov2pswcq,			//Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
+	
 };
