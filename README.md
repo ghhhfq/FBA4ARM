@@ -83,4 +83,4 @@ FBA本身暂不支持，但是RA支持。
 NGCD的模拟正在开发中，有些事情需要先说明一下 :
 * 需要两个BIOS：neocdz.zip和neogeo.zip，分别准备好放在libretro的系统目录下。
 * 需要在命令行里加上`--subsystem neocd`。
-* 目前只能使用`MODE1/2048`格式的镜像。
+* 目前只能使用`MODE1/2048`格式的镜像，需要使用CUE+ISO+WAV的格式。
