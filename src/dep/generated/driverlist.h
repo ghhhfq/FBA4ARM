@@ -12222,6 +12222,31 @@ DRV		BurnSpecSpec128BIOS;
 DRV		BurnSpecSpectrumBIOS;
 DRV		BurnDrvZzyzzyxx;
 DRV		BurnDrvZzyzzyxx2;
+
+//extra hacks
+DRV		BurnDrvCpsWofdr;
+DRV		BurnDrvCpsCaptcommpjy;
+DRV		BurnDrvCpsCaptcommrds;
+DRV		BurnDrvCpsCaptcommr1bs;
+DRV		BurnDrvCpsCaptcommpzs;
+DRV		BurnDrvCpsCaptcommpwx;
+DRV		BurnDrvCpsDinoxzb;
+DRV		BurnDrvCpsDinojps;
+DRV		BurnDrvCpsDinowtw;
+DRV		BurnDrvCpsDinowj;
+DRV		BurnDrvCpsDinojds;
+DRV		BurnDrvGrdianslbs;
+DRV		BurnDrvKof97orh;
+DRV		BurnDrvmslug3g;
+DRV		BurnDrvmslug3c;
+DRV		BurnDrvmslug4dr;
+DRV		BurnDrvmslug5dg2;
+DRV		BurnDrvmslug5dg3;
+DRV		BurnDrvkovshp1v4x;
+DRV		BurnDrvkovshpqxzq;
+DRV		BurnDrvKov2pcthl;
+DRV		BurnDrvKov2pswcq;
+
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24447,4 +24472,28 @@ static struct BurnDriver* pDriver[] = {
 	&BurnSpecSpectrumBIOS,		// ZX Spectrum [BIOS Only, NOT WORKING]
 	&BurnDrvZzyzzyxx,			// Zzyzzyxx (set 1)
 	&BurnDrvZzyzzyxx2,			// Zzyzzyxx (set 2)
+	
+	//extra hacks
+	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
+	&BurnDrvCpsCaptcommpjy,		// Captain Commando (Elite Version 20181231)
+	&BurnDrvCpsCaptcommrds,		// Captain Commando (99 Beater Version 20190102)
+	&BurnDrvCpsCaptcommr1bs,	// Captain Commando (Shape Shifting Version 20190101)
+	&BurnDrvCpsCaptcommpzs,		// Captain Commando (Warlord Version 20190107)
+	&BurnDrvCpsCaptcommpwx,		// Captain Commando (Infinite Bullet 20190121)
+	&BurnDrvCpsDinoxzb,			// Cadillacs & Dinosaurs (Warlord Version 20190119)
+	&BurnDrvCpsDinojps,			// Cadillacs & Dinosaurs (Arena Version 20190123)
+	&BurnDrvCpsDinowtw,			// Cadillacs & Dinosaurs (Sky King 20190114)
+	&BurnDrvCpsDinowj,			// Cadillacs & Dinosaurs (Majin Ranbu 20190117)
+	&BurnDrvCpsDinojds,			// Cadillacs & Dinosaurs (Fighting God Version 20190114)
+	&BurnDrvGrdianslbs,			// Guardians / Denjin Makai II (Robust Version 20190111)
+	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20130203)
+	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
+	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
+	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190124)
+	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
+	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
+	&BurnDrvkovshp1v4x,			//Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Shaking God of War 20190130)
+	&BurnDrvkovshpqxzq,			//Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
+	&BurnDrvKov2pcthl,			//Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
+	&BurnDrvKov2pswcq,			//Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
 };
