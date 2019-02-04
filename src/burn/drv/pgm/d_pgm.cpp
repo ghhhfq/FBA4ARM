@@ -5986,7 +5986,7 @@ STDROMPICKEXT(kov2pswcq, kov2pswcq, pgm)
 STD_ROM_FN(kov2pswcq)
 
 struct BurnDriver BurnDrvKov2pswcq = {
-	"kov2pcthl", "kov2p", "pgm", NULL, "2019",
+	"kov2pswcq", "kov2p", "pgm", NULL, "2019",
 	"Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)\0", NULL, "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
