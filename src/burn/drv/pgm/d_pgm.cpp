@@ -5867,9 +5867,9 @@ static struct BurnRomInfo kovshp1v4xRomDesc[] = {
 
 	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  2 Tile data
 
-	{ "a0600x.rom",	   		0x3200000, 0x92444dcd, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0600x.rom",	   		0x2000000, 0x92444dcd, 3 | BRF_GRA },			//  3 Sprite Color Data
 
-	{ "b0600x.rom",	   		0x1600000, 0x5d5d9512, 4 | BRF_GRA },			//  4 Sprite Masks & Color Indexes
+	{ "b0600x.rom",	   		0x1000000, 0x5d5d9512, 4 | BRF_GRA },			//  4 Sprite Masks & Color Indexes
 
 	{ "p0600h.rom",	   		0x400000, 0xec3f335d, 5 | BRF_SND },			//  5 Samples
 
@@ -5884,8 +5884,8 @@ struct BurnDriver BurnDrvkovshp1v4x = {
 	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Shaking God of War 20190130)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
-	NULL, kovshp1v4xRomInfo, kovshp1v4xRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
-	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	NULL, kovshp1v4xRomInfo, kovshp1v4xRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshxasInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
 
@@ -5899,11 +5899,11 @@ static struct BurnRomInfo kovshpqxzqRomDesc[] = {
 	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
 	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA }, 	        //  3 
 	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA }, 	        //  4
-	{ "a0540.rom",	   		0x800000, 0xfd349e53, 3 | BRF_GRA }, 	        //  5
+	{ "a0540.rom",	   		0x800000, 0x2482a3aa, 3 | BRF_GRA }, 	        //  5
 
 	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
 	{ "b0540.rom",	   		0x800000, 0xfd349e53, 4 | BRF_GRA },			//  7-1
-	{ "b0601.rom",	   		0x400000, 0xa0bb1c2f, 3 | BRF_GRA }, 	        //  7-2 Expanded ROM
+	{ "b0601.rom",	   		0x400000, 0xa0bb1c2f, 4 | BRF_GRA }, 	        //  7-2 Expanded ROM
 
 	{ "m0600.rom",	   		0x400000, 0x63c76ec7, 5 | BRF_SND },			//  8 Samples
 
@@ -5918,8 +5918,8 @@ struct BurnDriver BurnDrvkovshpqxzq = {
 	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
-	NULL, kovshpqxzqRomInfo, kovshpqxzqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
-	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	NULL, kovshpqxzqRomInfo, kovshpqxzqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshxasInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
 
@@ -5979,7 +5979,7 @@ static struct BurnRomInfo kov2pswcqRomDesc[] = {
 
 	{ "kov2p_igs027a_china.bin",	0x004000, 0x06214503, 7 | BRF_PRG | BRF_ESS },  // 10 Internal ARM7 Rom
 
-	{ "v200-16.rom",   		0x200000, 0x16a0c11f, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom
+	{ "v200-16.rom",   		0x200000, 0x28029563, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom
 };
 
 STDROMPICKEXT(kov2pswcq, kov2pswcq, pgm)
