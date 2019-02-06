@@ -17543,7 +17543,7 @@ struct BurnDriver BurnDrvkof10thd = {
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof10thdRomInfo, kof10thdRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
-	0x1000,	304, 224, 4, 3
+	0x1000,	320, 224, 4, 3
 };
 
 static struct BurnRomInfo kof97orhRomDesc[] = {
@@ -17752,6 +17752,154 @@ struct BurnDriver BurnDrvmslug5dg3 = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, mslug5dg3RomInfo, mslug5dg3RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	320, 224, 4, 3
+};
+
+// From FBA4DROID 20190113 拳皇98 ECK 松连王
+static struct BurnRomInfo kof98eckRomDesc[] = {
+	{ "242-p1.bin",   0x100000, 0x049ee8ac, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "242-p2.bin",   0x400000, 0x3f9b7f2c, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "242-s1.bin",    0x020000, 0xf91c29d2, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "242-c1.bin",    0x800000, 0x874c67b6, 3 | BRF_GRA },           //  3 Sprite data
+	{ "242-c2.bin",    0x800000, 0xb4f4f1c3, 3 | BRF_GRA },           //  4 
+	{ "242-c3.bin",    0x800000, 0x0689e5b1, 3 | BRF_GRA },           //  5 
+	{ "242-c4.bin",    0x800000, 0x5cc4d647, 3 | BRF_GRA },           //  6 
+	{ "242-c5.bin",    0x800000, 0x1531b766, 3 | BRF_GRA },           //  7 
+	{ "242-c6.bin",    0x800000, 0x04131307, 3 | BRF_GRA },           //  8 
+	{ "242-c7.bin",    0x800000, 0x6f879c38, 3 | BRF_GRA },           //  9 
+	{ "242-c8.bin",    0x800000, 0x89c797df, 3 | BRF_GRA },           // 10 
+
+	{ "242-mg1.bin",   0x040000, 0x4e7a6b1b, 4 | BRF_ESS | BRF_PRG }, // 11 Z80 code
+
+	{ "242-v1.bin",    0x400000, 0x32da3c63, 5 | BRF_SND },           // 12 Sound data
+	{ "242-v2.bin",    0x400000, 0x246edf6d, 5 | BRF_SND },           // 13 
+	{ "242-v3.bin",    0x400000, 0x308b0393, 5 | BRF_SND },           // 14 
+	{ "242-v4.bin",    0x400000, 0x00276d91, 5 | BRF_SND },           // 15 
+};
+
+STDROMPICKEXT(kof98eck, kof98eck, neogeo)
+STD_ROM_FN(kof98eck)
+
+struct BurnDriver BurnDrvKof98eck = {
+	"kof98eck", "kof98eck", "neogeo", NULL, "2019",
+	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)\0", NULL, "Gunloc941", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof98eckRomInfo, kof98eckRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// From FBA4DROID 20190115 拳皇98 ECK 松连王 能量加强
+static struct BurnRomInfo kof98eckpRomDesc[] = {
+	{ "242-p1.bin",   0x100000, 0xc4d3d4e2, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "242-p2.bin",   0x400000, 0x3f9b7f2c, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "242-s1.bin",    0x020000, 0xf91c29d2, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "242-c1.bin",    0x800000, 0x874c67b6, 3 | BRF_GRA },           //  3 Sprite data
+	{ "242-c2.bin",    0x800000, 0xb4f4f1c3, 3 | BRF_GRA },           //  4 
+	{ "242-c3.bin",    0x800000, 0x0689e5b1, 3 | BRF_GRA },           //  5 
+	{ "242-c4.bin",    0x800000, 0x5cc4d647, 3 | BRF_GRA },           //  6 
+	{ "242-c5.bin",    0x800000, 0x1531b766, 3 | BRF_GRA },           //  7 
+	{ "242-c6.bin",    0x800000, 0x04131307, 3 | BRF_GRA },           //  8 
+	{ "242-c7.bin",    0x800000, 0x6f879c38, 3 | BRF_GRA },           //  9 
+	{ "242-c8.bin",    0x800000, 0x89c797df, 3 | BRF_GRA },           // 10 
+
+	{ "242-mg1.bin",   0x040000, 0x4e7a6b1b, 4 | BRF_ESS | BRF_PRG }, // 11 Z80 code
+
+	{ "242-v1.bin",    0x400000, 0x32da3c63, 5 | BRF_SND },           // 12 Sound data
+	{ "242-v2.bin",    0x400000, 0x246edf6d, 5 | BRF_SND },           // 13 
+	{ "242-v3.bin",    0x400000, 0x308b0393, 5 | BRF_SND },           // 14 
+	{ "242-v4.bin",    0x400000, 0x00276d91, 5 | BRF_SND },           // 15 
+};
+
+STDROMPICKEXT(kof98eckp, kof98eckp, neogeo)
+STD_ROM_FN(kof98eckp)
+
+struct BurnDriver BurnDrvKof98eckp = {
+	"kof98eckp", "kof98eck", "neogeo", NULL, "2019",
+	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof98eckpRomInfo, kof98eckpRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// From FBA4DROID 20101120 拳皇2002 魔法加强版 Ⅲ
+static struct BurnRomInfo kf2k2mp3RomDesc[] = {
+	{ "kf2k2mp3-p1.rom",	0x100000, 0x0cdbe99c, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
+	{ "kf2k2mp3-p2.rom",	0x400000, 0xde6ffd21, 1 | BRF_ESS | BRF_PRG },
+
+	{ "kf2k2mp3-s1.rom",	0x020000, 0x4d0c4e77, 2 | BRF_GRA },           // 2 Text layer tiles / TC531000
+
+	{ "kf2k2_c1.rom",	0x800000, 0xc1a21b4c, 3 | BRF_GRA },          
+	{ "kf2k2_c2.rom",	0x800000, 0x9b3d7e8d, 3 | BRF_GRA },          
+	{ "kf2k2_c3.rom",	0x800000, 0xe5074eea, 3 | BRF_GRA },           
+	{ "kf2k2_c4.rom",	0x800000, 0xf6eb1ff2, 3 | BRF_GRA },          
+	{ "kof2k2_c5.rom",	0x800000, 0x74bba7c6, 3 | BRF_GRA },          
+	{ "kof2k2_c6.rom",	0x800000, 0xe20d2216, 3 | BRF_GRA },          
+	{ "kf2k2_c7.rom",	0x800000, 0x0e9f6adb, 3 | BRF_GRA },           
+	{ "kf2k2_c8.rom",	0x800000, 0x9961799e, 3 | BRF_GRA },           
+
+	{ "kof2k2_m1.rom",  0x020000, 0xab9d360e, 4 | BRF_ESS | BRF_PRG }, 
+
+	{ "kof2k2_v1.rom",  0x400000, 0x13d98607, 5 | BRF_SND },
+	{ "kof2k2_v2.rom",  0x400000, 0x9cf74677, 5 | BRF_SND },
+	{ "kof2k2_v3.rom",  0x400000, 0x8e9448b5, 5 | BRF_SND },
+	{ "kof2k2_v4.rom",  0x400000, 0x067271b5, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kf2k2mp3, kf2k2mp3, neogeo)
+STD_ROM_FN(kf2k2mp3)
+
+struct BurnDriver BurnDrvkf2k2mp3 = {
+	"kf2k2mp3", "kof2002", "neogeo", NULL, "2010",
+	"Kof2002 Magic Plus III (Decrypted C)\0", NULL, "Ismamj", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kf2k2mp3RomInfo, kf2k2mp3RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	320, 224, 4, 3
+};
+
+// From FBA4DROID 201901 拳皇2002 魔法加强版 Ⅲ 简化
+static struct BurnRomInfo kf2k2mp3sRomDesc[] = {
+	{ "kf2k2mp3-p1.rom",	0x100000, 0x933680ce, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
+	{ "kf2k2mp3-p2.rom",	0x400000, 0xde6ffd21, 1 | BRF_ESS | BRF_PRG },
+
+	{ "kf2k2mp3-s1.rom",	0x020000, 0x4d0c4e77, 2 | BRF_GRA },           // 2 Text layer tiles / TC531000
+
+	{ "kf2k2_c1.rom",	0x800000, 0xc1a21b4c, 3 | BRF_GRA },
+	{ "kf2k2_c2.rom",	0x800000, 0x9b3d7e8d, 3 | BRF_GRA },
+	{ "kf2k2_c3.rom",	0x800000, 0xe5074eea, 3 | BRF_GRA },
+	{ "kf2k2_c4.rom",	0x800000, 0xf6eb1ff2, 3 | BRF_GRA },
+	{ "kof2k2_c5.rom",	0x800000, 0x74bba7c6, 3 | BRF_GRA },
+	{ "kof2k2_c6.rom",	0x800000, 0xe20d2216, 3 | BRF_GRA },
+	{ "kf2k2_c7.rom",	0x800000, 0x0e9f6adb, 3 | BRF_GRA },
+	{ "kf2k2_c8.rom",	0x800000, 0x9961799e, 3 | BRF_GRA },
+
+	{ "kof2k2_m1.rom",  0x020000, 0xab9d360e, 4 | BRF_ESS | BRF_PRG },
+
+	{ "kof2k2_v1.rom",  0x400000, 0x13d98607, 5 | BRF_SND },
+	{ "kof2k2_v2.rom",  0x400000, 0x9cf74677, 5 | BRF_SND },
+	{ "kof2k2_v3.rom",  0x400000, 0x8e9448b5, 5 | BRF_SND },
+	{ "kof2k2_v4.rom",  0x400000, 0x067271b5, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kf2k2mp3s, kf2k2mp3s, neogeo)
+STD_ROM_FN(kf2k2mp3s)
+
+struct BurnDriver BurnDrvkf2k2mp3s = {
+	"kf2k2mp3s", "kf2k2mp3", "neogeo", NULL, "2019",
+	"Kof2002 Magic Plus III (Decrypted C, Moves Simplified)\0", NULL, "FBA4DROID", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kf2k2mp3sRomInfo, kf2k2mp3sRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	320, 224, 4, 3
 };
