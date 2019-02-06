@@ -12237,15 +12237,22 @@ DRV		BurnDrvCpsDinowj;
 DRV		BurnDrvCpsDinojds;
 DRV		BurnDrvGrdianslbs;
 DRV		BurnDrvKof97orh;
+DRV		BurnDrvKof98eck;
+DRV		BurnDrvKof98eckp;
+DRV		BurnDrvkf2k2mp3;
+DRV		BurnDrvkf2k2mp3s;
 DRV		BurnDrvmslug3g;
 DRV		BurnDrvmslug3c;
 DRV		BurnDrvmslug4dr;
 DRV		BurnDrvmslug5dg2;
 DRV		BurnDrvmslug5dg3;
+DRV		BurnDrvkovshpp19;
+DRV		BurnDrvkovshpqxzqj;
 DRV		BurnDrvkovshp1v4x;
 DRV		BurnDrvkovshpqxzq;
 DRV		BurnDrvKov2pcthl;
 DRV		BurnDrvKov2pswcq;
+DRV		BurnDrvOlds100adsgl;
 
 #undef DRV
 
@@ -24487,13 +24494,20 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsDinojds,			// Cadillacs & Dinosaurs (Fighting God Version 20190114)
 	&BurnDrvGrdianslbs,			// Guardians / Denjin Makai II (Robust Version 20190111)
 	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20130203)
+	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)
+	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
+	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
+	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
 	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
 	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190124)
 	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
-	&BurnDrvkovshp1v4x,			//Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Shaking God of War 20190130)
-	&BurnDrvkovshpqxzq,			//Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
-	&BurnDrvKov2pcthl,			//Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
-	&BurnDrvKov2pswcq,			//Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
+	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
+	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190105)
+	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Shaking God of War 20190130)
+	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
+	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
+	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
+	&BurnDrvOlds100adsgl,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
 };
