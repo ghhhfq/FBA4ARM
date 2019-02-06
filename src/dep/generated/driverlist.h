@@ -12225,6 +12225,7 @@ DRV		BurnDrvZzyzzyxx2;
 
 //extra hacks
 DRV		BurnDrvCpsWofdr;
+DRV		BurnDrvCpsWofr19;
 DRV		BurnDrvCpsCaptcommpjy;
 DRV		BurnDrvCpsCaptcommrds;
 DRV		BurnDrvCpsCaptcommr1bs;
@@ -12237,8 +12238,11 @@ DRV		BurnDrvCpsDinowj;
 DRV		BurnDrvCpsDinojds;
 DRV		BurnDrvGrdianslbs;
 DRV		BurnDrvKof97orh;
+DRV		BurnDrvKof97sw2;
+DRV		BurnDrvKof97sw2s;
 DRV		BurnDrvKof98eck;
 DRV		BurnDrvKof98eckp;
+DRV		BurnDrvKof98a1;
 DRV		BurnDrvkf2k2mp3;
 DRV		BurnDrvkf2k2mp3s;
 DRV		BurnDrvmslug3g;
@@ -24482,6 +24486,7 @@ static struct BurnDriver* pDriver[] = {
 	
 	//extra hacks
 	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
+	&BurnDrvCpsWofr19,			// Warriors of Fate (Unique Sword Armor 20190113)
 	&BurnDrvCpsCaptcommpjy,		// Captain Commando (Elite Version 20181231)
 	&BurnDrvCpsCaptcommrds,		// Captain Commando (99 Beater Version 20190102)
 	&BurnDrvCpsCaptcommr1bs,	// Captain Commando (Shape Shifting Version 20190101)
@@ -24494,8 +24499,11 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsDinojds,			// Cadillacs & Dinosaurs (Fighting God Version 20190114)
 	&BurnDrvGrdianslbs,			// Guardians / Denjin Makai II (Robust Version 20190111)
 	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20130203)
+	&BurnDrvKof97sw2,			// The King of Fighters '97 (Iori with Cloak 20190131)
+	&BurnDrvKof97sw2s,			// The King of Fighters '97 (Iori with Cloak, Moves Simplified 20190203)
 	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)
 	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
+	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
 	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
@@ -24505,7 +24513,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
 	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190105)
-	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Shaking God of War 20190130)
+	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190130)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
