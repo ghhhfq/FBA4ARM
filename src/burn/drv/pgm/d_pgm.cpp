@@ -5860,6 +5860,64 @@ struct BurnDriver BurnDrvEspgalbl = {
 	224, 448, 3, 4
 };
 
+// From FBA4DROID 20190105 乱世枭雄 PLUS 2019
+static struct BurnRomInfo kovshpp19RomDesc[] = {
+	{ "m6001.rom",			0x200000, 0xf238fbf5, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "m6002.rom",			0x200000, 0xd5638f8d, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
+
+	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  2 Tile data
+
+	{ "a0600x.rom",	   		0x2000000, 0xa45fa949, 3 | BRF_GRA },			//  3 Sprite Color Data
+
+	{ "b0600x.rom",	   		0x1000000, 0xb1c15d4f, 4 | BRF_GRA },			//  4 Sprite Masks & Color Indexes
+
+	{ "p0600h.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  5 Samples
+
+	{ "kovshp_v100_china.asic", 	0x004000, 0x7ece721c, 7 | BRF_PRG | BRF_ESS },  //  6 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshpp19, kovshpp19, pgm)
+STD_ROM_FN(kovshpp19)
+
+struct BurnDriver BurnDrvkovshpp19 = {
+	"kovshpp19", "kovshp", "pgm", NULL, "2019",
+	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshpp19RomInfo, kovshpp19RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshxasInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// From FBA4DROID 20190105 三国战纪 乱世枭雄 群雄再起 金版
+static struct BurnRomInfo kovshpqxzqjRomDesc[] = {
+	{ "m6001.rom",			0x300000, 0x4eb2722d, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
+	{ "m6002.rom",			0x300000, 0xce123ca4, 1 | BRF_PRG | BRF_ESS },  //  0-2 68K Code
+
+	{ "t0600.rom",    		0x800000, 0x355eb28d, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600x.rom",	   		0x2000000, 0x110b8d33, 3 | BRF_GRA },			//  2 Sprite Color Data
+
+	{ "b0600x.rom",	   		0x1000000, 0x43a2406e, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+
+	{ "p0600h.rom",	   		0x400000, 0x7a50501b, 5 | BRF_SND },			//  8 Samples
+
+	{ "kovshp_v100_china.asic", 	0x004000, 0x5e6ead02, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshpqxzqj, kovshpqxzqj, pgm)
+STD_ROM_FN(kovshpqxzqj)
+
+struct BurnDriver BurnDrvkovshpqxzqj = {
+	"kovshpqxzqj", "kovshp", "pgm", NULL, "2019",
+	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190105)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshpqxzqjRomInfo, kovshpqxzqjRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshxasInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
 // From FBA4DROID 20190130 乱世枭雄 惊天战神 2019
 static struct BurnRomInfo kovshp1v4xRomDesc[] = {
 	{ "m6001.rom",			0x300000, 0x3e4bd0ca, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -5992,5 +6050,47 @@ struct BurnDriver BurnDrvKov2pswcq = {
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kov2pswcqRomInfo, kov2pswcqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kov2pInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// From FBA4DROID 20181229 西游释厄传超级版 大圣归来
+static struct BurnRomInfo olds100adsglRomDesc[] = {
+	{ "p0500.v10",	   		0x400000, 0xd63d9999, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0500.rom",	   		0x400000, 0xd881726c, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0501.rom",	   		0x200000, 0xd2106864, 2 | BRF_GRA },			//  2
+
+	{ "a0500.rom",	   		0x400000, 0x80a59197, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0501.rom",	   		0x400000, 0x98c931b1, 3 | BRF_GRA },			//  4
+	{ "a0502.rom",	   		0x400000, 0xc3fcdf1d, 3 | BRF_GRA },			//  5
+	{ "a0503.rom",	   		0x400000, 0x066dffec, 3 | BRF_GRA },			//  6
+	{ "a0504.rom",	   		0x400000, 0x45337583, 3 | BRF_GRA },			//  7
+	{ "a0505.rom",	   		0x400000, 0x5b8cf3a5, 3 | BRF_GRA },			//  8
+	{ "a0506.rom",	   		0x400000, 0x2e50561c, 3 | BRF_GRA },			//  9
+
+	{ "b0500.rom",	   		0x400000, 0xcde07f74, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0501.rom",	   		0x400000, 0x1546c2e9, 4 | BRF_GRA },			// 11
+	{ "b0502.rom",	   		0x400000, 0xe97b31c3, 4 | BRF_GRA },			// 12
+	{ "b0503.u16",	   		0x400000, 0x069ec4d1, 4 | BRF_GRA },			// 13
+
+	{ "m0500.rom",	   		0x200000, 0x37928cdd, 5 | BRF_SND },			// 14 Samples
+	
+#if !defined (ROM_VERIFY)
+	{ "kd-u6.512",	   		0x010000, 0xe7613dda, 9 | BRF_PRG | BRF_ESS },  // 15 Protection Rom
+#else
+	{ "ram_dump",	   		0x040000, 0x280cfb4e, 0 | BRF_OPT },
+#endif
+};
+
+STDROMPICKEXT(olds100adsgl, olds100adsgl, pgm)
+STD_ROM_FN(olds100adsgl)
+
+struct BurnDriver BurnDrvOlds100adsgl = {
+	"olds100adsgl", "olds", "pgm", NULL, "2018",
+	"Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, olds100adsglRomInfo, olds100adsglRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
+	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
