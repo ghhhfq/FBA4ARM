@@ -17971,6 +17971,79 @@ struct BurnDriver BurnDrvkf2k2mp3s = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+
+// From FBA4DROID 20080624 拳皇2002 天国神族 游聚版
+static struct BurnRomInfo kof2k2c2RomDesc[] = {
+	{ "Kof2k2C2_p1.rom",	0x100000, 0xeb84d68f, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
+	{ "Kof2k2C2_p2.rom",	0x400000, 0x293bbf78, 1 | BRF_ESS | BRF_PRG },
+
+	{ "Kof2k2C2_s1.rom",	0x020000, 0x67e7cbe1, 2 | BRF_GRA },           // 2 Text layer tiles / TC531000
+
+	{ "kf2k2_c1.rom",	0x800000, 0x7efa6ef7, 3 | BRF_GRA },          
+	{ "kf2k2_c2.rom",	0x800000, 0xaa82948b, 3 | BRF_GRA },          
+	{ "kf2k2_c3.rom",	0x800000, 0x959fad0b, 3 | BRF_GRA },           
+	{ "Kof2k2C2_c4.rom",	0x800000, 0x2558972f, 3 | BRF_GRA },          
+	{ "kf2k2_c5.rom",	0x800000, 0x74bba7c6, 3 | BRF_GRA },          
+	{ "kf2k2_c6.rom",	0x800000, 0xe20d2216, 3 | BRF_GRA },          
+	{ "Kof2k2C2_c7.rom",	0x800000, 0x201e75e0, 3 | BRF_GRA },           
+	{ "Kof2k2C2_c8.rom",	0x800000, 0xff0fd53b, 3 | BRF_GRA },           
+
+	{ "265-m1.rom",  0x020000, 0x1c661a4b, 4 | BRF_ESS | BRF_PRG }, 
+
+	{ "kof2k2_v1.rom",  0x400000, 0x13d98607, 5 | BRF_SND },
+	{ "kof2k2_v2.rom",  0x400000, 0x9cf74677, 5 | BRF_SND },
+	{ "kof2k2_v3.rom",  0x400000, 0x8e9448b5, 5 | BRF_SND },
+	{ "kof2k2_v4.rom",  0x400000, 0x067271b5, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kof2k2c2, kof2k2c2, neogeo)
+STD_ROM_FN(kof2k2c2)
+
+struct BurnDriver BurnDrvkof2k2c2 = {
+	"kof2k2c2", "kof2002", "neogeo", NULL, "2008",
+	"The King of Fighters 2002 (Heavenly Divine 20080624)\0", NULL, "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof2k2c2RomInfo, kof2k2c2RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
+// From FBA4DROID 20181125 拳皇2002 通天版
+static struct BurnRomInfo kf2k2ttRomDesc[] = {
+	{ "265-p1.p1",       0x100000, 0x26b084c7, 1 | BRF_ESS | BRF_PRG },
+	{ "265-p2.sp2",      0x400000, 0x6fadc5c3, 1 | BRF_ESS | BRF_PRG }, 
+
+	{ "2k2-s1p.bin",      0x020000, 0x14b08bd9, 2 | BRF_GRA },
+
+	{ "265-c1.c1", 0x800000, 0x7efa6ef7, 3 | BRF_GRA },
+	{ "265-c2.c2", 0x800000, 0xaa82948b, 3 | BRF_GRA },
+	{ "265-c3.c3", 0x800000, 0xe5074eea, 3 | BRF_GRA },
+	{ "265-c4.c4", 0x800000, 0xf6eb1ff2, 3 | BRF_GRA },
+	{ "265-c5.c5", 0x800000, 0x74bba7c6, 3 | BRF_GRA },
+	{ "265-c6.c6", 0x800000, 0xe20d2216, 3 | BRF_GRA },
+	{ "265-c7.c7", 0x800000, 0x0e9f6adb, 3 | BRF_GRA },
+	{ "265-c8.c8", 0x800000, 0x9961799e, 3 | BRF_GRA },
+
+	{ "265-m1.m1",  0x020000, 0xab9d360e, 4 | BRF_ESS | BRF_PRG },
+
+	{ "265-v1.v1",  0x800000, 0x0fc9a58d, 5 | BRF_SND },
+	{ "265-v2.v2",  0x800000, 0xb8c475a4, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kf2k2tt, kf2k2tt, neogeo)
+STD_ROM_FN(kf2k2tt)
+
+struct BurnDriver BurnDrvkf2k2tt = {
+	"kf2k2tt", "kof2002", "neogeo", NULL, "2018",
+	"The King of Fighters 2002 (Exceeding Version 20181125)\0", NULL, "hack", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kf2k2ttRomInfo, kf2k2ttRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
 /* There are some protections.
 Graphic data are not complete.
 
