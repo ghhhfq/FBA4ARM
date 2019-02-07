@@ -1,21 +1,8 @@
-#include "retro_common.h"
-#include "retro_cdemu.h"
+// FBAlpha cd-img, TruRip .ccd/.sub/.img support by Jan Klaassen
+// .bin/.cue re-work by dink
 
-#define DPRINTF_BUFFER_SIZE 512
-char dprintf_buf[DPRINTF_BUFFER_SIZE];
-static INT32 __cdecl libretro_dprintf(TCHAR* szFormat, ...)
-{
-	va_list vp;
-	va_start(vp, szFormat);
-	int rc = vsnprintf(dprintf_buf, DPRINTF_BUFFER_SIZE, szFormat, vp);
-	va_end(vp);
-
-	if (rc >= 0)
-		log_cb(RETRO_LOG_INFO, dprintf_buf);
-
-	return rc;
-}
-#define dprintf libretro_dprintf
+#include "burner.h"
+#include "io.h"
 
 const int MAXIMUM_NUMBER_TRACKS = 100;
 
@@ -40,10 +27,6 @@ static int    cdimgFileSize = 0;
 static int    cdimgTrack = 0;
 static int    cdimgLBA = 0;
 
-bool bCDEmuOkay = false;
-CDEmuStatusValue CDEmuStatus;
-TCHAR CDEmuImage[MAX_PATH];
-
 static int    cdimgSamples = 0;
 
 // identical to the format used in clonecd .sub files, can use memcpy
@@ -60,11 +43,7 @@ static short* cdimgOutputbuffer = NULL;
 
 static int cdimgOutputPosition;
 
-void NeoCDInfo_Exit() {}
-
-/**
- * see src/intf/cd/win32/cd_img.cpp
- */
+// -----------------------------------------------------------------------------
 
 TCHAR* GetIsoPath()
 {
@@ -208,10 +187,15 @@ static int cdimgParseSubFile()
 	_tcscpy(cdimgTOC->Image, CDEmuImage);
 	_tcscpy(cdimgTOC->Image + length - 4, _T(".img"));
 	//bprintf(0, _T("Image file: %s\n"),cdimgTOC->Image);
+	if (_waccess(cdimgTOC->Image, 4) == -1)
+	{
+		dprintf(_T("*** Bad image: %s\n"), cdimgTOC->Image);
+		return 1;
+	}
 
 	_tcscpy(filename_sub + length - 4, _T(".sub"));
 	//bprintf(0, _T("filename_sub: %s\n"),filename_sub);
-	h = fopen(filename_sub, _T("rb"));
+	h = _wfopen(filename_sub, _T("rb"));
 	if (h == 0)
 	{
 		dprintf(_T("*** Bad image: %s\n"), filename_sub);
@@ -275,7 +259,7 @@ static int cdimgParseSubFile()
 	//bprintf(0, _T("pregap lba: %d MSF: %d:%d:%d\n"), cd_pregap, QChannel[0].MSFabs.M, QChannel[0].MSFabs.S, QChannel[0].MSFabs.F);
 
 	{ // Make a fake last-track w/total image size (for bounds checking)
-		h = fopen(cdimgTOC->Image, _T("rb"));
+		h = _wfopen(cdimgTOC->Image, _T("rb"));
 		if (h)
 		{
 			fseek(h, 0, SEEK_END);
@@ -317,7 +301,7 @@ static int cdimgParseCueFile()
 	_tcscpy(cdimgTOC->Image + length - 4, _T(".bin"));
 	//bprintf(0, _T("Image file: %s\n"),cdimgTOC->Image);
 
-	h = fopen(CDEmuImage, _T("rt"));
+	h = _tfopen(CDEmuImage, _T("rt"));
 	if (h == NULL) {
 		return 1;
 	}
@@ -345,7 +329,8 @@ static int cdimgParseCueFile()
 			// read filename
 			QuoteRead(&szQuote, NULL, s);
 
-			sprintf(szFile, "%s/%s", g_rom_dir, szQuote);
+			_sntprintf(szFile, ExtractFilename(CDEmuImage) - CDEmuImage, _T("%s"), CDEmuImage);
+			_sntprintf(szFile + (ExtractFilename(CDEmuImage) - CDEmuImage), 1024 - (ExtractFilename(CDEmuImage) - CDEmuImage), _T("\\%s"), szQuote);
 
 			if (track == 1) {
 				//bprintf(0, _T("Image file (from .CUE): %s\n"), szFile);
@@ -436,7 +421,7 @@ static int cdimgParseCueFile()
 	fclose(h);
 
 	{
-		h = fopen(cdimgTOC->Image, _T("rb"));
+		h = _wfopen(cdimgTOC->Image, _T("rb"));
 		if (h)
 		{
 			fseek(h, 0, SEEK_END);
@@ -529,7 +514,7 @@ static int cdimgInit()
 
 	{
 		char buf[2048];
-		FILE* h = fopen(cdimgTOC->Image, _T("rb"));	cdimgLBA++;
+		FILE* h = _wfopen(cdimgTOC->Image, _T("rb"));	cdimgLBA++;
 
 		if (h)
 		{
@@ -603,7 +588,7 @@ static int cdimgPlayLBA(int LBA)
 
 	bprintf(PRINT_IMPORTANT, _T("    playing track %2i\n"), cdimgTrack + 1);
 
-	cdimgFile = fopen(cdimgTOC->Image, _T("rb"));
+	cdimgFile = _wfopen(cdimgTOC->Image, _T("rb"));
 	if (cdimgFile == NULL)
 		return 1;
 
@@ -645,7 +630,7 @@ static int cdimgLoadSector(int LBA, char* pBuffer)
 		{
 			cdimgStop();
 
-			cdimgFile = fopen(cdimgTOC->Image, _T("rb"));
+			cdimgFile = _wfopen(cdimgTOC->Image, _T("rb"));
 			if (cdimgFile == NULL)
 				return 0;
 		}
@@ -872,136 +857,9 @@ static INT32 cdimgScan(INT32 nAction, INT32 *pnMin)
 	return 0;
 }
 
-/**
- * see src/burner/misc.cpp
- */
-TCHAR* ExtractFilename(TCHAR* fullname)
+static int cdimgGetSettings(InterfaceInfo* pInfo)
 {
-	TCHAR* filename = fullname + _tcslen(fullname);
-
-	do {
-		filename--;
-	} while (filename >= fullname && *filename != _T('\\') && *filename != _T('/') && *filename != _T(':'));
-
-	return filename;
-}
-
-TCHAR* LabelCheck(TCHAR* s, TCHAR* pszLabel)
-{
-	INT32 nLen;
-	if (s == NULL) {
-		return NULL;
-	}
-	if (pszLabel == NULL) {
-		return NULL;
-	}
-	nLen = _tcslen(pszLabel);
-
-	SKIP_WS(s);													// Skip whitespace
-
-	if (_tcsncmp(s, pszLabel, nLen)){							// Doesn't match
-		return NULL;
-	}
-	return s + nLen;
-}
-
-INT32 QuoteRead(TCHAR** ppszQuote, TCHAR** ppszEnd, TCHAR* pszSrc)	// Read a (quoted) string from szSrc and poINT32 to the end
-{
-	static TCHAR szQuote[QUOTE_MAX];
-	TCHAR* s = pszSrc;
-	TCHAR* e;
-
-	// Skip whitespace
-	SKIP_WS(s);
-
-	e = s;
-
-	if (*s == _T('\"')) {										// Quoted string
-		s++;
-		e++;
-		// Find end quote
-		FIND_QT(e);
-		_tcsncpy(szQuote, s, e - s);
-		// Zero-terminate
-		szQuote[e - s] = _T('\0');
-		e++;
-	} else {													// Non-quoted string
-		// Find whitespace
-		FIND_WS(e);
-		_tcsncpy(szQuote, s, e - s);
-		// Zero-terminate
-		szQuote[e - s] = _T('\0');
-	}
-
-	if (ppszQuote) {
-		*ppszQuote = szQuote;
-	}
-	if (ppszEnd)	{
-		*ppszEnd = e;
-	}
-
 	return 0;
 }
 
-/**
- * see src/intf/cd/cd_interface.cpp
- */
-
-INT32 CDEmuInit() {
-	INT32 nRet;
-	CDEmuStatus = idle;
-	if ((nRet = cdimgInit()) == 0) {
-		bCDEmuOkay = true;
-	}
-	return nRet;
-}
-INT32 CDEmuExit() {
-	if (!bCDEmuOkay) {
-		return 1;
-	}
-	bCDEmuOkay = false;
-	return cdimgExit();
-}
-INT32 CDEmuStop() {
-	if (!bCDEmuOkay) {
-		return 1;
-	}
-	return cdimgStop();
-}
-INT32 CDEmuPlay(UINT8 M, UINT8 S, UINT8 F) {
-	if (!bCDEmuOkay) {
-		return 1;
-	}
-	return cdimgPlay(M, S, F);
-}
-INT32 CDEmuLoadSector(INT32 LBA, char* pBuffer) {
-	if (!bCDEmuOkay) {
-		return 0;
-	}
-	return cdimgLoadSector(LBA, pBuffer);
-}
-UINT8* CDEmuReadTOC(INT32 track) {
-	if (!bCDEmuOkay) {
-		return NULL;
-	}
-	return cdimgReadTOC(track);
-}
-UINT8* CDEmuReadQChannel() {
-	if (!bCDEmuOkay) {
-		return NULL;
-	}
-	return cdimgReadQChannel();
-}
-INT32 CDEmuGetSoundBuffer(INT16* buffer, INT32 samples) {
-	if (!bCDEmuOkay) {
-		return 1;
-	}
-	return cdimgGetSoundBuffer(buffer, samples);
-}
-INT32 CDEmuScan(INT32 nAction, INT32 *pnMin)
-{
-	if (!bCDEmuOkay) {
-		return 1;
-	}
-	return cdimgScan(nAction, pnMin);
-}
+struct CDEmuDo cdimgDo = { cdimgExit, cdimgInit, cdimgStop, cdimgPlay, cdimgLoadSector, cdimgReadTOC, cdimgReadQChannel, cdimgGetSoundBuffer, cdimgScan, cdimgGetSettings, _T("raw image CD emulation") };
