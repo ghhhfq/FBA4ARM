@@ -12226,11 +12226,13 @@ DRV		BurnDrvZzyzzyxx2;
 //extra hacks
 DRV		BurnDrvCpsWofdr;
 DRV		BurnDrvCpsWofr19;
+DRV		BurnDrvCpsWofjps;
 DRV		BurnDrvCpsCaptcommpjy;
 DRV		BurnDrvCpsCaptcommrds;
 DRV		BurnDrvCpsCaptcommr1bs;
 DRV		BurnDrvCpsCaptcommpzs;
 DRV		BurnDrvCpsCaptcommpwx;
+DRV		BurnDrvCpsDinows2019;
 DRV		BurnDrvCpsDinoxzb;
 DRV		BurnDrvCpsDinojps;
 DRV		BurnDrvCpsDinowtw;
@@ -24487,11 +24489,13 @@ static struct BurnDriver* pDriver[] = {
 	//extra hacks
 	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
 	&BurnDrvCpsWofr19,			// Warriors of Fate (Unique Sword Armor 20190113)
+	&BurnDrvCpsWofjps,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Imitation of Playstation Version 20091209)
 	&BurnDrvCpsCaptcommpjy,		// Captain Commando (Elite Version 20181231)
 	&BurnDrvCpsCaptcommrds,		// Captain Commando (99 Beater Version 20190102)
 	&BurnDrvCpsCaptcommr1bs,	// Captain Commando (Shape Shifting Version 20190101)
 	&BurnDrvCpsCaptcommpzs,		// Captain Commando (Warlord Version 20190107)
 	&BurnDrvCpsCaptcommpwx,		// Captain Commando (Infinite Bullet 20190121)
+	&BurnDrvCpsDinows2019,		// Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)
 	&BurnDrvCpsDinoxzb,			// Cadillacs & Dinosaurs (Warlord Version 20190119)
 	&BurnDrvCpsDinojps,			// Cadillacs & Dinosaurs (Arena Version 20190123)
 	&BurnDrvCpsDinowtw,			// Cadillacs & Dinosaurs (Sky King 20190114)
