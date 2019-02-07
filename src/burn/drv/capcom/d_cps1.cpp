@@ -22777,7 +22777,7 @@ STD_ROM_PICK(Dinows2019)
 STD_ROM_FN(Dinows2019)
 
 struct BurnDriver BurnDrvCpsDinows2019 = {
-	"dinows2019", "dino", NULL, NULL, "1993",
+	"dinows2019", "dino", NULL, NULL, "2019",
 	"Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)\0", NULL, "LiXili", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
