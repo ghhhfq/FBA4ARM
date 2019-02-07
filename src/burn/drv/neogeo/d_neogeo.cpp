@@ -17971,6 +17971,8 @@ struct BurnDriver BurnDrvkf2k2mp3s = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+/* There are some protections.
+Graphic data are not complete.
 
 static struct BurnRomInfo kof98a1RomDesc[] = {
 	{ "242-a1.p1",   0x100000, 0xede75fce, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
@@ -18007,3 +18009,4 @@ struct BurnDriver BurnDrvKof98a1 = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
 };
+*/
