@@ -12232,6 +12232,7 @@ DRV		BurnDrvCpsCaptcommrds;
 DRV		BurnDrvCpsCaptcommr1bs;
 DRV		BurnDrvCpsCaptcommpzs;
 DRV		BurnDrvCpsCaptcommpwx;
+DRV		BurnDrvCpsCaptcommr1dw;
 DRV		BurnDrvCpsDinows2019;
 DRV		BurnDrvCpsDinoxzb;
 DRV		BurnDrvCpsDinojps;
@@ -12247,6 +12248,7 @@ DRV		BurnDrvKof98eckp;
 //DRV		BurnDrvKof98a1;
 DRV		BurnDrvkf2k2mp3;
 DRV		BurnDrvkf2k2mp3s;
+DRV		BurnDrvkof2k2c2;
 DRV		BurnDrvmslug3g;
 DRV		BurnDrvmslug3c;
 DRV		BurnDrvmslug4dr;
@@ -12259,6 +12261,11 @@ DRV		BurnDrvkovshpqxzq;
 DRV		BurnDrvKov2pcthl;
 DRV		BurnDrvKov2pswcq;
 DRV		BurnDrvOlds100adsgl;
+DRV		BurnDrvkovplusxb1,
+DRV		BurnDrvkovplusxb2,
+DRV		BurnDrvkovplusxb2ds,
+DRV		BurnDrvkovplusxb2wj,
+DRV		BurnDrvkovshzlzy,
 
 #undef DRV
 
@@ -24495,6 +24502,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsCaptcommr1bs,	// Captain Commando (Shape Shifting Version 20190101)
 	&BurnDrvCpsCaptcommpzs,		// Captain Commando (Warlord Version 20190107)
 	&BurnDrvCpsCaptcommpwx,		// Captain Commando (Infinite Bullet 20190121)
+	&BurnDrvCpsCaptcommr1dw,	// Captain Commando (Unrivalled Version 20181101)
 	&BurnDrvCpsDinows2019,		// Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)
 	&BurnDrvCpsDinoxzb,			// Cadillacs & Dinosaurs (Warlord Version 20190119)
 	&BurnDrvCpsDinojps,			// Cadillacs & Dinosaurs (Arena Version 20190123)
@@ -24510,6 +24518,7 @@ static struct BurnDriver* pDriver[] = {
 //	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
 	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
+	&BurnDrvkof2k2c2,			// The King of Fighters 2002 (Heavenly Divine 20080624)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
 	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
 	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190124)
@@ -24522,4 +24531,9 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
 	&BurnDrvOlds100adsgl,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
+	&BurnDrvkovplusxb1,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
+	&BurnDrvkovplusxb2,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)
+	&BurnDrvkovplusxb2ds,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
+	&BurnDrvkovplusxb2wj,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
+	&BurnDrvkovshzlzy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight for Territory in Ancient Central China 20180307)
 };
