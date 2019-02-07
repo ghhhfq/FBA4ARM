@@ -14361,6 +14361,7 @@ static const struct GameConfig ConfigTable[] =
 	// extra Hacks
 	{ "wofdr"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "wofr19"       , CPS_B_21_DEF, mapper_TK263B, 0, wof_decode          },
+	{ "wofjps"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "captcommpjy"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommrds"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommr1bs" , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
@@ -14371,6 +14372,7 @@ static const struct GameConfig ConfigTable[] =
 	{ "dinowtw"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinowj"       , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinojds"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinows2019"   , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -22493,6 +22495,55 @@ struct BurnDriver BurnDrvCpsWofr19 = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// FBA4DROID 20190113 三国志2 仿PS版
+// IN HBMAME, its name is tk2h12.
+static struct BurnRomInfo WofjpsRomDesc[] = {
+	{ "tk2j23c.bin",   0x080000, 0x6e392dd2, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2j22c.bin",   0x080000, 0x838dff10, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2_01.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2_02.4a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2_03.5a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2_04.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk2_05.7a",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk2_06.8a",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk2_07.9a",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk2_08.10a",    0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+	A_BOARD_QSOUND_PLDS
+	
+	{ "tk263b.1a",     0x000117, 0xc4b0349b, BRF_OPT },	// b-board PLDs
+	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
+	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
+	
+	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
+	
+	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
+	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
+	{ "d9k1.9k",       0x000117, 0x00000000, BRF_OPT | BRF_NODUMP },
+	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
+};
+
+STD_ROM_PICK(Wofjps)
+STD_ROM_FN(Wofjps)
+
+struct BurnDriver BurnDrvCpsWofjps = {
+	"wofjps", "wof", NULL, NULL, "2009",
+	"Tenchi wo Kurau II - Sekiheki no Tatakai (Imitation of Playstation Version 20091209)\0", NULL, "Rockywall", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, WofjpsRomInfo, WofjpsRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
 static struct BurnRomInfo CaptcommpjyRomDesc[] = {
 	{ "mj.1v4",    0x300000, 0xea88728a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22685,6 +22736,53 @@ struct BurnDriver BurnDrvCpsCaptcommpwx = {
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommpwxRomInfo, CaptcommpwxRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 20190107 恐龙新世纪 2019 无双版
+static struct BurnRomInfo Dinows2019RomDesc[] = {
+	{ "23.rom",    0x080000, 0x73f203b7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "22.rom",    0x080000, 0xf9e264dc, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0x73f203b7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+	A_BOARD_QSOUND_PLDS
+	
+	{ "cd63b.1a",      0x000117, 0xef72e902, BRF_OPT },	// b-board PLDs
+	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
+	{ "bprg1.11d",     0x000117, 0x31793da7, BRF_OPT },
+	{ "ioc1.ic1",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
+	{ "d7l1.7l",       0x000117, 0x27b7410d, BRF_OPT },	// d-board PLDs
+	{ "d8l1.8l",       0x000117, 0x539fc7da, BRF_OPT },
+	{ "d9k2.9k",       0x000117, 0xcd85a156, BRF_OPT },
+	{ "d10f1.10f",     0x000117, 0x6619c494, BRF_OPT },
+};
+
+STD_ROM_PICK(Dinows2019)
+STD_ROM_FN(Dinows2019)
+
+struct BurnDriver BurnDrvCpsDinows2019 = {
+	"dinows2019", "dino", NULL, NULL, "1993",
+	"Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)\0", NULL, "LiXili", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, Dinows2019RomInfo, Dinows2019RomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
