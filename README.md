@@ -1,16 +1,12 @@
+[![Build Status](https://travis-ci.org/libretro/fbalpha.svg?branch=master)](https://travis-ci.org/libretro/fbalpha)
+[![Build status](https://ci.appveyor.com/api/projects/status/bdj5xf7t3kgbk1p7/branch/master?svg=true)](https://ci.appveyor.com/project/bparker06/fbalpha/branch/master)
 
-# FBA4S905&RPi-libretro
-
-## NEVER USE IT FOR COMMCERICAL PURPOSE.
-
-## 严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！
-
+# FBAlpha-libretro
 https://www.fbalpha.com
 
 This is a fork of the official repository of the FB Alpha Emulator.
 
 Use of this program and it's source code is subject to the license conditions provided in the [license.txt](src/license.txt) file in the src folder.
-
 
 ## Roms
 
@@ -46,6 +42,53 @@ We don't have a convenient tool like the MAME OSD, instead we use the retroarch 
 For those who don't want to fully customize their mapping, there are 2 convenient presets you can apply by changing the "device type" for a player in this menu :
 * **Classic** : it will apply the original neogeo cd "square" mapping in neogeo games, and use L/R as 5th and 6th button for 6 buttons games like Street Fighter II.
 * **Modern** : it will apply the King of fighters mapping from Playstation 1 and above in neogeo fighting games, and it will use R1/R2 as 5th and 6th button for 6 buttons games like Street Fighter II (for the same reason as the neogeo games), this is really convenient for most arcade sticks.
+
+## Frequently asked questions
+
+### Where can i find the XXX roms ?
+We don't provide links for roms. Google is your friend.
+
+### Game XXX is not launching, why ?
+It is either not supported or you have a bad rom. Build a valid romset with clrmamepro as said above.
+There is also a few games marked as not working, try one of their clones.
+
+### Game XXX has graphical glitches, why ?
+Most likely the same as above, make sure you have the right romset.
+If the problem persist, write a report with a screenshot and the name of the platform you are using.
+
+### Game XXX runs slowly, why ?
+Your hardware is probably too slow to run the game with normal settings. Try the following :
+* Check if there is a speedhack dipswitch in the core options, set it to "yes".
+* Try setting a value for frameskip in core options.
+* Try disabling rewind, runahead, and anything related to the savestates system in retroarch.
+* Try lowering audio settings in the core options.
+If it is not enough, upgrade or overclock your hardware.
+
+### Game XXX has choppy sound, why ?
+Most likely for the same reason as above.
+
+### Game XXX runs faster in MAME2003/MAME2010, why ?
+This is not MAME, we are using different code. 
+Overall, FB Alpha is slower than old MAME version but more accurate and less buggy.
+This libretro port also support various features which are usually buggy or absent in MAME cores (netplay, rewind, retroachievements, ...). It takes some resources.
+
+### Cheat code doesn't work, why ?
+There should be partial support through the new API relying on main ram exposition.
+
+### Neogeo CD doesn't work, why ?
+The support is still a work in progress, there are several things to know :
+* You need a copy of neocdz.zip and neogeo.zip in your libretro system directory
+* You need to add `--subsystem neocd` to the command line
+* You can only load ccd/sub/img iso (trurip) at the moment, and maybe some bin/cue (redump's don't seem to work though)
+
+============================================================================
+
+# FBA4S905&RPi-libretro
+
+## NEVER USE IT FOR COMMCERICAL PURPOSE.
+
+## 严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！
+
 
 ## 常见问题
 
@@ -83,4 +126,4 @@ FBA本身暂不支持，但是RA支持。
 NGCD的模拟正在开发中，有些事情需要先说明一下 :
 * 需要两个BIOS：neocdz.zip和neogeo.zip，分别准备好放在libretro的系统目录下。
 * 需要在命令行里加上`--subsystem neocd`。
-* 目前只能使用`MODE1/2048`格式的镜像，需要使用CUE+ISO+WAV的格式。
+* 目前只能使用CUE+BIN或者CCD+IMG+CUE格式的镜像。
