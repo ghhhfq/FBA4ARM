@@ -5918,10 +5918,10 @@ struct BurnDriver BurnDrvkovshpqxzqj = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20190130 乱世枭雄 惊天战神 2019
+// From FBA4DROID 20190204 乱世枭雄 惊天战神 2019
 static struct BurnRomInfo kovshp1v4xRomDesc[] = {
-	{ "m6001.rom",			0x300000, 0x1305668f, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
-	{ "m6002.rom",			0x300000, 0x8ddefe6a, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
+	{ "m0601.rom",			0x200000, 0x1305668f, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "m0602.rom",			0x200000, 0x8ddefe6a, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
 
 	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  2 Tile data
 
@@ -5939,7 +5939,7 @@ STD_ROM_FN(kovshp1v4x)
 
 struct BurnDriver BurnDrvkovshp1v4x = {
 	"kovshp1v4x", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190130)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190204)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshp1v4xRomInfo, kovshp1v4xRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
