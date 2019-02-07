@@ -14367,6 +14367,7 @@ static const struct GameConfig ConfigTable[] =
 	{ "captcommr1bs" , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommpzs"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommpwx"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
+	{ "captcommr1dw" , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "dinoxzb"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinojps"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinowtw"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
@@ -22496,7 +22497,7 @@ struct BurnDriver BurnDrvCpsWofr19 = {
 };
 
 // FBA4DROID 20190113 三国志2 仿PS版
-// IN HBMAME, its name is tk2h12.
+// In HBMAME, its name is tk2h12.
 static struct BurnRomInfo WofjpsRomDesc[] = {
 	{ "tk2j23c.bin",   0x080000, 0x6e392dd2, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "tk2j22c.bin",   0x080000, 0x838dff10, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -22575,7 +22576,7 @@ STD_ROM_FN(Captcommpjy)
 
 struct BurnDriver BurnDrvCpsCaptcommpjy = {
 	"captcommpjy", "captcomm", NULL, NULL, "2018",
-	"Captain Commando (Elite Version 20181231)\0", NULL, "TouJinGaiErDeZei", "CPS1",
+	"Captain Commando (Elite Version 20181231)\0", NULL, "TouJingGaiErDeZei", "CPS1",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommpjyRomInfo, CaptcommpjyRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
@@ -22692,7 +22693,7 @@ STD_ROM_FN(Captcommpzs)
 
 struct BurnDriver BurnDrvCpsCaptcommpzs = {
 	"captcommpzs", "captcomm", NULL, NULL, "2019",
-	"Captain Commando (Warlord Version 20190107)\0", NULL, "TouJinGaiErDeZei", "CPS1",
+	"Captain Commando (Warlord Version 20190107)\0", NULL, "TouJingGaiErDeZei", "CPS1",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommpzsRomInfo, CaptcommpzsRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
@@ -22731,10 +22732,50 @@ STD_ROM_FN(Captcommpwx)
 
 struct BurnDriver BurnDrvCpsCaptcommpwx = {
 	"captcommpwx", "captcomm", NULL, NULL, "2019",
-	"Captain Commando (Infinite Bullet 20190121)\0", NULL, "TouJinGaiErDeZei", "CPS1",
+	"Captain Commando (Infinite Bullet 20190121)\0", NULL, "TouJingGaiErDeZei", "CPS1",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, CaptcommpwxRomInfo, CaptcommpwxRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// 游聚 20181101 名将无双版
+static struct BurnRomInfo Captcommr1dwRomDesc[] = {
+	{ "mj.mj",    0x302532, 0x65a99c58, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
+
+	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
+	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
+	{ "cc-1m.4a",      0x080000, 0x00637302, BRF_GRA | CPS1_TILES },
+	{ "cc-3m.6a",      0x080000, 0xcc87cf61, BRF_GRA | CPS1_TILES },
+	{ "cc-6m.7a",      0x080000, 0x28718bed, BRF_GRA | CPS1_TILES },
+	{ "cc-8m.9a",      0x080000, 0xd4acc53a, BRF_GRA | CPS1_TILES },
+	{ "cc-2m.8a",      0x080000, 0x0c69f151, BRF_GRA | CPS1_TILES },
+	{ "cc-4m.10a",     0x080000, 0x1f9ebb97, BRF_GRA | CPS1_TILES },
+
+	{ "cc_09.11a",     0x010000, 0x698e8b58, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	
+	A_BOARD_PLDS
+	
+	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
+	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
+	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
+	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
+	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
+};
+
+STD_ROM_PICK(Captcommr1dw)
+STD_ROM_FN(Captcommr1dw)
+
+struct BurnDriver BurnDrvCpsCaptcommr1dw = {
+	"captcommr1dw", "captcomm", NULL, NULL, "2018",
+	"Captain Commando (Unrivalled Version 20181101)\0", NULL, "TouJingGaiErDeZei", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, Captcommr1dwRomInfo, Captcommr1dwRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
