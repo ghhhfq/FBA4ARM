@@ -6094,3 +6094,167 @@ struct BurnDriver BurnDrvOlds100adsgl = {
 	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
+
+//  From FBA4DROID 20181206 三国战记 小兵争霸 
+static struct BurnRomInfo kovplusxb1RomDesc[] = {
+	{ "p0600xb.119",       		0x400000, 0x9935b99c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxb1, kovplusxb1, pgm)
+STD_ROM_FN(kovplusxb1)
+
+struct BurnDriver BurnDrvkovplusxb1 = {
+	"kovplusxb1", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxb1RomInfo, kovplusxb1RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+//  From FBA4DROID 20181206 三国战记 小兵争霸2
+static struct BurnRomInfo kovplusxb2RomDesc[] = {
+	{ "p0600xb2.119",		0x400000, 0x0d9dce43, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxb2, kovplusxb2, pgm)
+STD_ROM_FN(kovplusxb2)
+
+struct BurnDriver BurnDrvkovplusxb2 = {
+	"kovplusxb2", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxb2RomInfo, kovplusxb2RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+//  From FBA4DROID 20181207 三国战记 小兵争霸2 大神版
+static struct BurnRomInfo kovplusxb2dsRomDesc[] = {
+	{ "p0600xb2ds.119",		0x400000, 0xdabc2c66, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxb2ds, kovplusxb2ds, pgm)
+STD_ROM_FN(kovplusxb2ds)
+
+struct BurnDriver BurnDrvkovplusxb2ds = {
+	"kovplusxb2ds", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxb2dsRomInfo, kovplusxb2dsRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+//  From FBA4DROID 20181207 三国战记 小兵争霸2 大神版
+static struct BurnRomInfo kovplusxb2wjRomDesc[] = {
+	{ "p0600xb2wj.119",		0x400000, 0x6da2fd46, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxb2wj, kovplusxb2wj, pgm)
+STD_ROM_FN(kovplusxb2wj)
+
+struct BurnDriver BurnDrvkovplusxb2wj = {
+	"kovplusxb2wj", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxb2wjRomInfo, kovplusxb2wjRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// From FBA4DROID 20180307 三国战记 逐鹿中原
+// kovshs111 in HBMAME. Need to add this as parent ROM for other hacks.
+static struct BurnRomInfo kovshzlzyRomDesc[] = {
+	{ "p0600.322",	   		0x400000, 0x05cb05f4, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",	   		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	{ "a0604.rom",	   		0x400000, 0x17a67ffa, 3 | BRF_GRA },			//  6
+
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b0601.rom",	   		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  8
+	{ "b0602.rom",	   		0x100000, 0x1f79f118, 4 | BRF_GRA },			//  9
+	{ "b0603.rom",	   		0x800000, 0xd9da8cba, 4 | BRF_GRA },			//  9-2 EXPAND
+
+	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 10 Samples
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0x5c1c9305, 7 | BRF_PRG | BRF_ESS },  // 11 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshzlzy, kovshzlzy, pgm)
+STD_ROM_FN(kovshzlzy)
+
+struct BurnDriver BurnDrvkovshzlzy = {
+	"kovshzlzy", "kovsh", "pgm", NULL, "2018",
+	"Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight for Territory in Ancient Central China 20180307)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshzlzyRomInfo, kovshzlzyRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
