@@ -22743,7 +22743,7 @@ struct BurnDriver BurnDrvCpsCaptcommpwx = {
 static struct BurnRomInfo Dinows2019RomDesc[] = {
 	{ "23.rom",    0x080000, 0x73f203b7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "22.rom",    0x080000, 0xf9e264dc, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
-	{ "21.rom",    0x080000, 0x73f203b7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0x94d44390, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
 	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
