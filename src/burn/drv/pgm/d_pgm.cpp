@@ -6191,7 +6191,7 @@ struct BurnDriver BurnDrvkovplusxb2ds = {
 	448, 224, 4, 3
 };
 
-//  From FBA4DROID 20181207 三国战记 小兵争霸2 大神版
+//  From FBA4DROID 20181207 三国战记 小兵争霸2 武将版
 static struct BurnRomInfo kovplusxb2wjRomDesc[] = {
 	{ "p0600xb2wj.119",		0x400000, 0x6da2fd46, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
