@@ -12242,7 +12242,7 @@ DRV		BurnDrvKof97sw2;
 DRV		BurnDrvKof97sw2s;
 DRV		BurnDrvKof98eck;
 DRV		BurnDrvKof98eckp;
-DRV		BurnDrvKof98a1;
+//DRV		BurnDrvKof98a1;
 DRV		BurnDrvkf2k2mp3;
 DRV		BurnDrvkf2k2mp3s;
 DRV		BurnDrvmslug3g;
@@ -24503,7 +24503,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof97sw2s,			// The King of Fighters '97 (Iori with Cloak, Moves Simplified 20190203)
 	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)
 	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
-	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
+//	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
 	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
