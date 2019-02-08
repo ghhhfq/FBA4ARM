@@ -18044,9 +18044,10 @@ struct BurnDriver BurnDrvkf2k2tt = {
 	0x1000,	304, 224, 4, 3
 };
 
-/* There are some protections.
+/* 
+There are some protections.
 Graphic data are not complete.
-
+*/
 static struct BurnRomInfo kof98a1RomDesc[] = {
 	{ "242-a1.p1",   0x100000, 0xede75fce, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "242-a1.p2",   0x400000, 0xf5f667e1, 1 | BRF_ESS | BRF_PRG }, //  1 
@@ -18082,4 +18083,79 @@ struct BurnDriver BurnDrvKof98a1 = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
 };
-*/
+
+// From GOTVG Kof'99 (non encrypted P,decrypted C)(Korean release)
+static struct BurnRomInfo kof99ndRomDesc[] = {
+	{ "152-p1.bin",	0x100000, 0xf2c7ddfa, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
+	{ "152-p2.bin",	0x400000, 0x274ef47a, 1 | BRF_ESS | BRF_PRG },
+
+	{ "152-s1.bin",	0x020000, 0x1b0133fe, 2 | BRF_GRA },           // 2 Text layer tiles / TC531000
+
+	{ "152-c1.bin",	0x800000, 0xb3d88546, 3 | BRF_GRA },
+	{ "152-c2.bin",	0x800000, 0x915c8634, 3 | BRF_GRA },
+	{ "152-c3.bin",	0x800000, 0xb047c9d5, 3 | BRF_GRA },
+	{ "152-c4.bin",	0x800000, 0x6bc8e4b1, 3 | BRF_GRA },
+	{ "152-c5.bin",	0x800000, 0x9746268c, 3 | BRF_GRA },
+	{ "152-c6.bin",	0x800000, 0x238b3e71, 3 | BRF_GRA },
+	{ "152-c7.bin",	0x800000, 0x2f68fdeb, 3 | BRF_GRA },
+	{ "152-c8.bin",	0x800000, 0x4c2fad1e, 3 | BRF_GRA },
+	
+
+	{ "152-m1.bin",  0x020000, 0x5e74539c, 4 | BRF_ESS | BRF_PRG },
+
+	{ "152-v1.bin",  0x400000, 0xef2eecc8, 5 | BRF_SND },
+	{ "152-v2.bin",  0x400000, 0x73e211ca, 5 | BRF_SND },
+	{ "152-v3.bin",  0x400000, 0x821901da, 5 | BRF_SND },
+	{ "152-v4.bin",  0x400000, 0xb49e6178, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kof99nd, kof99nd, neogeo)
+STD_ROM_FN(kof99nd)
+
+struct BurnDriver BurnDrvkof99nd = {
+	"kof99nd", "kof99", "neogeo", NULL, "2000",
+	"Kof'99 (non encrypted P,decrypted C)(Korean release)\0", NULL, "SNK", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof99ndRomInfo, kof99ndRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
+// 游聚 20140829 Kof'99 优化版 解密版
+static struct BurnRomInfo kof99tRomDesc[] = {
+	{ "152-p1t.dec",	0x100000, 0xb89ba128, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
+	{ "152-p2t.dec",	0x400000, 0xf767394c, 1 | BRF_ESS | BRF_PRG },
+
+	{ "152-s1.bin",	0x020000, 0x1b0133fe, 2 | BRF_GRA },           // 2 Text layer tiles / TC531000
+
+	{ "152-c1.bin",	0x800000, 0xb3d88546, 3 | BRF_GRA },
+	{ "152-c2.bin",	0x800000, 0x915c8634, 3 | BRF_GRA },
+	{ "152-c3.bin",	0x800000, 0xb047c9d5, 3 | BRF_GRA },
+	{ "152-c4.bin",	0x800000, 0x6bc8e4b1, 3 | BRF_GRA },
+	{ "152-c5.bin",	0x800000, 0x9746268c, 3 | BRF_GRA },
+	{ "152-c6.bin",	0x800000, 0x238b3e71, 3 | BRF_GRA },
+	{ "152-c7.bin",	0x800000, 0x2f68fdeb, 3 | BRF_GRA },
+	{ "152-c8.bin",	0x800000, 0x4c2fad1e, 3 | BRF_GRA },
+	
+
+	{ "152-m1.bin",  0x020000, 0x5e74539c, 4 | BRF_ESS | BRF_PRG },
+
+	{ "152-v1.bin",  0x400000, 0xef2eecc8, 5 | BRF_SND },
+	{ "152-v2.bin",  0x400000, 0x73e211ca, 5 | BRF_SND },
+	{ "152-v3.bin",  0x400000, 0x821901da, 5 | BRF_SND },
+	{ "152-v4.bin",  0x400000, 0xb49e6178, 5 | BRF_SND },
+};
+
+STDROMPICKEXT(kof99t, kof99t, neogeo)
+STD_ROM_FN(kof99t)
+
+struct BurnDriver BurnDrvkof99t = {
+	"kof99t", "kof99nd", "neogeo", NULL, "2014",
+	"Kof'99 (Optimized Version For GOTVG 20140829)\0", NULL, "GOTVG", "Miscellaneous",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof99tRomInfo, kof99tRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
