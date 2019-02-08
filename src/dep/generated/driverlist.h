@@ -24522,7 +24522,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
  	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
 	&BurnDrvkof99nd,			// Kof'99 (non encrypted P,decrypted C)(Korean release)
-	&BurnDrvkof99t，			// Kof'99 (Optimized Version For GOTVG 20140829)
+	&BurnDrvkof99t,				// Kof'99 (Optimized Version For GOTVG 20140829)
 	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvkof2k2c2,			// The King of Fighters 2002 (Heavenly Divine 20080624)
@@ -24544,6 +24544,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovplusxb2ds,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
 	&BurnDrvkovplusxb2wj,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
 	&BurnDrvkovshzlzy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China 20180307)
-	&BurnDrvkovshzlzyjz，		// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
-	&BurnDrvkovshzlzywj，		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
+	&BurnDrvkovshzlzyjz,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
+	&BurnDrvkovshzlzywj,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
 };
