@@ -18100,13 +18100,12 @@ static struct BurnRomInfo kof99ndRomDesc[] = {
 	{ "152-c7.bin",	0x800000, 0x2f68fdeb, 3 | BRF_GRA },
 	{ "152-c8.bin",	0x800000, 0x4c2fad1e, 3 | BRF_GRA },
 	
-
 	{ "152-m1.bin",  0x020000, 0x5e74539c, 4 | BRF_ESS | BRF_PRG },
 
 	{ "152-v1.bin",  0x400000, 0xef2eecc8, 5 | BRF_SND },
 	{ "152-v2.bin",  0x400000, 0x73e211ca, 5 | BRF_SND },
 	{ "152-v3.bin",  0x400000, 0x821901da, 5 | BRF_SND },
-	{ "152-v4.bin",  0x400000, 0xb49e6178, 5 | BRF_SND },
+	{ "152-v4.bin",  0x200000, 0xb49e6178, 5 | BRF_SND },
 };
 
 STDROMPICKEXT(kof99nd, kof99nd, neogeo)
@@ -18138,13 +18137,12 @@ static struct BurnRomInfo kof99tRomDesc[] = {
 	{ "152-c7.bin",	0x800000, 0x2f68fdeb, 3 | BRF_GRA },
 	{ "152-c8.bin",	0x800000, 0x4c2fad1e, 3 | BRF_GRA },
 	
-
 	{ "152-m1.bin",  0x020000, 0x5e74539c, 4 | BRF_ESS | BRF_PRG },
 
 	{ "152-v1.bin",  0x400000, 0xef2eecc8, 5 | BRF_SND },
 	{ "152-v2.bin",  0x400000, 0x73e211ca, 5 | BRF_SND },
 	{ "152-v3.bin",  0x400000, 0x821901da, 5 | BRF_SND },
-	{ "152-v4.bin",  0x400000, 0xb49e6178, 5 | BRF_SND },
+	{ "152-v4.bin",  0x200000, 0xb49e6178, 5 | BRF_SND },
 };
 
 STDROMPICKEXT(kof99t, kof99t, neogeo)
