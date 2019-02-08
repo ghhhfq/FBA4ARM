@@ -12245,7 +12245,9 @@ DRV		BurnDrvKof97sw2;
 DRV		BurnDrvKof97sw2s;
 DRV		BurnDrvKof98eck;
 DRV		BurnDrvKof98eckp;
-//DRV		BurnDrvKof98a1;
+DRV		BurnDrvKof98a1;
+DRV		BurnDrvkof99nd;
+DRV		BurnDrvkof99t;
 DRV		BurnDrvkf2k2mp3;
 DRV		BurnDrvkf2k2mp3s;
 DRV		BurnDrvkof2k2c2;
@@ -12261,11 +12263,14 @@ DRV		BurnDrvkovshpqxzq;
 DRV		BurnDrvKov2pcthl;
 DRV		BurnDrvKov2pswcq;
 DRV		BurnDrvOlds100adsgl;
+DRV		BurnDrvolds100afybh;
 DRV		BurnDrvkovplusxb1,
 DRV		BurnDrvkovplusxb2,
 DRV		BurnDrvkovplusxb2ds,
 DRV		BurnDrvkovplusxb2wj,
 DRV		BurnDrvkovshzlzy,
+DRV		BurnDrvkovshzlzyjz,
+DRV		BurnDrvkovshzlzywj,
 
 #undef DRV
 
@@ -24515,7 +24520,9 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof97sw2s,			// The King of Fighters '97 (Iori with Cloak, Moves Simplified 20190203)
 	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)
 	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
-//	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
+ 	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
+	&BurnDrvkof99nd,			// Kof'99 (non encrypted P,decrypted C)(Korean release)
+	&BurnDrvkof99t，			// Kof'99 (Optimized Version For GOTVG 20140829)
 	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvkof2k2c2,			// The King of Fighters 2002 (Heavenly Divine 20080624)
@@ -24531,9 +24538,12 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
 	&BurnDrvOlds100adsgl,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
+	&BurnDrvolds100afybh,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
 	&BurnDrvkovplusxb1,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
 	&BurnDrvkovplusxb2,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)
 	&BurnDrvkovplusxb2ds,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
 	&BurnDrvkovplusxb2wj,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
-	&BurnDrvkovshzlzy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight for Territory in Ancient Central China 20180307)
+	&BurnDrvkovshzlzy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China 20180307)
+	&BurnDrvkovshzlzyjz，		// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
+	&BurnDrvkovshzlzywj，		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
 };
