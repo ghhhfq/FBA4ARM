@@ -6095,6 +6095,48 @@ struct BurnDriver BurnDrvOlds100adsgl = {
 	448, 224, 4, 3
 };
 
+// From FBA4DROID 20150203 西游 天下无双 游聚版
+static struct BurnRomInfo olds100afybhRomDesc[] = {
+	{ "p0500.v10",	   		0x400000, 0xfc1bcd42, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0500.rom",	   		0x400000, 0x4d8063e6, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0501.rom",	   		0x200000, 0xd2106864, 2 | BRF_GRA },			//  2
+
+	{ "a0500.rom",	   		0x400000, 0x4d0c685f, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0501.rom",	   		0x400000, 0xc352d1c0, 3 | BRF_GRA },			//  4
+	{ "a0502.rom",	   		0x400000, 0xc3fcdf1d, 3 | BRF_GRA },			//  5
+	{ "a0503.rom",	   		0x400000, 0x066dffec, 3 | BRF_GRA },			//  6
+	{ "a0504.rom",	   		0x400000, 0x45337583, 3 | BRF_GRA },			//  7
+	{ "a0505.rom",	   		0x400000, 0x5b8cf3a5, 3 | BRF_GRA },			//  8
+	{ "a0506.rom",	   		0x400000, 0x212f9bec, 3 | BRF_GRA },			//  9
+
+	{ "b0500.rom",	   		0x400000, 0xcb608609, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0501.rom",	   		0x400000, 0x1546c2e9, 4 | BRF_GRA },			// 11
+	{ "b0502.rom",	   		0x400000, 0xe97b31c3, 4 | BRF_GRA },			// 12
+	{ "b0503.u16",	   		0x400000, 0xc5beb6f8, 4 | BRF_GRA },			// 13
+
+	{ "m0500.rom",	   		0x200000, 0x37928cdd, 5 | BRF_SND },			// 14 Samples
+	
+#if !defined (ROM_VERIFY)
+	{ "kd-u6.512",	   		0x010000, 0xe7613dda, 9 | BRF_PRG | BRF_ESS },  // 15 Protection Rom
+#else
+	{ "ram_dump",	   		0x040000, 0x280cfb4e, 0 | BRF_OPT },
+#endif
+};
+
+STDROMPICKEXT(olds100afybh, olds100afybh, pgm)
+STD_ROM_FN(olds100afybh)
+
+struct BurnDriver BurnDrvolds100afybh = {
+	"olds100afybh", "olds", "pgm", NULL, "2015",
+	"Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, olds100afybhRomInfo, olds100afybhRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
+	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
 //  From FBA4DROID 20181206 三国战记 小兵争霸 
 static struct BurnRomInfo kovplusxb1RomDesc[] = {
 	{ "p0600xb.119",       		0x400000, 0x9935b99c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -6251,10 +6293,80 @@ STD_ROM_FN(kovshzlzy)
 
 struct BurnDriver BurnDrvkovshzlzy = {
 	"kovshzlzy", "kovsh", "pgm", NULL, "2018",
-	"Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight for Territory in Ancient Central China 20180307)\0", NULL, "IGS", "PolyGameMaster",
+	"Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China 20180307)\0", NULL, "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshzlzyRomInfo, kovshzlzyRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// From FBA4DROID 20181202 三国战记 逐鹿中原 决战天下
+static struct BurnRomInfo kovshzlzyjzRomDesc[] = {
+	{ "p0600.322",	   		0x400000, 0x58e08538, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",	   		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	{ "a0604.rom",	   		0x400000, 0x17a67ffa, 3 | BRF_GRA },			//  6
+
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b0601.rom",	   		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  8
+	{ "b0602.rom",	   		0x100000, 0x1f79f118, 4 | BRF_GRA },			//  9
+	{ "b0603.rom",	   		0x800000, 0xd9da8cba, 4 | BRF_GRA },			//  9-2 EXPAND
+
+	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 10 Samples
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0x5c1c9305, 7 | BRF_PRG | BRF_ESS },  // 11 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshzlzyjz, kovshzlzyjz, pgm)
+STD_ROM_FN(kovshzlzyjz)
+
+struct BurnDriver BurnDrvkovshzlzyjz = {
+	"kovshzlzyjz", "kovshzlzy", "pgm", NULL, "2018",
+	"Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshzlzyjzRomInfo, kovshzlzyjzRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// From FBA4DROID 20181203 三国战纪 逐鹿中原 五剑传奇
+static struct BurnRomInfo kovshzlzywjRomDesc[] = {
+	{ "p0600.322",	   		0x400000, 0xb8799030, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  3
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA },			//  4
+	{ "a0603.rom",	   		0x400000, 0xec31abda, 3 | BRF_GRA },			//  5
+	{ "a0604.rom",	   		0x400000, 0x17a67ffa, 3 | BRF_GRA },			//  6
+
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b0601.rom",	   		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },			//  8
+	{ "b0602.rom",	   		0x100000, 0x1f79f118, 4 | BRF_GRA },			//  9
+	{ "b0603.rom",	   		0x800000, 0xd9da8cba, 4 | BRF_GRA },			//  9-2 EXPAND
+
+	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 10 Samples
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0x5c1c9305, 7 | BRF_PRG | BRF_ESS },  // 11 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshzlzywj, kovshzlzywj, pgm)
+STD_ROM_FN(kovshzlzywj)
+
+struct BurnDriver BurnDrvkovshzlzywj = {
+	"kovshzlzywj", "kovshzlzy", "pgm", NULL, "2018",
+	"Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)\0", NULL, "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshzlzywjRomInfo, kovshzlzywjRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovshInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
