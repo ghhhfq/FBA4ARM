@@ -12264,13 +12264,13 @@ DRV		BurnDrvKov2pcthl;
 DRV		BurnDrvKov2pswcq;
 DRV		BurnDrvOlds100adsgl;
 DRV		BurnDrvolds100afybh;
-DRV		BurnDrvkovplusxb1,
-DRV		BurnDrvkovplusxb2,
-DRV		BurnDrvkovplusxb2ds,
-DRV		BurnDrvkovplusxb2wj,
-DRV		BurnDrvkovshzlzy,
-DRV		BurnDrvkovshzlzyjz,
-DRV		BurnDrvkovshzlzywj,
+DRV		BurnDrvkovplusxb1;
+DRV		BurnDrvkovplusxb2;
+DRV		BurnDrvkovplusxb2ds;
+DRV		BurnDrvkovplusxb2wj;
+DRV		BurnDrvkovshzlzy;
+DRV		BurnDrvkovshzlzyjz;
+DRV		BurnDrvkovshzlzywj;
 
 #undef DRV
 
