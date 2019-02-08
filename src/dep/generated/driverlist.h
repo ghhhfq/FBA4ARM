@@ -12251,6 +12251,7 @@ DRV		BurnDrvkof99t;
 DRV		BurnDrvkf2k2mp3;
 DRV		BurnDrvkf2k2mp3s;
 DRV		BurnDrvkof2k2c2;
+DRV		BurnDrvkf2k2tt;
 DRV		BurnDrvmslug3g;
 DRV		BurnDrvmslug3c;
 DRV		BurnDrvmslug4dr;
@@ -24526,6 +24527,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkf2k2mp3,			// KOF 2002 Magic Plus III (decrypted C)
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvkof2k2c2,			// The King of Fighters 2002 (Heavenly Divine 20080624)
+	&BurnDrvkf2k2tt,			// The King of Fighters 2002 (Exceeding Version 20181125)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
 	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
 	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190124)
