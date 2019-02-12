@@ -3530,6 +3530,7 @@ struct BurnDriverD BurnDrvFuncube4 = {
 	320, 240, 4, 3
 };
 
+// GOTVG 电神魔傀2乐百氏版	Guardians / Denjin Makai II (Robust Version 20190111)
 static struct BurnRomInfo grdianslbsRomDesc[] = {
 	{ "u2.bin",		  0x080000, 0xfb243872, BRF_ESS | BRF_PRG },	// Only u2 and u3 are hacked.
 	{ "u3.bin",		  0x080000, 0xa375123e, BRF_ESS | BRF_PRG },
