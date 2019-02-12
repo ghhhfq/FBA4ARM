@@ -17540,6 +17540,7 @@ struct BurnDriver BurnDrvkof10thd = {
 	0x1000,	304, 224, 4, 3
 };
 
+// GOTVG 拳皇97 天国神族	The King of Fighters '97 (Heavenly Divine 20130203)
 static struct BurnRomInfo kof97orhRomDesc[] = {
 	{ "232or-p1.bin",    0x100000, 0x5ce510d0, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "232or-p2.bin",    0x400000, 0xd64589a3, 1 | BRF_ESS | BRF_PRG }, //  1 
@@ -17641,6 +17642,7 @@ struct BurnDriver BurnDrvKof97sw2s = {
 	0x1000, 304, 224, 4, 3
 };
 
+// FBA4DROID 合金弹头3多功能	Metal Slug 3 (Multifunction Version 20190119)
 static struct BurnRomInfo mslug3gRomDesc[] = {
 	{ "256-ph1.bin",   0x100000, 0xb23bd9b7, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "256-ph2.bin",   0x400000, 0x8053a3fb, 1 | BRF_ESS | BRF_PRG }, //  1 
@@ -17653,8 +17655,6 @@ static struct BurnRomInfo mslug3gRomDesc[] = {
 	{ "256-c6.c6",    0x800000, 0xc698fd5d, 3 | BRF_GRA },           //  7 				/ TC5364202
 	{ "256-c7.c7",    0x800000, 0xcfceddd2, 3 | BRF_GRA },           //  8 				/ TC5364202
 	{ "256-c8.c8",    0x800000, 0x4d9be34c, 3 | BRF_GRA },           //  9 				/ TC5364202
-	//{ "ms3n_c7.rom",  0x800000, 0xed559fac, 3 | BRF_GRA },           //  8 				/ decrypted GFX?
-	//{ "ms3n_c8.rom",  0x800000, 0x1c52378b, 3 | BRF_GRA },           //  9 				/ decrypted GFX?
 
 	{ "256-m1.m1",    0x080000, 0xeaeec116, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code		/ mask rom TC534000
 
@@ -17677,6 +17677,7 @@ struct BurnDriver BurnDrvmslug3g = {
 	0x1000, 304, 224, 4, 3
 };
 
+// FBA4DROID 合金弹头3敌兵重置	Metal Slug 3 (Enemies Resetting Version 20190102)
 static struct BurnRomInfo mslug3cRomDesc[] = {
 	{ "256-ph1.bin",   0x100000, 0x9c42ca85, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "256-ph2.bin",   0x400000, 0x64ae37fc, 1 | BRF_ESS | BRF_PRG }, //  1 
@@ -17689,8 +17690,6 @@ static struct BurnRomInfo mslug3cRomDesc[] = {
 	{ "256-c6.c6",    0x800000, 0xc698fd5d, 3 | BRF_GRA },           //  7 				/ TC5364202
 	{ "256-c7.c7",    0x800000, 0xcfceddd2, 3 | BRF_GRA },           //  8 				/ TC5364202
 	{ "256-c8.c8",    0x800000, 0x4d9be34c, 3 | BRF_GRA },           //  9 				/ TC5364202
-	//{ "ms3n_c7.rom",  0x800000, 0xed559fac, 3 | BRF_GRA },           //  8 				/ decrypted GFX?
-	//{ "ms3n_c8.rom",  0x800000, 0x1c52378b, 3 | BRF_GRA },           //  9 				/ decrypted GFX?
 
 	{ "256-m1.m1",    0x080000, 0xeaeec116, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code		/ mask rom TC534000
 
@@ -17748,6 +17747,7 @@ struct BurnDriver BurnDrvmslug4dr = {
 	0x1000,	304, 224, 4, 3
 };
 
+// FBA4DROID 合金弹头5敌兵加强	Metal Slug 5 (Enemies Enhanced Version 20190105)
 static struct BurnRomInfo mslug5dg2RomDesc[] = {
 	{ "268d-p1.rom",    0x600000, 0xc4c5f9a4, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	
@@ -17774,7 +17774,7 @@ STDROMPICKEXT(mslug5dg2, mslug5dg2, neogeo)
 STD_ROM_FN(mslug5dg2)
 
 struct BurnDriver BurnDrvmslug5dg2 = {
-	"mslug5dg2", "mslug5dg2", "neogeo", NULL, "2019",
+	"mslug5dg2", "mslug5", "neogeo", NULL, "2019",
 	"Metal Slug 5 (Enemies Enhanced Version 20190101)\0", NULL, "YouGuDuoLa", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
@@ -17783,6 +17783,7 @@ struct BurnDriver BurnDrvmslug5dg2 = {
 	0x1000,	320, 224, 4, 3
 };
 
+// FBA4DROID 合金弹头5敌兵重置	Metal Slug 5 (Enemies Resetting Version 20190101)
 static struct BurnRomInfo mslug5dg3RomDesc[] = {
 	{ "268d-p1.rom",    0x600000, 0x24c1affa, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	
@@ -17809,7 +17810,7 @@ STDROMPICKEXT(mslug5dg3, mslug5dg3, neogeo)
 STD_ROM_FN(mslug5dg3)
 
 struct BurnDriver BurnDrvmslug5dg3 = {
-	"mslug5dg3", "mslug5dg2", "neogeo", NULL, "2019",
+	"mslug5dg3", "mslug5", "neogeo", NULL, "2019",
 	"Metal Slug 5 (Enemies Resetting Version 20190105)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
@@ -17846,7 +17847,7 @@ STDROMPICKEXT(kof98eck, kof98eck, neogeo)
 STD_ROM_FN(kof98eck)
 
 struct BurnDriver BurnDrvKof98eck = {
-	"kof98eck", "kof98eck", "neogeo", NULL, "2019",
+	"kof98eck", "kof98", "neogeo", NULL, "2019",
 	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)\0", NULL, "Gunloc941", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
@@ -17883,7 +17884,7 @@ STDROMPICKEXT(kof98eckp, kof98eckp, neogeo)
 STD_ROM_FN(kof98eckp)
 
 struct BurnDriver BurnDrvKof98eckp = {
-	"kof98eckp", "kof98eck", "neogeo", NULL, "2019",
+	"kof98eckp", "kof98", "neogeo", NULL, "2019",
 	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
@@ -17957,7 +17958,7 @@ STDROMPICKEXT(kf2k2mp3s, kf2k2mp3s, neogeo)
 STD_ROM_FN(kf2k2mp3s)
 
 struct BurnDriver BurnDrvkf2k2mp3s = {
-	"kf2k2mp3s", "kf2k2mp3", "neogeo", NULL, "2019",
+	"kf2k2mp3s", "kof2002", "neogeo", NULL, "2019",
 	"Kof2002 Magic Plus III (Decrypted C, Moves Simplified)\0", NULL, "FBA4DROID", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
@@ -18143,7 +18144,7 @@ STDROMPICKEXT(kof99t, kof99t, neogeo)
 STD_ROM_FN(kof99t)
 
 struct BurnDriver BurnDrvkof99t = {
-	"kof99t", "kof99nd", "neogeo", NULL, "2014",
+	"kof99t", "kof99", "neogeo", NULL, "2014",
 	"Kof'99 (Optimized Version For GOTVG 20140829)\0", NULL, "GOTVG", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
