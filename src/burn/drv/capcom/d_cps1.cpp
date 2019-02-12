@@ -22402,6 +22402,7 @@ struct BurnDriverX BurnDrvCpsSfzhch = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 三国志2达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
 static struct BurnRomInfo WofdrRomDesc[] = {
 	{ "wofj.dl",   0x200000, 0x640fae97, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22545,6 +22546,7 @@ struct BurnDriver BurnDrvCpsWofjps = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 名将精英版	Captain Commando (Elite Version 20181231)
 static struct BurnRomInfo CaptcommpjyRomDesc[] = {
 	{ "mj.1v4",    0x300000, 0xea88728a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22584,6 +22586,7 @@ struct BurnDriver BurnDrvCpsCaptcommpjy = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 名将99打手版	Captain Commando (99 Beater Version 20190102)
 static struct BurnRomInfo CaptcommrdsRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x7ad37dcb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22623,6 +22626,7 @@ struct BurnDriver BurnDrvCpsCaptcommrds = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 名将变身版	Captain Commando (Shape Shifting Version 20190101)
 static struct BurnRomInfo Captcommr1bsRomDesc[] = {
 	{ "mj.bs",    0x300000, 0xde6260b6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22662,6 +22666,7 @@ struct BurnDriver BurnDrvCpsCaptcommr1bs = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 名将战神版	Captain Commando (Warlord Version 20190107)
 static struct BurnRomInfo CaptcommpzsRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x9c6b0773, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22701,6 +22706,7 @@ struct BurnDriver BurnDrvCpsCaptcommpzs = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 名将无限子弹版	Captain Commando (Infinite Bullet 20190121)
 static struct BurnRomInfo CaptcommpwxRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x9d863e1d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },  //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22740,7 +22746,7 @@ struct BurnDriver BurnDrvCpsCaptcommpwx = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// 游聚 20181101 名将无双版
+// GOTVG 游聚 20181101 名将无双版
 static struct BurnRomInfo Captcommr1dwRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x65a99c58, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22827,6 +22833,7 @@ struct BurnDriver BurnDrvCpsDinows2019 = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 恐龙快打战神版【原血战版】	Cadillacs & Dinosaurs (Warlord Version 20190119)
 static struct BurnRomInfo DinoxzbRomDesc[] = {
 	{ "23.rom",    0x080000, 0x90710d71, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "22.rom",    0x080000, 0x3239cca6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -22873,6 +22880,7 @@ struct BurnDriver BurnDrvCpsDinoxzb = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 恐龙快打竞技版【原杜瓦版】	Cadillacs & Dinosaurs (Arena Version 20190123)
 static struct BurnRomInfo DinojpsRomDesc[] = {
 	{ "kl.ww",    0x400000, 0x4b4d2f30, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22917,6 +22925,7 @@ struct BurnDriver BurnDrvCpsDinojps = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 恐龙快打天王版	Cadillacs & Dinosaurs (Sky King 20190114)
 static struct BurnRomInfo DinowtwRomDesc[] = {
 	{ "kl.ww",    0x400000, 0xfcd50c77, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22961,6 +22970,7 @@ struct BurnDriver BurnDrvCpsDinowtw = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// 恐龙快打魔神乱舞版【原武将版】	Cadillacs & Dinosaurs (Majin Ranbu 20190117)
 static struct BurnRomInfo DinowjRomDesc[] = {
 	{ "mslw.dec",    0x180000, 0xbb57412b, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -23005,6 +23015,7 @@ struct BurnDriver BurnDrvCpsDinowj = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
+// GOTVG 恐龙快打斗神版	Cadillacs & Dinosaurs (Fighting God Version 20190114)
 static struct BurnRomInfo DinojdsRomDesc[] = {
 	{ "kljds.shr",    0x200000, 0x38da2130, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
