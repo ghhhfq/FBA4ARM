@@ -6327,7 +6327,7 @@ STDROMPICKEXT(kovshzlzyjz, kovshzlzyjz, pgm)
 STD_ROM_FN(kovshzlzyjz)
 
 struct BurnDriver BurnDrvkovshzlzyjz = {
-	"kovshzlzyjz", "kovshzlzy", "pgm", NULL, "2018",
+	"kovshzlzyjz", "kovsh", "pgm", NULL, "2018",
 	"Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)\0", NULL, "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
@@ -6362,7 +6362,7 @@ STDROMPICKEXT(kovshzlzywj, kovshzlzywj, pgm)
 STD_ROM_FN(kovshzlzywj)
 
 struct BurnDriver BurnDrvkovshzlzywj = {
-	"kovshzlzywj", "kovshzlzy", "pgm", NULL, "2018",
+	"kovshzlzywj", "kovsh", "pgm", NULL, "2018",
 	"Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)\0", NULL, "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
