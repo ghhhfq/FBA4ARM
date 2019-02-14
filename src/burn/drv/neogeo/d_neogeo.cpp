@@ -18179,7 +18179,7 @@ STD_ROM_FN(kof97st)
 
 struct BurnDriver BurnDrvkof97st = {
 	"kof97st", "kof97", "neogeo", NULL, "2018",
-	"The King of Fighters '97 (Revolution 20180904)\0", NULL, "GOTVG", "Neo Geo MVS",
+	"The King of Fighters '97 (Renovation 20180904)\0", NULL, "GOTVG", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof97stRomInfo, kof97stRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
@@ -18214,6 +18214,216 @@ struct BurnDriver BurnDrvMSlug2r = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug2rRomInfo, mslug2rRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+
+// GOTVG 拳皇97 COMBO版 The King of Fighters '97 (Combo 20180509)
+// kof97hs54 in HBMAME.
+static struct BurnRomInfo kof97cRomDesc[] = {
+	{ "9710THp1.bin",   0x100000, 0x827670ab, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "9710THp2.bin",   0x400000, 0x91c0cfdb, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "Kof97C-S1.bin",    0x020000, 0xd4957067, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "Kof97C-C1.bin",    0x800000, 0xea16b711, 3 | BRF_GRA },           //  3 Sprite data
+	{ "Kof97C-C2.bin",    0x800000, 0xb7bef674, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97c, kof97c, neogeo)
+STD_ROM_FN(kof97c)
+
+struct BurnDriver BurnDrvkof97c = {
+	"kof97c", "kof97", "neogeo", NULL, "2018",
+	"The King of Fighters '97 (Combo 20180509)\0", NULL, "HeiFengLing", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97cRomInfo, kof97cRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// GOTVG 拳皇97 YS版 The King of Fighters '97 (YS 20170801)
+static struct BurnRomInfo kof97ysRomDesc[] = {
+	{ "232-p1.bin",   0x100000, 0xa224b79d, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232-p2.bin",   0x400000, 0x4de21bfa, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "232-s1.s1",    0x020000, 0x8514ecf5, 2 | BRF_GRA },
+
+	{ "232-C1.bin",    0x800000, 0x022196e5, 3 | BRF_GRA },           //  3 Sprite data
+	{ "232-C2.bin",    0x800000, 0xaad1ef7c, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97ys, kof97ys, neogeo)
+STD_ROM_FN(kof97ys)
+
+struct BurnDriver BurnDrvkof97ys = {
+	"kof97ys", "kof97", "neogeo", NULL, "2017",
+	"The King of Fighters '97 (YS 20170801)\0", NULL, "littlemoon", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97ysRomInfo, kof97ysRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// GOTVG 拳皇97 梦回97 The King of Fighters '97 (Dream Back To 97 20130610)
+// kof97dse in HBMAME.
+static struct BurnRomInfo kof97mRomDesc[] = {
+	{ "232-p1.bin",   0x100000, 0x8f00511f, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232-p2.bin",   0x400000, 0x0fa5639a, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "232-s1.s1",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "232-c1.c1",    0x800000, 0x5f8bf0a1, 3 | BRF_GRA },           //  3 Sprite data
+	{ "232-c2.c2",    0x800000, 0xe4d45c81, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97m, kof97m, neogeo)
+STD_ROM_FN(kof97m)
+
+struct BurnDriver BurnDrvkof97m = {
+	"kof97m", "kof97", "neogeo", NULL, "2013",
+	"The King of Fighters '97 (Dream Back To 97 20130610)\0", NULL, "AiZong", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97mRomInfo, kof97mRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// GOTVG 拳皇97 风云再起 The King of Fighters '97 (Rerise Of Chaos 20140828)
+// 'kof97pla' has been used by FBA already, so I used 'kof97plss20' from HBMAME instead.
+static struct BurnRomInfo kof97plss20RomDesc[] = {
+	{ "kf97-p1p.bin",    0x100000, 0xf24cc135, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "kf97-p2p.bin",    0x400000, 0x5502b020, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "kf97-s1p.bin",    0x020000, 0x73254270, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "232-c1.c1",    0x800000, 0x5f8bf0a1, 3 | BRF_GRA },           //  3 Sprite data
+	{ "232-c2.c2",    0x800000, 0xe4d45c81, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97plss20, kof97plss20, neogeo)
+STD_ROM_FN(kof97plss20)
+
+struct BurnDriver BurnDrvkof97plss20 = {
+	"kof97plss20", "kof97", "neogeo", NULL, "2014",
+	"The King of Fighters '97 (Rerise Of Chaos 20140828)\0", NULL, "Tortoise", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97plss20RomInfo, kof97plss20RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// GOTVG 拳皇97 屠蛇版 The King of Fighters '97 (Slaughter Of Orochi 20060807)
+// kof97s62 in HBMAME.
+static struct BurnRomInfo kof97tsbRomDesc[] = {
+	{ "232-p1.bin",   0x100000, 0x542ae9a1, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232-p2.bin",   0x400000, 0xa028904b, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "232-s1.s1",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "232-c1.c1",    0x800000, 0x5f8bf0a1, 3 | BRF_GRA },           //  3 Sprite data
+	{ "232-c2.c2",    0x800000, 0xe4d45c81, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97tsb, kof97tsb, neogeo)
+STD_ROM_FN(kof97tsb)
+
+struct BurnDriver BurnDrvkof97tsb = {
+	"kof97tsb", "kof97", "neogeo", NULL, "2006",
+	"The King of Fighters '97 (Slaughter Of Orochi 20060807)\0", NULL, "Tortoise", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97tsbRomInfo, kof97tsbRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// GOTVG 拳皇97 降龙版 The King of Fighters '97 (Subduing The Dragon 20050824)
+// kof97hl in HBMAME.
+static struct BurnRomInfo kof97xlbRomDesc[] = {
+	{ "KOF97_hl_P1.ROM",    0x100000, 0x16767f2b, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232-p2.sp2",   		0x400000, 0x158b23f6, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "232-s1.s1",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "232-c1.c1",    0x800000, 0x5f8bf0a1, 3 | BRF_GRA },           //  3 Sprite data
+	{ "232-c2.c2",    0x800000, 0xe4d45c81, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97xlb, kof97xlb, neogeo)
+STD_ROM_FN(kof97xlb)
+
+struct BurnDriver BurnDrvkof97xlb = {
+	"kof97xlb", "kof97", "neogeo", NULL, "2005",
+	"The King of Fighters '97 (Subduing The Dragon 20050824)\0", NULL, "Tortoise", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97xlbRomInfo, kof97xlbRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
 };
