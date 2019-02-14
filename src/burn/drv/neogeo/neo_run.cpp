@@ -2,7 +2,11 @@
 
 // mit .bin/.cue & .ccd/.img (trurip) unterstutzung (feb.4.2019)
 // known issues:
-//   Audio Hz rate must be 44100 for proper CDDA speed
+//   Audio Hz rate must be 44100 for proper CDDA speed (auto-handled in fba-ui)
+//
+//   Ninja Commando: glitching "logo" during demo play.  This is fixed by
+//     changing renderbyline mode on.  A side-effect is that it makes CD-Loading
+//     for other games (karnovr, fatalfury3, etc) very slow.  Must investigate.
 
 /*
  * FB Alpha Neo Geo module
@@ -320,6 +324,7 @@ static INT32 NeoCDVectorSwitch = 0; // 1 ROM(ram), 0 BIOS
 
 static INT32 nNeoCDMode = 0;
 static INT32 nff0002 = 0;
+static INT32 nff0004 = 0;
 
 
 bool IsNeoGeoCD() {
@@ -1544,6 +1549,7 @@ INT32 NeoScan(INT32 nAction, INT32* pnMin)
 
 			SCAN_VAR(nNeoCDMode);
 			SCAN_VAR(nff0002);
+			SCAN_VAR(nff0004);
 
 			CDEmuScan(nAction, pnMin);
 		}
@@ -1791,7 +1797,6 @@ static inline void NeoCDIRQUpdate(UINT8 byteValue)
 {
 	nIRQAcknowledge |= (byteValue & 0x38);
 
-	if (!bNeoCDIRQEnabled) return;
 //	bprintf(PRINT_NORMAL, _T("  - IRQ Ack -> %02X (CD, at line %3i).\n"), nIRQAcknowledge, SekCurrentScanline());
 
 	if ((nIRQAcknowledge & 0x3F) == 0x3F) {
@@ -1801,6 +1806,9 @@ static inline void NeoCDIRQUpdate(UINT8 byteValue)
 			NeoIRQUpdate(0);
 			return;
 		}
+
+		if (!bNeoCDIRQEnabled) return;
+
 		if ((nIRQAcknowledge & 0x08) == 0) {
 			nNeoCDIRQVector = 0x17;
 			nNeoCDIRQVectorAck = 1;
@@ -1885,6 +1893,9 @@ static UINT8 ReadInput3(INT32 nOffset)
 
 static UINT8 __fastcall neogeoReadByte(UINT32 sekAddress)
 {
+	if (sekAddress >= 0x200000 && sekAddress <= 0x2fffff)
+		return ~0; // data from open bus should be read here
+
 	switch (sekAddress & 0xFE0000) {
 		case 0x300000:
 			return ReadInput1(sekAddress & 0xFF);
@@ -1936,6 +1947,9 @@ static UINT8 __fastcall neogeoReadByte(UINT32 sekAddress)
 
 static UINT16 __fastcall neogeoReadWord(UINT32 sekAddress)
 {
+	if (sekAddress >= 0x200000 && sekAddress <= 0x2fffff)
+		return ~0; // data from open bus should be read here
+
 	switch (sekAddress & 0xFE0000) {
 		case 0x300000:
 			return (ReadInput1(sekAddress & 0xFE) << 8) | ReadInput1((sekAddress & 0xFE) | 1);
@@ -2533,7 +2547,7 @@ static char* LC8951InitTransfer()
 
 static void LC8951EndTransfer()
 {
-	LC8951RegistersW[6]  = 0x00;												// reset DTTRG
+	LC8951RegistersW[6]  = 0x00; 												// reset DTTRG
 
 	LC8951RegistersR[1] |= 0x48;												//   set DTEI & DTBSY
 	if (LC8951RegistersW[1] & 0x40) {
@@ -2583,7 +2597,7 @@ static void NeoCDProcessCommand()
 		case 2:
 //								bprintf(PRINT_ERROR, _T("    CD comms received command %i\n"), NeoCDCommsCommandFIFO[0]);
 			NeoCDCommsStatusFIFO[1] = NeoCDCommsCommandFIFO[3];
-			 switch (NeoCDCommsCommandFIFO[3]) {
+			switch (NeoCDCommsCommandFIFO[3]) {
 
 				case 0: {
 					UINT8* ChannelData = CDEmuReadQChannel();
@@ -2597,7 +2611,7 @@ static void NeoCDProcessCommand()
 					NeoCDCommsStatusFIFO[6] = ChannelData[3] >> 4;
 					NeoCDCommsStatusFIFO[7] = ChannelData[3] & 0x0F;
 
-					NeoCDCommsStatusFIFO[8] = ChannelData[7];
+					NeoCDCommsStatusFIFO[8] = ChannelData[7] >> 4;
 
 // bprintf(PRINT_ERROR, _T("    %02i %02i:%02i:%02i %02i:%02i:%02i %02i\n"), ChannelData[0], ChannelData[1], ChannelData[2], ChannelData[3], ChannelData[4], ChannelData[5], ChannelData[6], ChannelData[7]);
 
@@ -2615,7 +2629,7 @@ static void NeoCDProcessCommand()
 					NeoCDCommsStatusFIFO[6] = ChannelData[6] >> 4;
 					NeoCDCommsStatusFIFO[7] = ChannelData[6] & 0x0F;
 
-					NeoCDCommsStatusFIFO[8] = ChannelData[7];
+					NeoCDCommsStatusFIFO[8] = ChannelData[7] >> 4;
 
 					break;
 				}
@@ -2625,12 +2639,16 @@ static void NeoCDProcessCommand()
 					NeoCDCommsStatusFIFO[2] = ChannelData[0] >> 4;
 					NeoCDCommsStatusFIFO[3] = ChannelData[0] & 0x0F;
 
-					NeoCDCommsStatusFIFO[8] = ChannelData[7];
+					UINT8* TOCEntry = CDEmuReadTOC(CDEmuTOC_FIRSTINDEX);
+					NeoCDCommsStatusFIFO[4] = TOCEntry[0] >> 4;
+					NeoCDCommsStatusFIFO[5] = TOCEntry[0] & 0x0F;
+
+					NeoCDCommsStatusFIFO[8] = ChannelData[7] >> 4;
 
 					break;
 				}
 				case 3: {
-					UINT8* TOCEntry = CDEmuReadTOC(-2);
+					UINT8* TOCEntry = CDEmuReadTOC(CDEmuTOC_LASTMSF);
 
 					NeoCDCommsStatusFIFO[2] = TOCEntry[0] >> 4;
 					NeoCDCommsStatusFIFO[3] = TOCEntry[0] & 0x0F;
@@ -2644,7 +2662,7 @@ static void NeoCDProcessCommand()
 					break;
 				}
 				case 4: {
-					UINT8* TOCEntry = CDEmuReadTOC(-1);
+					UINT8* TOCEntry = CDEmuReadTOC(CDEmuTOC_FIRSTLAST);
 
 					NeoCDCommsStatusFIFO[2] = TOCEntry[0] > 4;
 					NeoCDCommsStatusFIFO[3] = TOCEntry[0] & 0x0F;
@@ -2681,7 +2699,7 @@ static void NeoCDProcessCommand()
 				case 6: {
 					UINT8* ChannelData = CDEmuReadQChannel();
 
-					NeoCDCommsStatusFIFO[8] = ChannelData[7];
+					NeoCDCommsStatusFIFO[8] = ChannelData[7] >> 4;
 
 					break;
 				}
@@ -2910,20 +2928,22 @@ static void NeoCDDoDMA()
 			//  - DMA controller program[14] -> 0xFCF5 (PC: 0xC0FD8A)
 
 			// Double Dragon clears the vector table before loading in the
-			// actual vectors, leading me to believe that there is some sort
-			// of vector-cache going on here.  Let's just ignore the clearing
+			// actual vectors.  Let's just ignore the clearing part
 			// so the game doesn't freeze while loading.
 
 			INT32 OkWriteVect = !CheckDMASourceForBlankVectorTable(NeoCDDMAAddress2, NeoCDDMAAddress1);
+
+			if (!OkWriteVect) {
+				bprintf(0, _T("(DMA) Inhibit blank vector table write into 68k ram-vectspace\n"));
+			}
 
 			SekIdle(NeoCDDMACount * 1);
 
 			while (NeoCDDMACount--) {
 				if (OkWriteVect || NeoCDDMAAddress2 >= 0x80) {
 					SekWriteWord(NeoCDDMAAddress2, SekReadWord(NeoCDDMAAddress1));
-				} else {
-					bprintf(0, _T("DMA bytes into rom-vectspace failed @ %X:  %X\n"), NeoCDDMAAddress2, SekReadWord(NeoCDDMAAddress1));
 				}
+
 				NeoCDDMAAddress1 += 2;
 				NeoCDDMAAddress2 += 2;
 			}
@@ -3191,6 +3211,12 @@ static UINT16 __fastcall neogeoReadWordCDROM(UINT32 sekAddress)
 //	bprintf(PRINT_NORMAL, _T("  - CDROM: 0x%06X read (word, PC: 0x%06X)\n"), sekAddress, SekGetPC(-1));
 
 	switch (sekAddress & 0xFFFF) {
+		case 0x0004:
+			//bprintf(PRINT_IMPORTANT, _T("  - NGCD VBL (read) Interrupt mask -> 0x%04X (PC: 0x%06X)\n"), nff0004, SekGetPC(-1));
+
+			return nff0004;
+			break;
+
 		case 0x011C:
 			return ~((0x10 | (NeoSystem & 3)) << 8);
 	}
@@ -3216,7 +3242,14 @@ static void __fastcall neogeoWriteByteCDROM(UINT32 sekAddress, UINT8 byteValue)
 		case 0x0061:
 			if (byteValue & 0x40) {
 				NeoCDDoDMA();
-			}
+			} else
+				if (byteValue == 0) {
+					NeoCDDMAAddress1 = 0;
+					NeoCDDMAAddress2 = 0;
+					NeoCDDMAValue1 = 0;
+					NeoCDDMAValue2 = 0;
+					NeoCDDMACount = 0;
+				}
 			break;
 
 		// LC8951 registers
@@ -3370,17 +3403,17 @@ static void __fastcall neogeoWriteWordCDROM(UINT32 sekAddress, UINT16 wordValue)
 // LC8951RegistersR[1] |= 0x20;
 			break;
 
+		case 0x0004:
+			//bprintf(PRINT_IMPORTANT, _T("  - NGCD (write) VBL Interrupt mask -> 0x%04X (PC: 0x%06X)\n"), wordValue, SekGetPC(-1));
+
+			nff0004 = wordValue;
+			break;
+
 		case 0x000E:
 			NeoCDIRQUpdate(wordValue);
 			break;
 
 		// DMA controller
-		case 0x0060:
-			if (wordValue & 0x40) {
-				NeoCDDoDMA();
-			}
-			break;
-
 		case 0x0064:
 			NeoCDDMAAddress1 &= 0x0000FFFF;
 			NeoCDDMAAddress1 |= wordValue << 16;
@@ -3537,12 +3570,8 @@ static void __fastcall neogeoWriteWordTransfer(UINT32 sekAddress, UINT16 wordVal
 			YM2610ADPCMAROM[nNeoActiveSlot][nADPCMTransferBank + ((sekAddress & 0x0FFFFF) >> 1)] = wordValue;
 			break;
 		case 4:							// Z80
-			if (ZetGetBUSREQLine() == 0) {
-				YM2610ADPCMAROM[nNeoActiveSlot][nADPCMTransferBank + ((sekAddress & 0x0FFFFF) >> 1)] = wordValue;
-			} else {
-				if ((sekAddress & 0xfffff) >= 0x20000) break;
-				NeoZ80ROMActive[(sekAddress & 0x1FFFF) >> 1] = wordValue;
-			}
+			if ((sekAddress & 0xfffff) >= 0x20000) break;
+			NeoZ80ROMActive[(sekAddress & 0x1FFFF) >> 1] = wordValue;
 			break;
 		case 5:							// Text
 			NeoTextRAM[(sekAddress & 0x3FFFF) >> 1] = wordValue;
@@ -3757,6 +3786,7 @@ static INT32 neogeoReset()
 	nNeoCDIRQVector = 0;
 	nNeoCDIRQVectorAck = 0;
 	nff0002 = 0;
+	nff0004 = 0;
 
 	return 0;
 }
@@ -4449,7 +4479,9 @@ INT32 NeoFrame()
 		if (nNeoSystemType & NEO_SYS_CART) {
 			memset(Neo68KRAM, 0, 0x010000);
 		}
-
+		if (nNeoSystemType & NEO_SYS_CD) {
+			memset(Neo68KROM[0], 0, nCodeSize[0]);
+		}
 		neogeoReset();
 	}
 
@@ -4826,8 +4858,10 @@ INT32 NeoFrame()
 		NeoRenderText();											// Render text layer
 	}
 
-	nIRQAcknowledge &= ~4;
-	SekSetIRQLine(nVBLankIRQ, CPU_IRQSTATUS_ACK);
+	if ( ((nNeoSystemType & NEO_SYS_CD) && (nff0004 & 0x0030) == 0x0030) || (~nNeoSystemType & NEO_SYS_CD) ) {
+		nIRQAcknowledge &= ~4;
+		SekSetIRQLine(nVBLankIRQ, CPU_IRQSTATUS_ACK);
+	}
 
 #if 0 || defined LOG_IRQ
 	bprintf(PRINT_NORMAL, _T("  - VBLank.\n"));
