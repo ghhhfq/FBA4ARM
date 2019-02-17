@@ -18570,3 +18570,127 @@ struct BurnDriver BurnDrvkof99pr = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+
+/* FBAS 拳皇2000 解密版 The King of Fighters 2000 (non encrypted P, decrypted C)
+// Ported from FBAS.
+static struct BurnRomInfo kof2kndRomDesc[] = {
+	{ "257-pg1.bin",  0x100000, 0x5f809dbe, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "257-pg2.bin",  0x400000, 0x693c2c5e, 1 | BRF_ESS | BRF_PRG }, //  1
+
+	{ "kof2k_c1.rom", 0x800000, 0xabcdd424, 3 | BRF_GRA },		 //  2 Sprite data
+	{ "kof2k_c2.rom", 0x800000, 0xcda33778, 3 | BRF_GRA },		 //  3
+	{ "kof2k_c3.rom", 0x800000, 0x087fb15b, 3 | BRF_GRA },		 //  4
+	{ "kof2k_c4.rom", 0x800000, 0xfe9dfde4, 3 | BRF_GRA },		 //  5
+	{ "kof2k_c5.rom", 0x800000, 0x03ee4bf4, 3 | BRF_GRA },		 //  6
+	{ "kof2k_c6.rom", 0x800000, 0x8599cc5b, 3 | BRF_GRA },		 //  7
+	{ "kof2k_c7.rom", 0x800000, 0x71dfc3e2, 3 | BRF_GRA },		 //  8
+	{ "kof2k_c8.rom", 0x800000, 0x0fa30e5f, 3 | BRF_GRA },		 //  9
+
+	{ "257-m1.bin",   0x040000, 0x4b749113, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "257-v1.bin",   0x400000, 0x17cde847, 5 | BRF_SND },           // 11 Sound data
+	{ "257-v2.bin",   0x400000, 0x1afb20ff, 5 | BRF_SND },           // 12
+	{ "257-v3.bin",   0x400000, 0x4605036a, 5 | BRF_SND },           // 13
+	{ "257-v4.bin",   0x400000, 0x764bbd6b, 5 | BRF_SND },           // 14
+};
+
+STDROMPICKEXT(kof2knd, kof2knd, neogeo)
+STD_ROM_FN(kof2knd)
+
+struct BurnDriver BurnDrvkof2knd = {
+	"kof2knd", "kof2000", "neogeo", NULL, "2000",
+	"The King of Fighters 2000 (non encrypted P, decrypted C)\0", NULL, "SNK", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_CMC50 | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof2kndRomInfo, kof2kndRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	kof2000nInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+*/
+
+// GOTVG 拳皇2000 优化版 The King of Fighters 2000 (Optimized Version 20130910)
+// kof2000n32 in HBMAME.
+static struct BurnRomInfo kof2000tRomDesc[] = {
+	{ "157-p1t.bin",  0x100000, 0xa97dfaf2, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "257-pg2.sp2",  0x400000, 0x693c2c5e, 1 | BRF_ESS | BRF_PRG }, //  1 
+	
+	/* The Encrypted Boards do not have an s1 rom, data for it comes from the Cx ROMs */
+	/* Encrypted */
+	{ "257-c1.c1",    0x800000, 0xcef1cdfa, 3 | BRF_GRA },           //  2 Sprite data
+	{ "257-c2.c2",    0x800000, 0xf7bf0003, 3 | BRF_GRA },           //  3 
+	{ "257-c3.c3",    0x800000, 0x101e6560, 3 | BRF_GRA },           //  4 
+	{ "257-c4.c4",    0x800000, 0xbd2fc1b1, 3 | BRF_GRA },           //  5 
+	{ "257-c5.c5",    0x800000, 0x89775412, 3 | BRF_GRA },           //  6 
+	{ "257-c6.c6",    0x800000, 0xfa7200d5, 3 | BRF_GRA },           //  7 
+	{ "257-c7.c7",    0x800000, 0x7da11fe4, 3 | BRF_GRA },           //  8 
+	{ "257-c8.c8",    0x800000, 0xb1afa60b, 3 | BRF_GRA },           //  9 
+
+	{ "257-m1.m1",    0x040000, 0x4b749113, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "257-v1.v1",    0x400000, 0x17cde847, 5 | BRF_SND },           // 11 Sound data
+	{ "257-v2.v2",    0x400000, 0x1afb20ff, 5 | BRF_SND },           // 12 
+	{ "257-v3.v3",    0x400000, 0x4605036a, 5 | BRF_SND },           // 13 
+	{ "257-v4.v4",    0x400000, 0x764bbd6b, 5 | BRF_SND },           // 14 
+};
+
+STDROMPICKEXT(kof2000t, kof2000t, neogeo)
+STD_ROM_FN(kof2000t)
+
+struct BurnDriver BurnDrvkof2000t = {
+	"kof2000t", "kof2000", "neogeo", NULL, "2013",
+	"The King of Fighters 2000 (Optimized Version 20130910)\0", NULL, "hack", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_CMC50 | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof2000tRomInfo, kof2000tRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	kof2000nInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000,	304, 224, 4, 3
+};
+
+// GOTVG 拳皇2000 风云再起蓝版 The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
+// kof2000ev in HBMAME, but C ROMs are different.
+static struct BurnRomInfo kof2000pRomDesc[] = {
+	{ "neo-sma",      0x040000, 0x329d80c9, 9 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "257-p1.p1",    0x400000, 0x70b76979, 1 | BRF_ESS | BRF_PRG }, //  1 
+	{ "257-p2.p2",    0x400000, 0x1ec748c2, 1 | BRF_ESS | BRF_PRG }, //  2 
+	
+	/* The Encrypted Boards do not have an s1 rom, data for it comes from the Cx ROMs */
+	/* Encrypted */
+	
+	{ "257-c1.c1",    0x800000, 0xc89d1994, 3 | BRF_GRA },           //  3 Sprite data
+	{ "257-c2.c2",    0x800000, 0x19754968, 3 | BRF_GRA },           //  4 
+	{ "257-c3.c3",    0x800000, 0xc76b919b, 3 | BRF_GRA },           //  5 
+	{ "257-c4.c4",    0x800000, 0x5e03f2af, 3 | BRF_GRA },           //  6 
+	{ "257-c5.c5",    0x800000, 0x6a3b2fbd, 3 | BRF_GRA },           //  7 
+	{ "257-c6.c6",    0x800000, 0xac4a8edc, 3 | BRF_GRA },           //  8 
+	{ "257-c7.c7",    0x800000, 0x608ffca9, 3 | BRF_GRA },           //  9 
+	{ "257-c8.c8",    0x800000, 0x73280ea8, 3 | BRF_GRA },           // 10
+	/*
+	{ "257-c1.c1",    0x800000, 0xabcdd424, 3 | BRF_GRA },           //  3 Sprite data
+	{ "257-c2.c2",    0x800000, 0xcda33778, 3 | BRF_GRA },           //  4 
+	{ "257-c3.c3",    0x800000, 0x087fb15b, 3 | BRF_GRA },           //  5 
+	{ "257-c4.c4",    0x800000, 0xfe9dfde4, 3 | BRF_GRA },           //  6 
+	{ "257-c5.c5",    0x800000, 0x03ee4bf4, 3 | BRF_GRA },           //  7 
+	{ "257-c6.c6",    0x800000, 0x8599cc5b, 3 | BRF_GRA },           //  8 
+	{ "257-c7.c7",    0x800000, 0x0ceb9669, 3 | BRF_GRA },           //  9 
+	{ "257-c8.c8",    0x800000, 0x381f3964, 3 | BRF_GRA },           // 10 
+	*/
+	{ "257-m1.m1",    0x040000, 0x4b749113, 4 | BRF_ESS | BRF_PRG }, // 11 Z80 code
+
+	{ "257-v1.v1",    0x400000, 0x17cde847, 5 | BRF_SND },           // 12 Sound data
+	{ "257-v2.v2",    0x400000, 0x1afb20ff, 5 | BRF_SND },           // 13 
+	{ "257-v3.v3",    0x400000, 0x4605036a, 5 | BRF_SND },           // 14 
+	{ "257-v4.v4",    0x400000, 0x764bbd6b, 5 | BRF_SND },           // 15 
+};
+
+STDROMPICKEXT(kof2000p, kof2000p, neogeo)
+STD_ROM_FN(kof2000p)
+
+struct BurnDriver BurnDrvkof2000p = {
+	"kof2000p", "kof2000", "neogeo", NULL, "2018",
+	"The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)\0", NULL, "SNK", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_CMC50 | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_SMA_PROTECTION | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof2000pRomInfo, kof2000pRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	kof2000Init, NeoSMAExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
