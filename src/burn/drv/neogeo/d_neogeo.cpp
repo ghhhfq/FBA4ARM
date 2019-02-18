@@ -18659,7 +18659,7 @@ struct BurnDriver BurnDrvkof2000p = {
 	0x1000, 304, 224, 4, 3
 };
 
-// GOTVG 拳皇2001 BOSS版 The King of Fighters 2001 (Boss Hack 20101223)
+/* GOTVG 拳皇2001 BOSS版 The King of Fighters 2001 (Boss Hack 20101223)
 // kof2k1bs in HBMAME.
 static struct BurnRomInfo kf2k1bsRomDesc[] = {
 	{ "262bs.p1",   0x100000, 0xb5becb3c, 1 | BRF_ESS | BRF_PRG }, 
@@ -18694,8 +18694,9 @@ struct BurnDriver BurnDrvkf2k1bs = {
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k1bsRomInfo, kf2k1bsRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
-	304, 224, 4, 3
+	0x1000, 304, 224, 4, 3
 };
+*/
 
 // FBA4DROID 合金弹头3 敌兵重置版 Metal Slug 3 (Enemies Resetting Version 20190212)
 static struct BurnRomInfo mslug3cRomDesc[] = {
@@ -18771,12 +18772,13 @@ struct BurnDriver BurnDrvkof02ic = {
 	0x1000,	304, 224, 4, 3
 };
 
+/*
 // FBA4DROID 拳皇2001 再起风云2 The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
 static struct BurnRomInfo kf2k1cmRomDesc[] = {
 	{ "kf2k1ps2-p1.bin",   0x100000, 0x595e2226, 1 | BRF_ESS | BRF_PRG }, 
 	{ "kf2k1ps2-p2.bin",   0x400000, 0x2aa937b0, 1 | BRF_ESS | BRF_PRG }, 
 	
-	{ "kf2k1ps2-s1.bin",    0x020000, 0x73efb81d, 2 | BRF_GRA },
+	//{ "kf2k1ps2-s1.bin",    0x020000, 0x73efb81d, 2 | BRF_GRA },
 
 	{ "kf2k1_c1.rom",    0x800000, 0x103225b1, 3 | BRF_GRA },
 	{ "kf2k1_c2.rom",    0x800000, 0xf9d05d99, 3 | BRF_GRA },
@@ -18804,11 +18806,85 @@ struct BurnDriver BurnDrvkf2k1cm = {
 	"kf2k1cm", "kof2001", "neogeo", NULL, "2018",
 	"The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)\0", NULL, "hack", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ALTERNATE_TEXT | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	NULL, kf2k1cmRomInfo, kf2k1cmRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	kof2001Init, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
+// The King of Fighters 2001 (set 1, decrypted C)
+// Ported from FBAS.
+static struct BurnRomInfo kof2k1ndRomDesc[] = {
+	{ "262-p1-08-e0.bin",0x100000, 0x9381750d, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "262-p2-08-e0.bin",0x400000, 0x8e0d8329, 1 | BRF_ESS | BRF_PRG }, //  1
+
+	{ "kf2k1_c1.rom",    0x800000, 0x103225b1, 3 | BRF_GRA },	    //  2 Sprite data
+	{ "kf2k1_c2.rom",    0x800000, 0xf9d05d99, 3 | BRF_GRA },	    //  3
+	{ "kf2k1_c3.rom",    0x800000, 0x4c7ec427, 3 | BRF_GRA },	    //  4
+	{ "kf2k1_c4.rom",    0x800000, 0x1d237aa6, 3 | BRF_GRA },	    //  5
+	{ "kf2k1_c5.rom",    0x800000, 0xc2256db5, 3 | BRF_GRA },	    //  6
+	{ "kf2k1_c6.rom",    0x800000, 0x8d6565a9, 3 | BRF_GRA },	    //  7
+	{ "kf2k1_c7.rom",    0x800000, 0xd1408776, 3 | BRF_GRA },	    //  8
+	{ "kf2k1_c8.rom",    0x800000, 0x954d0e16, 3 | BRF_GRA },	    //  9
+
+	{ "265-262-m1.bin",        0x040000, 0xa7f8119f, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "262-v1-08-e0.bin",      0x400000, 0x83d49ecf, 5 | BRF_SND },     // 11 Sound data
+	{ "262-v2-08-e0.bin",      0x400000, 0x003f1843, 5 | BRF_SND },     // 12
+	{ "262-v3-08-e0.bin",      0x400000, 0x2ae38dbe, 5 | BRF_SND },     // 13
+	{ "262-v4-08-e0.bin",      0x400000, 0x26ec4dd9, 5 | BRF_SND },     // 14
+};
+
+STDROMPICKEXT(kof2k1nd, kof2k1nd, neogeo)
+STD_ROM_FN(kof2k1nd)
+
+struct BurnDriver BurnDrvkof2k1nd = {
+	"kof2k1nd", "kof2001", "neogeo", NULL, "2001",
+	"The King of Fighters 2001 (set 1, decrypted C)\0", NULL, "Eolith / SNK", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k1cmRomInfo, kf2k1cmRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
-	304, 224, 4, 3
+	0x1000, 304, 224, 4, 3
 };
+
+
+// The King of Fighters 2001 (set 2, decrypted C)
+// Ported from FBAS.
+static struct BurnRomInfo kf2k1hndRomDesc[] = {
+	{ "262-pg1.bin",     0x100000, 0x2af7e741, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "262-pg2.bin",     0x400000, 0x91eea062, 1 | BRF_ESS | BRF_PRG }, //  1
+
+	{ "kf2k1_c1.rom",    0x800000, 0x103225b1, 3 | BRF_GRA },	    //  2 Sprite data
+	{ "kf2k1_c2.rom",    0x800000, 0xf9d05d99, 3 | BRF_GRA },	    //  3
+	{ "kf2k1_c3.rom",    0x800000, 0x4c7ec427, 3 | BRF_GRA },	    //  4
+	{ "kf2k1_c4.rom",    0x800000, 0x1d237aa6, 3 | BRF_GRA },	    //  5
+	{ "kf2k1_c5.rom",    0x800000, 0xc2256db5, 3 | BRF_GRA },	    //  6
+	{ "kf2k1_c6.rom",    0x800000, 0x8d6565a9, 3 | BRF_GRA },	    //  7
+	{ "kf2k1_c7.rom",    0x800000, 0xd1408776, 3 | BRF_GRA },	    //  8
+	{ "kf2k1_c8.rom",    0x800000, 0x954d0e16, 3 | BRF_GRA },	    //  9
+
+	{ "265-262-m1.bin",        0x040000, 0xa7f8119f, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "262-v1-08-e0.bin",      0x400000, 0x83d49ecf, 5 | BRF_SND },     // 11 Sound data
+	{ "262-v2-08-e0.bin",      0x400000, 0x003f1843, 5 | BRF_SND },     // 12
+	{ "262-v3-08-e0.bin",      0x400000, 0x2ae38dbe, 5 | BRF_SND },     // 13
+	{ "262-v4-08-e0.bin",      0x400000, 0x26ec4dd9, 5 | BRF_SND },     // 14
+};
+
+STDROMPICKEXT(kf2k1hnd, kf2k1hnd, neogeo)
+STD_ROM_FN(kf2k1hnd)
+
+struct BurnDriver BurnDrvkf2k1hnd = {
+	"kf2k1hnd", "kof2001", "neogeo", NULL, "2001",
+	"The King of Fighters 2001 (set 2, decrypted C)\0", NULL, "Eolith / SNK", "Neo Geo",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
+	NULL, kf2k1cmRomInfo, kf2k1cmRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+*/
 
 // FBA4DROID 合金弹头6敌兵重置版 Metal Slug 6 (Enemies Resetting Version 20190205)
 static struct BurnRomInfo mslug3n6pRomDesc[] = {
