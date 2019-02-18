@@ -12284,9 +12284,17 @@ DRV		BurnDrvKof94p;
 DRV		BurnDrvkof96c;
 DRV		BurnDrvkof96p;
 DRV		BurnDrvkof99pr;
-//DRV		BurnDrvkof2knd;
+DRV		BurnDrvkof2knd;
 DRV		BurnDrvkof2000t;
 DRV 	BurnDrvkof2000p;
+DRV 	BurnDrvkf2k1bs;
+DRV		BurnDrvkovytzyp;
+DRV		BurnDrvkovshzlzymy;
+DRV		BurnDrvkovshp1v4xtw;
+DRV		BurnDrvolds100aylzx;
+DRV		BurnDrvkof02ic;
+DRV		BurnDrvkf2k1cm;
+DRV		BurnDrvmslug3n6p;
 
 #undef DRV
 
@@ -24515,7 +24523,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvZzyzzyxx2,			// Zzyzzyxx (set 2)
 	
 	//extra hacks
-	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
+	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190216)
 	&BurnDrvCpsWofr19,			// Warriors of Fate (Unique Sword Armor 20190113)
 	&BurnDrvCpsWofjps,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Imitation of Playstation Version 20091209)
 	&BurnDrvCpsCaptcommpjy,		// Captain Commando (Elite Version 20181231)
@@ -24544,13 +24552,13 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof2k2c2,			// The King of Fighters 2002 (Heavenly Divine 20080624)
 	&BurnDrvkf2k2tt,			// The King of Fighters 2002 (Exceeding Version 20181125)
 	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
-	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190102)
-	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190124)
+	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190212)
+	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190211)
 	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
-	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190105)
-	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190130)
+	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
+	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190216)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
@@ -24575,7 +24583,15 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof96c,				// The King of Fighters '96 (Revised Version 20051113)
 	&BurnDrvkof96p,				// The King of Fighters '96 (Rerise Of Chaos 20030205)
 	&BurnDrvkof99pr,			// Kof'99 (EUR Version 20150713)
-	//&BurnDrvkof2knd,			// The King of Fighters 2000 (non encrypted P, decrypted C)
+	&BurnDrvkof2knd,			// The King of Fighters 2000 (non encrypted P, decrypted C)
 	&BurnDrvkof2000t,			// The King of Fighters 2000 (Optimized Version 20130910)
 	&BurnDrvkof2000p,			// The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
+	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)
+	&BurnDrvkovytzyp,			// Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)
+	&BurnDrvkovshzlzymy,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
+	&BurnDrvkovshp1v4xtw,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War - Sky King 20190217)
+	&BurnDrvolds100aylzx,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
+	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
+	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
+	&BurnDrvmslug3n6p,			// Metal Slug 6 (Enemies Resetting Version 20190205)
 };
