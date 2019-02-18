@@ -12295,13 +12295,15 @@ DRV		BurnDrvkof99pr;
 DRV		BurnDrvkof2knd;
 DRV		BurnDrvkof2000t;
 DRV 	BurnDrvkof2000p;
-DRV 	BurnDrvkf2k1bs;
+//DRV 	BurnDrvkf2k1bs;
 DRV		BurnDrvkovytzyp;
 DRV		BurnDrvkovshzlzymy;
 DRV		BurnDrvkovshp1v4xtw;
 DRV		BurnDrvolds100aylzx;
 DRV		BurnDrvkof02ic;
-DRV		BurnDrvkf2k1cm;
+//DRV		BurnDrvkf2k1cm;
+//DRV		BurnDrvkof2k1nd;
+//DRV		BurnDrvkf2k1hnd;
 DRV		BurnDrvmslug3n6p;
 
 #undef DRV
@@ -24602,12 +24604,14 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof2knd,			// The King of Fighters 2000 (non encrypted P, decrypted C)
 	&BurnDrvkof2000t,			// The King of Fighters 2000 (Optimized Version 20130910)
 	&BurnDrvkof2000p,			// The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
-	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)
+	//&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)
 	&BurnDrvkovytzyp,			// Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)
 	&BurnDrvkovshzlzymy,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
 	&BurnDrvkovshp1v4xtw,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War - Sky King 20190217)
 	&BurnDrvolds100aylzx,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
-	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
+	//&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
+	//&BurnDrvkof2k1nd,			// The King of Fighters 2001 (set 1, decrypted C)
+	//&BurnDrvkf2k1hnd,			// The King of Fighters 2001 (set 2, decrypted C)
 	&BurnDrvmslug3n6p,			// Metal Slug 6 (Enemies Resetting Version 20190205)
 };
