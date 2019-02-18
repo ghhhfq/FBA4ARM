@@ -22402,9 +22402,9 @@ struct BurnDriverX BurnDrvCpsSfzhch = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 三国志2达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)
+// FBA4DROID 三国志2达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190216)
 static struct BurnRomInfo WofdrRomDesc[] = {
-	{ "wofj.dl",   0x200000, 0x640fae97, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "wofjdr.bin",    0x200000, 0x1ffbf531, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
 	{ "tk2_01.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
 	{ "tk2_02.4a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
@@ -22441,7 +22441,7 @@ STD_ROM_FN(Wofdr)
 
 struct BurnDriver BurnDrvCpsWofdr = {
 	"wofdr", "wof", NULL, NULL, "2019",
-	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190120)\0", NULL, "Bindi", "CPS1 / QSound",
+	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190216)\0", NULL, "Bindi", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, WofdrRomInfo, WofdrRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
