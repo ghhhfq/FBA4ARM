@@ -148,7 +148,7 @@ void retro_get_system_info(struct retro_system_info *info)
 #ifndef GIT_VERSION
 #define GIT_VERSION ""
 #endif
-	info->library_version = FBA_VERSION " Ver.0.1 (严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！！！)";
+	info->library_version = FBA_VERSION " Ver.0.2 (严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！)";
 	info->need_fullpath = true;
 	info->block_extract = true;
 	info->valid_extensions = "zip|7z";
