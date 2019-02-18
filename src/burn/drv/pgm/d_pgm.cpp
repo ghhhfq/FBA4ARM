@@ -6373,7 +6373,7 @@ struct BurnDriver BurnDrvkovshzlzywj = {
 
 // FBA4DROID 三国战纪 一统中原 加强版 20190216 Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan Plus (20190216)
 static struct BurnRomInfo kovytzypRomDesc[] = {
-	{ "ytzy_v201cn.rom",	0x400000, 0xa0ba0f05, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "ytzy_v201cn.rom",	0x4551ee, 0xa0ba0f05, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code , weird size!
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
 
