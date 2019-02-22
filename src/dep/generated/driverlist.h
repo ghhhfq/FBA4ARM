@@ -12309,6 +12309,9 @@ DRV		BurnDrvhookj1v4;
 DRV		BurnDrvhookus;
 DRV		BurnDrvhookx2;
 DRV		BurnDrvhookxr;
+DRV		BurnDrvnbbatman1v4;
+DRV		BurnDrvnbbatmanbh;
+DRV		BurnDrvnbbatmanx2;
 
 #undef DRV
 
@@ -24622,4 +24625,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvhookus,				// Hook (Unrivalled Version 20160818)
 	&BurnDrvhookx2,				// Hook (X2 Version 20180505)
 	&BurnDrvhookxr,				// Hook (Xiner's Edition 20180914)
+	&BurnDrvnbbatman1v4,			// Ninja Baseball Batman (1VS4 20170316)
+	&BurnDrvnbbatmanbh,			// Ninja Baseball Batman (Characters Changeable 20161203)
+	&BurnDrvnbbatmanx2,			// Ninja Baseball Batman (X2 Edition 20180505)
 };
