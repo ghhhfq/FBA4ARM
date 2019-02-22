@@ -3950,3 +3950,149 @@ struct BurnDriver BurnDrvSkingame2 = {
 	320, 240, 4, 3
 };
 
+// GOTVG 铁钩船长 1V4 Hook (1VS4 20160625)
+// Based on Japanese version. hooks01 in HBMAME.
+static struct BurnRomInfo hookj1v4RomDesc[] = {
+	{ "h-h0-g.3h",		0x040000, 0x13fa1eca, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "h-l0-g.5h",		0x040000, 0xf3efc301, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "h-h1.rom",		0x020000, 0x264ba1f0, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "h-l1.rom",		0x020000, 0xf9913731, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "h-sh0-a.3l",		0x010000, 0xbd3d1f61, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "h-sl0-a.3n",		0x010000, 0x76371def, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "hook-c0.rom",	0x040000, 0xdec63dcf, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "hook-c1.rom",	0x040000, 0xe4eb0b92, 3 | BRF_GRA },           //  7
+	{ "hook-c2.rom",	0x040000, 0xa52b320b, 3 | BRF_GRA },           //  8
+	{ "hook-c3.rom",	0x040000, 0x7ef67731, 3 | BRF_GRA },           //  9
+
+	{ "hook-000.rom",	0x100000, 0xccceac30, 4 | BRF_GRA },           // 10 Sprites
+	{ "hook-010.rom",	0x100000, 0x8ac8da67, 4 | BRF_GRA },           // 11
+	{ "hook-020.rom",	0x100000, 0x8847af9a, 4 | BRF_GRA },           // 12
+	{ "hook-030.rom",	0x100000, 0x239e877e, 4 | BRF_GRA },           // 13
+
+	{ "hook-da.rom",	0x080000, 0x88cd0212, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(hookj1v4)
+STD_ROM_FN(hookj1v4)
+
+struct BurnDriver BurnDrvhookj1v4 = {
+	"hookj1v4", "hook", NULL, NULL, "2016",
+	"Hook (1VS4 20160625)\0", NULL, "Bindi", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, hookj1v4RomInfo, hookj1v4RomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, HookDIPInfo,
+	hookInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
+
+// GOTVG 铁钩船长 无双版 Hook (Unrivalled Version 20160818)
+static struct BurnRomInfo hookusRomDesc[] = {
+	{ "h-h0-c.3h",		0x040000, 0x9124994c, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "h-l0-c.5h",		0x040000, 0xcaae5586, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "h-h1.rom",		0x020000, 0x264ba1f0, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "h-l1.rom",		0x020000, 0xf9913731, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "h-sh0.rom",		0x010000, 0x86a4e56e, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "h-sl0.rom",		0x010000, 0x10fd9676, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "hook-c0.rom",	0x040000, 0xdec63dcf, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "hook-c1.rom",	0x040000, 0xe4eb0b92, 3 | BRF_GRA },           //  7
+	{ "hook-c2.rom",	0x040000, 0xa52b320b, 3 | BRF_GRA },           //  8
+	{ "hook-c3.rom",	0x040000, 0x7ef67731, 3 | BRF_GRA },           //  9
+
+	{ "hook-000.rom",	0x100000, 0xccceac30, 4 | BRF_GRA },           // 10 Sprites
+	{ "hook-010.rom",	0x100000, 0x8ac8da67, 4 | BRF_GRA },           // 11
+	{ "hook-020.rom",	0x100000, 0x8847af9a, 4 | BRF_GRA },           // 12
+	{ "hook-030.rom",	0x100000, 0x239e877e, 4 | BRF_GRA },           // 13
+
+	{ "hook-da.rom",	0x080000, 0x88cd0212, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(hookus)
+STD_ROM_FN(hookus)
+
+struct BurnDriver BurnDrvhookus = {
+	"hookus", "hook", NULL, NULL, "2016",
+	"Hook (Unrivalled Version 20160818)\0", NULL, "GuXing", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, hookusRomInfo, hookusRomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, HookDIPInfo,
+	hookInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
+
+// GOTVG 铁钩船长 X2版 Hook (X2 Version 20180505)
+// hooks04 in HBMAME.
+static struct BurnRomInfo hookx2RomDesc[] = {
+	{ "h-h0-d.3h",		0x040000, 0x637f7d17, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "h-l0-d.3h",		0x040000, 0x180e4bbb, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "h-h1.rom",		0x020000, 0x9573d8b3, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "h-l1.rom",		0x020000, 0xeb5cd51c, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "h-sh0.rom",		0x010000, 0x86a4e56e, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "h-sl0.rom",		0x010000, 0x10fd9676, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "hook-c0.rom",	0x040000, 0xdec63dcf, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "hook-c1.rom",	0x040000, 0xe4eb0b92, 3 | BRF_GRA },           //  7
+	{ "hook-c2.rom",	0x040000, 0xa52b320b, 3 | BRF_GRA },           //  8
+	{ "hook-c3.rom",	0x040000, 0x7ef67731, 3 | BRF_GRA },           //  9
+
+	{ "hook-000.rom",	0x100000, 0xccceac30, 4 | BRF_GRA },           // 10 Sprites
+	{ "hook-010.rom",	0x100000, 0x8ac8da67, 4 | BRF_GRA },           // 11
+	{ "hook-020.rom",	0x100000, 0x8847af9a, 4 | BRF_GRA },           // 12
+	{ "hook-030.rom",	0x100000, 0x239e877e, 4 | BRF_GRA },           // 13
+
+	{ "hook-da.rom",	0x080000, 0x88cd0212, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(hookx2)
+STD_ROM_FN(hookx2)
+
+struct BurnDriver BurnDrvhookx2 = {
+	"hookx2", "hook", NULL, NULL, "2018",
+	"Hook (X2 Version 20180505)\0", NULL, "Bindi", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, hookx2RomInfo, hookx2RomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, HookDIPInfo,
+	hookInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
+
+// GOTVG 铁钩船长 锌儿版 Hook (Xiner's Edition 20180914)
+// Based on Japanese version.
+static struct BurnRomInfo hookxrRomDesc[] = {
+	{ "h-h0-c.3h",		0x040000, 0xa603d006, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "h-l0-c.5h",		0x040000, 0x8a1e8688, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "h-h1.rom",		0x020000, 0x264ba1f0, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "h-l1.rom",		0x020000, 0xf9913731, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "h-sh0-a.3l",		0x010000, 0xbd3d1f61, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "h-sl0-a.3n",		0x010000, 0x76371def, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "hook-c0.rom",	0x040000, 0xdec63dcf, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "hook-c1.rom",	0x040000, 0xe4eb0b92, 3 | BRF_GRA },           //  7
+	{ "hook-c2.rom",	0x040000, 0xa52b320b, 3 | BRF_GRA },           //  8
+	{ "hook-c3.rom",	0x040000, 0x7ef67731, 3 | BRF_GRA },           //  9
+
+	{ "hook-000.rom",	0x100000, 0xccceac30, 4 | BRF_GRA },           // 10 Sprites
+	{ "hook-010.rom",	0x100000, 0x8ac8da67, 4 | BRF_GRA },           // 11
+	{ "hook-020.rom",	0x100000, 0x8847af9a, 4 | BRF_GRA },           // 12
+	{ "hook-030.rom",	0x100000, 0x239e877e, 4 | BRF_GRA },           // 13
+
+	{ "hook-da.rom",	0x080000, 0x88cd0212, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(hookxr)
+STD_ROM_FN(hookxr)
+
+struct BurnDriver BurnDrvhookxr = {
+	"hookxr", "hook", NULL, NULL, "2018",
+	"Hook (Xiner's Edition 20180914)\0", NULL, "Bindi", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, hookxrRomInfo, hookxrRomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, HookDIPInfo,
+	hookInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
