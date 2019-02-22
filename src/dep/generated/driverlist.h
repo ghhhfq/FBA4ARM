@@ -12305,6 +12305,10 @@ DRV		BurnDrvolds100aylzx;
 DRV		BurnDrvkof02ic;
 DRV		BurnDrvkf2k1cm;
 DRV		BurnDrvmslug3n6p;
+DRV		BurnDrvhookj1v4;
+DRV		BurnDrvhookus;
+DRV		BurnDrvhookx2;
+DRV		BurnDrvhookxr;
 
 #undef DRV
 
@@ -24614,4 +24618,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
 	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
 	&BurnDrvmslug3n6p,			// Metal Slug 6 (Enemies Resetting Version 20190205)
+	&BurnDrvhookj1v4,			// Hook (1VS4 20160625)
+	&BurnDrvhookus,				// Hook (Unrivalled Version 20160818)
+	&BurnDrvhookx2,				// Hook (X2 Version 20180505)
+	&BurnDrvhookxr,				// Hook (Xiner's Edition 20180914)
 };
