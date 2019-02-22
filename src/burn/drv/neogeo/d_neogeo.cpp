@@ -18659,8 +18659,9 @@ struct BurnDriver BurnDrvkof2000p = {
 	0x1000, 304, 224, 4, 3
 };
 
-/* GOTVG 拳皇2001 BOSS版 The King of Fighters 2001 (Boss Hack 20101223)
+// GOTVG 拳皇2001 BOSS版 The King of Fighters 2001 (Boss Hack 20101223)
 // kof2k1bs in HBMAME.
+// I have no idea why it it not working. Need someone to help me to figure it out.
 static struct BurnRomInfo kf2k1bsRomDesc[] = {
 	{ "262bs.p1",   0x100000, 0xb5becb3c, 1 | BRF_ESS | BRF_PRG }, 
 	{ "262bs.p2",   0x400000, 0x295d0c5c, 1 | BRF_ESS | BRF_PRG }, 
@@ -18696,7 +18697,6 @@ struct BurnDriver BurnDrvkf2k1bs = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
 };
-*/
 
 // FBA4DROID 合金弹头3 敌兵重置版 Metal Slug 3 (Enemies Resetting Version 20190212)
 static struct BurnRomInfo mslug3cRomDesc[] = {
