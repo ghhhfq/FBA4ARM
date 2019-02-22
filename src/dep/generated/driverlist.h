@@ -12297,7 +12297,7 @@ DRV		BurnDrvkof99pr;
 DRV		BurnDrvkof2knd;
 DRV		BurnDrvkof2000t;
 DRV		BurnDrvkof2000p;
-//DRV		BurnDrvkf2k1bs;
+DRV		BurnDrvkf2k1bs;		// no comment [NOT WORKING]
 DRV		BurnDrvkovytzyp;
 DRV		BurnDrvkovshzlzymy;
 DRV		BurnDrvkovshp1v4xtw;
@@ -24579,26 +24579,26 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
-	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
+	&BurnDrvkovshpqxzqj,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
 	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190216)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
-	&BurnDrvOlds100adsgl,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
-	&BurnDrvolds100afybh,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
+	&BurnDrvOlds100adsgl,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
+	&BurnDrvolds100afybh,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
 	&BurnDrvkovplusxb1,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
 	&BurnDrvkovplusxb2,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)
-	&BurnDrvkovplusxb2ds,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
-	&BurnDrvkovplusxb2wj,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
+	&BurnDrvkovplusxb2ds,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
+	&BurnDrvkovplusxb2wj,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
 	&BurnDrvkovshzlzy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China 20180307)
-	&BurnDrvkovshzlzyjz,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
-	&BurnDrvkovshzlzywj,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
+	&BurnDrvkovshzlzyjz,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
+	&BurnDrvkovshzlzywj,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
 	&BurnDrvkof97st,			// The King of Fighters '97 (Renovation 20180904)
 	&BurnDrvMSlug2r,			// Metal Slug 2(Enemies Resetting Version 20141110)
 	&BurnDrvkof97c,				// The King of Fighters '97 (Combo 20180509)
 	&BurnDrvkof97ys,			// The King of Fighters '97 (YS 20170801)
 	&BurnDrvkof97m,				// The King of Fighters '97 (Dream Back To 97 20130610)
-	&BurnDrvkof97plss20,		// The King of Fighters '97 (Rerise Of Chaos 20140828)
+	&BurnDrvkof97plss20,			// The King of Fighters '97 (Rerise Of Chaos 20140828)
 	&BurnDrvkof97tsb,			// The King of Fighters '97 (Slaughter Of Orochi 20060807)
 	&BurnDrvkof97xlb,			// The King of Fighters '97 (Subduing The Dragon 20050824)
 	&BurnDrvkof97u,				// The King of Fighters '97 (Super Optimized 8th Edition 20140907)
@@ -24610,11 +24610,11 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof2knd,			// The King of Fighters 2000 (non encrypted P, decrypted C)
 	&BurnDrvkof2000t,			// The King of Fighters 2000 (Optimized Version 20130910)
 	&BurnDrvkof2000p,			// The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
-	//&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)
+	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)  // no comment [NOT WORKING]
 	&BurnDrvkovytzyp,			// Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)
-	&BurnDrvkovshzlzymy,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
-	&BurnDrvkovshp1v4xtw,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War - Sky King 20190217)
-	&BurnDrvolds100aylzx,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
+	&BurnDrvkovshzlzymy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
+	&BurnDrvkovshp1v4xtw,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War - Sky King 20190217)
+	&BurnDrvolds100aylzx,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
 	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
 	&BurnDrvmslug3n6p,			// Metal Slug 6 (Enemies Resetting Version 20190205)
