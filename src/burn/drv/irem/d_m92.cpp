@@ -4089,7 +4089,7 @@ STD_ROM_FN(hookxr)
 
 struct BurnDriver BurnDrvhookxr = {
 	"hookxr", "hook", NULL, NULL, "2018",
-	"Hook (Xiner's Edition 20180914)\0", NULL, "Bindi", "Irem M92",
+	"Hook (Xiner's Edition 20180914)\0", NULL, "Xiner", "Irem M92",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
 	NULL, hookxrRomInfo, hookxrRomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, HookDIPInfo,
