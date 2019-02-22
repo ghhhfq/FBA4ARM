@@ -4096,3 +4096,114 @@ struct BurnDriver BurnDrvhookxr = {
 	hookInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
 	320, 240, 4, 3
 };
+
+// GOTVG 棒球忍者 1V4版 Ninja Baseball Batman (1VS4 20170316)
+// nbbatmans02 in HBMAME.
+static struct BurnRomInfo nbbatman1v4RomDesc[] = {
+	{ "6_h0.34",		0x040000, 0x7c17d59a, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "3_l0.31",		0x040000, 0xe54a6e81, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "a1-h1-.33",		0x040000, 0x3ce2aab5, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "a1-l1-.32",		0x040000, 0x116d9bcc, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "a1-sh0-.14",		0x010000, 0xb7fae3e6, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "a1-sl0-.17",		0x010000, 0xb26d54fc, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "lh534k0c.9",		0x080000, 0x314a0c6d, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "lh534k0e.10",	0x080000, 0xdc31675b, 3 | BRF_GRA },           //  7
+	{ "lh534k0f.11",	0x080000, 0xe15d8bfb, 3 | BRF_GRA },           //  8
+	{ "lh534k0g.12",	0x080000, 0x888d71a3, 3 | BRF_GRA },           //  9
+
+	{ "lh538393.42",	0x100000, 0x26cdd224, 4 | BRF_GRA },           // 10 Sprites
+	{ "lh538394.43",	0x100000, 0x4bbe94fa, 4 | BRF_GRA },           // 11
+	{ "lh538395.44",	0x100000, 0x2a533b5e, 4 | BRF_GRA },           // 12
+	{ "lh538396.45",	0x100000, 0x863a66fa, 4 | BRF_GRA },           // 13
+
+	{ "lh534k0k.8",		0x080000, 0x735e6380, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(nbbatman1v4)
+STD_ROM_FN(nbbatman1v4)
+
+struct BurnDriver BurnDrvnbbatman1v4 = {
+	"nbbatman1v4", "nbbatman", NULL, NULL, "2017",
+	"Ninja Baseball Batman (1VS4 20170316)\0", NULL, "Xiner", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, nbbatman1v4RomInfo, nbbatman1v4RomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, NbbatmanDIPInfo,
+	nbbatmanInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
+
+// GOTVG 棒球忍者 变身版 Ninja Baseball Batman (Characters Changeable 20161203)
+// Based on USA version.
+static struct BurnRomInfo nbbatmanbhRomDesc[] = {
+	{ "a1-h0-a.34",		0x040000, 0xb49f2163, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "a1-l0-a.31",		0x040000, 0x0183e06b, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "a1-h1-.33",		0x040000, 0x3ce2aab5, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "a1-l1-.32",		0x040000, 0x116d9bcc, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "a1-sh0-.14",		0x010000, 0xb7fae3e6, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "a1-sl0-.17",		0x010000, 0xb26d54fc, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "lh534k0c.9",		0x080000, 0x314a0c6d, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "lh534k0e.10",	0x080000, 0xdc31675b, 3 | BRF_GRA },           //  7
+	{ "lh534k0f.11",	0x080000, 0xe15d8bfb, 3 | BRF_GRA },           //  8
+	{ "lh534k0g.12",	0x080000, 0x888d71a3, 3 | BRF_GRA },           //  9
+
+	{ "lh538393.42",	0x100000, 0x26cdd224, 4 | BRF_GRA },           // 10 Sprites
+	{ "lh538394.43",	0x100000, 0x4bbe94fa, 4 | BRF_GRA },           // 11
+	{ "lh538395.44",	0x100000, 0x2a533b5e, 4 | BRF_GRA },           // 12
+	{ "lh538396.45",	0x100000, 0x863a66fa, 4 | BRF_GRA },           // 13
+
+	{ "lh534k0k.8",		0x080000, 0x735e6380, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(nbbatmanbh)
+STD_ROM_FN(nbbatmanbh)
+
+struct BurnDriver BurnDrvnbbatmanbh = {
+	"nbbatmanbh", "nbbatman", NULL, NULL, "2016",
+	"Ninja Baseball Batman (Characters Changeable 20161203)\0", NULL, "imjinjia", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, nbbatmanbhRomInfo, nbbatmanbhRomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, NbbatmanDIPInfo,
+	nbbatmanInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
+
+// GOTVG 棒球忍者 X2版 Ninja Baseball Batman (X2 Edition 20180505)
+// nbbatmans01 in HBMAME.
+static struct BurnRomInfo nbbatmanx2RomDesc[] = {
+	{ "6_h0.34",		0x040000, 0x81e706e6, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "3_l0.31",		0x040000, 0x353c90e9, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "a1-h1-.33",		0x040000, 0x3ce2aab5, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "a1-l1-.32",		0x040000, 0x116d9bcc, 1 | BRF_PRG | BRF_ESS }, //  3
+
+	{ "a1-sh0-.14",		0x010000, 0xb7fae3e6, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
+	{ "a1-sl0-.17",		0x010000, 0xb26d54fc, 2 | BRF_PRG | BRF_ESS }, //  5
+
+	{ "lh534k0c.9",		0x080000, 0x314a0c6d, 3 | BRF_GRA },           //  6 Background Tiles
+	{ "lh534k0e.10",	0x080000, 0xdc31675b, 3 | BRF_GRA },           //  7
+	{ "lh534k0f.11",	0x080000, 0xe15d8bfb, 3 | BRF_GRA },           //  8
+	{ "lh534k0g.12",	0x080000, 0x888d71a3, 3 | BRF_GRA },           //  9
+
+	{ "lh538393.42",	0x100000, 0x26cdd224, 4 | BRF_GRA },           // 10 Sprites
+	{ "lh538394.43",	0x100000, 0x4bbe94fa, 4 | BRF_GRA },           // 11
+	{ "lh538395.44",	0x100000, 0x2a533b5e, 4 | BRF_GRA },           // 12
+	{ "lh538396.45",	0x100000, 0x863a66fa, 4 | BRF_GRA },           // 13
+
+	{ "lh534k0k.8",		0x080000, 0x735e6380, 5 | BRF_SND },           // 14 Irem GA20 Samples
+};
+
+STD_ROM_PICK(nbbatmanx2)
+STD_ROM_FN(nbbatmanx2)
+
+struct BurnDriver BurnDrvnbbatmanx2 = {
+	"nbbatmanx2", "nbbatman", NULL, NULL, "2018",
+	"Ninja Baseball Batman (X2 Edition 20180505)\0", NULL, "Bindi", "Irem M92",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
+	NULL, nbbatmanx2RomInfo, nbbatmanx2RomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, NbbatmanDIPInfo,
+	nbbatmanInit, DrvExit, DrvFrame, DrvReDraw, DrvScan, &bRecalcPalette, 0x800,
+	320, 240, 4, 3
+};
