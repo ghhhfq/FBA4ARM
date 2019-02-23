@@ -4028,8 +4028,8 @@ struct BurnDriver BurnDrvhookus = {
 static struct BurnRomInfo hookx2RomDesc[] = {
 	{ "h-h0-d.3h",		0x040000, 0x637f7d17, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
 	{ "h-l0-d.3h",		0x040000, 0x180e4bbb, 1 | BRF_PRG | BRF_ESS }, //  1
-	{ "h-h1.rom",		0x020000, 0x9573d8b3, 1 | BRF_PRG | BRF_ESS }, //  2
-	{ "h-l1.rom",		0x020000, 0xeb5cd51c, 1 | BRF_PRG | BRF_ESS }, //  3
+	{ "h-h1.rom",		0x040000, 0x9573d8b3, 1 | BRF_PRG | BRF_ESS }, //  2
+	{ "h-l1.rom",		0x040000, 0xeb5cd51c, 1 | BRF_PRG | BRF_ESS }, //  3
 
 	{ "h-sh0.rom",		0x010000, 0x86a4e56e, 2 | BRF_PRG | BRF_ESS }, //  4 V30 Code
 	{ "h-sl0.rom",		0x010000, 0x10fd9676, 2 | BRF_PRG | BRF_ESS }, //  5
