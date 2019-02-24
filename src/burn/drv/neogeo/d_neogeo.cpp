@@ -17780,15 +17780,16 @@ struct BurnDriver BurnDrvmslug5dg3 = {
 	0x1000,	320, 224, 4, 3
 };
 
-// From FBA4DROID 20190113 拳皇98 ECK 松连王
+// GOTVG 20190217 拳皇98 ECK 松连王
+// http://bbs.gotvg.com/thread-2550962-1-1.html
 static struct BurnRomInfo kof98eckRomDesc[] = {
-	{ "242-p1.bin",   0x100000, 0x049ee8ac, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
-	{ "242-p2.bin",   0x400000, 0x3f9b7f2c, 1 | BRF_ESS | BRF_PRG }, //  1 
+	{ "242-p1.bin",   0x100000, 0xb3afd80f, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "242-p2.bin",   0x400000, 0x5d59e3ae, 1 | BRF_ESS | BRF_PRG }, //  1 
 
 	{ "242-s1.bin",    0x020000, 0xf91c29d2, 2 | BRF_GRA },           //  2 Text layer tiles
 
-	{ "242-c1.bin",    0x800000, 0x874c67b6, 3 | BRF_GRA },           //  3 Sprite data
-	{ "242-c2.bin",    0x800000, 0xb4f4f1c3, 3 | BRF_GRA },           //  4 
+	{ "242-c1.bin",    0x800000, 0xd3da4dc1, 3 | BRF_GRA },           //  3 Sprite data
+	{ "242-c2.bin",    0x800000, 0xf5a5d149, 3 | BRF_GRA },           //  4 
 	{ "242-c3.bin",    0x800000, 0x0689e5b1, 3 | BRF_GRA },           //  5 
 	{ "242-c4.bin",    0x800000, 0x5cc4d647, 3 | BRF_GRA },           //  6 
 	{ "242-c5.bin",    0x800000, 0x1531b766, 3 | BRF_GRA },           //  7 
@@ -17809,7 +17810,7 @@ STD_ROM_FN(kof98eck)
 
 struct BurnDriver BurnDrvKof98eck = {
 	"kof98eck", "kof98", "neogeo", NULL, "2019",
-	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)\0", NULL, "Gunloc941", "Neo Geo MVS",
+	"The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190217)\0", NULL, "Gunloc941", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof98eckRomInfo, kof98eckRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
