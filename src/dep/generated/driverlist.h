@@ -24570,7 +24570,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsDinowj,			// Cadillacs & Dinosaurs (Majin Ranbu 20190117)
 	&BurnDrvCpsDinojds,			// Cadillacs & Dinosaurs (Fighting God Version 20190114)
 	&BurnDrvGrdianslbs,			// Guardians / Denjin Makai II (Robust Version 20190111)
-	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20130203)
+	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20190224)
 	&BurnDrvKof97sw2,			// The King of Fighters '97 (Iori with Cloak 20190131)
 	&BurnDrvKof97sw2s,			// The King of Fighters '97 (Iori with Cloak, Moves Simplified 20190203)
 	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)
