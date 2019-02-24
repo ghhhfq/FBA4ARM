@@ -24573,7 +24573,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof97orh,			// The King of Fighters '97 (Heavenly Divine 20190224)
 	&BurnDrvKof97sw2,			// The King of Fighters '97 (Iori with Cloak 20190131)
 	&BurnDrvKof97sw2s,			// The King of Fighters '97 (Iori with Cloak, Moves Simplified 20190203)
-	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190113)
+	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190217)
 	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
  	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
 	&BurnDrvkof99nd,			// Kof'99 (non encrypted P,decrypted C)(Korean release)
