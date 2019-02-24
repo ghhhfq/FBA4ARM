@@ -17534,19 +17534,21 @@ struct BurnDriver BurnDrvkof10thd = {
 	0x1000,	304, 224, 4, 3
 };
 
-// GOTVG 拳皇97 天国神族	The King of Fighters '97 (Heavenly Divine 20130203)
+// GOTVG 拳皇97 天国神族	The King of Fighters '97 (Heavenly Divine 20190224)
+// http://bbs.gotvg.com/thread-2551361-1-1.html
 static struct BurnRomInfo kof97orhRomDesc[] = {
-	{ "232or-p1.bin",    0x100000, 0x5ce510d0, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
-	{ "232or-p2.bin",    0x400000, 0xd64589a3, 1 | BRF_ESS | BRF_PRG }, //  1 
+	{ "232or-p1.bin",    0x100000, 0x55f457f5, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232or-p2.bin",    0x400000, 0xc7d74423, 1 | BRF_ESS | BRF_PRG }, //  1 
 
-	{ "232-s1.s1",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
+	//{ "KOF97_S1.ROM",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
+	{ "232-s1.bin",    0x020000, 0xe338d57f, 2 | BRF_GRA },           //  Another newer S1 ROM file which was provided by hacker.
 
 	{ "232-c1.bin",    0x800000, 0x93415994, 3 | BRF_GRA },           //  3 Sprite data
 	{ "232-c2.bin",    0x800000, 0x65b3b5b0, 3 | BRF_GRA },           //  4 
 	{ "232-c3.c3",     0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
 	{ "232-c4.c4",     0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
-	{ "232-c5.bin",    0x800000, 0xc70b8600, 3 | BRF_GRA },           //  7 
-	{ "232-c6.bin",    0x800000, 0x46840a83, 3 | BRF_GRA },           //  8 
+	{ "232-c5.bin",    0x800000, 0x46fc8247, 3 | BRF_GRA },           //  7 
+	{ "232-c6.bin",    0x800000, 0x0d39f4a8, 3 | BRF_GRA },           //  8 
 
 	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
 
@@ -17560,7 +17562,7 @@ STD_ROM_FN(kof97orh)
 
 struct BurnDriver BurnDrvKof97orh = {
 	"kof97orh", "kof97", "neogeo", NULL, "2013",
-	"The King of Fighters '97 (Heavenly Divine 20130203)\0", NULL, "littlemoon", "Neo Geo MVS",
+	"The King of Fighters '97 (Heavenly Divine 20190224)\0", NULL, "ShenLeWanGuiJieMei", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof97orhRomInfo, kof97orhRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
