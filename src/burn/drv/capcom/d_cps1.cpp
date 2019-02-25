@@ -14362,7 +14362,7 @@ static const struct GameConfig ConfigTable[] =
 	{ "wofdr"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "wofr19"       , CPS_B_21_DEF, mapper_TK263B, 0, wof_decode          },
 	{ "wofjps"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
-	{ "wof1v3"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wof1v3"       , CPS_B_21_DEF, mapper_TK263B, 0, wof_decode          },
 	{ "wofmz"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "wofzl"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "wofdwp"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
@@ -23100,7 +23100,7 @@ struct BurnDriver BurnDrvCpswof1v3 = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 三国志2 马战版 Sangokushi II (War On Horseback 20171120)
+// GOTVG 三国志2 马战版 Tenchi wo Kurau II (War On Horseback 20171120)
 static struct BurnRomInfo wofmzRomDesc[] = {
 	{ "tk2j23c.bin",   0x080000, 0x0719fb38, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "tk2j22c.bin",   0x080000, 0x22cb59f1, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -23127,7 +23127,7 @@ STD_ROM_FN(wofmz)
 
 struct BurnDriver BurnDrvCpswofmz = {
 	"wofmz", "wof", NULL, NULL, "2017",
-	"Sangokushi II (War On Horseback 20171120)\0", NULL, "aiYouYou", "CPS1 / QSound",
+	"Tenchi wo Kurau II (War On Horseback 20171120)\0", NULL, "aiYouYou", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, wofmzRomInfo, wofmzRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
@@ -23135,7 +23135,7 @@ struct BurnDriver BurnDrvCpswofmz = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 三国志2 战狼版 Sangokushi II (Warwolf 20171223)
+// GOTVG 三国志2 战狼版 Tenchi wo Kurau II (Warwolf 20171223)
 static struct BurnRomInfo wofzlRomDesc[] = {
 	//{ "tk2e_23c.8f",   0x080000, 0x0d708505, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	//{ "tk2e_22c.7f",   0x080000, 0x608c17e3, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -23164,7 +23164,7 @@ STD_ROM_FN(wofzl)
 
 struct BurnDriver BurnDrvCpswofzl = {
 	"wofzl", "wof", NULL, NULL, "2017",
-	"Sangokushi II (Warwolf 20171223)\0", NULL, "BinDi", "CPS1 / QSound",
+	"Tenchi wo Kurau II (Warwolf 20171223)\0", NULL, "BinDi", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, wofzlRomInfo, wofzlRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
@@ -23172,7 +23172,7 @@ struct BurnDriver BurnDrvCpswofzl = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 三国志2 无双加强版 Sangokushi II (Unrivalled Plus Version 20140718)
+// GOTVG 三国志2 无双加强版 Tenchi wo Kurau II (Unrivalled Plus Version 20140718)
 static struct BurnRomInfo wofdwpRomDesc[] = {
 	{ "tk2j23c.bin",   0x080000, 0xc8b7f43c, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "tk2j22c.bin",   0x080000, 0xf7c7acdb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -23199,7 +23199,7 @@ STD_ROM_FN(wofdwp)
 
 struct BurnDriver BurnDrvCpswofdwp = {
 	"wofdwp", "wof", NULL, NULL, "2014",
-	"Sangokushi II (Unrivalled Plus Version 20140718)\0", NULL, "tok", "CPS1 / QSound",
+	"Tenchi wo Kurau II (Unrivalled Plus Version 20140718)\0", NULL, "tok", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, wofdwpRomInfo, wofdwpRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
