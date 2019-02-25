@@ -14362,6 +14362,11 @@ static const struct GameConfig ConfigTable[] =
 	{ "wofdr"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "wofr19"       , CPS_B_21_DEF, mapper_TK263B, 0, wof_decode          },
 	{ "wofjps"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wof1v3"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wofmz"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wofzl"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wofdwp"       , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
+	{ "wof3m"        , CPS_B_21_QS1, mapper_TK263B, 0, wof_decode          },
 	{ "captcommpjy"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommrds"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommr1bs" , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
@@ -22441,7 +22446,7 @@ STD_ROM_FN(Wofdr)
 
 struct BurnDriver BurnDrvCpsWofdr = {
 	"wofdr", "wof", NULL, NULL, "2019",
-	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190216)\0", NULL, "Bindi", "CPS1 / QSound",
+	"Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190216)\0", NULL, "BinDi", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, WofdrRomInfo, WofdrRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
@@ -23056,6 +23061,184 @@ struct BurnDriver BurnDrvCpsDinojds = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, DinojdsRomInfo, DinojdsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 三国志2 1V3版 Sangokushi II (1VS3 20130405)
+static struct BurnRomInfo wof1v3RomDesc[] = {
+	{ "tk2e_23b.rom",   0x080000, 0xc436ef13, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2e_22b.rom",   0x080000, 0x0894db63, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2-1m.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2-3m.5a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2-2m.4a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2-4m.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk205.bin",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk206.bin",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk207.bin",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk208.bin",     0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(wof1v3)
+STD_ROM_FN(wof1v3)
+
+struct BurnDriver BurnDrvCpswof1v3 = {
+	"wof1v3", "wof", NULL, NULL, "2013",
+	"Sangokushi II (1VS3 20130405)\0", NULL, "MaZhuHouLongSeng", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, wof1v3RomInfo, wof1v3RomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 三国志2 马战版 Sangokushi II (War On Horseback 20171120)
+static struct BurnRomInfo wofmzRomDesc[] = {
+	{ "tk2j23c.bin",   0x080000, 0x0719fb38, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2j22c.bin",   0x080000, 0x22cb59f1, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2-1m.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2-3m.5a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2-2m.4a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2-4m.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk205.bin",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk206.bin",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk207.bin",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk208.bin",     0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(wofmz)
+STD_ROM_FN(wofmz)
+
+struct BurnDriver BurnDrvCpswofmz = {
+	"wofmz", "wof", NULL, NULL, "2017",
+	"Sangokushi II (War On Horseback 20171120)\0", NULL, "aiYouYou", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, wofmzRomInfo, wofmzRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 三国志2 战狼版 Sangokushi II (Warwolf 20171223)
+static struct BurnRomInfo wofzlRomDesc[] = {
+	//{ "tk2e_23c.8f",   0x080000, 0x0d708505, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	//{ "tk2e_22c.7f",   0x080000, 0x608c17e3, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2j_23c.8f",   0x080000, 0x74c37c24, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2j_22c.7f",   0x080000, 0x8c15d367, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2-1m.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2-3m.5a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2-2m.4a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2-4m.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk205.bin",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk206.bin",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk207.bin",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk208.bin",     0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(wofzl)
+STD_ROM_FN(wofzl)
+
+struct BurnDriver BurnDrvCpswofzl = {
+	"wofzl", "wof", NULL, NULL, "2017",
+	"Sangokushi II (Warwolf 20171223)\0", NULL, "BinDi", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, wofzlRomInfo, wofzlRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 三国志2 无双加强版 Sangokushi II (Unrivalled Plus Version 20140718)
+static struct BurnRomInfo wofdwpRomDesc[] = {
+	{ "tk2j23c.bin",   0x080000, 0xc8b7f43c, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "tk2j22c.bin",   0x080000, 0xf7c7acdb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2-1m.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2-3m.5a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2-2m.4a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2-4m.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk205.bin",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk206.bin",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk207.bin",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk208.bin",     0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(wofdwp)
+STD_ROM_FN(wofdwp)
+
+struct BurnDriver BurnDrvCpswofdwp = {
+	"wofdwp", "wof", NULL, NULL, "2014",
+	"Sangokushi II (Unrivalled Plus Version 20140718)\0", NULL, "tok", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, wofdwpRomInfo, wofdwpRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// PPXCLUB 三国志2 三美螺旋的逆袭 测试版103号 Tenchi wo Kurau II (Sanmei Spiral Counterattack Beta 103)
+// http://f.ppxclub.com/forum.php?mod=viewthread&tid=609564&highlight=%C2%DD%D0%FD
+static struct BurnRomInfo wof3mRomDesc[] = {
+	{ "wof3m.23",   0x080000, 0x6dba1d2f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "wof3m.22",   0x080000, 0x7630fd8a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "tk2_01.3a",     0x080000, 0x0d9cb9bf, BRF_GRA | CPS1_TILES },
+	{ "tk2_02.4a",     0x080000, 0x45227027, BRF_GRA | CPS1_TILES },
+	{ "tk2_03.5a",     0x080000, 0xc5ca2460, BRF_GRA | CPS1_TILES },
+	{ "tk2_04.6a",     0x080000, 0xe349551c, BRF_GRA | CPS1_TILES },
+	{ "tk2_05.7a",     0x080000, 0xe4a44d53, BRF_GRA | CPS1_TILES },
+	{ "tk2_06.8a",     0x080000, 0x58066ba8, BRF_GRA | CPS1_TILES },
+	{ "tk2_07.9a",     0x080000, 0xd706568e, BRF_GRA | CPS1_TILES },
+	{ "tk2_08.10a",    0x080000, 0xd4a19a02, BRF_GRA | CPS1_TILES },
+
+	{ "tk2_qa.5k",     0x020000, 0xc9183a0d, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "tk2-q1.1k",     0x080000, 0x611268cf, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q2.2k",     0x080000, 0x20f55ca9, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q3.3k",     0x080000, 0xbfcf6f52, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "tk2-q4.4k",     0x080000, 0x36642e88, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(wof3m)
+STD_ROM_FN(wof3m)
+
+struct BurnDriver BurnDrvCpswof3m = {
+	"wof3m", "wof", NULL, NULL, "2014",
+	"Tenchi wo Kurau II (Sanmei Spiral Counterattack Beta 103)\0", NULL, "axdx", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, wof3mRomInfo, wof3mRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
