@@ -24656,8 +24656,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvnbbatmanbh,			// Ninja Baseball Batman (Characters Changeable 20161203)
 	&BurnDrvnbbatmanx2,			// Ninja Baseball Batman (X2 Edition 20180505)
 	&BurnDrvCpswof1v3,			// Sangokushi II (1VS3 20130405)
-	&BurnDrvCpswofmz,			// Sangokushi II (War On Horseback 20171120)
-	&BurnDrvCpswofzl,			// Sangokushi II (Warwolf 20171223)
-	&BurnDrvCpswofdwp,			// Sangokushi II (Unrivalled Plus Version 20140718)
+	&BurnDrvCpswofmz,			// Tenchi wo Kurau II (War On Horseback 20171120)
+	&BurnDrvCpswofzl,			// Tenchi wo Kurau II (Warwolf 20171223)
+	&BurnDrvCpswofdwp,			// Tenchi wo Kurau II (Unrivalled Plus Version 20140718)
 	&BurnDrvCpswof3m,			// Tenchi wo Kurau II (Sanmei Spiral Counterattack Beta 103)
 };
