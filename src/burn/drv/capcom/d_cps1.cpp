@@ -14379,6 +14379,9 @@ static const struct GameConfig ConfigTable[] =
 	{ "dinowj"       , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinojds"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinows2019"   , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "kod1v3"       , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
+	{ "kodbs"        , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
+	{ "koddw"        , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -23244,6 +23247,126 @@ struct BurnDriver BurnDrvCpswof3m = {
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, wof3mRomInfo, wof3mRomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 龙王 1V3版 The King of Dragons (1VS3 20150506)
+// koduhc03 in HBMAME.
+static struct BurnRomInfo kod1v3RomDesc[] = {
+	{ "kdu-30b.bin",   0x020000, 0x825817f9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-37b.bin",   0x020000, 0xd2422dfb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-31b.bin",   0x020000, 0x34c88772, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-38b.bin",   0x020000, 0xbe8405a1, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_28.9e",      0x020000, 0x9367bcd9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_35.9f",      0x020000, 0x4ca6a48a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_29.10e",     0x020000, 0x0360fa72, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_36a.10f",    0x020000, 0x95a3cef8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	
+	{ "kd-5m.4a",      0x080000, 0xe45b8701, BRF_GRA | CPS1_TILES },
+	{ "kd-7m.6a",      0x080000, 0xa7750322, BRF_GRA | CPS1_TILES },
+	{ "kd-1m.3a",      0x080000, 0x5f74bf78, BRF_GRA | CPS1_TILES },
+	{ "kd-3m.5a",      0x080000, 0x5e5303bf, BRF_GRA | CPS1_TILES },
+	{ "kd-6m.4c",      0x080000, 0x113358f3, BRF_GRA | CPS1_TILES },
+	{ "kd-8m.6c",      0x080000, 0x38853c44, BRF_GRA | CPS1_TILES },
+	{ "kd-2m.3c",      0x080000, 0x9ef36604, BRF_GRA | CPS1_TILES },
+	{ "kd-4m.5c",      0x080000, 0x402b9b4f, BRF_GRA | CPS1_TILES },
+
+	{ "kd_9.12a",      0x010000, 0xbac6ec26, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "kd_18.11c",     0x020000, 0x4c63181d, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "kd_19.12c",     0x020000, 0x92941b80, BRF_SND | CPS1_OKIM6295_SAMPLES },
+};
+
+STD_ROM_PICK(kod1v3)
+STD_ROM_FN(kod1v3)
+
+struct BurnDriver BurnDrvCpskod1v3 = {
+	"kod1v3", "kod", NULL, NULL, "2015",
+	"The King of Dragons (1VS3 20150506)\0", NULL, "hack", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, kod1v3RomInfo, kod1v3RomName, NULL, NULL, NULL, NULL, KodInputInfo, Kodr1DIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 龙王 BOSS版 The King of Dragons (Boss Hack 20150527)
+// koduhc02 in HBMAME.
+static struct BurnRomInfo kodbsRomDesc[] = {
+	{ "kdu-30b.bin",   0x020000, 0x13dff227, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-37b.bin",   0x020000, 0x007d6dd9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-31b.bin",   0x020000, 0x3b89dd96, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-38b.bin",   0x020000, 0x3eceba92, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_28.9e",      0x020000, 0x9367bcd9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_35.9f",      0x020000, 0x4ca6a48a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_29.10e",     0x020000, 0x0360fa72, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_36a.10f",    0x020000, 0x95a3cef8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	
+	{ "kd-5m.4a",      0x080000, 0xe45b8701, BRF_GRA | CPS1_TILES },
+	{ "kd-7m.6a",      0x080000, 0xa7750322, BRF_GRA | CPS1_TILES },
+	{ "kd-1m.3a",      0x080000, 0x5f74bf78, BRF_GRA | CPS1_TILES },
+	{ "kd-3m.5a",      0x080000, 0x5e5303bf, BRF_GRA | CPS1_TILES },
+	{ "kd-6m.4c",      0x080000, 0x113358f3, BRF_GRA | CPS1_TILES },
+	{ "kd-8m.6c",      0x080000, 0x38853c44, BRF_GRA | CPS1_TILES },
+	{ "kd-2m.3c",      0x080000, 0x9ef36604, BRF_GRA | CPS1_TILES },
+	{ "kd-4m.5c",      0x080000, 0x402b9b4f, BRF_GRA | CPS1_TILES },
+
+	{ "kd_9.12a",      0x010000, 0xbac6ec26, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "kd_18.11c",     0x020000, 0x4c63181d, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "kd_19.12c",     0x020000, 0x92941b80, BRF_SND | CPS1_OKIM6295_SAMPLES },
+};
+
+STD_ROM_PICK(kodbs)
+STD_ROM_FN(kodbs)
+
+struct BurnDriver BurnDrvCpskodbs = {
+	"kodbs", "kod", NULL, NULL, "2015",
+	"The King of Dragons (Boss Hack 20150527)\0", NULL, "hack", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, kodbsRomInfo, kodbsRomName, NULL, NULL, NULL, NULL, KodInputInfo, Kodr1DIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 龙王 无双版 The King of Dragons (Unrivalled Version 20150526)
+// koduhc04 in HBMAME.
+static struct BurnRomInfo koddwRomDesc[] = {
+	{ "kdu-30b.bin",   0x020000, 0xddfa159a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-37b.bin",   0x020000, 0x3c8b145a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-31b.bin",   0x020000, 0x21b985cb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kdu-38b.bin",   0x020000, 0xfd6c6a53, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_28.9e",      0x020000, 0x9367bcd9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_35.9f",      0x020000, 0x4ca6a48a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_29.10e",     0x020000, 0x0360fa72, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "kd_36a.10f",    0x020000, 0x95a3cef8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	
+	{ "kd-5m.4a",      0x080000, 0xe45b8701, BRF_GRA | CPS1_TILES },
+	{ "kd-7m.6a",      0x080000, 0xa7750322, BRF_GRA | CPS1_TILES },
+	{ "kd-1m.3a",      0x080000, 0x5f74bf78, BRF_GRA | CPS1_TILES },
+	{ "kd-3m.5a",      0x080000, 0x5e5303bf, BRF_GRA | CPS1_TILES },
+	{ "kd-6m.4c",      0x080000, 0x113358f3, BRF_GRA | CPS1_TILES },
+	{ "kd-8m.6c",      0x080000, 0x38853c44, BRF_GRA | CPS1_TILES },
+	{ "kd-2m.3c",      0x080000, 0x9ef36604, BRF_GRA | CPS1_TILES },
+	{ "kd-4m.5c",      0x080000, 0x402b9b4f, BRF_GRA | CPS1_TILES },
+
+	{ "kd_9.12a",      0x010000, 0xbac6ec26, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "kd_18.11c",     0x020000, 0x4c63181d, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "kd_19.12c",     0x020000, 0x92941b80, BRF_SND | CPS1_OKIM6295_SAMPLES },
+};
+
+STD_ROM_PICK(koddw)
+STD_ROM_FN(koddw)
+
+struct BurnDriver BurnDrvCpskoddw = {
+	"koddw", "kod", NULL, NULL, "2015",
+	"The King of Dragons (Unrivalled Version 20150526)\0", NULL, "hack", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, koddwRomInfo, koddwRomName, NULL, NULL, NULL, NULL, KodInputInfo, Kodr1DIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
