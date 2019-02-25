@@ -12328,6 +12328,9 @@ DRV		BurnDrvCpswofmz;
 DRV		BurnDrvCpswofzl;
 DRV		BurnDrvCpswofdwp;
 DRV		BurnDrvCpswof3m;
+DRV		BurnDrvCpskod1v3;
+DRV		BurnDrvCpskodbs;
+DRV		BurnDrvCpskoddw;
 
 #undef DRV
 
@@ -24660,4 +24663,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpswofzl,			// Tenchi wo Kurau II (Warwolf 20171223)
 	&BurnDrvCpswofdwp,			// Tenchi wo Kurau II (Unrivalled Plus Version 20140718)
 	&BurnDrvCpswof3m,			// Tenchi wo Kurau II (Sanmei Spiral Counterattack Beta 103)
+	&BurnDrvCpskod1v3,			// The King of Dragons (1VS3 20150506)
+	&BurnDrvCpskodbs,			// The King of Dragons (Boss Hack 20150527)
+	&BurnDrvCpskoddw,			// The King of Dragons (Unrivalled Version 20150526)
 };
