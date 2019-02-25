@@ -23066,6 +23066,7 @@ struct BurnDriver BurnDrvCpsDinojds = {
 };
 
 // GOTVG 三国志2 1V3版 Sangokushi II (1VS3 20130405)
+// wofs05 in HBMAME.
 static struct BurnRomInfo wof1v3RomDesc[] = {
 	{ "tk2e_23b.rom",   0x080000, 0xc436ef13, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "tk2e_22b.rom",   0x080000, 0x0894db63, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -23136,6 +23137,7 @@ struct BurnDriver BurnDrvCpswofmz = {
 };
 
 // GOTVG 三国志2 战狼版 Tenchi wo Kurau II (Warwolf 20171223)
+// tk2h101 in HBMAME. Strange codes in HBMAME. Need more investigation.
 static struct BurnRomInfo wofzlRomDesc[] = {
 	//{ "tk2e_23c.8f",   0x080000, 0x0d708505, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	//{ "tk2e_22c.7f",   0x080000, 0x608c17e3, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -23173,6 +23175,7 @@ struct BurnDriver BurnDrvCpswofzl = {
 };
 
 // GOTVG 三国志2 无双加强版 Tenchi wo Kurau II (Unrivalled Plus Version 20140718)
+// tk2h116 in HBMAME.
 static struct BurnRomInfo wofdwpRomDesc[] = {
 	{ "tk2j23c.bin",   0x080000, 0xc8b7f43c, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "tk2j22c.bin",   0x080000, 0xf7c7acdb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -23209,6 +23212,7 @@ struct BurnDriver BurnDrvCpswofdwp = {
 
 // PPXCLUB 三国志2 三美螺旋的逆袭 测试版103号 Tenchi wo Kurau II (Sanmei Spiral Counterattack Beta 103)
 // http://f.ppxclub.com/forum.php?mod=viewthread&tid=609564&highlight=%C2%DD%D0%FD
+// tk2h10 in HBMAME. Wrong GFX ROM in HBMAME. GOTVG's ROM(wofzsm) is a mess.
 static struct BurnRomInfo wof3mRomDesc[] = {
 	{ "wof3m.23",   0x080000, 0x6dba1d2f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "wof3m.22",   0x080000, 0x7630fd8a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
