@@ -14382,6 +14382,8 @@ static const struct GameConfig ConfigTable[] =
 	{ "kod1v3"       , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
 	{ "kodbs"        , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
 	{ "koddw"        , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
+	{ "ffightj2u"    , CPS_B_02    , mapper_S224B , 0, NULL                },
+	{ "ffight1v2"    , CPS_B_01    , mapper_S224B , 0, NULL                },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -23366,6 +23368,110 @@ struct BurnDriver BurnDrvCpskoddw = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, koddwRomInfo, koddwRomName, NULL, NULL, NULL, NULL, KodInputInfo, Kodr1DIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 快打旋风 无双版 Final Fight (Unrivalled Version 20160817)
+static struct BurnRomInfo ffightj2uRomDesc[] = {
+	{ "ffj_36a.12f",   0x020000, 0xcb024f54, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_42a.12h",   0x020000, 0x516fc7a6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_37a.13f",   0x020000, 0xe1bd4c19, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_43a.13h",   0x020000, 0x066c44ba, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ff_34.10f",     0x020000, 0x0c8dc3fc, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ff_40.10h",     0x020000, 0x8075bab9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ff_35.11f",     0x020000, 0x4a934121, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ff_41.11h",     0x020000, 0x2af68154, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+
+	{ "ff_09.4b",      0x020000, 0x5b116d0d, BRF_GRA | CPS1_TILES },
+	{ "ff_01.4a",      0x020000, 0x815b1797, BRF_GRA | CPS1_TILES },
+	{ "ff_13.9b",      0x020000, 0x8721a7da, BRF_GRA | CPS1_TILES },
+	{ "ff_05.9a",      0x020000, 0xd0fcd4b5, BRF_GRA | CPS1_TILES },
+	{ "ff_24.5e",      0x020000, 0xa1ab607a, BRF_GRA | CPS1_TILES },
+	{ "ff_17.5c",      0x020000, 0x2dc18cf4, BRF_GRA | CPS1_TILES },
+	{ "ff_38.8h",      0x020000, 0x6535a57f, BRF_GRA | CPS1_TILES },
+	{ "ff_32.8f",      0x020000, 0xc8bc4a57, BRF_GRA | CPS1_TILES },
+	{ "ff_10.5b",      0x020000, 0x624a924a, BRF_GRA | CPS1_TILES },
+	{ "ff_02.5a",      0x020000, 0x5d91f694, BRF_GRA | CPS1_TILES },
+	{ "ff_14.10b",     0x020000, 0x0a2e9101, BRF_GRA | CPS1_TILES },
+	{ "ff_06.10a",     0x020000, 0x1c18f042, BRF_GRA | CPS1_TILES },
+	{ "ff_25.7e",      0x020000, 0x6e8181ea, BRF_GRA | CPS1_TILES },
+	{ "ff_18.7c",      0x020000, 0xb19ede59, BRF_GRA | CPS1_TILES },
+	{ "ff_39.9h",      0x020000, 0x9416b477, BRF_GRA | CPS1_TILES },
+	{ "ff_33.9f",      0x020000, 0x7369fa07, BRF_GRA | CPS1_TILES },
+
+	{ "ff_23.13c",     0x010000, 0xb8367eb5, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ff_30.12e",     0x020000, 0x375c66e7, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "ff_31.13e",     0x020000, 0x1ef137f9, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	
+	A_BOARD_PLDS
+	
+	{ "s222b.1a",      0x000117, 0x6d86b45e, BRF_OPT }, // b-board PLDs
+	{ "lwio.12c",      0x000117, 0xad52b90c, BRF_OPT },
+};
+
+STD_ROM_PICK(ffightj2u)
+STD_ROM_FN(ffightj2u)
+
+struct BurnDriver BurnDrvCpsffightj2u = {
+	"ffightj2u", "ffight", NULL, NULL, "2016",
+	"Final Fight (Unrivalled Version 20160817)\0", NULL, "Capcom", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, ffightj2uRomInfo, ffightj2uRomName, NULL, NULL, NULL, NULL, FfightInputInfo, FfightDIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 快打旋风 1V2版 Final Fight (1VS2 20171126)
+static struct BurnRomInfo ffight1v2RomDesc[] = {
+	{ "36v2",          0x020000, 0x37708588, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_42.11h",    0x020000, 0x48986823, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_37.13f",    0x020000, 0xc371c667, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_43.13h",    0x020000, 0x6f81f194, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_34.10f",    0x020000, 0x0c8dc3fc, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_40.10h",    0x020000, 0x8075bab9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_35.11f",    0x020000, 0x4a934121, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ffj_41.11h",    0x020000, 0x2af68154, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+
+	{ "ffj_09.4b",     0x020000, 0x5b116d0d, BRF_GRA | CPS1_TILES },
+	{ "ffj_01.4a",     0x020000, 0x815b1797, BRF_GRA | CPS1_TILES },
+	{ "ffj_13.9b",     0x020000, 0x8721a7da, BRF_GRA | CPS1_TILES },
+	{ "ffj_05.9a",     0x020000, 0xd0fcd4b5, BRF_GRA | CPS1_TILES },
+	{ "ffj_24.5e",     0x020000, 0xa1ab607a, BRF_GRA | CPS1_TILES },
+	{ "ffj_17.5c",     0x020000, 0x2dc18cf4, BRF_GRA | CPS1_TILES },
+	{ "ffj_38.8h",     0x020000, 0x6535a57f, BRF_GRA | CPS1_TILES },
+	{ "ffj_32.8f",     0x020000, 0xc8bc4a57, BRF_GRA | CPS1_TILES },
+	{ "ffj_10.5b",     0x020000, 0x624a924a, BRF_GRA | CPS1_TILES },
+	{ "ffj_02.5a",     0x020000, 0x5d91f694, BRF_GRA | CPS1_TILES },
+	{ "ffj_14.10b",    0x020000, 0x0a2e9101, BRF_GRA | CPS1_TILES },
+	{ "ffj_06.10a",    0x020000, 0x1c18f042, BRF_GRA | CPS1_TILES },
+	{ "ffj_25.7e",     0x020000, 0x6e8181ea, BRF_GRA | CPS1_TILES },
+	{ "ffj_18.7c",     0x020000, 0xb19ede59, BRF_GRA | CPS1_TILES },
+	{ "ffj_39.9h",     0x020000, 0x9416b477, BRF_GRA | CPS1_TILES },
+	{ "ffj_33.9f",     0x020000, 0x7369fa07, BRF_GRA | CPS1_TILES },
+
+	{ "ff_23.13b",     0x010000, 0xb8367eb5, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ffj_30.12c",    0x020000, 0x375c66e7, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "ffj_31.13c",    0x020000, 0x1ef137f9, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	
+	A_BOARD_PLDS
+	
+	{ "s222b.1a",      0x000117, 0x6d86b45e, BRF_OPT }, // b-board PLDs
+	{ "lwio.12e",      0x000117, 0xad52b90c, BRF_OPT },
+};
+
+STD_ROM_PICK(ffight1v2)
+STD_ROM_FN(ffight1v2)
+
+struct BurnDriver BurnDrvCpsffight1v2 = {
+	"ffight1v2", "ffight", NULL, NULL, "2017",
+	"Final Fight (1VS2 20171126)\0", NULL, "Capcom", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, ffight1v2RomInfo, ffight1v2RomName, NULL, NULL, NULL, NULL, FfightInputInfo, FfightDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
