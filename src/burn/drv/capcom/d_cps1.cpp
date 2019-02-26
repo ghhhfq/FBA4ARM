@@ -14384,6 +14384,8 @@ static const struct GameConfig ConfigTable[] =
 	{ "koddw"        , CPS_B_21_BT2, mapper_KD29B , 0, NULL                },
 	{ "ffightj2u"    , CPS_B_02    , mapper_S224B , 0, NULL                },
 	{ "ffight1v2"    , CPS_B_01    , mapper_S224B , 0, NULL                },
+	{ "captcommr1v4" , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
+	{ "captcommp"    , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -23472,6 +23474,89 @@ struct BurnDriver BurnDrvCpsffight1v2 = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, ffight1v2RomInfo, ffight1v2RomName, NULL, NULL, NULL, NULL, FfightInputInfo, FfightDIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 名将 1V4版	Captain Commando (1VS4 20180120)
+static struct BurnRomInfo captcommr1v4RomDesc[] = {
+	{ "mj.1v4",        0x300000, 0xc908702c, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, 
+
+	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
+	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
+	{ "cc-1m.4a",      0x080000, 0x00637302, BRF_GRA | CPS1_TILES },
+	{ "cc-3m.6a",      0x080000, 0xcc87cf61, BRF_GRA | CPS1_TILES },
+	{ "cc-6m.7a",      0x080000, 0x28718bed, BRF_GRA | CPS1_TILES },
+	{ "cc-8m.9a",      0x080000, 0xd4acc53a, BRF_GRA | CPS1_TILES },
+	{ "cc-2m.8a",      0x080000, 0x0c69f151, BRF_GRA | CPS1_TILES },
+	{ "cc-4m.10a",     0x080000, 0x1f9ebb97, BRF_GRA | CPS1_TILES },
+
+	{ "cc_09.11a",     0x010000, 0x698e8b58, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	
+	A_BOARD_PLDS
+	
+	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },
+	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
+	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
+	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	
+	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
+};
+
+STD_ROM_PICK(captcommr1v4)
+STD_ROM_FN(captcommr1v4)
+
+struct BurnDriver BurnDrvCpscaptcommr1v4 = {
+	"captcommr1v4", "captcomm", NULL, NULL, "2018",
+	"Captain Commando (1VS4 20180120)\0", NULL, "BinDi", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, captcommr1v4RomInfo, captcommr1v4RomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 名将 加强版 Captain Commando (Plus 20161128)
+// 23d&22d are ripped from RAM due to encryption.
+static struct BurnRomInfo captcommpRomDesc[] = {
+	{ "23d_22d.dec",   0x100000, 0x09f5433a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cc_24d.rom",    0x020000, 0x680e543f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "cc_28d.rom",    0x020000, 0x8820039f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+
+	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
+	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
+	{ "cc-1m.4a",      0x080000, 0x00637302, BRF_GRA | CPS1_TILES },
+	{ "cc-3m.6a",      0x080000, 0xcc87cf61, BRF_GRA | CPS1_TILES },
+	{ "cc-6m.7a",      0x080000, 0x28718bed, BRF_GRA | CPS1_TILES },
+	{ "cc-8m.9a",      0x080000, 0xd4acc53a, BRF_GRA | CPS1_TILES },
+	{ "cc-2m.8a",      0x080000, 0x0c69f151, BRF_GRA | CPS1_TILES },
+	{ "cc-4m.10a",     0x080000, 0x1f9ebb97, BRF_GRA | CPS1_TILES },
+
+	{ "cc_09.11a",     0x010000, 0x698e8b58, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	
+	A_BOARD_PLDS
+	
+	{ "cc63b.1a",      0x000117, 0xcae8f0f9, BRF_OPT },	// b-board PLDs
+	{ "iob1.12d",      0x000117, 0x3abc0700, BRF_OPT },
+	{ "ccprg.11d",     0x000117, 0xe1c225c4, BRF_OPT },
+	{ "ioc1.ic7",      0x000104, 0xa399772d, BRF_OPT },	// c-board PLDs
+	{ "c632.ic1",      0x000117, 0x0fbd9270, BRF_OPT },
+};
+
+STD_ROM_PICK(captcommp)
+STD_ROM_FN(captcommp)
+
+struct BurnDriver BurnDrvCpscaptcommp = {
+	"captcommp", "captcomm", NULL, NULL, "2016",
+	"Captain Commando (Plus 20161128)\0", NULL, "hack", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, captcommpRomInfo, captcommpRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };

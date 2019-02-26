@@ -12333,6 +12333,8 @@ DRV		BurnDrvCpskodbs;
 DRV		BurnDrvCpskoddw;
 DRV		BurnDrvCpsffightj2u;
 DRV		BurnDrvCpsffight1v2;
+DRV		BurnDrvCpscaptcommr1v4;
+DRV		BurnDrvCpscaptcommp;
 
 #undef DRV
 
@@ -24670,4 +24672,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpskoddw,			// The King of Dragons (Unrivalled Version 20150526)
 	&BurnDrvCpsffightj2u,		// Final Fight (Unrivalled Version 20160817)
 	&BurnDrvCpsffight1v2,		// Final Fight (1VS2 20171126)
+	&BurnDrvCpscaptcommr1v4,	// Captain Commando (1VS4 20180120)
+	&BurnDrvCpscaptcommp,		// Captain Commando (Plus 20161128)
 };
