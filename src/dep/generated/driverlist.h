@@ -12335,6 +12335,10 @@ DRV		BurnDrvCpsffightj2u;
 DRV		BurnDrvCpsffight1v2;
 DRV		BurnDrvCpscaptcommr1v4;
 DRV		BurnDrvCpscaptcommp;
+DRV		BurnDrvCpsdinodw;
+DRV		BurnDrvCpsdino1v3;
+DRV		BurnDrvCpsdinoyz;
+DRV		BurnDrvCpsdinoplus;
 
 #undef DRV
 
@@ -24674,4 +24678,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsffight1v2,		// Final Fight (1VS2 20171126)
 	&BurnDrvCpscaptcommr1v4,	// Captain Commando (1VS4 20180120)
 	&BurnDrvCpscaptcommp,		// Captain Commando (Plus 20161128)
+	&BurnDrvCpsdinodw,			// Cadillacs & Dinosaurs (Unrivalled Version 20120122)
+	&BurnDrvCpsdino1v3,			// Cadillacs & Dinosaurs (Warriors 20100303)
+	&BurnDrvCpsdinoyz,			// Cadillacs & Dinosaurs (Warriors 20181221)
+	&BurnDrvCpsdinoplus,		// Cadillacs & Dinosaurs (Topspeed Plus 20171017)
 };
