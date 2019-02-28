@@ -3530,7 +3530,7 @@ struct BurnDriverD BurnDrvFuncube4 = {
 	320, 240, 4, 3
 };
 
-// GOTVG 电神魔傀2乐百氏版	Guardians / Denjin Makai II (Robust Version 20190111)
+// GOTVG 电神魔傀2 乐百氏版	Guardians / Denjin Makai II (Robust Version 20190111)
 static struct BurnRomInfo grdianslbsRomDesc[] = {
 	{ "u2.bin",		  0x080000, 0xfb243872, BRF_ESS | BRF_PRG },	// Only u2 and u3 are hacked.
 	{ "u3.bin",		  0x080000, 0xa375123e, BRF_ESS | BRF_PRG },
@@ -3559,6 +3559,72 @@ struct BurnDriver BurnDrvGrdianslbs = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SETA2, GBF_SCRFIGHT, 0,
 	NULL, grdianslbsRomInfo, grdianslbsRomName, NULL, NULL, NULL, NULL, grdiansInputInfo, grdiansDIPInfo,
+	grdiansInit, grdiansExit, grdiansFrame, DrvDraw, grdiansScan, &bRecalcPalette, 0x8000,
+	304, 232, 4, 3
+};
+
+// GOTVG 电神魔傀2 Plus版	Guardians / Denjin Makai II (Plus 20180726)
+static struct BurnRomInfo grdiansplusRomDesc[] = {
+	{ "u2.bin",		  0x080000, 0xaedb91fb, BRF_ESS | BRF_PRG },	// Only u2&u3 are hacked.
+	{ "u3.bin",		  0x080000, 0xe29de57a, BRF_ESS | BRF_PRG },
+	{ "u4.bin",		  0x080000, 0xbb52447b, BRF_ESS | BRF_PRG },
+	{ "u5.bin",		  0x080000, 0x9c164a3b, BRF_ESS | BRF_PRG },
+
+	{ "u16.bin",	  0x400000, 0x6a65f265,	BRF_GRA },				// GFX
+	{ "u20.bin",	  0x400000, 0xa7226ab7,	BRF_GRA },
+	{ "u15.bin",	  0x400000, 0x01672dcd,	BRF_GRA },
+	{ "u19.bin",	  0x400000, 0xc0c998a0,	BRF_GRA },
+	{ "u18.bin",	  0x400000, 0x967babf4,	BRF_GRA },
+	{ "u22.bin",	  0x400000, 0x6239997a,	BRF_GRA },
+	{ "u17.bin",	  0x400000, 0x0fad0629,	BRF_GRA },
+	{ "u21.bin",	  0x400000, 0x6f95e466,	BRF_GRA },
+
+	{ "u32.bin",    0x100000, 0xcf0f3017, BRF_SND },				// PCM
+
+};
+
+STD_ROM_PICK(grdiansplus)
+STD_ROM_FN(grdiansplus)
+
+struct BurnDriver BurnDrvgrdiansplus = {
+	"grdiansplus", "grdians", NULL, NULL, "2018",
+	"Guardians / Denjin Makai II (Plus 20180726)\0", "Imperfect graphics @ game start cutscene", "BinDi", "Newer Seta",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SETA2, GBF_SCRFIGHT, 0,
+	NULL, grdiansplusRomInfo, grdiansplusRomName, NULL, NULL, NULL, NULL, grdiansInputInfo, grdiansDIPInfo,
+	grdiansInit, grdiansExit, grdiansFrame, DrvDraw, grdiansScan, &bRecalcPalette, 0x8000,
+	304, 232, 4, 3
+};
+
+// GOTVG 电神魔傀2 神月版 Guardians / Denjin Makai II (Shen Yue's Version 201800505)
+static struct BurnRomInfo grdianssyRomDesc[] = {
+	{ "u2.bin",		  0x080000, 0x90b1aa01, BRF_ESS | BRF_PRG },	// 68000 code
+	{ "u3.bin",		  0x080000, 0xdbaabf39, BRF_ESS | BRF_PRG },
+	{ "u4.bin",		  0x080000, 0xbb52447b, BRF_ESS | BRF_PRG },
+	{ "u5.bin",		  0x080000, 0x9c164a3b, BRF_ESS | BRF_PRG },
+
+	{ "u16.bin",	  0x400000, 0x6a65f265,	BRF_GRA },				// GFX
+	{ "u20.bin",	  0x400000, 0xa7226ab7,	BRF_GRA },
+	{ "u15.bin",	  0x400000, 0x01672dcd,	BRF_GRA },
+	{ "u19.bin",	  0x400000, 0xc0c998a0,	BRF_GRA },
+	{ "u18.bin",	  0x400000, 0x967babf4,	BRF_GRA },
+	{ "u22.bin",	  0x400000, 0x6239997a,	BRF_GRA },
+	{ "u17.bin",	  0x400000, 0x0fad0629,	BRF_GRA },
+	{ "u21.bin",	  0x400000, 0x6f95e466,	BRF_GRA },
+
+	{ "u32.bin",    0x100000, 0xcf0f3017, BRF_SND },				// PCM
+
+};
+
+STD_ROM_PICK(grdianssy)
+STD_ROM_FN(grdianssy)
+
+struct BurnDriver BurnDrvgrdianssy = {
+	"grdianssy", "grdians", NULL, NULL, "2018",
+	"Guardians / Denjin Makai II (Shen Yue's Version 201800505)\0", "Imperfect graphics @ game start cutscene", "GuShenGanYue", "Newer Seta",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SETA2, GBF_SCRFIGHT, 0,
+	NULL, grdianssyRomInfo, grdianssyRomName, NULL, NULL, NULL, NULL, grdiansInputInfo, grdiansDIPInfo,
 	grdiansInit, grdiansExit, grdiansFrame, DrvDraw, grdiansScan, &bRecalcPalette, 0x8000,
 	304, 232, 4, 3
 };

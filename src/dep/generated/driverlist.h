@@ -12339,6 +12339,8 @@ DRV		BurnDrvCpsdinodw;
 DRV		BurnDrvCpsdino1v3;
 DRV		BurnDrvCpsdinoyz;
 DRV		BurnDrvCpsdinoplus;
+DRV		BurnDrvgrdiansplus;
+DRV		BurnDrvgrdianssy;
 
 #undef DRV
 
@@ -24682,4 +24684,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsdino1v3,			// Cadillacs & Dinosaurs (Warriors 20100303)
 	&BurnDrvCpsdinoyz,			// Cadillacs & Dinosaurs (Warriors 20181221)
 	&BurnDrvCpsdinoplus,		// Cadillacs & Dinosaurs (Topspeed Plus 20171017)
+	&BurnDrvgrdiansplus,		// Guardians / Denjin Makai II (Plus 20180726)
+	&BurnDrvgrdianssy,			// Guardians / Denjin Makai II (Shen Yue's Version 201800505)
 };
