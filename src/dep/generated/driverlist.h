@@ -12341,6 +12341,8 @@ DRV		BurnDrvCpsdinoyz;
 DRV		BurnDrvCpsdinoplus;
 DRV		BurnDrvgrdiansplus;
 DRV		BurnDrvgrdianssy;
+DRV		BurnDrvCpsddsoma4pp;
+DRV		BurnDrvCpsddtodp;
 
 #undef DRV
 
@@ -24686,4 +24688,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsdinoplus,		// Cadillacs & Dinosaurs (Topspeed Plus 20171017)
 	&BurnDrvgrdiansplus,		// Guardians / Denjin Makai II (Plus 20180726)
 	&BurnDrvgrdianssy,			// Guardians / Denjin Makai II (Shen Yue's Version 201800505)
+	&BurnDrvCpsddsoma4pp,		// Dungeons & Dragons - shadow over mystara (Plus 20160825)
+	&BurnDrvCpsddtodp,			// Dungeons & Dragons - tower of doom (Plus 20160825)
 };
