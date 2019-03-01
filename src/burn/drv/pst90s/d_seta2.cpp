@@ -3596,7 +3596,7 @@ struct BurnDriver BurnDrvgrdiansplus = {
 	304, 232, 4, 3
 };
 
-// GOTVG 电神魔傀2 神月版 Guardians / Denjin Makai II (Shen Yue's Version 201800505)
+// GOTVG 电神魔傀2 神月版 Guardians / Denjin Makai II (Shen Yue's Edition 201800505)
 static struct BurnRomInfo grdianssyRomDesc[] = {
 	{ "u2.bin",		  0x080000, 0x90b1aa01, BRF_ESS | BRF_PRG },	// 68000 code
 	{ "u3.bin",		  0x080000, 0xdbaabf39, BRF_ESS | BRF_PRG },
@@ -3621,7 +3621,7 @@ STD_ROM_FN(grdianssy)
 
 struct BurnDriver BurnDrvgrdianssy = {
 	"grdianssy", "grdians", NULL, NULL, "2018",
-	"Guardians / Denjin Makai II (Shen Yue's Version 201800505)\0", "Imperfect graphics @ game start cutscene", "GuShenGanYue", "Newer Seta",
+	"Guardians / Denjin Makai II (Shen Yue's Edition 201800505)\0", "Imperfect graphics @ game start cutscene", "GuShenGanYue", "Newer Seta",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_SETA2, GBF_SCRFIGHT, 0,
 	NULL, grdianssyRomInfo, grdianssyRomName, NULL, NULL, NULL, NULL, grdiansInputInfo, grdiansDIPInfo,
