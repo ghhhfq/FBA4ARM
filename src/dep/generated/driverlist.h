@@ -24720,9 +24720,9 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsknightsc,		// Knights of the Round (With A Counter 20161128)
 	&BurnDrvCpsknightsp,		// Knights of the Round (Plus 20160714)
 	&BurnDrvkof97ru,			// The King of Fighters '97 (Remix 20190227)
-	&BurnDrvkov8,				// Knights of Valour - Sangoku Senki (1VS8 20170218)
-	&BurnDrvkovshptplscs,		// Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228)
-	&BurnDrvkovshpwsb,			// Knights of Valour Super Heroes Plus (Unrivalled Version 20190228)
+	&BurnDrvkov8,				// Knights of Valour - Sangoku Senki (1VS8 20170218)   // NOT WORKING!
+	&BurnDrvkovshptplscs,		// Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228) // NOT WORKING!
+	&BurnDrvkovshpwsb,			// Knights of Valour Super Heroes Plus (Unrivalled Version 20190228) // NOT WORKING!
 	&BurnDrvmslugxc1,			// Metal Slug X - Super Vehicle-001 (Multi-Vehicle 20130515)
 	&BurnDrvmslugxc2,			// Metal Slug X - Super Vehicle-001 (Enemies Resetting Version 20161019)
 	&BurnDrvmslugxeb,			// Metal Slug X - Super Vehicle-001 (Blue Version 20161016)

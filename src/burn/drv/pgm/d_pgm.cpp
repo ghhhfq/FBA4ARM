@@ -6511,7 +6511,7 @@ struct BurnDriver BurnDrvolds100aylzx = {
 
 // FBA4DROID 三国战纪 正宗1V8版 Knights of Valour - Sangoku Senki (1VS8 20170218)
 static struct BurnRomInfo kov8RomDesc[] = {
-	{ "Fzzf_v8.rom",     		0x400000, 0xf680fc22, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "Fzzf_v8.rom",     	0x400000, 0xf680fc22, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",     		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
 	
@@ -6532,10 +6532,10 @@ STDROMPICKEXT(kov8, kov8, pgm)
 STD_ROM_FN(kov8)
 
 struct BurnDriver BurnDrvkov8 = {
-	"kov8", "kov", "pgm", NULL, "2017",
-	"Knights of Valour - Sangoku Senki (1VS8 20170218)\0", NULL, "hack", "PolyGameMaster",
+	"kov8", , "kovplus", "pgm", NULL, "2017",
+	"Knights of Valour Plus (1VS8 20170218)\0", NULL, "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, kov8RomInfo, kov8RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
@@ -6561,12 +6561,12 @@ STDROMPICKEXT(kovshptplscs, kovshptplscs, pgm)
 STD_ROM_FN(kovshptplscs)
 
 struct BurnDriver BurnDrvkovshptplscs = {
-	"kovshptplscs", NULL, "pgm", NULL, "2019",
+	"kovshptplscs", "kovshp", "pgm", NULL, "2019",
 	"Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
-	NULL, kovshptplscsRomInfo, kovshptplscsRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
-	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshptplscsRomInfo, kovshptplscsRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshxasInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
 
@@ -6590,11 +6590,11 @@ STDROMPICKEXT(kovshpwsb, kovshpwsb, pgm)
 STD_ROM_FN(kovshpwsb)
 
 struct BurnDriver BurnDrvkovshpwsb = {
-	"kovshpwsb", NULL, "pgm", NULL, "2019",
+	"kovshpwsb", "kovshp", "pgm", NULL, "2019",
 	"Knights of Valour Super Heroes Plus (Unrivalled Version 20190228)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
-	NULL, kovshpwsbRomInfo, kovshpwsbRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
-	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshpwsbRomInfo, kovshpwsbRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshxasInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
