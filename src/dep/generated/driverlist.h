@@ -12323,6 +12323,7 @@ DRV		BurnDrvhookxr;
 DRV		BurnDrvnbbatman1v4;
 DRV		BurnDrvnbbatmanbh;
 DRV		BurnDrvnbbatmanx2;
+DRV		BurnDrvnbbatmanx2x;
 DRV		BurnDrvCpswof1v3;
 DRV		BurnDrvCpswofmz;
 DRV		BurnDrvCpswofzl;
@@ -12345,7 +12346,20 @@ DRV		BurnDrvCpsddsoma4pp;
 DRV		BurnDrvCpsddtodp;
 DRV		BurnDrvCpsknightsc;
 DRV		BurnDrvCpsknightsp;
-
+DRV 	BurnDrvkof97ru;
+DRV		BurnDrvkov8;
+DRV		BurnDrvkovshptplscs;
+DRV		BurnDrvkovshpwsb;
+DRV		BurnDrvmslugxc1;
+DRV		BurnDrvmslugxc2;
+DRV		BurnDrvmslugxeb;
+DRV		BurnDrvmslugxh;
+DRV		BurnDrvmslugxjdkj;
+DRV		BurnDrvmslugxplus;
+DRV		BurnDrvmslug2ct;
+DRV		BurnDrvmslug2h;
+DRV		BurnDrvmslug2p;
+DRV		BurnDrvmslug2r;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24592,7 +24606,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvZzyzzyxx2,			// Zzyzzyxx (set 2)
 	
 	//extra hacks
-	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190216)
+	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190221)
 	&BurnDrvCpsWofr19,			// Warriors of Fate (Unique Sword Armor 20190113)
 	&BurnDrvCpsWofjps,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Imitation of Playstation Version 20091209)
 	&BurnDrvCpsCaptcommpjy,			// Captain Commando (Elite Version 20181231)
@@ -24612,7 +24626,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof97sw2,			// The King of Fighters '97 (Iori with Cloak 20190131)
 	&BurnDrvKof97sw2s,			// The King of Fighters '97 (Iori with Cloak, Moves Simplified 20190203)
 	&BurnDrvKof98eck,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King 20190217)
-	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King Power-up 20190115)
+	&BurnDrvKof98eckp,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Easy Combo King - Subduing Dragon 20190218)
  	&BurnDrvKof98a1,			// The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Alpha 1.0 20190206)
 	&BurnDrvkof99nd,			// Kof'99 (non encrypted P,decrypted C)(Korean release)
 	&BurnDrvkof99t,				// Kof'99 (Optimized Version For GOTVG 20140829)
@@ -24627,7 +24641,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
 	&BurnDrvkovshpqxzqj,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
-	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War 20190216)
+	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus (Incredible God of War 20190227)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
@@ -24660,7 +24674,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)  // no comment [NOT WORKING]
 	&BurnDrvkovytzyp,			// Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)
 	&BurnDrvkovshzlzymy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
-	&BurnDrvkovshp1v4xtw,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Incredible God of War - Sky King 20190217)
+	&BurnDrvkovshp1v4xtw,			// Knights of Valour Super Heroes Plus (Incredible God of War - Sky King 20190228)
 	&BurnDrvolds100aylzx,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
 	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
@@ -24669,9 +24683,10 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvhookus,				// Hook (Unrivalled Version 20160818)
 	&BurnDrvhookx2,				// Hook (X2 Version 20180505)
 	&BurnDrvhookxr,				// Hook (Xiner's Edition 20180914)
-	&BurnDrvnbbatman1v4,			// Ninja Baseball Batman (1VS4 20170316)
+	&BurnDrvnbbatman1v4, 		// Ninja Baseball Batman (1VS4 20170316)
 	&BurnDrvnbbatmanbh,			// Ninja Baseball Batman (Characters Changeable 20161203)
 	&BurnDrvnbbatmanx2,			// Ninja Baseball Batman (X2 Edition 20180505)
+	&BurnDrvnbbatmanx2x,		// Ninja Baseball Batman (Unrivalled Version 20190223)
 	&BurnDrvCpswof1v3,			// Sangokushi II (1VS3 20130405)
 	&BurnDrvCpswofmz,			// Tenchi wo Kurau II (War On Horseback 20171120)
 	&BurnDrvCpswofzl,			// Tenchi wo Kurau II (Warwolf 20171223)
@@ -24694,4 +24709,18 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsddtodp,			// Dungeons & Dragons - tower of doom (Plus 20160825)
 	&BurnDrvCpsknightsc,		// Knights of the Round (With A Counter 20161128)
 	&BurnDrvCpsknightsp,		// Knights of the Round (Plus 20160714)
+	&BurnDrvkof97ru,			// The King of Fighters '97 (Remix 20190227)
+	&BurnDrvkov8,				// Knights of Valour - Sangoku Senki (1VS8 20170218)
+	&BurnDrvkovshptplscs,		// Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228)
+	&BurnDrvkovshpwsb,			// Knights of Valour Super Heroes Plus (Unrivalled Version 20190228)
+	&BurnDrvmslugxc1,			// Metal Slug X - Super Vehicle-001 (Multi-Vehicle 20130515)
+	&BurnDrvmslugxc2,			// Metal Slug X - Super Vehicle-001 (Enemies Resetting Version 20161019)
+	&BurnDrvmslugxeb,			// Metal Slug X - Super Vehicle-001 (Blue Version 20161016)
+	&BurnDrvmslugxh,			// Metal Slug X - Super Vehicle-001 (Crazy Firepower 20170109)
+	&BurnDrvmslugxjdkj,			// Metal Slug X - Super Vehicle-001 (Extreme Space 20150421)
+	&BurnDrvmslugxplus,			// Metal Slug X - Super Vehicle-001 (Mount version 20180510)
+	&BurnDrvmslug2ct,			// Metal Slug 2 - Super Vehicle-001/II (Survival Version 20180731)
+	&BurnDrvmslug2h,			// Metal Slug 2 - Super Vehicle-001/II (Crazy Firepower 20170109)
+	&BurnDrvmslug2p,			// Metal Slug 2 - Super Vehicle-001/II (Mount Version 20180510)
+	&BurnDrvmslug2r,			// Metal Slug 2 - Super Vehicle-001/II (Enemies Resetting Version 20180530)
 };
