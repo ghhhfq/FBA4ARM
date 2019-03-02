@@ -17818,7 +17818,7 @@ struct BurnDriver BurnDrvKof98eck = {
 	0x1000, 304, 224, 4, 3
 };
 
-// From FBA4DROID 20190218 拳皇98 ECK 松连王 降龙版
+// FBA4DROID 拳皇98 ECK 松连王 降龙版 The King of Fighters '98 - The Slugfest (Easy Combo King - Subduing Dragon 20190218)
 static struct BurnRomInfo kof98eckpRomDesc[] = {
 	{ "242-p1.bin",   0x100000, 0x73e2e441, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "242-p2.bin",   0x400000, 0x5d59e3ae, 1 | BRF_ESS | BRF_PRG }, //  1 

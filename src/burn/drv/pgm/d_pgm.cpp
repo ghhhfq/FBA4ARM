@@ -5860,7 +5860,7 @@ struct BurnDriver BurnDrvEspgalbl = {
 	224, 448, 3, 4
 };
 
-// From FBA4DROID 20190105 乱世枭雄 PLUS 2019
+//FBA4DROID 乱世枭雄 PLUS 2019 Knights of Valour Super Heroes Plus (Plus 20190105)
 static struct BurnRomInfo kovshpp19RomDesc[] = {
 	{ "m6001.rom",			0x200000, 0xf238fbf5, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 	{ "m6002.rom",			0x200000, 0xd5638f8d, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
@@ -5881,7 +5881,7 @@ STD_ROM_FN(kovshpp19)
 
 struct BurnDriver BurnDrvkovshpp19 = {
 	"kovshpp19", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Plus 20190105)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpp19RomInfo, kovshpp19RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -5889,7 +5889,7 @@ struct BurnDriver BurnDrvkovshpp19 = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 三国战纪 乱世枭雄 群雄再起 金版 20190217
+// FBA4DROID 三国战纪 乱世枭雄 群雄再起 金版 Knights of Valour Super Heroes Plus (Rerise of Heroes Gold 20190217)
 static struct BurnRomInfo kovshpqxzqjRomDesc[] = {
 	{ "m6001.rom",			0x300000, 0xe0c103f2, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
 	{ "m6002.rom",			0x300000, 0x9debf14d, 1 | BRF_PRG | BRF_ESS },  //  0-2 68K Code
@@ -5910,7 +5910,7 @@ STD_ROM_FN(kovshpqxzqj)
 
 struct BurnDriver BurnDrvkovshpqxzqj = {
 	"kovshpqxzqj", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Rerise of Heroes Gold 20190217)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpqxzqjRomInfo, kovshpqxzqjRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -5918,7 +5918,7 @@ struct BurnDriver BurnDrvkovshpqxzqj = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 乱世枭雄 惊天战神 20190227 Knights of Valour Super Heroes Plus (Incredible God of War 20190227)
+// FBA4DROID 乱世枭雄 惊天战神 Knights of Valour Super Heroes Plus (Incredible God of War 20190227)
 static struct BurnRomInfo kovshp1v4xRomDesc[] = {
 	{ "m0601.rom",			0x200000, 0xf513d89c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 	{ "m0602.rom",			0x200000, 0x19125f83, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
@@ -5947,7 +5947,7 @@ struct BurnDriver BurnDrvkovshp1v4x = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20190130 三国战纪 乱世枭雄 群雄再起
+// FBA4DROID 三国战纪 乱世枭雄 群雄再起 Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 static struct BurnRomInfo kovshpqxzqRomDesc[] = {
 	{ "b0541.rom",			0x300000, 0xf1966241, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
 	{ "b0602.rom",			0x300000, 0xe91cef2b, 1 | BRF_PRG | BRF_ESS },  //  0-2 68K Code
@@ -5981,7 +5981,7 @@ struct BurnDriver BurnDrvkovshpqxzq = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20190130 三国战纪2苍天航路
+// FBA4DROID 三国战纪2苍天航路 Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 static struct BurnRomInfo kov2pcthlRomDesc[] = {
 	{ "b1202.rom",  		0x200000, 0x8b8d3bf4, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
 	{ "b1203.rom",  		0x200000, 0xf2926e49, 1 | BRF_PRG | BRF_ESS },  //  0-2 68K Code
@@ -6017,7 +6017,7 @@ struct BurnDriver BurnDrvKov2pcthl = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20190130 三国战纪2p 神武传奇 2019
+//FBA4DROID 三国战纪2p 神武传奇 2019 Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
 static struct BurnRomInfo kov2pswcqRomDesc[] = {
 	{ "b1202.rom",  		0x200000, 0x66f561e6, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
 	{ "b1203.rom",  		0x200000, 0x85cc2079, 1 | BRF_PRG | BRF_ESS },  //  0-2 68K Code
@@ -6053,7 +6053,7 @@ struct BurnDriver BurnDrvKov2pswcq = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20181229 西游释厄传超级版 大圣归来
+// FBA4DROID 西游释厄传超级版 大圣归来 Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
 static struct BurnRomInfo olds100adsglRomDesc[] = {
 	{ "p0500.v10",	   		0x400000, 0xd63d9999, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6095,7 +6095,7 @@ struct BurnDriver BurnDrvOlds100adsgl = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20150203 西游 天下无双 游聚版
+// FBA4DROID 西游 天下无双 游聚版 Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
 static struct BurnRomInfo olds100afybhRomDesc[] = {
 	{ "p0500.v10",	   		0x400000, 0xfc1bcd42, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6137,7 +6137,7 @@ struct BurnDriver BurnDrvolds100afybh = {
 	448, 224, 4, 3
 };
 
-//  From FBA4DROID 20181206 三国战记 小兵争霸 
+// FBA4DROID 三国战记 小兵争霸 Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
 static struct BurnRomInfo kovplusxb1RomDesc[] = {
 	{ "p0600xb.119",       		0x400000, 0x9935b99c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6169,7 +6169,7 @@ struct BurnDriver BurnDrvkovplusxb1 = {
 	448, 224, 4, 3
 };
 
-//  From FBA4DROID 20181206 三国战记 小兵争霸2
+// FBA4DROID 三国战记 小兵争霸2 Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)
 static struct BurnRomInfo kovplusxb2RomDesc[] = {
 	{ "p0600xb2.119",		0x400000, 0x0d9dce43, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6201,7 +6201,7 @@ struct BurnDriver BurnDrvkovplusxb2 = {
 	448, 224, 4, 3
 };
 
-//  From FBA4DROID 20181207 三国战记 小兵争霸2 大神版
+// FBA4DROID 三国战记 小兵争霸2 大神版 Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
 static struct BurnRomInfo kovplusxb2dsRomDesc[] = {
 	{ "p0600xb2ds.119",		0x400000, 0xdabc2c66, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6233,7 +6233,7 @@ struct BurnDriver BurnDrvkovplusxb2ds = {
 	448, 224, 4, 3
 };
 
-//  From FBA4DROID 20181207 三国战记 小兵争霸2 武将版
+// FBA4DROID 三国战记 小兵争霸2 武将版 Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
 static struct BurnRomInfo kovplusxb2wjRomDesc[] = {
 	{ "p0600xb2wj.119",		0x400000, 0x6da2fd46, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6265,7 +6265,7 @@ struct BurnDriver BurnDrvkovplusxb2wj = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20180307 三国战记 逐鹿中原
+// From FBA4DROID 三国战记 逐鹿中原 Knights of Valour Superheroes (Fight For Territory In Ancient Central China 20180307)
 // kovshs111 in HBMAME. Need to add this as parent ROM for other hacks.
 static struct BurnRomInfo kovshzlzyRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0x05cb05f4, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -6301,7 +6301,7 @@ struct BurnDriver BurnDrvkovshzlzy = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20181202 三国战记 逐鹿中原 决战天下
+// From FBA4DROID 20181202 三国战记 逐鹿中原 决战天下 Knights of Valour Superheroes (A Decisive Battle Over The World 20181202)
 static struct BurnRomInfo kovshzlzyjzRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0x58e08538, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6336,7 +6336,7 @@ struct BurnDriver BurnDrvkovshzlzyjz = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20181203 三国战纪 逐鹿中原 五剑传奇
+// From FBA4DROID 三国战纪 逐鹿中原 五剑传奇 Knights of Valour Superheroes (Legend Of Five Swords 20181203)
 static struct BurnRomInfo kovshzlzywjRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0xb8799030, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6371,7 +6371,7 @@ struct BurnDriver BurnDrvkovshzlzywj = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 一统中原 加强版 20190216 Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan Plus (20190216)
+// FBA4DROID 三国战纪 一统中原 加强版 Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan Plus (20190216)
 static struct BurnRomInfo kovytzypRomDesc[] = {
 	{ "ytzy_v201cn.rom",	0x4551ee, 0xa0ba0f05, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code , weird size!
 
@@ -6403,7 +6403,7 @@ struct BurnDriver BurnDrvkovytzyp = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 20190102 三国战记 逐鹿中原 莫邪传说
+// FBA4DROID 20190102 三国战记 逐鹿中原 莫邪传说 Knights of Valour Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
 static struct BurnRomInfo kovshzlzymyRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0x21bffcf1, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6438,7 +6438,7 @@ struct BurnDriver BurnDrvkovshzlzymy = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 乱世枭雄 惊天战神 天王版 20190228
+// FBA4DROID 乱世枭雄 惊天战神 天王版 Knights of Valour Super Heroes Plus (Incredible God of War - Sky King 20190228)
 static struct BurnRomInfo kovshp1v4xtwRomDesc[] = {
 	{ "m0601.rom",			0x200000, 0x96f921d6, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 	{ "m0602.rom",			0x200000, 0xa31bd590, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
@@ -6467,7 +6467,7 @@ struct BurnDriver BurnDrvkovshp1v4xtw = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 西游释厄传 元灵之息 20190129
+// FBA4DROID 西游释厄传 元灵之息 Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 static struct BurnRomInfo olds100aylzxRomDesc[] = {
 	{ "p0500.v10",	   		0x400000, 0x3541e3b5, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 

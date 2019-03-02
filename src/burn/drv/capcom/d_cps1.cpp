@@ -22420,7 +22420,7 @@ struct BurnDriverX BurnDrvCpsSfzhch = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// FBA4DROID 三国志2达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190221)
+// FBA4DROID 三国志2 达人版	Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190221)
 static struct BurnRomInfo WofdrRomDesc[] = {
 	{ "wofjdr.bin",    0x200000, 0xc7b9345e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22467,7 +22467,7 @@ struct BurnDriver BurnDrvCpsWofdr = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-//FBA4DROID 20190113 三国志2 剑甲无双2019
+//FBA4DROID 三国志2 剑甲无双2019 Tenchi wo Kurau II (Unique Sword Armor 20190113)
 static struct BurnRomInfo Wofr19RomDesc[] = {
 	{ "23.bin",   0x080000, 0x11051718, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "22.bin",   0x080000, 0x85665664, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -22507,7 +22507,7 @@ STD_ROM_FN(Wofr19)
 
 struct BurnDriver BurnDrvCpsWofr19 = {
 	"wofr19", "wof", NULL, NULL, "2019",
-	"Warriors of Fate (Unique Sword Armor 20190113)\0", NULL, "Capcom", "CPS1 / QSound",
+	"Tenchi wo Kurau II (Unique Sword Armor 20190113)\0", NULL, "Capcom", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, Wofr19RomInfo, Wofr19RomName, NULL, NULL, NULL, NULL, WofInputInfo, WofDIPInfo,
@@ -22515,7 +22515,7 @@ struct BurnDriver BurnDrvCpsWofr19 = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// FBA4DROID 20190113 三国志2 仿PS版
+// FBA4DROID 三国志2 仿PS版 Tenchi wo Kurau II - Sekiheki no Tatakai (Imitation of Playstation Version 20091209)
 // In HBMAME, its name is tk2h12.
 static struct BurnRomInfo WofjpsRomDesc[] = {
 	{ "tk2j23c.bin",   0x080000, 0x6e392dd2, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -22564,7 +22564,7 @@ struct BurnDriver BurnDrvCpsWofjps = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将精英版	Captain Commando (Elite Version 20181231)
+// GOTVG 名将 精英版	Captain Commando (Elite Version 20181231)
 static struct BurnRomInfo CaptcommpjyRomDesc[] = {
 	{ "mj.1v4",    0x300000, 0xea88728a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22604,7 +22604,7 @@ struct BurnDriver BurnDrvCpsCaptcommpjy = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将99打手版	Captain Commando (99 Beater Version 20190102)
+// GOTVG 名将 99打手版	Captain Commando (99 Beater Version 20190102)
 static struct BurnRomInfo CaptcommrdsRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x7ad37dcb, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22644,7 +22644,7 @@ struct BurnDriver BurnDrvCpsCaptcommrds = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将变身版	Captain Commando (Shape Shifting Version 20190101)
+// GOTVG 名将 变身版	Captain Commando (Shape Shifting Version 20190101)
 static struct BurnRomInfo Captcommr1bsRomDesc[] = {
 	{ "mj.bs",    0x300000, 0xde6260b6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22684,7 +22684,7 @@ struct BurnDriver BurnDrvCpsCaptcommr1bs = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将战神版	Captain Commando (Warlord Version 20190107)
+// GOTVG 名将 战神版	Captain Commando (Warlord Version 20190107)
 static struct BurnRomInfo CaptcommpzsRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x9c6b0773, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22724,7 +22724,7 @@ struct BurnDriver BurnDrvCpsCaptcommpzs = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 名将无限子弹版	Captain Commando (Infinite Bullet 20190121)
+// GOTVG 名将 无限子弹版	Captain Commando (Infinite Bullet 20190121)
 static struct BurnRomInfo CaptcommpwxRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x9d863e1d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },  //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22764,7 +22764,7 @@ struct BurnDriver BurnDrvCpsCaptcommpwx = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 游聚 20181101 名将无双版
+// GOTVG 名将 无双版 Captain Commando (Unrivalled Version 20181101)
 static struct BurnRomInfo Captcommr1dwRomDesc[] = {
 	{ "mj.mj",    0x302532, 0x65a99c58, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP }, //P ROM is a little larger than 3MB. Nasty protection!
 
@@ -22804,7 +22804,7 @@ struct BurnDriver BurnDrvCpsCaptcommr1dw = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// FBA4DROID 20190107 恐龙新世纪 2019 无双版
+// FBA4DROID 恐龙新世纪 2019 无双版 Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)
 static struct BurnRomInfo Dinows2019RomDesc[] = {
 	{ "23.rom",    0x080000, 0x73f203b7, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "22.rom",    0x080000, 0xf9e264dc, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -22851,7 +22851,7 @@ struct BurnDriver BurnDrvCpsDinows2019 = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打战神版【原血战版】	Cadillacs & Dinosaurs (Warlord Version 20190119)
+// GOTVG 恐龙快打 战神版【原血战版】	Cadillacs & Dinosaurs (Warlord Version 20190119)
 static struct BurnRomInfo DinoxzbRomDesc[] = {
 	{ "23.rom",    0x080000, 0x90710d71, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "22.rom",    0x080000, 0x3239cca6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -22898,7 +22898,7 @@ struct BurnDriver BurnDrvCpsDinoxzb = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打竞技版【原杜瓦版】	Cadillacs & Dinosaurs (Arena Version 20190123)
+// GOTVG 恐龙快打 竞技版【原杜瓦版】	Cadillacs & Dinosaurs (Arena Version 20190123)
 static struct BurnRomInfo DinojpsRomDesc[] = {
 	{ "kl.ww",    0x400000, 0x4b4d2f30, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22943,7 +22943,7 @@ struct BurnDriver BurnDrvCpsDinojps = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打天王版	Cadillacs & Dinosaurs (Sky King 20190114)
+// GOTVG 恐龙快打 天王版	Cadillacs & Dinosaurs (Sky King 20190114)
 static struct BurnRomInfo DinowtwRomDesc[] = {
 	{ "kl.ww",    0x400000, 0xfcd50c77, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -22988,7 +22988,7 @@ struct BurnDriver BurnDrvCpsDinowtw = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// 恐龙快打魔神乱舞版【原武将版】	Cadillacs & Dinosaurs (Majin Ranbu 20190117)
+// 恐龙快打 魔神乱舞版【原武将版】	Cadillacs & Dinosaurs (Majin Ranbu 20190117)
 static struct BurnRomInfo DinowjRomDesc[] = {
 	{ "mslw.dec",    0x180000, 0xbb57412b, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -23033,7 +23033,7 @@ struct BurnDriver BurnDrvCpsDinowj = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 恐龙快打斗神版	Cadillacs & Dinosaurs (Fighting God Version 20190114)
+// GOTVG 恐龙快打 斗神版	Cadillacs & Dinosaurs (Fighting God Version 20190114)
 static struct BurnRomInfo DinojdsRomDesc[] = {
 	{ "kljds.shr",    0x200000, 0x38da2130, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -23078,7 +23078,7 @@ struct BurnDriver BurnDrvCpsDinojds = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// GOTVG 三国志2 1V3版 Sangokushi II (1VS3 20130405)
+// GOTVG 三国志2 1V3版 Tenchi wo Kurau II (1VS3 20130405)
 // wofs05 in HBMAME.
 static struct BurnRomInfo wof1v3RomDesc[] = {
 	{ "tk2e_23b.rom",   0x080000, 0xc436ef13, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
