@@ -12365,6 +12365,12 @@ DRV		BurnDrvmslug2ct;
 DRV		BurnDrvmslug2h;
 DRV		BurnDrvmslug2p;
 DRV		BurnDrvmslug2r;
+DRV		BurnDrvolds100aem;
+DRV		BurnDrvkov2pmess;
+DRV		BurnDrvkovplus2017;
+DRV		BurnDrvolds100aem2015;
+DRV		BurnDrvkovshpd19;
+DRV		BurnDrvkovshpb;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24733,4 +24739,10 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug2h,			// Metal Slug 2 - Super Vehicle-001/II (Crazy Firepower 20170109)
 	&BurnDrvmslug2p,			// Metal Slug 2 - Super Vehicle-001/II (Mount Version 20180510)
 	&BurnDrvmslug2r,			// Metal Slug 2 - Super Vehicle-001/II (Enemies Resetting Version 20180530)
+	&BurnDrvolds100aem,			// Xi Yo Gi Shi Re Zuang Super (Unrivalled Version 20181030)
+	&BurnDrvkov2pmess,			// Knights of Valour 2 Plus - (Soul Stripping 20181030)
+	&BurnDrvkovplus2017,		// Knights of Valour - Sangoku Senki (Hong Bo's Death 20180904)
+	&BurnDrvolds100aem2015,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2015 20180823)
+	&BurnDrvkovshpd19,			// Knights of Valour Super Heroes Plus (Plus 2018 20180820)
+	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180909)
 };
