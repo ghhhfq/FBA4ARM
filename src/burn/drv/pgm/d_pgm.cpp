@@ -6265,7 +6265,7 @@ struct BurnDriver BurnDrvkovplusxb2wj = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 三国战记 逐鹿中原 Knights of Valour Superheroes (Fight For Territory In Ancient Central China 20180307)
+// FBA4DROID 三国战记 逐鹿中原 Knights of Valour Superheroes (Fight For Territory In Ancient Central China 20180307)
 // kovshs111 in HBMAME. Need to add this as parent ROM for other hacks.
 static struct BurnRomInfo kovshzlzyRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0x05cb05f4, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -6301,7 +6301,7 @@ struct BurnDriver BurnDrvkovshzlzy = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 20181202 三国战记 逐鹿中原 决战天下 Knights of Valour Superheroes (A Decisive Battle Over The World 20181202)
+// FBA4DROID 三国战记 逐鹿中原 决战天下 Knights of Valour Superheroes (A Decisive Battle Over The World 20181202)
 static struct BurnRomInfo kovshzlzyjzRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0x58e08538, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6336,7 +6336,7 @@ struct BurnDriver BurnDrvkovshzlzyjz = {
 	448, 224, 4, 3
 };
 
-// From FBA4DROID 三国战纪 逐鹿中原 五剑传奇 Knights of Valour Superheroes (Legend Of Five Swords 20181203)
+// FBA4DROID 三国战纪 逐鹿中原 五剑传奇 Knights of Valour Superheroes (Legend Of Five Swords 20181203)
 static struct BurnRomInfo kovshzlzywjRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0xb8799030, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6403,7 +6403,7 @@ struct BurnDriver BurnDrvkovytzyp = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 20190102 三国战记 逐鹿中原 莫邪传说 Knights of Valour Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
+// FBA4DROID 三国战记 逐鹿中原 莫邪传说 Knights of Valour Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
 static struct BurnRomInfo kovshzlzymyRomDesc[] = {
 	{ "p0600.322",	   		0x400000, 0x21bffcf1, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 

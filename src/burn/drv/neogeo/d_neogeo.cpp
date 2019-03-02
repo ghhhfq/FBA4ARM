@@ -17855,7 +17855,7 @@ struct BurnDriver BurnDrvKof98eckp = {
 	0x1000, 304, 224, 4, 3
 };
 
-// From FBA4DROID 20101120 拳皇2002 魔法加强版 Ⅲ
+// FBA4DROID 20101120 拳皇2002 魔法加强版 Ⅲ
 static struct BurnRomInfo kf2k2mp3RomDesc[] = {
 	{ "kf2k2mp3-p1.rom",	0x100000, 0x0cdbe99c, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
 	{ "kf2k2mp3-p2.rom",	0x400000, 0xde6ffd21, 1 | BRF_ESS | BRF_PRG },
@@ -17892,7 +17892,7 @@ struct BurnDriver BurnDrvkf2k2mp3 = {
 	0x1000,	304, 224, 4, 3
 };
 
-// From FBA4DROID 201901 拳皇2002 魔法加强版 Ⅲ 简化
+// FBA4DROID 201901 拳皇2002 魔法加强版 Ⅲ 简化
 static struct BurnRomInfo kf2k2mp3sRomDesc[] = {
 	{ "kf2k2mp3-p1.rom",	0x100000, 0x933680ce, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
 	{ "kf2k2mp3-p2.rom",	0x400000, 0xde6ffd21, 1 | BRF_ESS | BRF_PRG },
@@ -17929,7 +17929,7 @@ struct BurnDriver BurnDrvkf2k2mp3s = {
 	0x1000,	304, 224, 4, 3
 };
 
-// From FBA4DROID 20080624 拳皇2002 天国神族 游聚版
+// FBA4DROID 20080624 拳皇2002 天国神族 游聚版
 static struct BurnRomInfo kof2k2c2RomDesc[] = {
 	{ "Kof2k2C2_p1.rom",	0x100000, 0xeb84d68f, 1 | BRF_ESS | BRF_PRG }, // 1 68K code
 	{ "Kof2k2C2_p2.rom",	0x400000, 0x293bbf78, 1 | BRF_ESS | BRF_PRG },
@@ -17966,7 +17966,7 @@ struct BurnDriver BurnDrvkof2k2c2 = {
 	0x1000,	304, 224, 4, 3
 };
 
-// From FBA4DROID 20181125 拳皇2002 通天版
+// FBA4DROID 20181125 拳皇2002 通天版
 static struct BurnRomInfo kf2k2ttRomDesc[] = {
 	{ "265-p1.p1",       0x100000, 0x26b084c7, 1 | BRF_ESS | BRF_PRG },
 	{ "265-p2.sp2",      0x400000, 0x6fadc5c3, 1 | BRF_ESS | BRF_PRG }, 
