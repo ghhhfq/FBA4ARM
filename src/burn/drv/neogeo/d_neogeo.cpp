@@ -18149,7 +18149,7 @@ struct BurnDriver BurnDrvkof97st = {
 	0x1000, 304, 224, 4, 3
 };
 
-// 游聚 20141110 合金弹头2 敌兵重置版
+/* 游聚 20141110 合金弹头2 敌兵重置版
 static struct BurnRomInfo mslug2rRomDesc[] = {
 	{ "241-p1.dec",   0x100000, 0xf882d50d, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "241-p2.sp2",   0x200000, 0x38883f44, 1 | BRF_ESS | BRF_PRG }, //  1 
@@ -18179,7 +18179,7 @@ struct BurnDriver BurnDrvMSlug2r = {
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
 };
-
+*/
 
 // GOTVG 拳皇97 COMBO版 The King of Fighters '97 (Combo 20180509)
 // kof97hs54 in HBMAME.

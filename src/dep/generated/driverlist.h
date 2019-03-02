@@ -12297,7 +12297,7 @@ DRV		BurnDrvkovshzlzy;
 DRV		BurnDrvkovshzlzyjz;
 DRV		BurnDrvkovshzlzywj;
 DRV		BurnDrvkof97st;
-DRV		BurnDrvMSlug2r;
+//DRV		BurnDrvMSlug2r;
 DRV		BurnDrvkof97c;
 DRV		BurnDrvkof97ys;
 DRV		BurnDrvkof97m;
@@ -24665,7 +24665,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshzlzyjz,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
 	&BurnDrvkovshzlzywj,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
 	&BurnDrvkof97st,			// The King of Fighters '97 (Renovation 20180904)
-	&BurnDrvMSlug2r,			// Metal Slug 2(Enemies Resetting Version 20141110)
+	//&BurnDrvMSlug2r,			// Metal Slug 2(Enemies Resetting Version 20141110)
 	&BurnDrvkof97c,				// The King of Fighters '97 (Combo 20180509)
 	&BurnDrvkof97ys,			// The King of Fighters '97 (YS 20170801)
 	&BurnDrvkof97m,				// The King of Fighters '97 (Dream Back To 97 20130610)
