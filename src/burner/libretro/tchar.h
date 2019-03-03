@@ -38,6 +38,7 @@ extern int bRunPause;
 	#endif
 #else
 	#include <windows.h>
+	#include <tchar.h>
 #endif
 
 #endif
