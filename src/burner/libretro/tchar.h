@@ -34,6 +34,8 @@ extern int bRunPause;
 	#endif
 #else
 	#undef _UNICODE
+	#include "compat/msvc.h"
+	#include "compat/posix_string.h"
 #endif
 
 #define _T(x) x
