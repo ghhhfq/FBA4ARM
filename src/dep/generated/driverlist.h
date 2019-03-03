@@ -12391,6 +12391,10 @@ DRV		BurnDrvkovplus2017;
 DRV		BurnDrvolds100aem2015;
 DRV		BurnDrvkovshpd19;
 DRV		BurnDrvkovshpb;
+DRV		BurnDrvmslug5d;
+DRV		BurnDrvmslug5dzh;
+DRV		BurnDrvms5f;
+DRV		BurnDrvMslug5wn;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24785,4 +24789,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvolds100aem2015,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2015 20180823)
 	&BurnDrvkovshpd19,			// Knights of Valour Super Heroes Plus (Plus 2018 20180820)
 	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180909)
+	&BurnDrvmslug5d,			// Metal Slug 5 (Fully Decrypted Version)
+	&BurnDrvmslug5dzh,			// Metal Slug 5 (Callable Vehicle 20180918)
+	&BurnDrvms5f,				// Metal Slug 5 (Dogfight 20161019)
+	&BurnDrvMslug5wn,			// Metal Slug 5 (New Campaign 20161019)
 };
