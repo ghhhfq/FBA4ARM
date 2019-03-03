@@ -14392,6 +14392,11 @@ static const struct GameConfig ConfigTable[] =
 	{ "dinodw"       , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "knightsc"     , CPS_B_21_BT4, mapper_KR63B , 0, NULL                },
 	{ "knightsp"     , CPS_B_21_BT4, mapper_KR63B , 0, NULL                },
+	{ "punisherly"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
+	{ "punisher1v2"  , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
+	{ "punisherdw"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
+	{ "punisherbs"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
+	{ "punisherhr"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -23790,6 +23795,205 @@ struct BurnDriver BurnDrvCpsknightsp = {
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, knightspRomInfo, knightspRomName, NULL, NULL, NULL, NULL, KnightsInputInfo, KnightsDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 惩罚者 烈焰版 The Punisher (Blaze 20180813)
+// P ROM is decrypted.
+static struct BurnRomInfo punisherlyRomDesc[] = {
+	{ "punisherly.p",      0x180000, 0x104ae2d6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "ps-1m.3a",      0x080000, 0x4d4111de, BRF_GRA | CPS1_TILES },
+	{ "ps-3m.5a",      0x080000, 0x2d346b82, BRF_GRA | CPS1_TILES },
+	{ "ps-2m.4a",      0x080000, 0x5e0c85a1, BRF_GRA | CPS1_TILES },
+	{ "ps-4m.6a",      0x080000, 0x4ccc5b41, BRF_GRA | CPS1_TILES },
+	{ "ps-5m.7a",      0x080000, 0xc54ea839, BRF_GRA | CPS1_TILES },
+	{ "ps-7m.9a",      0x080000, 0x04c5acbd, BRF_GRA | CPS1_TILES },
+	{ "ps-6m.8a",      0x080000, 0xa544f4cc, BRF_GRA | CPS1_TILES },
+	{ "ps-8m.10a",     0x080000, 0x8f02f436, BRF_GRA | CPS1_TILES },
+
+	{ "ps_q.5k",       0x020000, 0x49ff4446, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ps-q1.1k",      0x080000, 0x31fd8726, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q2.2k",      0x080000, 0x980a9eef, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q3.3k",      0x080000, 0x0dd44491, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q4.4k",      0x080000, 0xbed42f03, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+};
+
+STD_ROM_PICK(punisherly)
+STD_ROM_FN(punisherly)
+
+struct BurnDriver BurnDrvCpspunisherly = {
+	"punisherly", "punisher", NULL, NULL, "2018",
+	"The Punisher (Blaze 20180813)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, punisherlyRomInfo, punisherlyRomName, NULL, NULL, NULL, NULL, PunisherInputInfo, PunisherDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 惩罚者 1V2版 The Punisher (1VS2 20180331)
+// punishers04 in HBMAME. P ROM may be NO_BYTESWAP?
+static struct BurnRomInfo punisher1v2RomDesc[] = {
+	{ "pse_26.rom",    0x020000, 0x81cd5484, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_30.rom",    0x020000, 0x5e2b19f6, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_27.rom",    0x020000, 0x75580ff8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_31.rom",    0x020000, 0x75e6e262, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_24.rom",    0x020000, 0xc25ef92e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_28.rom",    0x020000, 0xf3ff48fc, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_25.rom",    0x020000, 0xae1fb98e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_29.rom",    0x020000, 0x4a2ea384, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ps_21.rom",     0x080000, 0xfc83f71d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "ps_gfx1.rom",      0x080000, 0x726dbd2c, BRF_GRA | CPS1_TILES },
+	{ "ps_gfx3.rom",      0x080000, 0x907ffea8, BRF_GRA | CPS1_TILES },
+	{ "ps_gfx2.rom",      0x080000, 0x61202953, BRF_GRA | CPS1_TILES },
+	{ "ps_gfx4.rom",      0x080000, 0xf187ce6b, BRF_GRA | CPS1_TILES },
+	{ "ps-5m.7a",      0x080000, 0xc54ea839, BRF_GRA | CPS1_TILES },
+	{ "ps-7m.9a",      0x080000, 0x04c5acbd, BRF_GRA | CPS1_TILES },
+	{ "ps-6m.8a",      0x080000, 0xa544f4cc, BRF_GRA | CPS1_TILES },
+	{ "ps-8m.10a",     0x080000, 0x8f02f436, BRF_GRA | CPS1_TILES },
+
+	{ "ps_q.5k",       0x020000, 0x49ff4446, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ps-q1.1k",      0x080000, 0x31fd8726, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q2.2k",      0x080000, 0x980a9eef, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q3.3k",      0x080000, 0x0dd44491, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q4.4k",      0x080000, 0xbed42f03, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+};
+
+STD_ROM_PICK(punisher1v2)
+STD_ROM_FN(punisher1v2)
+
+struct BurnDriver BurnDrvCpspunisher1v2 = {
+	"punisher1v2", "punisher", NULL, NULL, "2018",
+	"The Punisher (1VS2 20180331)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, punisher1v2RomInfo, punisher1v2RomName, NULL, NULL, NULL, NULL, PunisherInputInfo, PunisherDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 惩罚者 无双版 The Punisher (Unrivalled Version 20090613)
+// punisherjha in HBMAME.
+static struct BurnRomInfo punisherdwRomDesc[] = {
+	{ "psj_23.8f",     0x080000, 0xfa084bab, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "psj_22.7f",     0x080000, 0x69433b02, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "psj_21.6f",     0x080000, 0xe4e15e4a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "ps_01.3a",      0x080000, 0x77b7ccab, BRF_GRA | CPS1_TILES },
+	{ "ps_02.4a",      0x080000, 0x0122720b, BRF_GRA | CPS1_TILES },
+	{ "ps_03.5a",      0x080000, 0x64fa58d4, BRF_GRA | CPS1_TILES },
+	{ "ps_04.6a",      0x080000, 0x60da42c8, BRF_GRA | CPS1_TILES },
+	{ "ps_05.7a",      0x080000, 0xc54ea839, BRF_GRA | CPS1_TILES },
+	{ "ps_06.8a",      0x080000, 0x04c5acbd, BRF_GRA | CPS1_TILES },
+	{ "ps_07.9a",      0x080000, 0xa544f4cc, BRF_GRA | CPS1_TILES },
+	{ "ps_08.10a",     0x080000, 0x8f02f436, BRF_GRA | CPS1_TILES },
+
+	{ "ps_q.5k",       0x020000, 0x49ff4446, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ps-q1.1k",      0x080000, 0x31fd8726, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q2.2k",      0x080000, 0x980a9eef, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q3.3k",      0x080000, 0x0dd44491, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q4.4k",      0x080000, 0xbed42f03, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+};
+
+STD_ROM_PICK(punisherdw)
+STD_ROM_FN(punisherdw)
+
+struct BurnDriver BurnDrvCpspunisherdw = {
+	"punisherdw", "punisher", NULL, NULL, "2009",
+	"The Punisher (Unrivalled Version 20090613)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, punisherdwRomInfo, punisherdwRomName, NULL, NULL, NULL, NULL, PunisherInputInfo, PunisherDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 惩罚者 比赛版 The Punisher (Match Version 20180920)
+// P ROM is decrypted.
+static struct BurnRomInfo punisherbsRomDesc[] = {
+	{ "punisherbs.p",      0x180000, 0x10EA3B27, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "ps_gfx1.rom",      0x080000, 0xbdd7db37, BRF_GRA | CPS1_TILES },
+	{ "ps_gfx3.rom",      0x080000, 0x9682d033, BRF_GRA | CPS1_TILES },
+	{ "ps_gfx2.rom",      0x080000, 0xae9a4f48, BRF_GRA | CPS1_TILES },
+	{ "ps_gfx4.rom",      0x080000, 0xf77ae0f0, BRF_GRA | CPS1_TILES },
+	{ "ps-5m.7a",      0x080000, 0xc54ea839, BRF_GRA | CPS1_TILES },
+	{ "ps-7m.9a",      0x080000, 0x04c5acbd, BRF_GRA | CPS1_TILES },
+	{ "ps-6m.8a",      0x080000, 0xa544f4cc, BRF_GRA | CPS1_TILES },
+	{ "ps-8m.10a",     0x080000, 0x8f02f436, BRF_GRA | CPS1_TILES },
+
+	{ "ps_q.5k",       0x020000, 0x49ff4446, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ps-q1.1k",      0x080000, 0x31fd8726, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q2.2k",      0x080000, 0x980a9eef, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q3.3k",      0x080000, 0x0dd44491, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q4.4k",      0x080000, 0xbed42f03, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+};
+
+STD_ROM_PICK(punisherbs)
+STD_ROM_FN(punisherbs)
+
+struct BurnDriver BurnDrvCpspunisherbs = {
+	"punisherbs", "punisher", NULL, NULL, "2018",
+	"The Punisher (Match Version 20180920)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, punisherbsRomInfo, punisherbsRomName, NULL, NULL, NULL, NULL, PunisherInputInfo, PunisherDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 惩罚者 红人版 The Punisher (Buggy Red Guy 20180411)
+// P ROM is decrypted. There may be a BYTESWAP issue？
+// punishers08 in HBMAME.
+static struct BurnRomInfo punisherhrRomDesc[] = {
+	{ "pse_26.11e",    0x020000, 0x7730f07f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_30.11f",    0x020000, 0xadc62a92, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_27.12e",    0x020000, 0xe3694c47, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_31.12f",    0x020000, 0xaa40c89d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_24.9e",     0x020000, 0x876bf007, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_28.9f",     0x020000, 0x644392c9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_25.10e",    0x020000, 0x7812ca13, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "pse_29.10f",    0x020000, 0x9330cb5d, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_BYTESWAP },
+	{ "ps_21.6f",      0x080000, 0x8affa5a9, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "ps-1m.3a",      0x080000, 0x15bb2e4d, BRF_GRA | CPS1_TILES },
+	{ "ps-3m.5a",      0x080000, 0x75ce5411, BRF_GRA | CPS1_TILES },
+	{ "ps-2m.4a",      0x080000, 0x06f6ba32, BRF_GRA | CPS1_TILES },
+	{ "ps-4m.6a",      0x080000, 0x143664d2, BRF_GRA | CPS1_TILES },
+	{ "ps-5m.7a",      0x080000, 0xc54ea839, BRF_GRA | CPS1_TILES },
+	{ "ps-7m.9a",      0x080000, 0x04c5acbd, BRF_GRA | CPS1_TILES },
+	{ "ps-6m.8a",      0x080000, 0xa544f4cc, BRF_GRA | CPS1_TILES },
+	{ "ps-8m.10a",     0x080000, 0x8f02f436, BRF_GRA | CPS1_TILES },
+
+	{ "ps_q.5k",       0x020000, 0x49ff4446, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "ps-q1.1k",      0x080000, 0x31fd8726, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q2.2k",      0x080000, 0x980a9eef, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q3.3k",      0x080000, 0x0dd44491, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "ps-q4.4k",      0x080000, 0xbed42f03, BRF_SND | CPS1_QSOUND_SAMPLES },
+	
+};
+
+STD_ROM_PICK(punisherhr)
+STD_ROM_FN(punisherhr)
+
+struct BurnDriver BurnDrvCpspunisherhr = {
+	"punisherhr", "punisher", NULL, NULL, "2018",
+	"The Punisher (Buggy Red Guy 20180411)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, punisherhrRomInfo, punisherhrRomName, NULL, NULL, NULL, NULL, PunisherInputInfo, PunisherDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 

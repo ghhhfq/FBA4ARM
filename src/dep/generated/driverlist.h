@@ -12395,6 +12395,11 @@ DRV		BurnDrvmslug5d;
 DRV		BurnDrvmslug5dzh;
 DRV		BurnDrvms5f;
 DRV		BurnDrvMslug5wn;
+DRV		BurnDrvCpspunisherly;
+DRV		BurnDrvCpspunisher1v2;
+DRV		BurnDrvCpspunisherdw;
+DRV		BurnDrvCpspunisherbs;
+DRV		BurnDrvCpspunisherhr;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24793,4 +24798,9 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dzh,			// Metal Slug 5 (Callable Vehicle 20180918)
 	&BurnDrvms5f,				// Metal Slug 5 (Dogfight 20161019)
 	&BurnDrvMslug5wn,			// Metal Slug 5 (New Campaign 20161019)
+	&BurnDrvCpspunisherly,		// The Punisher (Blaze 20180813)
+	&BurnDrvCpspunisher1v2,		// The Punisher (1VS2 20180331)
+	&BurnDrvCpspunisherdw,		// The Punisher (Unrivalled Version 20090613)
+	&BurnDrvCpspunisherbs,		// The Punisher (Match Version 20180920)
+	&BurnDrvCpspunisherhr,		// The Punisher (Buggy Red Guy 20180411)
 };
