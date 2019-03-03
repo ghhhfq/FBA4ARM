@@ -26,6 +26,7 @@ extern int bRunPause;
 	#define _tcsncmp strncmp
 	#define _tcsncpy strncpy
 	#define _tcsicmp strcasecmp
+	#define _T(x) x
 	/* fastcall only works on x86_32 */
 	#ifndef FASTCALL
 		#undef __fastcall
@@ -36,8 +37,7 @@ extern int bRunPause;
 	#endif
 #else
 	#include <windows.h>
+	#define _T _TEXT
 #endif
-
-#define _T(x) x
 
 #endif
