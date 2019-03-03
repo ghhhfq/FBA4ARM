@@ -26,7 +26,6 @@ extern int bRunPause;
 	#define _tcsncmp strncmp
 	#define _tcsncpy strncpy
 	#define _tcsicmp strcasecmp
-	typedef char TCHAR;
 	/* fastcall only works on x86_32 */
 	#ifndef FASTCALL
 		#undef __fastcall
@@ -35,10 +34,9 @@ extern int bRunPause;
 		#undef __fastcall
 		#define __fastcall __attribute__((fastcall))
 	#endif
-#else
-	#include <windows.h>
 #endif
 
 #define _T(x) x
+typedef char TCHAR;
 
 #endif
