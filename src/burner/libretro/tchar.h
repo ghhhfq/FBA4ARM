@@ -17,7 +17,6 @@ extern int bRunPause;
 	#include <stdint.h>
 	#define _stricmp strcasecmp
 	#define stricmp strcasecmp
-	#define _stprintf sprintf
 	#define _tcslen strlen
 	#define _tcscpy strcpy
 	#define _tcstol strtol
@@ -25,7 +24,6 @@ extern int bRunPause;
 	#define _tcsncmp strncmp
 	#define _tcsncpy strncpy
 	#define _tcsicmp strcasecmp
-	#define _T(x) x
 	/* fastcall only works on x86_32 */
 	#ifndef FASTCALL
 		#undef __fastcall
@@ -34,12 +32,12 @@ extern int bRunPause;
 		#undef __fastcall
 		#define __fastcall __attribute__((fastcall))
 	#endif
-#else
-	#include <windows.h>
-	#include <string.h>
-	#define _T(x) TEXT(x)
 #endif
 
+#define _T(x) x
 #define _tfopen fopen
+#define _stprintf sprintf
+
+typedef char TCHAR;
 
 #endif
