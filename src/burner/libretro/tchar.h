@@ -37,7 +37,7 @@ extern int bRunPause;
 	#endif
 #else
 	#include <windows.h>
-	#define _T _TEXT
+	#define _T(x) TEXT(x)
 #endif
 
 #endif
