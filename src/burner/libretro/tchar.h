@@ -34,6 +34,8 @@ extern int bRunPause;
 		#undef __fastcall
 		#define __fastcall __attribute__((fastcall))
 	#endif
+#else
+	#include <windows.h>
 #endif
 
 #define _T(x) x
