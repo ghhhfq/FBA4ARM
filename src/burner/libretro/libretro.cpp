@@ -30,6 +30,7 @@ retro_environment_t environ_cb;
 static retro_video_refresh_t video_cb;
 static retro_audio_sample_batch_t audio_batch_cb;
 
+#ifndef _MSC_VER
 #define BPRINTF_BUFFER_SIZE 512
 char bprintf_buf[BPRINTF_BUFFER_SIZE];
 static INT32 __cdecl libretro_bprintf(INT32 nStatus, TCHAR* szFormat, ...)
@@ -56,6 +57,7 @@ static INT32 __cdecl libretro_bprintf(INT32 nStatus, TCHAR* szFormat, ...)
 }
 
 INT32 (__cdecl *bprintf) (INT32 nStatus, TCHAR* szFormat, ...) = libretro_bprintf;
+#endif
 
 // FBARL ---
 

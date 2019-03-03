@@ -39,6 +39,5 @@ extern int bRunPause;
 #endif
 
 #define _T(x) x
-typedef char TCHAR;
 
 #endif
