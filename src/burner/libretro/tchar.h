@@ -32,6 +32,8 @@ extern int bRunPause;
 		#undef __fastcall
 		#define __fastcall __attribute__((fastcall))
 	#endif
+#else
+	#undef _UNICODE
 #endif
 
 #define _T(x) x
