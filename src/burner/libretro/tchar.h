@@ -17,7 +17,6 @@ extern int bRunPause;
 	#include <stdint.h>
 	#define _stricmp strcasecmp
 	#define stricmp strcasecmp
-	#define _tfopen fopen
 	#define _stprintf sprintf
 	#define _tcslen strlen
 	#define _tcscpy strcpy
@@ -37,7 +36,10 @@ extern int bRunPause;
 	#endif
 #else
 	#include <windows.h>
+	#include <string.h>
 	#define _T(x) TEXT(x)
 #endif
+
+#define _tfopen fopen
 
 #endif
