@@ -15,15 +15,6 @@ extern int bRunPause;
 
 #ifndef _MSC_VER
 	#include <stdint.h>
-	#define _stricmp strcasecmp
-	#define stricmp strcasecmp
-	#define _tcslen strlen
-	#define _tcscpy strcpy
-	#define _tcstol strtol
-	#define _istspace isspace
-	#define _tcsncmp strncmp
-	#define _tcsncpy strncpy
-	#define _tcsicmp strcasecmp
 	/* fastcall only works on x86_32 */
 	#ifndef FASTCALL
 		#undef __fastcall
@@ -34,6 +25,8 @@ extern int bRunPause;
 	#endif
 #else
 	#undef _UNICODE
+	#undef __fastcall
+	#define __fastcall
 	#include "compat/msvc.h"
 	#include "compat/posix_string.h"
 #endif
@@ -41,6 +34,16 @@ extern int bRunPause;
 #define _T(x) x
 #define _tfopen fopen
 #define _stprintf sprintf
+#define _tcslen strlen
+#define _tcscpy strcpy
+#define _tcstol strtol
+#define _istspace isspace
+#define _tcsncmp strncmp
+#define _tcsncpy strncpy
+#define _tcsicmp strcasecmp
+#define _stricmp strcasecmp
+#define stricmp strcasecmp
+#define _ftprintf fprintf
 
 typedef char TCHAR;
 
