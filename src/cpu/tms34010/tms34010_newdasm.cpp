@@ -2,7 +2,7 @@
  * Copyright (c) 2015, Marcos Medeiros
  * Licensed under BSD 3-clause.
  */
-//#include <string>
+#include <string>
 #include <vector>
 #include "tms34010.h"
 #include "memhandler.h"
@@ -67,10 +67,10 @@ struct dasm_state {
 };
 
 
-static char *reg_list(word opcode, word data)
+static std::string reg_list(word opcode, word data)
 {
     int inc = (opcode & 0x10) ? 16 : 0;
-    std::vector<char *> regs;
+    std::vector<std::string> regs;
     regs.reserve(16);
 
 
@@ -81,20 +81,21 @@ static char *reg_list(word opcode, word data)
     }
 
 
-    char s[100];
+    std::string s;
+    s.reserve(100);
     for (size_t i = 0; i < regs.size(); i++) {
-        strcat(s,regs[i]);
+        s.append(regs[i]);
         if (i != regs.size() - 1)
-            strcat(s,",");
+            s.append(",");
     }
 
     return s;
 }
 
-static char *reg_list_inv(word opcode, word data)
+static std::string reg_list_inv(word opcode, word data)
 {
     int inc = (opcode & 0x10) ? 16 : 0;
-    std::vector<char *> regs;
+    std::vector<std::string> regs;
     regs.reserve(16);
 
 
@@ -105,11 +106,12 @@ static char *reg_list_inv(word opcode, word data)
     }
 
 
-    char s[100];
+    std::string s;
+    s.reserve(100);
     for (int i = 0; i < regs.size(); i++) {
-        strcat(s,regs[i]);
+        s.append(regs[i]);
         if (i != regs.size() - 1)
-            strcat(s,",");
+            s.append(",");
     }
 
     return s;
@@ -491,7 +493,7 @@ static void dasm_prefix_1111(dasm_state &st)
     }
 }
 
-char *new_dasm(dword pc, size_t *size)
+std::string new_dasm(dword pc, size_t *size)
 {
     dasm_state st;
 
@@ -525,7 +527,7 @@ char *new_dasm(dword pc, size_t *size)
     if (size)
         *size = st.words * 16;
 
-    return st.buf;
+    return std::string(st.buf);
 }
 
 }

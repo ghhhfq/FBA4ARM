@@ -13,21 +13,20 @@ extern int bRunPause;
 	extern int nSekCpuCore;  // 0 - c68k, 1 - m68k
 #endif
 
-/* fastcall only works on x86_32 */
-#ifndef FASTCALL
-	#undef __fastcall
-	#define __fastcall
-#else
-	#ifndef _MSC_VER
+#ifndef _MSC_VER
+	#include <stdint.h>
+	/* fastcall only works on x86_32 */
+	#ifndef FASTCALL
+		#undef __fastcall
+		#define __fastcall
+	#else
 		#undef __fastcall
 		#define __fastcall __attribute__((fastcall))
 	#endif
-#endif
-
-#ifndef _MSC_VER
-	#include <stdint.h>
 #else
 	#undef _UNICODE
+	#undef __fastcall
+	#define __fastcall
 	#include "compat/msvc.h"
 	#include "compat/posix_string.h"
 #endif
