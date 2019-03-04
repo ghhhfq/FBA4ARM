@@ -12394,8 +12394,8 @@ DRV		BurnDrvkovshpd19;
 DRV		BurnDrvkovshpb;
 DRV		BurnDrvmslug5d;
 DRV		BurnDrvmslug5dzh;
-DRV		BurnDrvms5f;
-DRV		BurnDrvMslug5wn;
+//DRV		BurnDrvms5f;
+//DRV		BurnDrvMslug5wn;
 DRV		BurnDrvCpspunisherly;
 DRV		BurnDrvCpspunisher1v2;
 DRV		BurnDrvCpspunisherdw;
@@ -24798,8 +24798,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180909)
 	&BurnDrvmslug5d,			// Metal Slug 5 (Fully Decrypted Version)
 	&BurnDrvmslug5dzh,			// Metal Slug 5 (Callable Vehicle 20180918)
-	&BurnDrvms5f,				// Metal Slug 5 (Dogfight 20161019)
-	&BurnDrvMslug5wn,			// Metal Slug 5 (New Campaign 20161019)
+	//&BurnDrvms5f,				// Metal Slug 5 (Dogfight 20161019)
+	//&BurnDrvMslug5wn,			// Metal Slug 5 (New Campaign 20161019)
 	&BurnDrvCpspunisherly,		// The Punisher (Blaze 20180813)
 	&BurnDrvCpspunisher1v2,		// The Punisher (1VS2 20180331)
 	&BurnDrvCpspunisherdw,		// The Punisher (Unrivalled Version 20090613)

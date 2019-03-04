@@ -19360,7 +19360,8 @@ struct BurnDriver BurnDrvmslug5dzh = {
 	0x1000,	320, 224, 4, 3
 };
 
-// FBA4DROID 合金弹头5 激斗	Metal Slug 5 (Dogfight 20161019)
+/* Not working for now!
+FBA4DROID 合金弹头5 激斗	Metal Slug 5 (Dogfight 20161019)
 static struct BurnRomInfo ms5fRomDesc[] = {
 	{ "254-p1.bin",	0x100000, 0x430a2c94, 1 | BRF_PRG | BRF_ESS }, //  0 maincpu
 	{ "254-p2.bin",	0x400000, 0xf06c589a, 1 | BRF_PRG | BRF_ESS }, //  1
@@ -19434,3 +19435,4 @@ struct BurnDriver BurnDrvMslug5wn = {
 	s1945pInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
 };
+*/
