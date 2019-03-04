@@ -48,4 +48,16 @@ extern int bRunPause;
 
 typedef char TCHAR;
 
+#ifdef ANDROID
+	#ifdef PAGE_SHIFT
+		#undef PAGE_SHIFT
+	#endif
+	#ifdef PAGE_SIZE
+		#undef PAGE_SIZE
+	#endif
+	#ifdef PAGE_MASK
+		#undef PAGE_MASK
+	#endif
+#endif
+
 #endif
