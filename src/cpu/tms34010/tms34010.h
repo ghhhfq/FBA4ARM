@@ -6,7 +6,7 @@
 #define TMS34010_H
 
 #include "burnint.h"
-#include <string>
+//#include <string>
 //#include <list>
 //#include <fstream>
 //#include <array>
@@ -517,8 +517,8 @@ void reset(cpu_state *cpu);
 void write_ioreg(cpu_state *cpu, dword addr, word value);
 dword read_ioreg(cpu_state *cpu, dword addr);
 
-std::string dasm(dword addr, size_t *size);
-std::string new_dasm(dword pc, size_t *size);
+char *dasm(dword addr, size_t *size);
+char *new_dasm(dword pc, size_t *size);
 
 }
 

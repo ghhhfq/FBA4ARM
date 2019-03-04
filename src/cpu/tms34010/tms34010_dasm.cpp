@@ -2,7 +2,7 @@
  * Copyright (c) 2015, Marcos Medeiros
  * Licensed under BSD 3-clause.
  */
-#include <string>
+//#include <string>
 #include <vector>
 #include "tms34010.h"
 #include "memhandler.h"
@@ -80,7 +80,7 @@ static inline const char *jr_cond(word opcode)
 static const char *reg_list(word opcode, word data)
 {
     int inc = (opcode & 0x10) ? 16 : 0;
-    std::vector<std::string> regs;
+    std::vector<char *> regs;
     regs.reserve(16);
 
 
@@ -91,21 +91,20 @@ static const char *reg_list(word opcode, word data)
     }
 
 
-    std::string s;
-    s.reserve(100);
+    char s[100];
     for (int i = 0; i < regs.size(); i++) {
-        s.append(regs[i]);
+        strcat(s,regs[i]);
         if (i != regs.size() - 1)
-            s.append(",");
+            strcat(s,",");
     }
 
-    return s.c_str();
+    return s;
 }
 
 static const char *reg_list_inv(word opcode, word data)
 {
     int inc = (opcode & 0x10) ? 16 : 0;
-    std::vector<std::string> regs;
+    std::vector<char *> regs;
     regs.reserve(16);
 
 
@@ -116,20 +115,19 @@ static const char *reg_list_inv(word opcode, word data)
     }
 
 
-    std::string s;
-    s.reserve(100);
+    char s[100];
     for (int i = 0; i < regs.size(); i++) {
-        s.append(regs[i]);
+        strcat(s,regs[i]);
         if (i != regs.size() - 1)
-            s.append(",");
+            strcat(s,",");
     }
 
-    return s.c_str();
+    return s;
 }
 
 #define DASM(...)    snprintf(buf, dasm_buf_size, __VA_ARGS__)
 
-std::string dasm(dword pc, size_t *szbits)
+char *dasm(dword pc, size_t *szbits)
 {
     const int size = 128;
     char buf[size];
@@ -409,7 +407,7 @@ std::string dasm(dword pc, size_t *szbits)
     if (szbits)
         *szbits = words * 16;
 
-    return std::string(buf);
+    return buf;
 }
 
 }

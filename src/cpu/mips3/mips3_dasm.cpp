@@ -2,8 +2,8 @@
  * Copyright (c) 2015, Marcos Medeiros
  * Licensed under BSD 3-clause.
  */
-#include <string>
-#include <cstring>
+//#include <string>
+//#include <cstring>
 #include "mips3.h"
 #include "mipsdef.h"
 
@@ -13,7 +13,7 @@ namespace mips
 const int dasm_buf_size = 128;
 const int dasm_pc_size = 10;
 
-string mips3::dasm(uint32_t opcode, uint64_t pc)
+char *mips3::dasm(uint32_t opcode, uint64_t pc)
 {
     const int size = 128;
     char buf[size];
@@ -120,8 +120,8 @@ string mips3::dasm(uint32_t opcode, uint64_t pc)
     case 0x0D: snprintf(buf, dasm_buf_size, "ori\tr%d, r%d, 0x%04X", RTNUM, RSNUM, IMM); break;
     case 0x0E: snprintf(buf, dasm_buf_size, "xori\tr%d, r%d, 0x%04X", RTNUM, RSNUM, IMM); break;
     case 0x0F: snprintf(buf, dasm_buf_size, "lui\tr%d, 0x%04X", RTNUM, IMM); break;
-    case 0x10: return string(pcb) + dasm_cop0(opcode, pc);
-    case 0x11: return string(pcb) + dasm_cop1(opcode, pc);
+    case 0x10: return pcb + dasm_cop0(opcode, pc);
+    case 0x11: return pcb + dasm_cop1(opcode, pc);
 
     case 0x18: snprintf(buf, dasm_buf_size, "daddi\tr%d, r%d, 0x%04X", RTNUM, RSNUM, SIMM); break;
 
@@ -148,11 +148,11 @@ string mips3::dasm(uint32_t opcode, uint64_t pc)
         snprintf(buf, dasm_buf_size, "??? %08X - %02X", opcode,  opcode >> 26);
         break;
     }
-    return string(pcb) + buf;
+    return pcb + buf;
 }
 
 
-string mips3::dasm_cop0(uint32_t opcode, uint64_t pc)
+char *mips3::dasm_cop0(uint32_t opcode, uint64_t pc)
 {
     char buf[128];
     switch (RSNUM) {
@@ -179,7 +179,7 @@ static inline const char * const fmt_string(uint32_t opcode)
     return "#";
 }
 
-string mips3::dasm_cop1(uint32_t opcode, uint64_t pc)
+char *mips3::dasm_cop1(uint32_t opcode, uint64_t pc)
 {
     char buf[128];
     // MFC1 rt, rd
