@@ -12298,8 +12298,6 @@ DRV		BurnDrvkf2k2mp3;
 DRV		BurnDrvkf2k2mp3s;
 DRV		BurnDrvkof2k2c2;
 DRV		BurnDrvkf2k2tt;
-DRV		BurnDrvmslug3g;
-DRV		BurnDrvmslug3c;
 DRV		BurnDrvmslug4dr;
 DRV		BurnDrvmslug5dg2;
 DRV		BurnDrvmslug5dg3;
@@ -12342,7 +12340,6 @@ DRV		BurnDrvkovshp1v4xtw;
 DRV		BurnDrvolds100aylzx;
 DRV		BurnDrvkof02ic;
 DRV		BurnDrvkf2k1cm;
-DRV		BurnDrvmslug3n6p;
 DRV		BurnDrvhookj1v4;
 DRV		BurnDrvhookus;
 DRV		BurnDrvhookx2;
@@ -12403,6 +12400,17 @@ DRV		BurnDrvCpspunisher1v2;
 DRV		BurnDrvCpspunisherdw;
 DRV		BurnDrvCpspunisherbs;
 DRV		BurnDrvCpspunisherhr;
+DRV		BurnDrvmslug3g;
+DRV		BurnDrvmslug3c;
+DRV		BurnDrvmslug3n6p;
+DRV		BurnDrvmslug3nd;
+DRV		BurnDrvmslug3nsj;
+DRV		BurnDrvmslug3ngw;
+DRV		BurnDrvmslug3eb;
+DRV		BurnDrvmslug3ntk;
+DRV		BurnDrvmslug3v;
+DRV		BurnDrvmslug3nzj;
+DRV		BurnDrvmslug3n6zp;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24704,8 +24712,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkf2k2mp3s,			// KOF 2002 Magic Plus III (decrypted C, Moves Simplified)
 	&BurnDrvkof2k2c2,			// The King of Fighters 2002 (Heavenly Divine 20080624)
 	&BurnDrvkf2k2tt,			// The King of Fighters 2002 (Exceeding Version 20181125)
-	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
-	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190212)
 	&BurnDrvmslug4dr,			// Metal Slug 4 (Enemies Resetting Version 20190211)
 	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
@@ -24748,7 +24754,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvolds100aylzx,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
 	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
-	&BurnDrvmslug3n6p,			// Metal Slug 6 (Enemies Resetting Version 20190205)
 	&BurnDrvhookj1v4,			// Hook (1VS4 20160625)
 	&BurnDrvhookus,				// Hook (Unrivalled Version 20160818)
 	&BurnDrvhookx2,				// Hook (X2 Version 20180505)
@@ -24809,4 +24814,15 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpspunisherdw,		// The Punisher (Unrivalled Version 20090613)
 	&BurnDrvCpspunisherbs,		// The Punisher (Match Version 20180920)
 	&BurnDrvCpspunisherhr,		// The Punisher (Buggy Red Guy 20180411)
+	&BurnDrvmslug3g,			// Metal Slug 3 (Multifunction Version 20190119)
+	&BurnDrvmslug3c,			// Metal Slug 3 (Enemies Resetting Version 20190212)
+	&BurnDrvmslug3n6p,			// Metal Slug 6 (Enemies Resetting Version 20190205)
+	&BurnDrvmslug3nd,			// Metal Slug 3 (non encrypted P, decrypted C)
+	&BurnDrvmslug3nsj,			// Metal Slug 3 (Random Enemies Resetting Version 20171208)
+	&BurnDrvmslug3ngw,			// Metal Slug 3 (Onimusa 20180530)
+	&BurnDrvmslug3eb,			// Metal Slug 3 (Blue Version 20130227)
+	&BurnDrvmslug3ntk,			// Metal Slug 3 (Tanks Increased Version 20170813)
+	&BurnDrvmslug3v,			// Metal Slug 3 (Tanks Increased Version 20170813)
+	&BurnDrvmslug3nzj,			// Metal Slug 3 (Mount Version 20180510)
+	&BurnDrvmslug3n6zp,			//Metal Slug 6 (Enhanced Mount Version 20190205)
 };
