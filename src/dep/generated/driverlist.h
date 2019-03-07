@@ -12411,6 +12411,7 @@ DRV		BurnDrvmslug3ntk;
 DRV		BurnDrvmslug3v;
 DRV		BurnDrvmslug3nzj;
 DRV		BurnDrvmslug3n6zp;
+DRV		BurnDrvCpsavspp;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24824,5 +24825,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug3ntk,			// Metal Slug 3 (Tanks Increased Version 20170813)
 	&BurnDrvmslug3v,			// Metal Slug 3 (Tanks Increased Version 20170813)
 	&BurnDrvmslug3nzj,			// Metal Slug 3 (Mount Version 20180510)
-	&BurnDrvmslug3n6zp,			//Metal Slug 6 (Enhanced Mount Version 20190205)
+	&BurnDrvmslug3n6zp,			// Metal Slug 6 (Enhanced Mount Version 20190205)
+	&BurnDrvCpsavspp,			// Alien vs Predator (Plus 20180226)
 };
