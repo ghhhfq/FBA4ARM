@@ -1,6 +1,6 @@
 This list contains all games supported by FB Alpha.
 
-12001 games supported in total; X = excluded from build; D = included in debug build only; NW = not working
+12002 games supported in total; X = excluded from build; D = included in debug build only; NW = not working
 
   name		  status  full name						  parent	  year	  company	  hardware	  remarks
 +---------------+-------+-------------------------------------------------------+---------------+-------+---------------+---------------+---------------------------------------+
@@ -3626,7 +3626,8 @@ This list contains all games supported by FB Alpha.
 | galmedes	|  	| Galmedes (Japan)					| 		| 1992	| Visco		| Taito Misc	| 					|
 | galhustl	|  	| Gals Hustler						| pgalvip	| 1997	| ACE Internatio| Miscellaneous	| 					|
 | galpanic	|  	| Gals Panic (Unprotected)				| 		| 1990	| Kaneko	| Miscellaneous	| 					|
-| galpani4	|  	| Gals Panic 4 (Japan)					| 		| 1996	| Kaneko	| Super Kaneko N| 					|
+| galpani4	|  	| Gals Panic 4 (Europe)					| 		| 1996	| Kaneko	| Super Kaneko N| No sound.  Use a clone, instead!	|
+| galpani4j	|  	| Gals Panic 4 (Japan)					| galpani4	| 1996	| Kaneko	| Super Kaneko N| 					|
 | galpani4k	|  	| Gals Panic 4 (Korea)					| galpani4	| 1996	| Kaneko	| Super Kaneko N| 					|
 | galpanidx	|  	| Gals Panic DX (Asia)					| galpani4	| 2001	| Kaneko	| Super Kaneko N| 					|
 | galpanis	|  	| Gals Panic S - Extra Edition (Europe)			| 		| 1997	| Kaneko	| Super Kaneko N| 					|
@@ -5059,7 +5060,7 @@ This list contains all games supported by FB Alpha.
 | strahl	|  	| Koutetsu Yousai Strahl (World)			| 		| 1992	| UPL		| NMK16		| 					|
 | kozure	|  	| Kozure Ookami (Japan)					| 		| 1987	| Nichibutsu	| Miscellaneous	| 					|
 | msx_krakout	|  	| Krakout (Euro)					| 		| 1987	| Gremlin Graphi| MSX		| 					|
-| kram3		| X	| Kram (encrypted)					| kram		| 1982	| Taito America | Miscellaneous	| 					|
+| kram3		| X NW	| Kram (encrypted)					| kram		| 1982	| Taito America | Miscellaneous	| 					|
 | kram		|  	| Kram (set 1)						| 		| 1982	| Taito America | Miscellaneous	| 					|
 | kram2		|  	| Kram (set 2)						| kram		| 1982	| Taito America | Miscellaneous	| 					|
 | krzybowl	|  	| Krazy Bowl						| 		| 1994	| American Sammy| Seta		| 					|
