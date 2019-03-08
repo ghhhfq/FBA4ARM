@@ -19289,7 +19289,7 @@ struct BurnDriver BurnDrvms5f = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_CMC42, GBF_VSFIGHT, FBF_KOF,
 	NULL, ms5fRomInfo, ms5fRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
-	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	s1945pInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	320, 224, 4, 3
 };
 
@@ -19480,43 +19480,6 @@ struct BurnDriver BurnDrvmslug3g = {
 	0x1000, 304, 224, 4, 3
 };
 
-// FBA4DROID 合金弹头6敌兵重置版 Metal Slug 6 (Enemies Resetting Version 20190205)
-static struct BurnRomInfo mslug3n6pRomDesc[] = {
-	{ "256-ph1.p1",  0x100000, 0x1f1079a2, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
-	{ "256-ph2.p2",  0x400000, 0x62ac1321, 1 | BRF_ESS | BRF_PRG }, //  1
-
-	{ "ms3n_s1.rom",    0x020000, 0x8458fff9, 2 | BRF_GRA },
-
-	{ "ms3n_c1.rom",  0x800000, 0x3540398c, 3 | BRF_GRA },		 //  2 Sprite data
-	{ "ms3n_c2.rom",  0x800000, 0xbdd220f0, 3 | BRF_GRA },		 //  3
-	{ "ms3n_c3.rom",  0x800000, 0xbfaade82, 3 | BRF_GRA },		 //  4
-	{ "ms3n_c4.rom",  0x800000, 0x1463add6, 3 | BRF_GRA },		 //  5
-	{ "ms3n_c5.rom",  0x800000, 0x48ca7f28, 3 | BRF_GRA },		 //  6
-	{ "ms3n_c6.rom",  0x800000, 0x806eb36f, 3 | BRF_GRA },		 //  7
-	{ "256-c7d.c7",   0x800000, 0xf53108fe, 3 | BRF_GRA },		 //  8
-	{ "256-c8d.c8",   0x800000, 0x64c33010, 3 | BRF_GRA },		 //  9
-
-	{ "256-m1.bin",   0x080000, 0xeaeec116, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
-
-	{ "ms3n_v1.rom",  0x400000, 0xf2690241, 5 | BRF_SND },           // 11 Sound data
-	{ "ms3n_v2.rom",  0x400000, 0x7e2a10bd, 5 | BRF_SND },           // 12
-	{ "ms3n_v3.rom",  0x400000, 0x0eaec17c, 5 | BRF_SND },           // 13
-	{ "ms3n_v4.rom",  0x400000, 0x9b4b22d4, 5 | BRF_SND },           // 14
-};
-
-STDROMPICKEXT(mslug3n6p, mslug3n6p, neogeo)
-STD_ROM_FN(mslug3n6p)
-
-struct BurnDriver BurnDrvmslug3n6p = {
-	"mslug3n6p", "mslug3nd", "neogeo", NULL, "2019",
-	"Metal Slug 6 (Enemies Resetting Version 20190205)\0", NULL, "hack", "Neo Geo MVS",
-	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
-	NULL, mslug3n6pRomInfo, mslug3n6pRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
-	mslug3hInit, NeoSMAExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
-	0x1000, 304, 224, 4, 3
-};
-
 // FBA4DROID 合金弹头3 敌兵重置随机版 Metal Slug 3 (Random Enemies Resetting Version 20171208)
 // mslug3h40 in HBMAME.
 static struct BurnRomInfo mslug3nsjRomDesc[] = {
@@ -19584,8 +19547,8 @@ STDROMPICKEXT(mslug3ngw, mslug3ngw, neogeo)
 STD_ROM_FN(mslug3ngw)
 
 struct BurnDriver BurnDrvmslug3ngw = {
-	"mslug3ngw", "mslug3", "neogeo", NULL, "2018",
-	"Metal Slug 3 (Onimusa 20180530)\0", NULL, "SNK", "Neo Geo MVS",
+	"mslug3ngw", "mslug3nd", "neogeo", NULL, "2018",
+	"Metal Slug 3 (Onimusa 20180530)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
 	NULL, mslug3ngwRomInfo, mslug3ngwRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
@@ -19673,7 +19636,7 @@ struct BurnDriver BurnDrvmslug3ntk = {
 
 // FBA4DROID 合金弹头3 召唤坐骑版 Metal Slug 3 (Callable Vehicle 20170404)
 // mslug3h42 in HBMAME.
-static struct BurnRomInfo mslug3vRomDesc[] = {
+static struct BurnRomInfo mslug3v2RomDesc[] = {
 	{ "256-pg1.p1",  0x100000, 0x257fa6b9, 1 | BRF_ESS | BRF_PRG }, //  0 68K code / Only this file is modified.
 	{ "256-pg2.p2",  0x400000, 0xbadc753c, 1 | BRF_ESS | BRF_PRG }, //  1
 
@@ -19696,15 +19659,15 @@ static struct BurnRomInfo mslug3vRomDesc[] = {
 	{ "ms3n_v4.rom",  0x400000, 0x9b4b22d4, 5 | BRF_SND },           // 14
 };
 
-STDROMPICKEXT(mslug3v, mslug3v, neogeo)
-STD_ROM_FN(mslug3v)
+STDROMPICKEXT(mslug3v2, mslug3v2, neogeo)
+STD_ROM_FN(mslug3v2)
 
-struct BurnDriver BurnDrvmslug3v = {
-	"mslug3v", "mslug3nd", "neogeo", NULL, "2017",
+struct BurnDriver BurnDrvmslug3v2 = {
+	"mslug3v2", "mslug3nd", "neogeo", NULL, "2017",
 	"Metal Slug 3 (Tanks Increased Version 20170813)\0", NULL, "hack", "Neo Geo MVS",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
-	NULL, mslug3vRomInfo, mslug3vRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NULL, mslug3v2RomInfo, mslug3v2RomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	mslug3hInit, NeoSMAExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000, 304, 224, 4, 3
 };
@@ -19747,7 +19710,46 @@ struct BurnDriver BurnDrvmslug3nzj = {
 	0x1000, 304, 224, 4, 3
 };
 
+// FBA4DROID 合金弹头6敌兵重置版 Metal Slug 6 (Enemies Resetting Version 20190205)
+// 图形错误，需修正！
+static struct BurnRomInfo mslug3n6pRomDesc[] = {
+	{ "256-ph1.p1",  0x100000, 0x1f1079a2, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "256-ph2.p2",  0x400000, 0x62ac1321, 1 | BRF_ESS | BRF_PRG }, //  1
+
+	{ "ms3n_s1.rom",    0x020000, 0x8458fff9, 2 | BRF_GRA },
+
+	{ "ms3n_c1.rom",  0x800000, 0x3540398c, 3 | BRF_GRA },		 //  2 Sprite data
+	{ "ms3n_c2.rom",  0x800000, 0xbdd220f0, 3 | BRF_GRA },		 //  3
+	{ "ms3n_c3.rom",  0x800000, 0xbfaade82, 3 | BRF_GRA },		 //  4
+	{ "ms3n_c4.rom",  0x800000, 0x1463add6, 3 | BRF_GRA },		 //  5
+	{ "ms3n_c5.rom",  0x800000, 0x48ca7f28, 3 | BRF_GRA },		 //  6
+	{ "ms3n_c6.rom",  0x800000, 0x806eb36f, 3 | BRF_GRA },		 //  7
+	{ "256-c7d.c7",   0x800000, 0xf53108fe, 3 | BRF_GRA },		 //  8
+	{ "256-c8d.c8",   0x800000, 0x64c33010, 3 | BRF_GRA },		 //  9
+
+	{ "256-m1.bin",   0x080000, 0xeaeec116, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
+
+	{ "ms3n_v1.rom",  0x400000, 0xf2690241, 5 | BRF_SND },           // 11 Sound data
+	{ "ms3n_v2.rom",  0x400000, 0x7e2a10bd, 5 | BRF_SND },           // 12
+	{ "ms3n_v3.rom",  0x400000, 0x0eaec17c, 5 | BRF_SND },           // 13
+	{ "ms3n_v4.rom",  0x400000, 0x9b4b22d4, 5 | BRF_SND },           // 14
+};
+
+STDROMPICKEXT(mslug3n6p, mslug3n6p, neogeo)
+STD_ROM_FN(mslug3n6p)
+
+struct BurnDriver BurnDrvmslug3n6p = {
+	"mslug3n6p", "mslug3nd", "neogeo", NULL, "2019",
+	"Metal Slug 6 (Enemies Resetting Version 20190205)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_RUNGUN, FBF_MSLUG,
+	NULL, mslug3n6pRomInfo, mslug3n6pRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	mslug3hInit, NeoSMAExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
 // FBA4DROID 合金弹头6 坐骑加强版 Metal Slug 6 (Enhanced Mount Version 20190205)
+// 图形错误，需修正！
 static struct BurnRomInfo mslug3n6zpRomDesc[] = {
 	{ "256-ph1.p1",  0x100000, 0x3d8bb07c, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "256-ph2.p2",  0x400000, 0x7610b94d, 1 | BRF_ESS | BRF_PRG }, //  1

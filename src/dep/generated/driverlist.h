@@ -12408,7 +12408,7 @@ DRV		BurnDrvmslug3nsj;
 DRV		BurnDrvmslug3ngw;
 DRV		BurnDrvmslug3eb;
 DRV		BurnDrvmslug3ntk;
-DRV		BurnDrvmslug3v;
+DRV		BurnDrvmslug3v2;
 DRV		BurnDrvmslug3nzj;
 DRV		BurnDrvmslug3n6zp;
 DRV		BurnDrvCpsavspp;
@@ -24823,7 +24823,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug3ngw,			// Metal Slug 3 (Onimusa 20180530)
 	&BurnDrvmslug3eb,			// Metal Slug 3 (Blue Version 20130227)
 	&BurnDrvmslug3ntk,			// Metal Slug 3 (Tanks Increased Version 20170813)
-	&BurnDrvmslug3v,			// Metal Slug 3 (Tanks Increased Version 20170813)
+	&BurnDrvmslug3v2,			// Metal Slug 3 (Tanks Increased Version 20170813)
 	&BurnDrvmslug3nzj,			// Metal Slug 3 (Mount Version 20180510)
 	&BurnDrvmslug3n6zp,			// Metal Slug 6 (Enhanced Mount Version 20190205)
 	&BurnDrvCpsavspp,			// Alien vs Predator (Plus 20180226)
