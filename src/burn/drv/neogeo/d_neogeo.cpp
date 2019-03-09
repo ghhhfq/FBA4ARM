@@ -19257,7 +19257,6 @@ struct BurnDriver BurnDrvms5f = {
 	0x1000,	304, 224, 4, 3
 };
 
-// May not work for now!
 // FBA4DROID 合金弹头5 新战役	Metal Slug 5 (New Campaign 20161019)
 // mslug5dh34 in HBMAME.
 static struct BurnRomInfo mslug5wnRomDesc[] = {
@@ -19757,20 +19756,6 @@ static struct BurnRomInfo mslug4dRomDesc[] = {
 
 	{ "263.s1",    0x020000, 0xa9446774, 2 | BRF_GRA },
 
-	/*{ "263nd.c1",	0x800000, 0x361ddda6, 3 | BRF_GRA },
-	{ "263nd.c2",	0x800000, 0x15d192c4, 3 | BRF_GRA },
-	{ "263nd.c3",	0x800000, 0x63fb79ff, 3 | BRF_GRA },
-	{ "263nd.c4",	0x800000, 0xe8623126, 3 | BRF_GRA },
-	{ "263nd.c5",	0x400000, 0x3348dc5d, 3 | BRF_GRA },
-	{ "263nd.c6",	0x400000, 0xd90fc1a0, 3 | BRF_GRA },
-
-	{ "263nd.m1",    0x020000, 0xef5db532, 4 | BRF_ESS | BRF_PRG },
-
-	{ "263nd.v1",	0x400000, 0xc1b2af81, 5 | BRF_SND },
-	{ "263nd.v2",	0x400000, 0xcbbdc6fa, 5 | BRF_SND },
-	{ "263nd.v3",	0x400000, 0xc4f1a3cc, 5 | BRF_SND },
-	{ "263nd.v4",	0x400000, 0x40126a0a, 5 | BRF_SND },
-	*/
 	{ "263nd.c1",	0x800000, 0x361ddda6, 3 | BRF_GRA },
 	{ "263nd.c2",	0x800000, 0x15d192c4, 3 | BRF_GRA },
 	{ "263-c3.bin",	0x800000, 0xe296612c, 3 | BRF_GRA },
