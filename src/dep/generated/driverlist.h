@@ -12412,6 +12412,14 @@ DRV		BurnDrvmslug3v2;
 DRV		BurnDrvmslug3nzj;
 DRV		BurnDrvmslug3n6zp;
 DRV		BurnDrvCpsavspp;
+DRV		BurnDrvmslug4d;
+DRV		BurnDrvmslug4ammor;
+DRV		BurnDrvmslug4lw;
+DRV		BurnDrvmslug4sp;
+DRV		BurnDrvmslugdg;
+DRV		BurnDrvmslug2gs;
+DRV		BurnDrvmslug2dg;
+DRV		BurnDrvmslug3sd;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24827,4 +24835,12 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug3nzj,			// Metal Slug 3 (Mount Version 20180510)
 	&BurnDrvmslug3n6zp,			// Metal Slug 6 (Enhanced Mount Version 20190205)
 	&BurnDrvCpsavspp,			// Alien vs Predator (Plus 20180226)
+	&BurnDrvmslug4d,			// Metal Slug 4 (Fully Decrypted Version)
+	&BurnDrvmslug4ammor,		// Metal Slug 4 (Random Ammo Version 20160724)
+	&BurnDrvmslug4lw,			// Metal Slug 4 (Last Slug 20161015)
+	&BurnDrvmslug4sp,			// Metal Slug 4 (Enhanced Mount Version 20150510)
+	&BurnDrvmslugdg,			// Metal Slug (Multifunction Version 20180430)
+	&BurnDrvmslug2gs,			// Metal Slug 2 - Super Vehicle-001/II (Guns Storable Version 20151111)
+	&BurnDrvmslug2dg,			// Metal Slug 2 - Super Vehicle-001/II (Multifunction Version 20170509)
+	&BurnDrvmslug3sd,			// Metal Slug 3 (Mount Version 20180510)
 };
