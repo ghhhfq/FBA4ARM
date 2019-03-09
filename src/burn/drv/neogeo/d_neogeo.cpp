@@ -19783,7 +19783,7 @@ static struct BurnRomInfo mslug4dRomDesc[] = {
 	{ "263-v1.bin",	0x400000, 0x8cb5a9ef, 5 | BRF_SND },
 	{ "263-v2.bin",	0x400000, 0x94217b1e, 5 | BRF_SND },
 	{ "263-v3.bin",	0x400000, 0x7616fcec, 5 | BRF_SND },
-	{ "263-v4.bin",	0x800000, 0x35e79379, 5 | BRF_SND }, 
+	{ "263-v4.bin",	0x400000, 0xc5967f91, 5 | BRF_SND }, 
 };
 
 STDROMPICKEXT(mslug4d, mslug4d, neogeo)
@@ -19818,7 +19818,7 @@ static struct BurnRomInfo mslug4drRomDesc[] = {
 	{ "263-v1.bin",	0x400000, 0x8cb5a9ef, 5 | BRF_SND },
 	{ "263-v2.bin",	0x400000, 0x94217b1e, 5 | BRF_SND },
 	{ "263-v3.bin",	0x400000, 0x7616fcec, 5 | BRF_SND },
-	{ "263-v4.bin",	0x800000, 0x35e79379, 5 | BRF_SND }, 
+	{ "263-v4.bin",	0x400000, 0xc5967f91, 5 | BRF_SND }, 
 };
 
 STDROMPICKEXT(mslug4dr, mslug4dr, neogeo)
@@ -19854,7 +19854,7 @@ static struct BurnRomInfo mslug4ammorRomDesc[] = {
 	{ "263-v1.bin",	0x400000, 0x8cb5a9ef, 5 | BRF_SND },
 	{ "263-v2.bin",	0x400000, 0x94217b1e, 5 | BRF_SND },
 	{ "263-v3.bin",	0x400000, 0x7616fcec, 5 | BRF_SND },
-	{ "263-v4.bin",	0x800000, 0x35e79379, 5 | BRF_SND }, 
+	{ "263-v4.bin",	0x400000, 0xc5967f91, 5 | BRF_SND }, 
 };
 
 STDROMPICKEXT(mslug4ammor, mslug4ammor, neogeo)
@@ -19890,7 +19890,7 @@ static struct BurnRomInfo mslug4lwRomDesc[] = {
 	{ "263-v1.bin",	0x400000, 0x8cb5a9ef, 5 | BRF_SND },
 	{ "263-v2.bin",	0x400000, 0x94217b1e, 5 | BRF_SND },
 	{ "263-v3.bin",	0x400000, 0x7616fcec, 5 | BRF_SND },
-	{ "263-v4.bin",	0x800000, 0x35e79379, 5 | BRF_SND }, 
+	{ "263-v4.bin",	0x400000, 0xc5967f91, 5 | BRF_SND }, 
 };
 
 STDROMPICKEXT(mslug4lw, mslug4lw, neogeo)
