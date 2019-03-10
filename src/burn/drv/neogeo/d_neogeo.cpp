@@ -19406,7 +19406,7 @@ struct BurnDriver BurnDrvmslug3c = {
 	0x1000, 304, 224, 4, 3
 };
 
-// FBA4DROID 合金弹头3多功能	Metal Slug 3 (Multifunction Version 20190119)
+// FBA4DROID 合金弹头3 多功能版	Metal Slug 3 (Multifunction Version 20190119)
 static struct BurnRomInfo mslug3gRomDesc[] = {
 	{ "256-ph1.bin",   0x100000, 0xb23bd9b7, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
 	{ "256-ph2.bin",   0x400000, 0x8053a3fb, 1 | BRF_ESS | BRF_PRG }, //  1 
@@ -19635,7 +19635,7 @@ struct BurnDriver BurnDrvmslug3v2 = {
 	0x1000, 304, 224, 4, 3
 };
 
-// FBA4DROID 合金弹头3 召唤坐骑版 Metal Slug 3 (Mount Version 20180510)
+// FBA4DROID 合金弹头3 坐骑版 Metal Slug 3 (Mount Version 20180510)
 // mslug3h52 in HBMAME.
 static struct BurnRomInfo mslug3nzjRomDesc[] = {
 	{ "256-pg1.p1",  0x100000, 0xc85c345f, 1 | BRF_ESS | BRF_PRG }, //  0 68K code / Only this file is modified.
