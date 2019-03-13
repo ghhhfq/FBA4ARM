@@ -18394,7 +18394,7 @@ struct BurnDriver BurnDrvkof96p = {
 	0x1000, 304, 224, 4, 3
 };
 
-// GOTVG 拳皇99 EUR版 Kof'99 (EUR Version 20150713)
+// GOTVG 拳皇99 EUR版 The King of Fighters '99 (EUR Version 20150713)
 // kof99p is used in FBA, so I use kof99pr instead.
 // There are some protections to be patched out. Need someone to do it!
 static struct BurnRomInfo kof99prRomDesc[] = {
@@ -18425,12 +18425,49 @@ STD_ROM_FN(kof99pr)
 
 struct BurnDriver BurnDrvkof99pr = {
 	"kof99pr", "kof99", "neogeo", NULL, "2015",
-	"Kof'99 (EUR Version 20150713)\0", NULL, "qd", "Miscellaneous",
+	"The King of Fighters '99 (EUR Version 20150713)\0", NULL, "qd", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99prRomInfo, kof99prRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3
+};
+
+// FBA4DROID 拳皇99 RPG The King of Fighters '99 (RPG 20140103)
+static struct BurnRomInfo kof99rpgRomDesc[] = {
+	{ "proto_251-p1.p1",   0x100000, 0x7eeb6064, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "proto_251-p2.p2",   0x400000, 0x18f8e9b5, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "proto_251-s1.s1",   0x020000, 0xcf570e5e, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "proto_251-c1.c1",   0x800000, 0x0f8cbfba, 3 | BRF_GRA },           //  3 Sprite data
+	{ "proto_251-c2.c2",   0x800000, 0x1232d8c0, 3 | BRF_GRA },           //  4 
+	{ "251-c3p.bin",   0x800000, 0xf20959e8, 3 | BRF_GRA },           //  5 
+	{ "251-c4p.bin",   0x800000, 0x54ffbe9f, 3 | BRF_GRA },           //  6 
+	{ "251-c5p.bin",   0x800000, 0xd87a3bbc, 3 | BRF_GRA },           //  7 
+	{ "251-c6p.bin",   0x800000, 0x4d40a691, 3 | BRF_GRA },           //  8 
+	{ "proto_251-c7.c7",   0x800000, 0xf9f17f45, 3 | BRF_GRA },           //  9 
+	{ "proto_251-c8.c8",   0x800000, 0xaa894237, 3 | BRF_GRA },           // 10 
+
+	{ "251-m1.m1",         0x020000, 0x5e74539c, 4 | BRF_ESS | BRF_PRG }, // 11 Z80 code
+
+	{ "251-v1.v1",         0x400000, 0xef2eecc8, 5 | BRF_SND },           // 12 Sound data
+	{ "251-v2.v2",         0x400000, 0x73e211ca, 5 | BRF_SND },           // 13 
+	{ "251-v3.v3",         0x400000, 0x821901da, 5 | BRF_SND },           // 14 
+	{ "251-v4.v4",         0x200000, 0xb49e6178, 5 | BRF_SND },           // 15 
+};
+
+STDROMPICKEXT(kof99rpg, kof99rpg, neogeo)
+STD_ROM_FN(kof99rpg)
+
+struct BurnDriver BurnDrvkof99rpg = {
+	"kof99rpg", "kof99", "neogeo", NULL, "2014",
+	"The King of Fighters '99 (RPG 20140103)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_PROTOTYPE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof99rpgRomInfo, kof99rpgRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
 };
 
 // FBAS 拳皇2000 解密版 The King of Fighters 2000 (non encrypted P, decrypted C)

@@ -12340,6 +12340,7 @@ DRV		BurnDrvKof94p;
 DRV		BurnDrvkof96c;
 DRV		BurnDrvkof96p;
 DRV		BurnDrvkof99pr;
+DRV		BurnDrvkof99rpg;
 DRV		BurnDrvkof2knd;
 DRV		BurnDrvkof2000t;
 DRV		BurnDrvkof2000p;
@@ -24776,7 +24777,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvKof94p,				// The King of Fighters '94 (Boss Hack 20150331)
 	&BurnDrvkof96c,				// The King of Fighters '96 (Revised Version 20051113)
 	&BurnDrvkof96p,				// The King of Fighters '96 (Rerise Of Chaos 20030205)
-	&BurnDrvkof99pr,			// Kof'99 (EUR Version 20150713)
+	&BurnDrvkof99pr,			// The King of Fighters '99 (EUR Version 20150713)
+	&BurnDrvkof99rpg,			// The King of Fighters '99 (RPG 20140103)
 	&BurnDrvkof2knd,			// The King of Fighters 2000 (non encrypted P, decrypted C)
 	&BurnDrvkof2000t,			// The King of Fighters 2000 (Optimized Version 20130910)
 	&BurnDrvkof2000p,			// The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
