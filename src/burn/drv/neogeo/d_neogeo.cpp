@@ -18248,6 +18248,42 @@ struct BurnDriver BurnDrvkof97xlb = {
 	0x1000, 304, 224, 4, 3
 };
 
+// FBA4DROID 拳皇97 卢卡尔版 The King of Fighters '97 (Rugal 20180228)
+static struct BurnRomInfo kof97rugalRomDesc[] = {
+	{ "232-p1.bin",   0x100000, 0x082dd515, 1 | BRF_ESS | BRF_PRG }, //  0 68K code
+	{ "232-p2.bin",   0x400000, 0x4c4383cb, 1 | BRF_ESS | BRF_PRG }, //  1 
+
+	{ "232-s1.s1",    0x020000, 0x8514ecf5, 2 | BRF_GRA },           //  2 Text layer tiles
+
+	{ "232-c1.c1",    0x800000, 0x5f8bf0a1, 3 | BRF_GRA },           //  3 Sprite data
+	{ "232-c2.c2",    0x800000, 0xe4d45c81, 3 | BRF_GRA },           //  4 
+	{ "232-c3.c3",    0x800000, 0x581d6618, 3 | BRF_GRA },           //  5 
+	{ "232-c4.c4",    0x800000, 0x49bb1e68, 3 | BRF_GRA },           //  6 
+	{ "232-c5.c5",    0x400000, 0x34fc4e51, 3 | BRF_GRA },           //  7 
+	{ "232-c6.c6",    0x400000, 0x4ff4d47b, 3 | BRF_GRA },           //  8 
+	{ "242-c7.bin",   0x800000, 0xf6d7a38a, 3 | BRF_GRA },           //  5 
+	{ "242-c8.bin",   0x800000, 0xc823e045, 3 | BRF_GRA },           //  6 
+
+	{ "232-m1.m1",    0x020000, 0x45348747, 4 | BRF_ESS | BRF_PRG }, //  9 Z80 code
+
+	{ "232-v1.v1",    0x400000, 0x22a2b5b5, 5 | BRF_SND },           // 10 Sound data
+	{ "232-v2.v2",    0x400000, 0x2304e744, 5 | BRF_SND },           // 11 
+	{ "232-v3.v3",    0x400000, 0x759eb954, 5 | BRF_SND },           // 12 
+};
+
+STDROMPICKEXT(kof97rugal, kof97rugal, neogeo)
+STD_ROM_FN(kof97rugal)
+
+struct BurnDriver BurnDrvkof97rugal = {
+	"kof97rugal", "kof97", "neogeo", NULL, "2018",
+	"The King of Fighters '97 (Rugal 20180228)\0", NULL, "hack", "Neo Geo MVS",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	NULL, kof97rugalRomInfo, kof97rugalRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
+	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
+	0x1000, 304, 224, 4, 3
+};
+
 // GOTVG 拳皇94 BOSS版 The King of Fighters '94 (Boss Hack 20150331)
 // kof94s07 in HBMAME.
 static struct BurnRomInfo kof94pRomDesc[] = {

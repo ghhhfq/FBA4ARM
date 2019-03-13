@@ -12335,6 +12335,7 @@ DRV		BurnDrvkof97tsb;
 DRV		BurnDrvkof97xlb;
 DRV		BurnDrvkof97u;
 DRV		BurnDrvkof97p;
+DRV		BurnDrvkof97rugal;
 DRV		BurnDrvKof94p;
 DRV		BurnDrvkof96c;
 DRV		BurnDrvkof96p;
@@ -24771,6 +24772,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof97xlb,			// The King of Fighters '97 (Subduing The Dragon 20050824)
 	&BurnDrvkof97u,				// The King of Fighters '97 (Super Optimized 8th Edition 20140907)
 	&BurnDrvkof97p,				// The King of Fighters '97 (Practice Mode in AES Mode 20140907)
+	&BurnDrvkof97rugal,			// The King of Fighters '97 (Rugal 20180228)
 	&BurnDrvKof94p,				// The King of Fighters '94 (Boss Hack 20150331)
 	&BurnDrvkof96c,				// The King of Fighters '96 (Revised Version 20051113)
 	&BurnDrvkof96p,				// The King of Fighters '96 (Rerise Of Chaos 20030205)
