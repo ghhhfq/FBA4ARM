@@ -18521,13 +18521,13 @@ struct BurnDriver BurnDrvkof2000p = {
 };
 
 // GOTVG 拳皇2001 BOSS版 The King of Fighters 2001 (Boss Hack 20101223)
-// kof2k1bs in HBMAME.
+// kof2k1bs in HBMAME. 
 // I have no idea why it it not working. Need someone to help me to figure it out.
 static struct BurnRomInfo kf2k1bsRomDesc[] = {
 	{ "262bs.p1",   0x100000, 0xb5becb3c, 1 | BRF_ESS | BRF_PRG }, 
 	{ "262bs.p2",   0x400000, 0x295d0c5c, 1 | BRF_ESS | BRF_PRG }, 
 	
-	{ "262bs.s1",    0x020000, 0x19b6587b, 2 | BRF_GRA },
+	{ "262bs.s1",   0x020000, 0x19b6587b, 2 | BRF_GRA },
 
 	{ "262d.c1",    0x800000, 0x103225b1, 3 | BRF_GRA },
 	{ "262d.c2",    0x800000, 0xf9d05d99, 3 | BRF_GRA },
@@ -18551,12 +18551,12 @@ STD_ROM_FN(kf2k1bs)
 
 struct BurnDriver BurnDrvkf2k1bs = {
 	"kf2k1bs", "kof2001", "neogeo", NULL, "2010",
-	"The King of Fighters 2001 (Boss Hack 20101223)\0", NULL, "Eddids", "Neo Geo",
+	"The King of Fighters 2001 (Boss Hack 20101223)\0", "Not working!", "Eddids", "Neo Geo",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k1bsRomInfo, kf2k1bsRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
-	0x1000, 304, 224, 4, 3
+	0x1000,	304, 224, 4, 3
 };
 
 // FBA4DROID 拳皇2002 风衣暴走八神 The King of Fighters 2002(Crazy Iroi With Cloak 20190214)

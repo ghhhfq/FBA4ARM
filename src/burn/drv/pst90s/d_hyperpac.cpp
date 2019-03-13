@@ -4300,3 +4300,26 @@ struct BurnDriver BurnDrvToto = {
 	TotoInit, SnowbrosExit, SnowbrosFrame, SnowbrosRender, SnowbrosScan,
 	NULL, 0x200, 256, 224, 4, 3
 };
+
+// FBA4DROID 雪人兄弟特别版 Snow Bros. - Nick & Tom (Special v1.0 20180925)
+static struct BurnRomInfo snowbrosbsRomDesc[] = {
+	{ "sbros3-a",      0x20000, 0x9a0f2016, BRF_ESS | BRF_PRG }, //  0	68000 Program Code
+	{ "sbros2-a",      0x20000, 0x0f83e900, BRF_ESS | BRF_PRG }, //  1	68000 Program Code
+
+	{ "sbros-1.41",    0x80000, 0x16f06b3a, BRF_GRA },			 //  2	Sprites
+
+	{ "sbros-4.29",    0x08000, 0xe6eab4e4, BRF_SND },			 //  3	Z80 Program Code
+};
+
+STD_ROM_PICK(snowbrosbs)
+STD_ROM_FN(snowbrosbs)
+
+struct BurnDriver BurnDrvsnowbrosbs = {
+	"snowbrosbs", "snowbros", NULL, NULL, "2018",
+	"Snow Bros. - Nick & Tom (Special v1.0 20180925)\0", NULL, "hack", "Kaneko Pandora based",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_MISC_POST90S, GBF_PLATFORM, 0,
+	NULL, snowbrosbsRomInfo, snowbrosbsRomName, NULL, NULL, NULL, NULL, SnowbrosInputInfo, SnowbrosDIPInfo,
+	SnowbrosInit, SnowbrosExit, SnowbrosFrame, SnowbrosRender, SnowbrosScan,
+	NULL, 0x200, 256, 224, 4, 3
+};

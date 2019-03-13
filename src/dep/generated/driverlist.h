@@ -12315,7 +12315,7 @@ DRV		BurnDrvkovshp1v4x;
 DRV		BurnDrvkovshpqxzq;
 DRV		BurnDrvKov2pcthl;
 DRV		BurnDrvKov2pswcq;
-DRV		BurnDrvOlds100adsgl;
+DRV		BurnDrvolds100adsgl;
 DRV		BurnDrvolds100afybh;
 DRV		BurnDrvkovplusxb1;
 DRV		BurnDrvkovplusxb2;
@@ -12396,6 +12396,8 @@ DRV		BurnDrvolds100aem;
 DRV		BurnDrvkov2pmess;
 DRV		BurnDrvkovplus2017;
 DRV		BurnDrvolds100aem2015;
+DRV		BurnDrvolds100aem2016;
+DRV		BurnDrvolds100asrp;
 DRV		BurnDrvkovshpd19;
 DRV		BurnDrvkovshpb;
 DRV		BurnDrvmslug5d;
@@ -12428,6 +12430,8 @@ DRV		BurnDrvmslugdg;
 DRV		BurnDrvmslug2gs;
 DRV		BurnDrvmslug2dg;
 DRV		BurnDrvmslug3sd;
+DRV		BurnDrvkov2pjlcq;
+DRV		BurnDrvsnowbrosbs;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24746,8 +24750,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
-	&BurnDrvOlds100adsgl,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
-	&BurnDrvolds100afybh,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
+	&BurnDrvolds100adsgl,			// Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
+	&BurnDrvolds100afybh,			// Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
 	&BurnDrvkovplusxb1,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
 	&BurnDrvkovplusxb2,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)
 	&BurnDrvkovplusxb2ds,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
@@ -24827,6 +24831,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkov2pmess,			// Knights of Valour 2 Plus - (Soul Stripping 20181030)
 	&BurnDrvkovplus2017,		// Knights of Valour - Sangoku Senki (Hong Bo's Death 20180904)
 	&BurnDrvolds100aem2015,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2015 20180823)
+	&BurnDrvolds100aem2016,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2017 20180927)
+	&BurnDrvolds100asrp,		// Xi Yo Gi Shi Re Zuang Super (Remix Plus 20180927)
 	&BurnDrvkovshpd19,			// Knights of Valour Super Heroes Plus (Plus 2018 20180820)
 	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180909)
 	&BurnDrvmslug5d,			// Metal Slug 5 (Fully Decrypted Version)
@@ -24859,4 +24865,6 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug2gs,			// Metal Slug 2 - Super Vehicle-001/II (Guns Storable Version 20151111)
 	&BurnDrvmslug2dg,			// Metal Slug 2 - Super Vehicle-001/II (Multifunction Version 20170509)
 	&BurnDrvmslug3sd,			// Metal Slug 3 (Mount Version 20180510)
+	&BurnDrvkov2pjlcq,			// Knights of Valour 2 Plus - (Legend Of Nine Dragons 20180924)
+	&BurnDrvsnowbrosbs,			// Snow Bros. - Nick & Tom (Special v1.0 20180925)
 };

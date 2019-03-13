@@ -6053,7 +6053,7 @@ struct BurnDriver BurnDrvKov2pswcq = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 西游释厄传超级版 大圣归来 Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
+// FBA4DROID 西游释厄传超级版 大圣归来 Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
 static struct BurnRomInfo olds100adsglRomDesc[] = {
 	{ "p0500.v10",	   		0x400000, 0xd63d9999, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6085,9 +6085,9 @@ static struct BurnRomInfo olds100adsglRomDesc[] = {
 STDROMPICKEXT(olds100adsgl, olds100adsgl, pgm)
 STD_ROM_FN(olds100adsgl)
 
-struct BurnDriver BurnDrvOlds100adsgl = {
+struct BurnDriver BurnDrvolds100adsgl = {
 	"olds100adsgl", "olds", "pgm", NULL, "2018",
-	"Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
 	NULL, olds100adsglRomInfo, olds100adsglRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
@@ -6095,7 +6095,7 @@ struct BurnDriver BurnDrvOlds100adsgl = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 西游 天下无双 游聚版 Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
+// FBA4DROID 西游 天下无双 游聚版 Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
 static struct BurnRomInfo olds100afybhRomDesc[] = {
 	{ "p0500.v10",	   		0x400000, 0xfc1bcd42, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
@@ -6129,7 +6129,7 @@ STD_ROM_FN(olds100afybh)
 
 struct BurnDriver BurnDrvolds100afybh = {
 	"olds100afybh", "olds", "pgm", NULL, "2015",
-	"Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
 	NULL, olds100afybhRomInfo, olds100afybhRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
@@ -6742,11 +6742,95 @@ STDROMPICKEXT(olds100aem2015, olds100aem2015, pgm)
 STD_ROM_FN(olds100aem2015)
 
 struct BurnDriver BurnDrvolds100aem2015 = {
-	"olds100aem2015", "olds", "pgm", NULL, "1998",
+	"olds100aem2015", "olds", "pgm", NULL, "2018",
 	"Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2015 20180823)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
 	NULL, olds100aem2015RomInfo, olds100aem2015RomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
+	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 超级西游释厄传 噩梦求生 2017 Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2017 20180927)
+static struct BurnRomInfo olds100aem2016RomDesc[] = {
+	{ "p0500.v10",	   		0x400000, 0xde996dd4, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0500.rom",	   		0x400000, 0xd881726c, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0501.rom",	   		0x200000, 0xd2106864, 2 | BRF_GRA },			//  2
+
+	{ "a0500.rom",	   		0x400000, 0x80a59197, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0501.rom",	   		0x400000, 0x98c931b1, 3 | BRF_GRA },			//  4
+	{ "a0502.rom",	   		0x400000, 0xc3fcdf1d, 3 | BRF_GRA },			//  5
+	{ "a0503.rom",	   		0x400000, 0x066dffec, 3 | BRF_GRA },			//  6
+	{ "a0504.rom",	   		0x400000, 0x45337583, 3 | BRF_GRA },			//  7
+	{ "a0505.rom",	   		0x400000, 0x5b8cf3a5, 3 | BRF_GRA },			//  8
+	{ "a0506.rom",	   		0x400000, 0xd76bdbad, 3 | BRF_GRA },			//  9
+
+	{ "b0500.rom",	   		0x400000, 0xcde07f74, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0501.rom",	   		0x400000, 0x1546c2e9, 4 | BRF_GRA },			// 11
+	{ "b0502.rom",	   		0x400000, 0xe97b31c3, 4 | BRF_GRA },			// 12
+	{ "b0503.u16",	   		0x400000, 0xd5c55bd3, 4 | BRF_GRA },			// 13
+
+	{ "m0500.rom",	   		0x200000, 0x37928cdd, 5 | BRF_SND },			// 14 Samples
+	
+#if !defined (ROM_VERIFY)
+	{ "kd-u6.512",	   		0x010000, 0xe7613dda, 9 | BRF_PRG | BRF_ESS },  // 15 Protection Rom
+#else
+	{ "ram_dump",	   		0x040000, 0x280cfb4e, 0 | BRF_OPT },
+#endif
+};
+
+STDROMPICKEXT(olds100aem2016, olds100aem2016, pgm)
+STD_ROM_FN(olds100aem2016)
+
+struct BurnDriver BurnDrvolds100aem2016 = {
+	"olds100aem2016", "olds", "pgm", NULL, "2018",
+	"Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2017 20180927)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, olds100aem2016RomInfo, olds100aem2016RomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
+	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 超级西游释厄传 Remix加强版 Xi Yo Gi Shi Re Zuang Super (Remix Plus 20180927)
+static struct BurnRomInfo olds100asrpRomDesc[] = {
+	{ "p0500.v10",	   		0x400000, 0x5162b454, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0500.rom",	   		0x400000, 0xd881726c, 2 | BRF_GRA },			//  1 Tile data
+	{ "t0501.rom",	   		0x200000, 0xd2106864, 2 | BRF_GRA },			//  2
+
+	{ "a0500.rom",	   		0x400000, 0x80a59197, 3 | BRF_GRA },			//  3 Sprite Color Data
+	{ "a0501.rom",	   		0x400000, 0x98c931b1, 3 | BRF_GRA },			//  4
+	{ "a0502.rom",	   		0x400000, 0xc3fcdf1d, 3 | BRF_GRA },			//  5
+	{ "a0503.rom",	   		0x400000, 0x066dffec, 3 | BRF_GRA },			//  6
+	{ "a0504.rom",	   		0x400000, 0x45337583, 3 | BRF_GRA },			//  7
+	{ "a0505.rom",	   		0x400000, 0x5b8cf3a5, 3 | BRF_GRA },			//  8
+	{ "a0506.rom",	   		0x400000, 0xd76bdbad, 3 | BRF_GRA },			//  9
+
+	{ "b0500.rom",	   		0x400000, 0xcde07f74, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0501.rom",	   		0x400000, 0x1546c2e9, 4 | BRF_GRA },			// 11
+	{ "b0502.rom",	   		0x400000, 0xe97b31c3, 4 | BRF_GRA },			// 12
+	{ "b0503.u16",	   		0x400000, 0xd5c55bd3, 4 | BRF_GRA },			// 13
+
+	{ "m0500.rom",	   		0x200000, 0x37928cdd, 5 | BRF_SND },			// 14 Samples
+	
+#if !defined (ROM_VERIFY)
+	{ "kd-u6.512",	   		0x010000, 0xe7613dda, 9 | BRF_PRG | BRF_ESS },  // 15 Protection Rom
+#else
+	{ "ram_dump",	   		0x040000, 0x280cfb4e, 0 | BRF_OPT },
+#endif
+};
+
+STDROMPICKEXT(olds100asrp, olds100asrp, pgm)
+STD_ROM_FN(olds100asrp)
+
+struct BurnDriver BurnDrvolds100asrp = {
+	"olds100asrp", "olds", "pgm", NULL, "2018",
+	"Xi Yo Gi Shi Re Zuang Super (Remix Plus 20180927)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, olds100asrpRomInfo, olds100asrpRomName, NULL, NULL, NULL, NULL, pgmInputInfo, olds100DIPInfo,
 	oldsInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
@@ -6812,5 +6896,40 @@ struct BurnDriver BurnDrvkovshpb = {
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpbRomInfo, kovshpbRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪2P 九龙传奇 Knights of Valour 2 Plus - (Legend Of Nine Dragons 20180924)
+static struct BurnRomInfo kov2pjlcqRomDesc[] = {
+	{ "v206-32m.rom",  		0x400000, 0x836075b8, 1 | BRF_PRG | BRF_ESS },  ////  0 68K Code
+
+	{ "t1200.rom",	   		0x800000, 0xd7e26609, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a1200.rom",	   		0x800000, 0xceeb81d8, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a1201.rom",   		0x800000, 0x21063ca7, 3 | BRF_GRA },			//  3
+	{ "a1202.rom",	   		0x800000, 0x24a4315f, 3 | BRF_GRA },			//  4
+	{ "a1203.rom",	   		0x800000, 0xe73cb627, 3 | BRF_GRA },			//  5
+	{ "a1204.rom",   		0x200000, 0x14b4b5bb, 3 | BRF_GRA },			//  6
+
+	{ "b1200.rom",	   		0x800000, 0xbed7d994, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b1201.rom",	   		0x800000, 0x07347997, 4 | BRF_GRA },			//  8
+
+	{ "m1200.rom",	   		0x800000, 0x4bc06a41, 5 | BRF_SND },			//  9 Samples
+
+	{ "kov2p_igs027a_china.bin",	0x004000, 0x19a0bd95, 7 | BRF_PRG | BRF_ESS },  // 10 Internal ARM7 Rom
+
+	{ "v200-16.rom",   		0x200000, 0x16a0c11f, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom
+};
+
+STDROMPICKEXT(kov2pjlcq, kov2pjlcq, pgm)
+STD_ROM_FN(kov2pjlcq)
+
+struct BurnDriver BurnDrvkov2pjlcq = {
+	"kov2pjlcq", "kov2p", "pgm", NULL, "2018",
+	"Knights of Valour 2 Plus - (Legend Of Nine Dragons 20180924)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kov2pjlcqRomInfo, kov2pjlcqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kov2pInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
