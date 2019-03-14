@@ -12438,6 +12438,13 @@ DRV		BurnDrvsnowbrosbs;
 DRV 	BurnDrvkovshpqszl;
 DRV		BurnDrvkovshpqszltw;
 DRV		BurnDrvkov2pfwll;
+DRV		BurnDrvkovplusxt;
+DRV		BurnDrvkovplusdszl;
+DRV		BurnDrvkovplusdjjz;
+DRV		BurnDrvkovshpd3;
+DRV		BurnDrvkovshpd3tw;
+DRV		BurnDrvorlegndcmm;
+DRV 	BurnDrvoldsplushmf;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24879,4 +24886,11 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshpqszl,			// Knights of Valour Super Heroes Plus (Road To Survival 20180224)
 	&BurnDrvkovshpqszltw,		// Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20180915)
 	&BurnDrvkov2pfwll,			// Knights of Valour 2 Plus - (Dancing Phoenix, Singing Dragon 20180411)
+	&BurnDrvkovplusxt,			// Knights of Valour Plus (Unity Of China 20180515)
+	&BurnDrvkovplusdszl,		// Knights of Valour Plus (Road To Master 20180711)
+	&BurnDrvkovplusdjjz,		// Knights of Valour Plus (Single Savior 20180308)
+	&BurnDrvkovshpd3,			// Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy 20180411)
+	&BurnDrvkovshpd3tw,			// Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20180905)
+	&BurnDrvorlegndcmm,			// Xi Yo Gi Shi Re Zuang (Boss Rush Edition 20180716)
+	&BurnDrvoldsplushmf,		// Xi Yo Gi Shi Re Zuang (Yellow Hat Subduing Devils 20180802)
 };

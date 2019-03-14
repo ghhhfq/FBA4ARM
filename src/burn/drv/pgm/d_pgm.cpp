@@ -7034,3 +7034,232 @@ struct BurnDriver BurnDrvkov2pfwll = {
 	kov2pInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
+
+// FBA4DROID 三国战纪2012 天下一统 Knights of Valour Plus (Unity Of China 20180515)
+static struct BurnRomInfo kovplusxtRomDesc[] = {
+	{ "p0600.119",       	0x400000, 0x14f0b6fc, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0xe451df7f, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0x783df23c, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0x71c8a46c, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0x4d755da5, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0xe3bf000f, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0x47a9af9c, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0xd84343ec, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusxt, kovplusxt, pgm)
+STD_ROM_FN(kovplusxt)
+
+struct BurnDriver BurnDrvkovplusxt = {
+	"kovplusxt", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Unity Of China 20180515)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusxtRomInfo, kovplusxtRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪 大神之路 Knights of Valour Plus (Road To Master 20180711)
+static struct BurnRomInfo kovplusdszlRomDesc[] = {
+	{ "p0600.119",       	0x400000, 0x404404e5, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x954551ff, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0xd8167834, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0xf24258ce, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0x7d3cd059, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0xc870aebb, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0x3ada4fd6, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusdszl, kovplusdszl, pgm)
+STD_ROM_FN(kovplusdszl)
+
+struct BurnDriver BurnDrvkovplusdszl = {
+	"kovplusdszl", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Road To Master 20180711)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusdszlRomInfo, kovplusdszlRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪 单骑救主 Knights of Valour Plus (Single Savior 20180308)
+static struct BurnRomInfo kovplusdjjzRomDesc[] = {
+	{ "p0600.119",       	0x400000, 0x6be54539, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",     		0x800000, 0x169b4e8b, 2 | BRF_GRA },			//  5 Tile data
+	
+	{ "a0600.rom",     		0x800000, 0x4f287f85, 3 | BRF_GRA },			//  6 Sprite Color Data
+	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },			//  7
+	{ "a0602.rom",     		0x800000, 0x11ecd0bf, 3 | BRF_GRA },			//  8
+	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },			//  9
+	
+	{ "b0600.rom",     		0x800000, 0x9783ed2c, 4 | BRF_GRA },			// 10 Sprite Masks & Color Indexes
+	{ "b0601.rom",     		0x400000, 0x50d9c24c, 4 | BRF_GRA },			// 11
+	
+	{ "m0600.rom",     		0x400000, 0xb61b8214, 5 | BRF_SND },			// 12 Samples	
+	
+	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  // 13 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovplusdjjz, kovplusdjjz, pgm)
+STD_ROM_FN(kovplusdjjz)
+
+struct BurnDriver BurnDrvkovplusdjjz = {
+	"kovplusdjjz", "kovplus", "pgm", NULL, "2018",
+	"Knights of Valour Plus (Single Savior 20180308)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, kovplusdjjzRomInfo, kovplusdjjzRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪 群雄逐鹿 Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy 20180411)
+static struct BurnRomInfo kovshpd3RomDesc[] = {
+	{ "p0600h.rom",			0x400000, 0xdfb1f3f8, 1 | BRF_PRG | BRF_ESS },
+
+	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },
+
+	{ "a0600.rom",	   		0x800000, 0x72643288, 3 | BRF_GRA },
+	{ "a0601.rom",	   		0x800000, 0x9c1d1bea, 3 | BRF_GRA },
+	{ "a0602.rom",	   		0x800000, 0x7b437e0f, 3 | BRF_GRA },
+	{ "a0540.rom",	   		0x800000, 0x612306ed, 3 | BRF_GRA },
+	{ "a0541.rom",	   		0x800000, 0xfac5160e, 3 | BRF_GRA }, 	        //  Expanded ROM
+
+	{ "b0600.rom",	   		0x800000, 0x0646c5ef, 4 | BRF_GRA },
+	{ "b0540.rom",	   		0x800000, 0xb7032905, 4 | BRF_GRA },
+	{ "b0601.rom",	   		0x800000, 0x095378f3, 4 | BRF_GRA },			//  Expanded ROM? Not sure whether it is needed or not!
+
+	{ "m0600.rom",	   		0x400000, 0xec3f335d, 5 | BRF_SND },
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0xd9a43086, 7 | BRF_PRG | BRF_ESS },
+};
+
+STDROMPICKEXT(kovshpd3, kovshpd3, pgm)
+STD_ROM_FN(kovshpd3)
+
+struct BurnDriver BurnDrvkovshpd3 = {
+	"kovshpd3", NULL, "pgm", NULL, "2018",
+	"Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy 20180411)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshpd3RomInfo, kovshpd3RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪 群雄逐鹿 天王版 Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20180905)
+static struct BurnRomInfo kovshpd3twRomDesc[] = {
+	{ "p0600h.rom",			0x400000, 0x8268e84f, 1 | BRF_PRG | BRF_ESS },
+
+	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },
+
+	{ "a0600.rom",	   		0x800000, 0x72643288, 3 | BRF_GRA },
+	{ "a0601.rom",	   		0x800000, 0x9c1d1bea, 3 | BRF_GRA },
+	{ "a0602.rom",	   		0x800000, 0x7b437e0f, 3 | BRF_GRA },
+	{ "a0540.rom",	   		0x800000, 0x612306ed, 3 | BRF_GRA },
+	{ "a0541.rom",	   		0x800000, 0xfac5160e, 3 | BRF_GRA }, 	        //  Expanded ROM
+
+	{ "b0600.rom",	   		0x800000, 0x0646c5ef, 4 | BRF_GRA },
+	{ "b0540.rom",	   		0x800000, 0xb7032905, 4 | BRF_GRA },
+	{ "b0601.rom",	   		0x800000, 0x095378f3, 4 | BRF_GRA },			//  Expanded ROM? Not sure whether it is needed or not!
+
+	{ "m0600.rom",	   		0x400000, 0xec3f335d, 5 | BRF_SND },
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0xd9a43086, 7 | BRF_PRG | BRF_ESS },
+};
+
+STDROMPICKEXT(kovshpd3tw, kovshpd3tw, pgm)
+STD_ROM_FN(kovshpd3tw)
+
+struct BurnDriver BurnDrvkovshpd3tw = {
+	"kovshpd3tw", "kovshpd3", "pgm", NULL, "2018",
+	"Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20180905)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshpd3twRomInfo, kovshpd3twRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 西游释厄传 寻仙回梦 Xi Yo Gi Shi Re Zuang (Boss Rush Edition 20180716)
+static struct BurnRomInfo orlegndcmmRomDesc[] = {
+	{ "p0101.160",			0x200000, 0xb515772b, 1 | BRF_PRG | BRF_ESS },	//  0 68K Code
+
+	{ "t0100.rom",			0x400000, 0x61425e1e, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0100.rom",			0x400000, 0x8b3bd88a, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0101.rom",			0x400000, 0x3b9e9644, 3 | BRF_GRA },			//  3	  
+	{ "a0102.rom",			0x400000, 0x069e2c38, 3 | BRF_GRA },			//  4
+	{ "a0103.rom",			0x400000, 0x4460a3fd, 3 | BRF_GRA },			//  5
+	{ "a0104.rom",			0x400000, 0x5f8abb56, 3 | BRF_GRA },			//  6
+	{ "a0105.rom",			0x400000, 0xa17a7147, 3 | BRF_GRA },			//  7
+
+	{ "b0100.rom",			0x400000, 0x69d2e48c, 4 | BRF_GRA },			//  8 Sprite Masks & Color Indexes
+	{ "b0101.rom",			0x400000, 0x0d587bf3, 4 | BRF_GRA },			//  9
+	{ "b0102.rom",			0x400000, 0x43823c1e, 4 | BRF_GRA },			// 10
+
+	{ "m0100.rom",			0x200000, 0xe5c36c83, 5 | BRF_SND },			// 11 Samples
+};
+
+STDROMPICKEXT(orlegndcmm, orlegndcmm, pgm)
+STD_ROM_FN(orlegndcmm)
+
+struct BurnDriver BurnDrvorlegndcmm = {
+	"orlegndcmm", "orlegend", "pgm", NULL, "2018",
+	"Xi Yo Gi Shi Re Zuang (Boss Rush Edition 20180716)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM, GBF_SCRFIGHT, 0,
+	NULL, orlegndcmmRomInfo, orlegndcmmRomName, NULL, NULL, NULL, NULL, pgmInputInfo, orld112cDIPInfo,
+	orlegendInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 西游释厄传 群魔乱舞 黄帽伏魔版 Xi Yo Gi Shi Re Zuang (Yellow Hat Subduing Devils 20180802)
+static struct BurnRomInfo oldsplushmfRomDesc[] = {
+	{ "p05301.rom",			0x400000, 0xc2e70cae, 1 | BRF_PRG | BRF_ESS },	//  0 68K Code
+
+	{ "t05301.rom",			0x800000, 0x8257bbb0, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a05301.rom",			0x800000, 0x57946fd2, 3 | BRF_GRA },	 		//  2 Sprite Color Data
+	{ "a05302.rom",			0x800000, 0x65acdbf7, 3 | BRF_GRA },			//  3
+	{ "a05303.rom",			0x800000, 0x13475d85, 3 | BRF_GRA },			//  4
+	{ "a05304.rom",			0x800000, 0xb92e10a4, 3 | BRF_GRA },			//  5
+
+	{ "b05301.rom",			0x800000, 0x7aedd210, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b05302.rom",			0x800000, 0x059d9ad8, 4 | BRF_GRA },			//  7
+
+	{ "m05301.rom",			0x400000, 0x61a1413c, 5 | BRF_SND },			//  8 Samples
+
+	{ "oldsplus_igs027a.bin",	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },	//  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(oldsplushmf, oldsplushmf, pgm)
+STD_ROM_FN(oldsplushmf)
+
+struct BurnDriver BurnDrvoldsplushmf = {
+	"oldsplushmf", "oldsplus", "pgm", NULL, "2018",
+	"Xi Yo Gi Shi Re Zuang (Yellow Hat Subduing Devils 20180802)\0", "Incomplete Dump", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
+	NULL, oldsplushmfRomInfo, oldsplushmfRomName, NULL, NULL, NULL, NULL, pgmInputInfo, puzzli2DIPInfo,
+	oldsplusInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
