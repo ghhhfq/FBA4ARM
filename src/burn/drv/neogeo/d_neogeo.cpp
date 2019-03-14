@@ -18425,7 +18425,7 @@ STD_ROM_FN(kof99pr)
 
 struct BurnDriver BurnDrvkof99pr = {
 	"kof99pr", "kof99", "neogeo", NULL, "2015",
-	"The King of Fighters '99 (EUR Version 20150713)\0", NULL, "qd", "Miscellaneous",
+	"The King of Fighters '99 (EUR Version 20150713)\0", "Protections to be removed!", "qd", "Miscellaneous",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HACK, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
 	NULL, kof99prRomInfo, kof99prRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,

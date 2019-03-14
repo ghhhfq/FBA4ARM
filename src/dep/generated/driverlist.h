@@ -12435,6 +12435,9 @@ DRV		BurnDrvmslug2dg;
 DRV		BurnDrvmslug3sd;
 DRV		BurnDrvkov2pjlcq;
 DRV		BurnDrvsnowbrosbs;
+DRV 	BurnDrvkovshpqszl;
+DRV		BurnDrvkovshpqszltw;
+DRV		BurnDrvkov2pfwll;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24840,7 +24843,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvolds100aem2016,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2017 20180927)
 	&BurnDrvolds100asrp,		// Xi Yo Gi Shi Re Zuang Super (Remix Plus 20180927)
 	&BurnDrvkovshpd19,			// Knights of Valour Super Heroes Plus (Plus 2018 20180820)
-	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180909)
+	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180922)
 	&BurnDrvmslug5d,			// Metal Slug 5 (Fully Decrypted Version)
 	&BurnDrvmslug5dzh,			// Metal Slug 5 (Callable Vehicle 20180918)
 	&BurnDrvms5f,				// Metal Slug 5 (Dogfight 20161019)
@@ -24873,4 +24876,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug3sd,			// Metal Slug 3 (Mount Version 20180510)
 	&BurnDrvkov2pjlcq,			// Knights of Valour 2 Plus - (Legend Of Nine Dragons 20180924)
 	&BurnDrvsnowbrosbs,			// Snow Bros. - Nick & Tom (Special v1.0 20180925)
+	&BurnDrvkovshpqszl,			// Knights of Valour Super Heroes Plus (Road To Survival 20180224)
+	&BurnDrvkovshpqszltw,		// Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20180915)
+	&BurnDrvkov2pfwll,			// Knights of Valour 2 Plus - (Dancing Phoenix, Singing Dragon 20180411)
 };
