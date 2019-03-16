@@ -144,12 +144,11 @@ static bool driver_inited;
 
 void retro_get_system_info(struct retro_system_info *info)
 {
-	info->library_name = "FBA4S905&RPI";
+	info->library_name = "FB Alpha";
 #ifndef GIT_VERSION
 #define GIT_VERSION ""
 #endif
-	//info->library_version = FBA_VERSION " Ver.0.2 (严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！)";
-	info->library_version = " v0.3 (严禁将本核心编译后使用在收费或者挂有募捐名义的项目中！)";
+	info->library_version = FBA_VERSION GIT_VERSION;
 	info->need_fullpath = true;
 	info->block_extract = true;
 	info->valid_extensions = "zip|7z";
