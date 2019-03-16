@@ -12316,8 +12316,8 @@ DRV		BurnDrvkovshpp19;
 DRV		BurnDrvkovshpqxzqj;
 DRV		BurnDrvkovshp1v4x;
 DRV		BurnDrvkovshpqxzq;
-DRV		BurnDrvKov2pcthl;
-DRV		BurnDrvKov2pswcq;
+DRV		BurnDrvkov2pcthl;
+DRV		BurnDrvkov2pswcq;
 DRV		BurnDrvolds100adsgl;
 DRV		BurnDrvolds100afybh;
 DRV		BurnDrvkovplusxb1;
@@ -12447,6 +12447,18 @@ DRV		BurnDrvkovshpd3;
 DRV		BurnDrvkovshpd3tw;
 DRV		BurnDrvorlegndcmm;
 DRV 	BurnDrvoldsplushmf;
+DRV		BurnDrvkov2pplus;
+DRV		BurnDrvkov2ppws;
+DRV		BurnDrvkovshpd3x;
+DRV		BurnDrvkovplus2012dw;	// [MAY NOT WORK]
+DRV		BurnDrvkovplus2012m;	// [MAY NOT WORK]
+DRV		BurnDrvkovplus2012em;
+DRV		BurnDrvkovplus2012st;
+DRV		BurnDrvkovshsjcs;
+DRV		BurnDrvkovshwsgl;
+DRV		BurnDrvkovshpdx;
+DRV		BurnDrvkovshp1v4;
+DRV		BurnDrvkovshp1v4s;
 #undef DRV
 
 // Structure containing addresses of all drivers
@@ -24734,13 +24746,13 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsWofdr,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Master Version 20190221)
 	&BurnDrvCpsWofr19,			// Warriors of Fate (Unique Sword Armor 20190113)
 	&BurnDrvCpsWofjps,			// Tenchi wo Kurau II - Sekiheki no Tatakai (Imitation of Playstation Version 20091209)
-	&BurnDrvCpsCaptcommpjy,			// Captain Commando (Elite Version 20181231)
-	&BurnDrvCpsCaptcommrds,			// Captain Commando (99 Beater Version 20190102)
-	&BurnDrvCpsCaptcommr1bs,		// Captain Commando (Shape Shifting Version 20190101)
-	&BurnDrvCpsCaptcommpzs,			// Captain Commando (Warlord Version 20190107)
-	&BurnDrvCpsCaptcommpwx,			// Captain Commando (Infinite Bullet 20190121)
-	&BurnDrvCpsCaptcommr1dw,		// Captain Commando (Unrivalled Version 20181101)
-	&BurnDrvCpsDinows2019,			// Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)
+	&BurnDrvCpsCaptcommpjy,		// Captain Commando (Elite Version 20181231)
+	&BurnDrvCpsCaptcommrds,		// Captain Commando (99 Beater Version 20190102)
+	&BurnDrvCpsCaptcommr1bs,	// Captain Commando (Shape Shifting Version 20190101)
+	&BurnDrvCpsCaptcommpzs,		// Captain Commando (Warlord Version 20190107)
+	&BurnDrvCpsCaptcommpwx,		// Captain Commando (Infinite Bullet 20190121)
+	&BurnDrvCpsCaptcommr1dw,	// Captain Commando (Unrivalled Version 20181101)
+	&BurnDrvCpsDinows2019,		// Cadillacs & Dinosaurs (Unrivalled Version 2019 20190107)
 	&BurnDrvCpsDinoxzb,			// Cadillacs & Dinosaurs (Warlord Version 20190119)
 	&BurnDrvCpsDinojps,			// Cadillacs & Dinosaurs (Arena Version 20190123)
 	&BurnDrvCpsDinowtw,			// Cadillacs & Dinosaurs (Sky King 20190114)
@@ -24763,26 +24775,26 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
-	&BurnDrvkovshpqxzqj,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
+	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
 	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus (Incredible God of War 20190227)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
-	&BurnDrvKov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
-	&BurnDrvKov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
-	&BurnDrvolds100adsgl,			// Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
-	&BurnDrvolds100afybh,			// Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
+	&BurnDrvkov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
+	&BurnDrvkov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
+	&BurnDrvolds100adsgl,		// Xi Yo Gi Shi Re Zuang Super (Return of Monkey King 20181229)
+	&BurnDrvolds100afybh,		// Xi Yo Gi Shi Re Zuang Super (Unparalleled In The World, GOTVG 20150203)
 	&BurnDrvkovplusxb1,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 20181206)
 	&BurnDrvkovplusxb2,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 20181206)
-	&BurnDrvkovplusxb2ds,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
-	&BurnDrvkovplusxb2wj,			// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
+	&BurnDrvkovplusxb2ds,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Manito 20181207)
+	&BurnDrvkovplusxb2wj,		// Knights of Valour Plus (Small Soldiers Fighting for Hegemony 2 - Military Commanders 20181207)
 	&BurnDrvkovshzlzy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China 20180307)
-	&BurnDrvkovshzlzyjz,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
-	&BurnDrvkovshzlzywj,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
+	&BurnDrvkovshzlzyjz,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (A Decisive Battle Over The World 20181202)
+	&BurnDrvkovshzlzywj,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Legend Of Five Swords 20181203)
 	&BurnDrvkof97st,			// The King of Fighters '97 (Renovation 20180904)
 	//&BurnDrvMSlug2r,			// Metal Slug 2(Enemies Resetting Version 20141110)
 	&BurnDrvkof97c,				// The King of Fighters '97 (Combo 20180509)
 	&BurnDrvkof97ys,			// The King of Fighters '97 (YS 20170801)
 	&BurnDrvkof97m,				// The King of Fighters '97 (Dream Back To 97 20130610)
-	&BurnDrvkof97plss20,			// The King of Fighters '97 (Rerise Of Chaos 20140828)
+	&BurnDrvkof97plss20,		// The King of Fighters '97 (Rerise Of Chaos 20140828)
 	&BurnDrvkof97tsb,			// The King of Fighters '97 (Slaughter Of Orochi 20060807)
 	&BurnDrvkof97xlb,			// The King of Fighters '97 (Subduing The Dragon 20050824)
 	&BurnDrvkof97u,				// The King of Fighters '97 (Super Optimized 8th Edition 20140907)
@@ -24798,9 +24810,9 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof2000p,			// The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
 	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)  // no comment [NOT WORKING]
 	&BurnDrvkovytzyp,			// Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)
-	&BurnDrvkovshzlzymy,			// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
-	&BurnDrvkovshp1v4xtw,			// Knights of Valour Super Heroes Plus (Incredible God of War - Sky King 20190228)
-	&BurnDrvolds100aylzx,			// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
+	&BurnDrvkovshzlzymy,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
+	&BurnDrvkovshp1v4xtw,		// Knights of Valour Super Heroes Plus (Incredible God of War - Sky King 20190228)
+	&BurnDrvolds100aylzx,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
 	&BurnDrvkf2k1cm,			// The King of Fighters 2001 (Rerise Of Chaos - 2 20180918)
 	&BurnDrvhookj1v4,			// Hook (1VS4 20160625)
@@ -24897,4 +24909,16 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshpd3tw,			// Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20180905)
 	&BurnDrvorlegndcmm,			// Xi Yo Gi Shi Re Zuang (Boss Rush Edition 20180716)
 	&BurnDrvoldsplushmf,		// Xi Yo Gi Shi Re Zuang (Yellow Hat Subduing Devils 20180802)
+	&BurnDrvkov2pplus,			// Knights of Valour 2 Plus - (Dynasty Warriors 20180614)
+	&BurnDrvkov2ppws,			// Knights of Valour 2 Plus - (Unrivaled In The World 20180819)
+	&BurnDrvkovshpd3x,			// Knights of Valour Super Heroes Plus (Inherent Qualities Of Shen Yun 20180902)
+	&BurnDrvkovplus2012dw,		// Knights of Valour Plus (Unrivalled Version 20180823)
+	&BurnDrvkovplus2012m,		// Knights of Valour Plus (Nightmare 20180601)
+	&BurnDrvkovplus2012em,		// Knights of Valour Plus (Unrivalled God Of War 20180715)
+	&BurnDrvkovplus2012st,		// Knights of Valour Plus (God Of War ST 20180716)
+	&BurnDrvkovshsjcs,			// Knights of Valour Superheroes (Legend Of Four Swords 20151105)
+	&BurnDrvkovshwsgl,			// Knights of Valour Superheroes (Legend Of Moonlight 20151105)
+	&BurnDrvkovshpdx,			// Knights of Valour Super Heroes Plus (Bloody Battle Against All Quarters 20170801)
+	&BurnDrvkovshp1v4,			// Knights of Valour Super Heroes Plus (Twilight for the Gods 20180506)
+	&BurnDrvkovshp1v4s,			// Knights of Valour Super Heroes Plus (Twilight for the Gods - Dawn 20180506)
 };
