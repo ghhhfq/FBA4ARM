@@ -18595,12 +18595,9 @@ struct BurnDriver BurnDrvkof2000p = {
 
 // GOTVG 拳皇2001 BOSS版 The King of Fighters 2001 (Boss Hack 20101223)
 // kof2k1bs in HBMAME. 
-// I have no idea why it it not working. Need someone to help me to figure it out.
 static struct BurnRomInfo kf2k1bsRomDesc[] = {
 	{ "262bs.p1",   0x100000, 0xb5becb3c, 1 | BRF_ESS | BRF_PRG }, 
 	{ "262bs.p2",   0x400000, 0x295d0c5c, 1 | BRF_ESS | BRF_PRG }, 
-	
-	{ "262bs.s1",   0x020000, 0x19b6587b, 2 | BRF_GRA },
 
 	{ "262d.c1",    0x800000, 0x103225b1, 3 | BRF_GRA },
 	{ "262d.c2",    0x800000, 0xf9d05d99, 3 | BRF_GRA },
@@ -18610,13 +18607,13 @@ static struct BurnRomInfo kf2k1bsRomDesc[] = {
 	{ "262d.c6",    0x800000, 0x8d6565a9, 3 | BRF_GRA },
 	{ "262bs.c7",   0x800000, 0x8d11aed2, 3 | BRF_GRA },
 	{ "262bs.c8",   0x800000, 0x9e7168f5, 3 | BRF_GRA },
+	
+	{ "265-262-m1.bin",        0x040000, 0xa7f8119f, 4 | BRF_ESS | BRF_PRG }, // 10 Z80 code
 
-	{ "262d.m1",    0x020000, 0x2fb0a8a5, 4 | BRF_ESS | BRF_PRG },
-
-	{ "262.v1",     0x400000, 0x83d49ecf, 5 | BRF_SND },
-	{ "262.v2",     0x400000, 0x003f1843, 5 | BRF_SND },
-	{ "262.v3",     0x400000, 0x2ae38dbe, 5 | BRF_SND },
-	{ "262.v4",     0x400000, 0x26ec4dd9, 5 | BRF_SND },
+	{ "262-v1-08-e0.bin",      0x400000, 0x83d49ecf, 5 | BRF_SND },     // 11 Sound data
+	{ "262-v2-08-e0.bin",      0x400000, 0x003f1843, 5 | BRF_SND },     // 12
+	{ "262-v3-08-e0.bin",      0x400000, 0x2ae38dbe, 5 | BRF_SND },     // 13
+	{ "262-v4-08-e0.bin",      0x400000, 0x26ec4dd9, 5 | BRF_SND },     // 14
 };
 
 STDROMPICKEXT(kf2k1bs, kf2k1bs, neogeo)
@@ -18624,9 +18621,9 @@ STD_ROM_FN(kf2k1bs)
 
 struct BurnDriver BurnDrvkf2k1bs = {
 	"kf2k1bs", "kof2001", "neogeo", NULL, "2010",
-	"The King of Fighters 2001 (Boss Hack 20101223)\0", "Not working!", "Eddids", "Neo Geo",
+	"The King of Fighters 2001 (Boss Hack 20101223)\0", NULL, "Eddids", "Neo Geo",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO, GBF_VSFIGHT, FBF_KOF,
+	BDF_GAME_WORKING | BDF_CLONE, 2, HARDWARE_PREFIX_CARTRIDGE | HARDWARE_SNK_NEOGEO | HARDWARE_SNK_ENCRYPTED_M1, GBF_VSFIGHT, FBF_KOF,
 	NULL, kf2k1bsRomInfo, kf2k1bsRomName, NULL, NULL, NULL, NULL, neogeoInputInfo, neogeoDIPInfo,
 	NeoInit, NeoExit, NeoFrame, NeoRender, NeoScan, &NeoRecalcPalette,
 	0x1000,	304, 224, 4, 3

@@ -12448,8 +12448,8 @@ DRV 	BurnDrvoldsplushmf;
 DRV		BurnDrvkov2pplus;
 DRV		BurnDrvkov2ppws;
 DRV		BurnDrvkovshpd3x;
-DRV		BurnDrvkovplus2012dw;	// [MAY NOT WORK]
-DRV		BurnDrvkovplus2012m;	// [MAY NOT WORK]
+DRV		BurnDrvkovplus2012dw;
+DRV		BurnDrvkovplus2012m;
 DRV		BurnDrvkovplus2012em;
 DRV		BurnDrvkovplus2012st;
 DRV		BurnDrvkovshsjcs;
