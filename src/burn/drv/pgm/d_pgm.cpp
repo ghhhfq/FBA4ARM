@@ -6156,13 +6156,11 @@ static struct BurnRomInfo kovplus2012dwRomDesc[] = {
 	{ "p2012dw.119",       	0x400000, 0x2c75ac09, 1 | BRF_PRG | BRF_ESS },
 
 	{ "t0600.rom",     		0x800000, 0x842b7711, 2 | BRF_GRA },
-	{ "pgm_t01s.rom",     	0x200000, 0x1a7123a0, 2 | BRF_GRA },			//  Expanded ROM ???
 	
 	{ "a0600.rom",     		0x800000, 0x5bd7ea9f, 3 | BRF_GRA },
 	{ "a0601.rom",     		0x800000, 0xff7a4373, 3 | BRF_GRA },
 	{ "a0602.rom",     		0x800000, 0xaf2c086d, 3 | BRF_GRA },
 	{ "a0603.rom",     		0x400000, 0xec31abda, 3 | BRF_GRA },
-	{ "pgm_m01s.rom",     	0x200000, 0x692511a5, 3 | BRF_GRA },			//  Expanded ROM ???
 	
 	{ "b0600.rom",     		0x800000, 0x07d91ea3, 4 | BRF_GRA },
 	{ "b0601.rom",     		0x400000, 0x4ce7b2b8, 4 | BRF_GRA },
@@ -6170,8 +6168,6 @@ static struct BurnRomInfo kovplus2012dwRomDesc[] = {
 	{ "m0600.rom",     		0x400000, 0x7a50501b, 5 | BRF_SND },
 	
 	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
-	//{ "pgm_p01s.u20", 	0x004000, 0xe42b166e, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom ?
-	//{ "pgm_p02s.u20", 	0x004000, 0x78c15fa2, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom ?
 };
 
 STDROMPICKEXT(kovplus2012dw, kovplus2012dw, pgm)
@@ -6188,17 +6184,16 @@ struct BurnDriver BurnDrvkovplus2012dw = {
 };
 
 // FBA4DROID 三国战纪 正宗2012 噩梦版 Knights of Valour Plus (Nightmare 20180601)
+// Not working properly.
 static struct BurnRomInfo kovplus2012mRomDesc[] = {
 	{ "p2012m.119",       	0x600000, 0xfb759b85, 1 | BRF_PRG | BRF_ESS },
 
 	{ "t0600.rom",     		0x800000, 0xea123375, 2 | BRF_GRA },
-	{ "pgm_t01s.rom",     	0x200000, 0x1a7123a0, 2 | BRF_GRA },			//  Expanded ROM ???
-	
+
 	{ "a0600.rom",     		0x800000, 0x5bd7ea9f, 3 | BRF_GRA },
 	{ "A0601.ROM",     		0x800000, 0xff7a4373, 3 | BRF_GRA },
 	{ "A0602.ROM",     		0x800000, 0xe7a32959, 3 | BRF_GRA },
 	{ "a0603.ROM",     		0x400000, 0xec31abda, 3 | BRF_GRA },
-	{ "pgm_m01s.rom",     	0x200000, 0xbc785efc, 3 | BRF_GRA },			//  Expanded ROM ???
 	
 	{ "b0600.rom",     		0x800000, 0x07d91ea3, 4 | BRF_GRA },
 	{ "b0601.rom",     		0x400000, 0xa0bb1c2f, 4 | BRF_GRA },
@@ -6206,8 +6201,6 @@ static struct BurnRomInfo kovplus2012mRomDesc[] = {
 	{ "m0600.rom",     		0x400000, 0x7a50501b, 5 | BRF_SND },
 	
 	{ "kov_igs027a.bin", 	0x004000, 0x00000000, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom
-	//{ "pgm_p01s.u20", 	0x004000, 0xe42b166e, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom ?
-	//{ "pgm_p02s.u20", 	0x004000, 0x78c15fa2, 7 | BRF_PRG | BRF_ESS | BRF_NODUMP },  //  9 Internal ARM7 Rom ?
 };
 
 STDROMPICKEXT(kovplus2012m, kovplus2012m, pgm)
@@ -6215,7 +6208,7 @@ STD_ROM_FN(kovplus2012m)
 
 struct BurnDriver BurnDrvkovplus2012m = {
 	"kovplus2012m", "kovplus", "pgm", NULL, "2018",
-	"Knights of Valour Plus (Nightmare 20180601)\0", NULL, "hack", "PolyGameMaster",
+	"Knights of Valour Plus (Nightmare 20180601)\0", "Not Working!", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM/* | HARDWARE_IGS_USE_ARM_CPU*/, GBF_SCRFIGHT, 0,
 	NULL, kovplus2012mRomInfo, kovplus2012mRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,

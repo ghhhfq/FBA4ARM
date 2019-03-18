@@ -12345,7 +12345,7 @@ DRV		BurnDrvkof99rpg;
 DRV		BurnDrvkof2knd;
 DRV		BurnDrvkof2000t;
 DRV		BurnDrvkof2000p;
-DRV		BurnDrvkf2k1bs;		// no comment [NOT WORKING]
+DRV		BurnDrvkf2k1bs;	
 DRV		BurnDrvkovytzyp;
 DRV		BurnDrvkovshzlzymy;
 DRV		BurnDrvkovshp1v4xtw;
