@@ -12458,6 +12458,7 @@ DRV		BurnDrvkovshwsgl;
 DRV		BurnDrvkovshpdx;
 DRV		BurnDrvkovshp1v4;
 DRV		BurnDrvkovshp1v4s;
+DRV		BurnDrvkovytzyftxq;
 
 #undef DRV
 
@@ -24807,9 +24808,9 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkof2knd,			// The King of Fighters 2000 (non encrypted P, decrypted C)
 	&BurnDrvkof2000t,			// The King of Fighters 2000 (Optimized Version 20130910)
 	&BurnDrvkof2000p,			// The King of Fighters 2000 (Rerise of Chaos Blue Version 20180309)
-	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)  // no comment [NOT WORKING]
-	&BurnDrvkovytzyp,			// Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)
-	&BurnDrvkovshzlzymy,		// Knights of Valour Superheroes / Sangoku Senki Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
+	&BurnDrvkf2k1bs,			// The King of Fighters 2001 (Boss Hack 20101223)
+	&BurnDrvkovytzyp,			// Knights of Valour - Yi Tong Zhong Yuan (Plus 20190216)
+	&BurnDrvkovshzlzymy,		// Knights of Valour Superheroes (Fight For Territory In Ancient Central China - Legend Of Mo Ye 20190102)
 	&BurnDrvkovshp1v4xtw,		// Knights of Valour Super Heroes Plus (Incredible God of War - Sky King 20190228)
 	&BurnDrvolds100aylzx,		// Oriental Legend Special - Xi Yo Gi Shi Re Zuang Super (Breath of Yuan Ling 20190129)
 	&BurnDrvkof02ic,			// The King of Fighters 2002(Crazy Iroi With Cloak 20190214)
@@ -24920,4 +24921,5 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshpdx,			// Knights of Valour Super Heroes Plus (Bloody Battle Against All Quarters 20170801)
 	&BurnDrvkovshp1v4,			// Knights of Valour Super Heroes Plus (Twilight for the Gods 20180506)
 	&BurnDrvkovshp1v4s,			// Knights of Valour Super Heroes Plus (Twilight for the Gods - Dawn 20180506)
+	&BurnDrvkovytzyftxq,		// Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20181209)
 };

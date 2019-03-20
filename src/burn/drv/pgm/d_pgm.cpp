@@ -6581,7 +6581,7 @@ struct BurnDriver BurnDrvkovshpqxzq = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 一统中原 加强版 Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan Plus (20190216)
+// FBA4DROID 三国战纪 一统中原 加强版 Knights of Valour - Yi Tong Zhong Yuan Plus (20190216)
 static struct BurnRomInfo kovytzypRomDesc[] = {
 	{ "ytzy_v201cn.rom",	0x4551ee, 0xa0ba0f05, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code , weird size!
 
@@ -6605,7 +6605,7 @@ STD_ROM_FN(kovytzyp)
 
 struct BurnDriver BurnDrvkovytzyp = {
 	"kovytzyp", NULL, "pgm", NULL, "2019",
-	"Knights of Valour / Sangoku Senki: Yi Tong Zhong Yuan (Plus 20190216)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour  - Yi Tong Zhong Yuan (Plus 20190216)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovytzypRomInfo, kovytzypRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -7060,6 +7060,39 @@ struct BurnDriver BurnDrvkovshp1v4s = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshp1v4sRomInfo, kovshp1v4sRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪 一统中原 青版 Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20181209)
+static struct BurnRomInfo kovytzyftxqRomDesc[] = {
+	{ "ytzy_v201cn.rom",	0x600000, 0x8a5702ff, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code , weird size!
+
+	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0xf25b6930, 3 | BRF_GRA }, 	        //  4
+	{ "a0540.rom",	   		0x800000, 0x9d30ffbc, 3 | BRF_GRA }, 	        //  5
+
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0540.rom",	   		0x800000, 0x2de11691, 4 | BRF_GRA },			//  7
+	{ "b0601.rom",	   		0x400000, 0x16a7afde, 4 | BRF_GRA },			//  Expanded ROM??? Maybe not necessary?
+
+	{ "m0600.rom",	   		0x400000, 0x1f981f2c, 5 | BRF_SND },			//  8 Samples
+
+	{ "kovshp_v100_china.asic", 	0x004000, 0x2b170e33, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovytzyftxq, kovytzyftxq, pgm)
+STD_ROM_FN(kovytzyftxq)
+
+struct BurnDriver BurnDrvkovytzyftxq = {
+	"kovytzyftxq", NULL, "pgm", NULL, "2018",
+	"Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20181209)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovytzyftxqRomInfo, kovytzyftxqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
