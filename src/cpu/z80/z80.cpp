@@ -838,7 +838,7 @@ Z80_INLINE UINT32 ARG16(void)
 	change_pc(PCD);												\
 /* according to http://www.msxnet.org/tech/z80-documented.pdf */\
 	IFF1 = IFF2;												\
-	if (Z80.daisy)												\
+    if (Z80.daisy)												\
 		z80daisy_call_reti_device(Z80.daisy);					\
 }
 
@@ -3523,6 +3523,11 @@ void Z80Init()
 	F = ZF;			/* Zero flag is set */
 }
 
+void Z80SetDaisy(void *dptr)
+{
+	Z80.daisy = (z80_irq_daisy_chain *)dptr;
+}
+
 void Z80Reset()
 {
 	//struct z80_irq_daisy_chain *daisy;
@@ -3553,6 +3558,9 @@ void Z80Reset()
 
 void Z80Exit()
 {
+    if (Z80.daisy) {
+        z80daisy_exit();
+    }
 
 	if (SZHVC_add) free(SZHVC_add);
 	SZHVC_add = NULL;
@@ -3661,6 +3669,11 @@ void Z80SetContext (void *src)
 
 int Z80Scan(int nAction)
 {
+    z80daisy_scan(nAction);
+
+#if 0
+    bprintf(0, _T("Z80Scan() should not be used. depreciated.\n"));
+
 	if ((nAction & ACB_DRIVER_DATA) == 0) {
 		return 0;
 	}
@@ -3672,6 +3685,7 @@ int Z80Scan(int nAction)
 	ba.nLen	  = STRUCT_SIZE_HELPER(Z80_Regs, hold_irq);
 	ba.szName = "Z80 Registers";
 	BurnAcb(&ba);
+#endif
 
 	return 0;
 }
