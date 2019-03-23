@@ -4208,10 +4208,10 @@ struct BurnDriver BurnDrvnbbatmanx2 = {
 	320, 240, 4, 3
 };
 
-// FBA4DROID 棒球忍者 无双版 Ninja Baseball Batman (Unrivalled Version 20190223)
+// FBA4DROID 棒球忍者 无双版 Ninja Baseball Batman (Unrivalled Version 20190309)
 static struct BurnRomInfo nbbatmanx2xRomDesc[] = {
-	{ "6_h0.34",		0x040000, 0x81e706e6, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
-	{ "3_l0.31",		0x040000, 0x353c90e9, 1 | BRF_PRG | BRF_ESS }, //  1
+	{ "6_h0.34",		0x040000, 0x80aa047d, 1 | BRF_PRG | BRF_ESS }, //  0 V33 Code
+	{ "3_l0.31",		0x040000, 0xfd078299, 1 | BRF_PRG | BRF_ESS }, //  1
 	{ "a1-h1-.33",		0x040000, 0x3ce2aab5, 1 | BRF_PRG | BRF_ESS }, //  2
 	{ "a1-l1-.32",		0x040000, 0x116d9bcc, 1 | BRF_PRG | BRF_ESS }, //  3
 
@@ -4235,8 +4235,8 @@ STD_ROM_PICK(nbbatmanx2x)
 STD_ROM_FN(nbbatmanx2x)
 
 struct BurnDriver BurnDrvnbbatmanx2x = {
-	"nbbatmanx2x", "nbbatman", NULL, NULL, "2018",
-	"Ninja Baseball Batman (Unrivalled Version 20190223)\0", NULL, "Bindi", "Irem M92",
+	"nbbatmanx2x", "nbbatman", NULL, NULL, "2019",
+	"Ninja Baseball Batman (Unrivalled Version 20190309)\0", NULL, "Bindi", "Irem M92",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IREM_M92, GBF_SCRFIGHT, 0,
 	NULL, nbbatmanx2xRomInfo, nbbatmanx2xRomName, NULL, NULL, NULL, NULL, p4CommonInputInfo, NbbatmanDIPInfo,

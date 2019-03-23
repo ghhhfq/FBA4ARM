@@ -12459,6 +12459,7 @@ DRV		BurnDrvkovshpdx;
 DRV		BurnDrvkovshp1v4;
 DRV		BurnDrvkovshp1v4s;
 DRV		BurnDrvkovytzyftxq;
+DRV		BurnDrvkovshptx;
 
 #undef DRV
 
@@ -24776,7 +24777,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
 	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
-	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus (Incredible God of War 20190227)
+	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus (Incredible God of War 20190312)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvkov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
 	&BurnDrvkov2pswcq,			// Knights of Valour 2 Plus - Nine Dragons (Legend of Conquering Generals 20190120)
@@ -24822,7 +24823,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvnbbatman1v4, 		// Ninja Baseball Batman (1VS4 20170316)
 	&BurnDrvnbbatmanbh,			// Ninja Baseball Batman (Characters Changeable 20161203)
 	&BurnDrvnbbatmanx2,			// Ninja Baseball Batman (X2 Edition 20180505)
-	&BurnDrvnbbatmanx2x,		// Ninja Baseball Batman (Unrivalled Version 20190223)
+	&BurnDrvnbbatmanx2x,		// Ninja Baseball Batman (Unrivalled Version 20190309)
 	&BurnDrvCpswof1v3,			// Sangokushi II (1VS3 20130405)
 	&BurnDrvCpswofmz,			// Tenchi wo Kurau II (War On Horseback 20171120)
 	&BurnDrvCpswofzl,			// Tenchi wo Kurau II (Warwolf 20171223)
@@ -24847,8 +24848,8 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsknightsp,		// Knights of the Round (Plus 20160714)
 	&BurnDrvkof97ru,			// The King of Fighters '97 (Remix 20190227)
 	&BurnDrvkov8,				// Knights of Valour - Sangoku Senki (1VS8 20170218)   // NOT WORKING!
-	&BurnDrvkovshptplscs,		// Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228)
-	&BurnDrvkovshpwsb,			// Knights of Valour Super Heroes Plus (Unrivalled Version 20190228)
+	&BurnDrvkovshptplscs,		// Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190321)
+	&BurnDrvkovshpwsb,			// Knights of Valour Super Heroes Plus (Unrivalled Version 20190319)
 	&BurnDrvmslugxc1,			// Metal Slug X - Super Vehicle-001 (Multi-Vehicle 20130515)
 	&BurnDrvmslugxc2,			// Metal Slug X - Super Vehicle-001 (Enemies Resetting Version 20161019)
 	&BurnDrvmslugxeb,			// Metal Slug X - Super Vehicle-001 (Blue Version 20161016)
@@ -24865,7 +24866,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvolds100aem2015,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2015 20180823)
 	&BurnDrvolds100aem2016,		// Xi Yo Gi Shi Re Zuang Super (Survival In Nightmare 2017 20180927)
 	&BurnDrvolds100asrp,		// Xi Yo Gi Shi Re Zuang Super (Remix Plus 20180927)
-	&BurnDrvkovshpd19,			// Knights of Valour Super Heroes Plus (Plus 2018 20180820)
+	&BurnDrvkovshpd19,			// Knights of Valour Super Heroes Plus (Plus v1.9 - Sky King 20190320)
 	&BurnDrvkovshpb,			// Knights of Valour Super Heroes Plus (Zhao Yun Version 103 20180922)
 	&BurnDrvmslug5d,			// Metal Slug 5 (Fully Decrypted Version)
 	&BurnDrvmslug5dzh,			// Metal Slug 5 (Callable Vehicle 20180918)
@@ -24900,7 +24901,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkov2pjlcq,			// Knights of Valour 2 Plus - (Legend Of Nine Dragons 20180924)
 	&BurnDrvsnowbrosbs,			// Snow Bros. - Nick & Tom (Special v1.0 20180925)
 	&BurnDrvkovshpqszl,			// Knights of Valour Super Heroes Plus (Road To Survival 20180224)
-	&BurnDrvkovshpqszltw,		// Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20180915)
+	&BurnDrvkovshpqszltw,		// Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190319)
 	&BurnDrvkov2pfwll,			// Knights of Valour 2 Plus - (Dancing Phoenix, Singing Dragon 20180411)
 	&BurnDrvkovplusxt,			// Knights of Valour Plus (Unity Of China 20180515)
 	&BurnDrvkovplusdszl,		// Knights of Valour Plus (Road To Master 20180711)
@@ -24922,4 +24923,5 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshp1v4,			// Knights of Valour Super Heroes Plus (Twilight for the Gods 20180506)
 	&BurnDrvkovshp1v4s,			// Knights of Valour Super Heroes Plus (Twilight for the Gods - Dawn 20180506)
 	&BurnDrvkovytzyftxq,		// Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20181209)
+	&BurnDrvkovshptx,			// Knights of Valour Super Heroes Plus ( Ambitious Heroes Over The World 2019 20190301)
 };

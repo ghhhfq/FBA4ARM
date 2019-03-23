@@ -6518,10 +6518,10 @@ struct BurnDriver BurnDrvkovshpqxzqj = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 惊天战神 2019 Knights of Valour Super Heroes Plus (Incredible God of War 20190227)
+// FBA4DROID 三国战纪 乱世枭雄 惊天战神 2019 Knights of Valour Super Heroes Plus (Incredible God of War 20190312)
 static struct BurnRomInfo kovshp1v4xRomDesc[] = {
 	{ "m0601.rom",			0x200000, 0xf513d89c, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
-	{ "m0602.rom",			0x200000, 0x19125f83, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
+	{ "m0602.rom",			0x200000, 0x505c0fb9, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
 
 	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  2 Tile data
 
@@ -6539,7 +6539,7 @@ STD_ROM_FN(kovshp1v4x)
 
 struct BurnDriver BurnDrvkovshp1v4x = {
 	"kovshp1v4x", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Incredible God of War 20190227)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Incredible God of War 20190312)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshp1v4xRomInfo, kovshp1v4xRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -6642,16 +6642,16 @@ struct BurnDriver BurnDrvkovshp1v4xtw = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 太平乱世 传说版 Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228)
+// FBA4DROID 三国战纪 乱世枭雄 太平乱世 传说版 Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190321)
 static struct BurnRomInfo kovshptplscsRomDesc[] = {
-	{ "m0601.rom",		0x200000, 0xa279f5f2, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
-	{ "m0602.rom",		0x200000, 0x468e039a, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "m0601.rom",		0x200000, 0x86322d6a, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "m0602.rom",		0x200000, 0xb673c954, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
 
-	{ "a0600x.rom",	   		0x2000000, 0x26a884e8, 3 | BRF_GRA },			//  2-5 Sprite Color Data
+	{ "a0600x.rom",	   		0x2000000, 0xdab91337, 3 | BRF_GRA },			//  2-5 Sprite Color Data
 
-	{ "b0600x.rom",	   		0x1000000, 0x602f1e77, 4 | BRF_GRA },			//  6-7 Sprite Masks & Color Indexes
+	{ "b0600x.rom",	   		0x1000000, 0x22b3beb8, 4 | BRF_GRA },			//  6-7 Sprite Masks & Color Indexes
 
 	{ "p0600h.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
 
@@ -6663,7 +6663,7 @@ STD_ROM_FN(kovshptplscs)
 
 struct BurnDriver BurnDrvkovshptplscs = {
 	"kovshptplscs", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190228)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Peace In Chaotic Times - Legend 20190321)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshptplscsRomInfo, kovshptplscsRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -6671,10 +6671,10 @@ struct BurnDriver BurnDrvkovshptplscs = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 无双版 Knights of Valour Super Heroes Plus (Unrivalled Version 20190228)
+// FBA4DROID 三国战纪 乱世枭雄 无双版 Knights of Valour Super Heroes Plus (Unrivalled Version 20190319)
 static struct BurnRomInfo kovshpwsbRomDesc[] = {
-	{ "m0601.rom",		0x200000, 0x60992645, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
-	{ "m0602.rom",		0x200000, 0xf73c8e82, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
+	{ "m0601.rom",		0x200000, 0x82579022, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "m0602.rom",		0x200000, 0x69c260ba, 1 | BRF_PRG | BRF_ESS },  //  1 68K Code
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  2 Tile data
 
@@ -6692,7 +6692,7 @@ STD_ROM_FN(kovshpwsb)
 
 struct BurnDriver BurnDrvkovshpwsb = {
 	"kovshpwsb", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Unrivalled Version 20190228)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Unrivalled Version 20190319)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpwsbRomInfo, kovshpwsbRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
@@ -6700,19 +6700,19 @@ struct BurnDriver BurnDrvkovshpwsb = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 PLUS 2018 Knights of Valour Super Heroes Plus (Plus 2018 20180820)
+// FBA4DROID 三国战纪 乱世枭雄 加强版 1.9 天王版 Knights of Valour Super Heroes Plus (Plus v1.9 - Sky King 20190320)
 static struct BurnRomInfo kovshpd19RomDesc[] = {
-	{ "p0600hd.rom",		0x400000, 0xb993ca1b, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "p0600hd.rom",		0x400000, 0x7cffefac, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
 
 	{ "a0600.rom",	   		0x800000, 0xeaa46772, 3 | BRF_GRA },			//  2 Sprite Color Data
 	{ "a0601.rom",	   		0x800000, 0xd94abe4b, 3 | BRF_GRA }, 	        //  3 
 	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA }, 	        //  4
-	{ "a0540.rom",	   		0x800000, 0xfd1e6e0b, 3 | BRF_GRA }, 	        //  5
+	{ "a0540.rom",	   		0x800000, 0x4f4ac911, 3 | BRF_GRA }, 	        //  5
 
 	{ "b0600.rom",	   		0x800000, 0xf2a85ce6, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
-	{ "b0540.rom",	   		0x800000, 0x14bd80ef, 4 | BRF_GRA },			//  7
+	{ "b0540.rom",	   		0x800000, 0x94eb0579, 4 | BRF_GRA },			//  7
 
 	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
 
@@ -6723,8 +6723,8 @@ STDROMPICKEXT(kovshpd19, kovshpd19, pgm)
 STD_ROM_FN(kovshpd19)
 
 struct BurnDriver BurnDrvkovshpd19 = {
-	"kovshpd19", "kovshp", "pgm", NULL, "2018",
-	"Knights of Valour Super Heroes Plus (Plus 2018 20180820)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"kovshpd19", "kovshp", "pgm", NULL, "2019",
+	"Knights of Valour Super Heroes Plus (Plus v1.9 - Sky King 20190320)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpd19RomInfo, kovshpd19RomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
@@ -6797,9 +6797,9 @@ struct BurnDriver BurnDrvkovshpqszl = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世英雄 求生之路 天王版 Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20180915)
+// FBA4DROID 三国战纪 乱世英雄 求生之路 天王版 Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190319)
 static struct BurnRomInfo kovshpqszltwRomDesc[] = {
-	{ "p0600h.rom",		0x400000, 0x10aee065, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+	{ "p0600h.rom",		0x4006f8, 0xbac75779, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },			//  1 Tile data
 
@@ -6821,8 +6821,8 @@ STDROMPICKEXT(kovshpqszltw, kovshpqszltw, pgm)
 STD_ROM_FN(kovshpqszltw)
 
 struct BurnDriver BurnDrvkovshpqszltw = {
-	"kovshpqszltw", "kovshpqszl", "pgm", NULL, "2018",
-	"Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20180915)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"kovshpqszltw", "kovshpqszl", "pgm", NULL, "2019",
+	"Knights of Valour Super Heroes Plus (Road To Survival - Sky King 20190319)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpqszltwRomInfo, kovshpqszltwRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
@@ -6864,9 +6864,9 @@ struct BurnDriver BurnDrvkovshpd3 = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世英雄 群雄逐鹿 天王版 Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20180905)
+// FBA4DROID 三国战纪 乱世英雄 群雄逐鹿 天王版 Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20190319)
 static struct BurnRomInfo kovshpd3twRomDesc[] = {
-	{ "p0600h.rom",			0x400000, 0x8268e84f, 1 | BRF_PRG | BRF_ESS },
+	{ "p0600h.rom",			0x4004b2, 0xc8f14031, 1 | BRF_PRG | BRF_ESS },  // Incorrect size ???
 
 	{ "t0600.rom",    		0x800000, 0xa919ec0f, 2 | BRF_GRA },
 
@@ -6889,8 +6889,8 @@ STDROMPICKEXT(kovshpd3tw, kovshpd3tw, pgm)
 STD_ROM_FN(kovshpd3tw)
 
 struct BurnDriver BurnDrvkovshpd3tw = {
-	"kovshpd3tw", "kovshpd3", "pgm", NULL, "2018",
-	"Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20180905)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	"kovshpd3tw", "kovshpd3", "pgm", NULL, "2019",
+	"Knights of Valour Super Heroes Plus (Powerful Politicians Fighting For Supremacy - Sky King 20190319)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpd3twRomInfo, kovshpd3twRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
@@ -7093,6 +7093,38 @@ struct BurnDriver BurnDrvkovytzyftxq = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovytzyftxqRomInfo, kovytzyftxqRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,
+	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
+// FBA4DROID 三国战纪 乱世枭雄 枭雄天下 2019 Knights of Valour Super Heroes Plus ( Ambitious Heroes Over The World 2019 20190301)
+static struct BurnRomInfo kovshptxRomDesc[] = {
+	{ "p0600h2019.rom",		0x400000, 0xc3579501, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t0600.rom",    		0x800000, 0x4acc1ad6, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a0600.rom",	   		0x800000, 0xd8167834, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a0601.rom",	   		0x800000, 0xff7a4373, 3 | BRF_GRA }, 	        //  3 
+	{ "a0602.rom",	   		0x800000, 0xe7a32959, 3 | BRF_GRA }, 	        //  4
+	{ "a0540.rom",	   		0x800000, 0xc68f3b54, 3 | BRF_GRA }, 	        //  5
+
+	{ "b0600.rom",	   		0x800000, 0x7d3cd059, 4 | BRF_GRA },			//  6 Sprite Masks & Color Indexes
+	{ "b0540.rom",	   		0x800000, 0x664adc02, 4 | BRF_GRA },			//  7
+
+	{ "m0600.rom",	   		0x400000, 0x3ada4fd6, 5 | BRF_SND },			//  8 Samples
+
+	{ "kovsh_v100_china.asic", 	0x004000, 0x0f09a5c1, 7 | BRF_PRG | BRF_ESS },  //  9 Internal ARM7 Rom
+};
+
+STDROMPICKEXT(kovshptx, kovshptx, pgm)
+STD_ROM_FN(kovshptx)
+
+struct BurnDriver BurnDrvkovshptx = {
+	"kovshptx", "kovshp", "pgm", NULL, "2019",
+	"Knights of Valour Super Heroes Plus ( Ambitious Heroes Over The World 2019 20190301)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kovshptxRomInfo, kovshptxRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
 	kovshpInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
