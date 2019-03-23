@@ -221,6 +221,7 @@ void evaluate_neogeo_bios_mode(const char* drvname)
 void set_environment()
 {
 	std::vector<const retro_variable*> vars_systems;
+	struct retro_variable *vars;
 #ifdef _MSC_VER
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 	struct retro_vfs_interface_info vfs_iface_info;
@@ -257,13 +258,12 @@ void set_environment()
 
 	int nbr_vars = vars_systems.size();
 	int nbr_dips = dipswitch_core_options.size();
-	int nbr_macros = macro_core_options.size();
 
 #if 0
 	log_cb(RETRO_LOG_INFO, "set_environment: SYSTEM: %d, DIPSWITCH: %d, MACRO: %d\n", nbr_vars, nbr_dips, nbr_macros);
 #endif
 
-	std::vector<retro_variable> vars(nbr_vars + nbr_dips + nbr_macros + 1); // + 1 for the empty ending retro_variable
+	vars = (struct retro_variable*)calloc(nbr_vars + nbr_dips + 1, sizeof(struct retro_variable));
 
 	int idx_var = 0;
 
@@ -291,19 +291,10 @@ void set_environment()
 		}
 	}
 
-	// Add the macro inputs core options
-	for (int macro_idx = 0; macro_idx < nbr_macros; macro_idx++, idx_var++)
-	{
-		vars[idx_var].key = macro_core_options[macro_idx].option_name;
-		vars[idx_var].value = macro_core_options[macro_idx].values_str.c_str();
-#if 0
-		log_cb(RETRO_LOG_INFO, "retro_variable (MACRO)     { '%s', '%s' }\n", vars[idx_var].key, vars[idx_var].value);
-#endif
-	}
-
 	vars[idx_var] = var_empty;
-	environ_cb(RETRO_ENVIRONMENT_SET_VARIABLES, (void*)vars.data());
-	
+	environ_cb(RETRO_ENVIRONMENT_SET_VARIABLES, (void*)vars);
+	free(vars);
+
 	// Initialize VFS
 	// Only on UWP for now, since EEPROM saving is not VFS aware
 #ifdef _MSC_VER
