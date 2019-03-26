@@ -2,6 +2,8 @@
 #define __PORT_TYPEDEFS_H
 
 #include "libretro.h"
+#include <wchar.h>
+#include <string>
 #include "streams/file_stream_transforms.h"
 
 extern int kNetGame;
