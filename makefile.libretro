@@ -442,10 +442,11 @@ else
 	SHARED := -shared -Wl,-no-undefined -Wl,--version-script=$(VERSION_SCRIPT)
 	LDFLAGS += -static-libgcc -static-libstdc++
 	ENDIANNESS_DEFINES := -DLSB_FIRST
-	LBITS := $(shell getconf LONG_BIT)
-	ifeq ($(LBITS),64)
-		USE_X64_DRC = 1
-	endif
+	# The following won't work when cross-building...
+	# LBITS := $(shell getconf LONG_BIT)
+	# ifeq ($(LBITS),64)
+	#	USE_X64_DRC = 1
+	# endif
 
 endif
 
