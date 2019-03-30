@@ -7343,6 +7343,41 @@ struct BurnDriver BurnDrvkov2pplus = {
 	448, 224, 4, 3
 };
 
+// GOTVG 三国战纪2p 盖世群雄 Knights of Valour 2 Plus (Unparalleled Heroes 20181022)
+static struct BurnRomInfo kov2ppRomDesc[] = {
+	{ "v204-32m.rom",  		0x400052, 0xa68332e2, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
+
+	{ "t1200.rom",	   		0x800000, 0xd7e26609, 2 | BRF_GRA },			//  1 Tile data
+
+	{ "a1200.rom",	   		0x800000, 0xceeb81d8, 3 | BRF_GRA },			//  2 Sprite Color Data
+	{ "a1201.rom",   		0x800000, 0x21063CA7, 3 | BRF_GRA },			//  3
+	{ "a1202.rom",	   		0x800000, 0x4bb92fae, 3 | BRF_GRA },			//  4
+	{ "a1203.rom",	   		0x800000, 0xe73cb627, 3 | BRF_GRA },			//  5
+	{ "a1204.rom",   		0x200000, 0x14b4b5bb, 3 | BRF_GRA },			//  6
+
+	{ "b1200.rom",	   		0x800000, 0xbed7d994, 4 | BRF_GRA },			//  7 Sprite Masks & Color Indexes
+	{ "b1201.rom",	   		0x800000, 0xf251eb57, 4 | BRF_GRA },			//  8
+
+	{ "m1200.rom",	   		0x800000, 0xb0d88720, 5 | BRF_SND },			//  9 Samples
+
+	{ "kov2p_igs027a_china.bin",	0x004000, 0x19a0bd95, 7 | BRF_PRG | BRF_ESS },  // 10 Internal ARM7 Rom
+
+	{ "v200-16.rom",		0x200000, 0x6a1bd28f, 8 | BRF_PRG | BRF_ESS },  // 11 External ARM7 Rom
+};
+
+STDROMPICKEXT(kov2pp, kov2pp, pgm)
+STD_ROM_FN(kov2pp)
+
+struct BurnDriver BurnDrvkov2pp = {
+	"kov2pp", "kov2p", "pgm", NULL, "2018",
+	"Knights of Valour 2 Plus (Unparalleled Heroes 20181022)\0", NULL, "hack", "PolyGameMaster",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
+	NULL, kov2ppRomInfo, kov2ppRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovDIPInfo,
+	kov2pInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
+	448, 224, 4, 3
+};
+
 // FBA4DROID 三国战纪2p 盖世无双 Knights of Valour 2 Plus - (Unrivaled In The World 20180819)
 static struct BurnRomInfo kov2ppwsRomDesc[] = {
 	{ "v204-32m.rom",  		0x400000, 0x14751691, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code

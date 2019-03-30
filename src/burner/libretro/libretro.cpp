@@ -142,7 +142,7 @@ static bool driver_inited;
 
 void retro_get_system_info(struct retro_system_info *info)
 {
-	info->library_name = "FBA4S905&RPI";
+	info->library_name = "FBA4ARM";
 #ifndef GIT_VERSION
 #define GIT_VERSION ""
 #endif
