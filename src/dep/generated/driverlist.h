@@ -12469,7 +12469,7 @@ DRV		BurnDrvkovshp1v4;
 DRV		BurnDrvkovshp1v4s;
 DRV		BurnDrvkovytzyftxq;
 DRV		BurnDrvkovshptx;
-DRV		BurnDrvkov2pp;
+//DRV		BurnDrvkov2pp;
 
 #undef DRV
 
@@ -24943,5 +24943,5 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkovshp1v4s,			// Knights of Valour Super Heroes Plus (Twilight for the Gods - Dawn 20180506)
 	&BurnDrvkovytzyftxq,		// Knights of Valour - Yi Tong Zhong Yuan (Blue Version) (20181209)
 	&BurnDrvkovshptx,			// Knights of Valour Super Heroes Plus ( Ambitious Heroes Over The World 2019 20190301)
-	&BurnDrvkov2pp,				// Knights of Valour 2 Plus (Unparalleled Heroes 20181022)
+	//&BurnDrvkov2pp,				// Knights of Valour 2 Plus (Unparalleled Heroes 20181022)
 };

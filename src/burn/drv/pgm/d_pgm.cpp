@@ -7343,6 +7343,7 @@ struct BurnDriver BurnDrvkov2pplus = {
 	448, 224, 4, 3
 };
 
+/* Encrypted ROM, comment out for now.
 // GOTVG 三国战纪2p 盖世群雄 Knights of Valour 2 Plus (Unparalleled Heroes 20181022)
 static struct BurnRomInfo kov2ppRomDesc[] = {
 	{ "v204-32m.rom",  		0x400052, 0xa68332e2, 1 | BRF_PRG | BRF_ESS },  //  0 68K Code
@@ -7377,6 +7378,7 @@ struct BurnDriver BurnDrvkov2pp = {
 	kov2pInit, pgmExit, pgmFrame, pgmDraw, pgmScan, &nPgmPalRecalc, 0x900,
 	448, 224, 4, 3
 };
+*/
 
 // FBA4DROID 三国战纪2p 盖世无双 Knights of Valour 2 Plus - (Unrivaled In The World 20180819)
 static struct BurnRomInfo kov2ppwsRomDesc[] = {
