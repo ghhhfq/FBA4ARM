@@ -12516,7 +12516,7 @@ DRV		BurnDrvCpsdinotfzn;
 DRV		BurnDrvCpsdinoslicews;
 DRV		BurnDrvCpsdinowszh;
 DRV		BurnDrvCpsdinoxa;
-DRV		BurnDrvCpsdinoxc;
+//DRV		BurnDrvCpsdinoxc;
 DRV		BurnDrvCpsdino2011ws;
 
 #undef DRV
@@ -25037,7 +25037,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsdinotfzn,		// Cadillacs & Dinosaurs (Anger Of Butcher 2017 20171123)
 	&BurnDrvCpsdinoslicews,		// Cadillacs & Dinosaurs (Unrivalled Phantom Boss 20171129)
 	&BurnDrvCpsdinowszh,		// Cadillacs & Dinosaurs (Unrivalled in the World 2018 20170604)
-	&BurnDrvCpsdinoxa,			// Cadillacs & Dinosaurs (Knight 2017 20171119)
-	&BurnDrvCpsdinoxc,			// Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
+	&BurnDrvCpsdinoxa,			// Cadillacs & Dinosaurs (Riders Version 2017 20171119)
+//	&BurnDrvCpsdinoxc,			// Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
 	&BurnDrvCpsdino2011ws,		// Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)
 };

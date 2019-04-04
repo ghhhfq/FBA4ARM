@@ -24182,7 +24182,7 @@ struct BurnDriver BurnDrvCpsdinowszh = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// FBA4DROID 恐龙新世纪 97恐龙二代 骑士版 2017 Cadillacs & Dinosaurs (Knight 2017 20171119)
+// FBA4DROID 恐龙新世纪 97恐龙二代 骑士版 2017 Cadillacs & Dinosaurs (Riders Version 2017 20171119)
 static struct BurnRomInfo dinoxaRomDesc[] = {
 	{ "cde_23a.8f",    0x080000, 0xe15c6b88, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 	{ "cde_22a.7f",    0x080000, 0x3e8d0903, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -24210,7 +24210,7 @@ STD_ROM_FN(dinoxa)
 
 struct BurnDriver BurnDrvCpsdinoxa = {
 	"dinoxa", "dino", NULL, NULL, "2017",
-	"Cadillacs & Dinosaurs (Knight 2017 20171119)\0", NULL, "hack", "CPS1 / QSound",
+	"Cadillacs & Dinosaurs (Riders Version 2017 20171119)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, dinoxaRomInfo, dinoxaRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
@@ -24218,7 +24218,7 @@ struct BurnDriver BurnDrvCpsdinoxa = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// FBA4DROID 恐龙新世纪 恐龙猎人 挑战版 2017 Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
+/* FBA4DROID 恐龙新世纪 恐龙猎人 挑战版 2017 Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
 // Based on dinohunt.
 static struct BurnRomInfo dinoxcRomDesc[] = {
 	{ "cde_23a.8f",    0x080000, 0xa5c8cd20, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
@@ -24249,11 +24249,12 @@ struct BurnDriver BurnDrvCpsdinoxc = {
 	"dinoxc", "dino", NULL, NULL, "2017",
 	"Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)\0", NULL, "hack", "CPS1 / QSound",
 	NULL, NULL, NULL, NULL,
-	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_BOOTLEG | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, dinoxcRomInfo, dinoxcRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
-	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	DinohuntInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
+*/
 
 // FBA4DROID 恐龙新世纪 2011 无双版 第1套 Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)
 // 恐龙新世纪2011无双最终破解版
