@@ -14397,6 +14397,14 @@ static const struct GameConfig ConfigTable[] =
 	{ "punisherdw"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
 	{ "punisherbs"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
 	{ "punisherhr"   , CPS_B_21_QS3, mapper_PS63B , 0, punisher_decode     },
+	{ "dinolbws"     , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dino2015ws"   , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinotfzn"     , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinoslicews"  , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinowszh"     , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinoxa"       , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dino2011ws"   , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
+	{ "dinoxc"       , CPS_B_21_DEF, mapper_CD63B , 0, NULL                },
 
 	{ 0             , 0           , 0            , 0, 0                   }
 };
@@ -22993,7 +23001,7 @@ struct BurnDriver BurnDrvCpsDinowtw = {
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
 
-// 恐龙快打 魔神乱舞版【原武将版】	Cadillacs & Dinosaurs (Majin Ranbu 20190117)
+// GOTVG 恐龙快打 魔神乱舞版【原武将版】	Cadillacs & Dinosaurs (Majin Ranbu 20190117)
 static struct BurnRomInfo DinowjRomDesc[] = {
 	{ "mslw.dec",    0x180000, 0xbb57412b, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
 
@@ -23993,6 +24001,293 @@ struct BurnDriver BurnDrvCpspunisherhr = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
 	NULL, punisherhrRomInfo, punisherhrRomName, NULL, NULL, NULL, NULL, PunisherInputInfo, PunisherDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 乱步无双 2018 Cadillacs & Dinosaurs (Random Unrivalled Version 2018 20180816)
+static struct BurnRomInfo dinolbwsRomDesc[] = {
+	{ "23.rom",    0x080000, 0x2327d53e, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "22.rom",    0x080000, 0x8890573f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "21.rom",    0x080000, 0x9ce27308, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinolbws)
+STD_ROM_FN(dinolbws)
+
+struct BurnDriver BurnDrvCpsdinolbws = {
+	"dinolbws", "dino", NULL, NULL, "2018",
+	"Cadillacs & Dinosaurs (Random Unrivalled Version 2018 20180816)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinolbwsRomInfo, dinolbwsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 97恐龙二代 无双版 2017 Cadillacs & Dinosaurs (Unrivalled Version 2017 20171119)
+static struct BurnRomInfo dino2015wsRomDesc[] = {
+	{ "cde_23a.8f",    0x080000, 0x22a63a9f, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_22a.7f",    0x080000, 0x10c16933, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_21a.6f",    0x080000, 0x9a532f75, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0xda7d2d64, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0xa6444fa8, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x5e11285e, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0xa97b4a24, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x175d0862, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x59c069b4, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0x31d2b4e9, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0xc923b1b8, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dino2015ws)
+STD_ROM_FN(dino2015ws)
+
+struct BurnDriver BurnDrvCpsdino2015ws = {
+	"dino2015ws", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Unrivalled Version 2017 20171119)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dino2015wsRomInfo, dino2015wsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 2017 屠夫之怒 Cadillacs & Dinosaurs (Anger Of Butcher 2017 20171123)
+// 屠夫之怒最终版(无双死斗)
+static struct BurnRomInfo dinotfznRomDesc[] = {
+	{ "cde_23a.8f",    0x080000, 0x0122db0a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_22a.7f",    0x080000, 0xc52c8b29, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_21a.6f",    0x080000, 0x40c8621c, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinotfzn)
+STD_ROM_FN(dinotfzn)
+
+struct BurnDriver BurnDrvCpsdinotfzn = {
+	"dinotfzn", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Anger Of Butcher 2017 20171123)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinotfznRomInfo, dinotfznRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 BOSS 幻影无双 Cadillacs & Dinosaurs (Unrivalled Phantom Boss 20171129)
+static struct BurnRomInfo dinoslicewsRomDesc[] = {
+	{ "cde.bin",    0x200000, 0x5fb39c2a, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinoslicews)
+STD_ROM_FN(dinoslicews)
+
+struct BurnDriver BurnDrvCpsdinoslicews = {
+	"dinoslicews", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Unrivalled Phantom Boss 20171129)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinoslicewsRomInfo, dinoslicewsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 2018 绝世无双 Cadillacs & Dinosaurs (Unrivalled in the World 2018 20170604)
+static struct BurnRomInfo dinowszhRomDesc[] = {
+	{ "cde.bin",    0x200000, 0xe4f13863, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinowszh)
+STD_ROM_FN(dinowszh)
+
+struct BurnDriver BurnDrvCpsdinowszh = {
+	"dinowszh", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Unrivalled in the World 2018 20170604)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinowszhRomInfo, dinowszhRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 97恐龙二代 骑士版 2017 Cadillacs & Dinosaurs (Knight 2017 20171119)
+static struct BurnRomInfo dinoxaRomDesc[] = {
+	{ "cde_23a.8f",    0x080000, 0xe15c6b88, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_22a.7f",    0x080000, 0x3e8d0903, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_21a.6f",    0x080000, 0x6c1a4291, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0xda7d2d64, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0xa6444fa8, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x5e11285e, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0xa97b4a24, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x175d0862, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x59c069b4, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0x31d2b4e9, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0xc923b1b8, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinoxa)
+STD_ROM_FN(dinoxa)
+
+struct BurnDriver BurnDrvCpsdinoxa = {
+	"dinoxa", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Knight 2017 20171119)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinoxaRomInfo, dinoxaRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 恐龙猎人 挑战版 2017 Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
+// Based on dinohunt.
+static struct BurnRomInfo dinoxcRomDesc[] = {
+	{ "cde_23a.8f",    0x080000, 0xa5c8cd20, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_22a.7f",    0x080000, 0x3a8ed567, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_21a.6f",    0x080000, 0x74c155b8, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0xa01a9fb5, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0xbdf02c17, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x058beefa, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x5028a9f1, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0xd77f89ea, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0xbfbcb034, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xa2544d4e, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x8869bbb1, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dinoxc)
+STD_ROM_FN(dinoxc)
+
+struct BurnDriver BurnDrvCpsdinoxc = {
+	"dinoxc", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dinoxcRomInfo, dinoxcRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
+	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// FBA4DROID 恐龙新世纪 2011 无双版 第1套 Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)
+// 恐龙新世纪2011无双最终破解版
+static struct BurnRomInfo dino2011wsRomDesc[] = {
+	{ "cde_23a.8f",    0x080000, 0xf4193752, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_22a.7f",    0x080000, 0xfd2d3d51, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+	{ "cde_21a.6f",    0x080000, 0xa3c26851, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cd-1m.3a",      0x080000, 0x8da4f917, BRF_GRA | CPS1_TILES },
+	{ "cd-3m.5a",      0x080000, 0x6c40f603, BRF_GRA | CPS1_TILES },
+	{ "cd-2m.4a",      0x080000, 0x09c8fc2d, BRF_GRA | CPS1_TILES },
+	{ "cd-4m.6a",      0x080000, 0x637ff38f, BRF_GRA | CPS1_TILES },
+	{ "cd-5m.7a",      0x080000, 0x470befee, BRF_GRA | CPS1_TILES },
+	{ "cd-7m.9a",      0x080000, 0x22bfb7a3, BRF_GRA | CPS1_TILES },
+	{ "cd-6m.8a",      0x080000, 0xe7599ac4, BRF_GRA | CPS1_TILES },
+	{ "cd-8m.10a",     0x080000, 0x211b4b15, BRF_GRA | CPS1_TILES },
+
+	{ "cd_q.5k",       0x020000, 0x605fdb0b, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cd-q1.1k",      0x080000, 0x60927775, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q2.2k",      0x080000, 0x770f4c47, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q3.3k",      0x080000, 0x2f273ffc, BRF_SND | CPS1_QSOUND_SAMPLES },
+	{ "cd-q4.4k",      0x080000, 0x2c67821d, BRF_SND | CPS1_QSOUND_SAMPLES },
+};
+
+STD_ROM_PICK(dino2011ws)
+STD_ROM_FN(dino2011ws)
+
+struct BurnDriver BurnDrvCpsdino2011ws = {
+	"dino2011ws", "dino", NULL, NULL, "2017",
+	"Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)\0", NULL, "hack", "CPS1 / QSound",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 3, HARDWARE_CAPCOM_CPS1_QSOUND, GBF_SCRFIGHT, 0,
+	NULL, dino2011wsRomInfo, dino2011wsRomName, NULL, NULL, NULL, NULL, DinoInputInfo, DinoDIPInfo,
 	TwelveMhzInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };

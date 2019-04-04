@@ -12510,6 +12510,14 @@ DRV		BurnDrvkovshptx;
 DRV		BurnDrvkov2ppws2016;
 DRV		BurnDrvkov2pfwly;
 DRV		BurnDrvkillbldqy;
+DRV		BurnDrvCpsdinolbws;
+DRV		BurnDrvCpsdino2015ws;
+DRV		BurnDrvCpsdinotfzn;
+DRV		BurnDrvCpsdinoslicews;
+DRV		BurnDrvCpsdinowszh;
+DRV		BurnDrvCpsdinoxa;
+DRV		BurnDrvCpsdinoxc;
+DRV		BurnDrvCpsdino2011ws;
 
 #undef DRV
 
@@ -25024,4 +25032,12 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvkov2ppws2016,		// Knights of Valour 2 Plus - (Unrivaled In The World 2016 20180727)
 	&BurnDrvkov2pfwly,			// Knights of Valour 2 Plus - (Feng Ye Yuan Qing 20180728)
 	&BurnDrvkillbldqy,			// The Killing Blade (Heroes 20180622)
+	&BurnDrvCpsdinolbws,		// Cadillacs & Dinosaurs (Random Unrivalled Version 2018 20180816)
+	&BurnDrvCpsdino2015ws,		// Cadillacs & Dinosaurs (Unrivalled Version 2017 20171119)
+	&BurnDrvCpsdinotfzn,		// Cadillacs & Dinosaurs (Anger Of Butcher 2017 20171123)
+	&BurnDrvCpsdinoslicews,		// Cadillacs & Dinosaurs (Unrivalled Phantom Boss 20171129)
+	&BurnDrvCpsdinowszh,		// Cadillacs & Dinosaurs (Unrivalled in the World 2018 20170604)
+	&BurnDrvCpsdinoxa,			// Cadillacs & Dinosaurs (Knight 2017 20171119)
+	&BurnDrvCpsdinoxc,			// Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
+	&BurnDrvCpsdino2011ws,		// Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)
 };
