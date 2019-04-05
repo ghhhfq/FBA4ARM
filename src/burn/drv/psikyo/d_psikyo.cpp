@@ -545,6 +545,7 @@ STDDIPINFOEXT(s1945a, s1945, s1945aRegion)
 //STDDIPINFO(tengai)
 STDDIPINFOEXT(tengai, tengai, tengaiRegion)
 STDDIPINFOEXT(tengaij, tengai, tengaijRegion)
+STDDIPINFOEXT(tengaijs, tengai, tengaijRegion)
 
 // ----------------------------------------------------------------------------
 // Z80 banswitch
@@ -1692,7 +1693,7 @@ static INT32 DrvInit()
 
 		bPsikyoClearBackground = false;
 	}
-	if (!strcmp(BurnDrvGetTextA(DRV_NAME), "tengai") || !strcmp(BurnDrvGetTextA(DRV_NAME), "tengaij")) {
+	if (!strcmp(BurnDrvGetTextA(DRV_NAME), "tengai")|| !strcmp(BurnDrvGetTextA(DRV_NAME), "tengaij") || !strcmp(BurnDrvGetTextA(DRV_NAME), "tengaijs")) {
 		PsikyoHardwareVersion = PSIKYO_HW_TENGAI;
 
 		CheckSleep = psikyoCheckSleep;
@@ -2544,6 +2545,40 @@ struct BurnDriver BurnDrvTengaij = {
 	L"Tengai\0\u6226\u56FD\u30D6\u30EC\u30FC\u30C9 - sengoku ace episode II\0", NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_PSIKYO, GBF_HORSHOOT, 0,
 	NULL, tengaijRomInfo, tengaijRomName, NULL, NULL, NULL, NULL, gunbirdInputInfo, tengaijDIPInfo,
+	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, &PsikyoRecalcPalette, 0x1000,
+	320, 224, 4, 3
+};
+
+// PPXCLUB 真战国之刃 Sengoku Blade - sengoku ace episode II (Easy Type 20190308)
+static struct BurnRomInfo tengaijsRomDesc[] = {
+	{ "2-u40.bin",    0x080000, 0x2cbb7dfd, BRF_ESS | BRF_PRG }, //  0 CPU #0 code
+	{ "3-u41.bin",    0x080000, 0x52c74de1, BRF_ESS | BRF_PRG }, //  1
+
+	{ "u20.bin",      0x200000, 0xf6ab6364, BRF_GRA },			 //  2 Sprite data
+	{ "u22.bin",      0x200000, 0x8d21caee, BRF_GRA },			 //  3
+	{ "u21.bin",      0x200000, 0xefe34eed, BRF_GRA },			 //  4
+
+	{ "u1.bin",       0x040000, 0x681d7d55, BRF_GRA },			 //  5 Sprite LUT
+
+	{ "u34.bin",      0x400000, 0x1c712ec8, BRF_GRA },			 //  6 Tile data
+
+	{ "1-u63.bin",    0x020000, 0x2025e387, BRF_ESS | BRF_PRG }, //  7 CPU #1 code
+
+	{ "u61.bin",      0x200000, 0xa63633c5, BRF_SND },			 //  8 PCM data
+	{ "u62.bin",      0x200000, 0x3ad0c357, BRF_SND },			 //   9
+	
+	{ "4-u59.bin",    	   256, 0x00000000, BRF_NODUMP },
+};
+
+STD_ROM_PICK(tengaijs)
+STD_ROM_FN(tengaijs)
+
+struct BurnDriver BurnDrvTengaijs = {
+	"tengaijs", "tengai", NULL, NULL, "2019",
+	"Sengoku Blade - sengoku ace episode II (Easy Type 20190308)\0", NULL, "hack", "Psikyo 68EC020",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_16BIT_ONLY | BDF_CLONE | BDF_HISCORE_SUPPORTED, 2, HARDWARE_PSIKYO, GBF_HORSHOOT, 0,
+	NULL, tengaijsRomInfo, tengaijsRomName, NULL, NULL, NULL, NULL, gunbirdInputInfo, tengaijDIPInfo,
 	DrvInit, DrvExit, DrvFrame, DrvDraw, DrvScan, &PsikyoRecalcPalette, 0x1000,
 	320, 224, 4, 3
 };

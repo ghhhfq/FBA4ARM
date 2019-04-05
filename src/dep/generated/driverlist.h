@@ -12518,6 +12518,7 @@ DRV		BurnDrvCpsdinowszh;
 DRV		BurnDrvCpsdinoxa;
 //DRV		BurnDrvCpsdinoxc;
 DRV		BurnDrvCpsdino2011ws;
+DRV		BurnDrvTengaijs;
 
 #undef DRV
 
@@ -25040,4 +25041,5 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvCpsdinoxa,			// Cadillacs & Dinosaurs (Riders Version 2017 20171119)
 //	&BurnDrvCpsdinoxc,			// Cadillacs & Dinosaurs (Challenge Edition 2017 20171116)
 	&BurnDrvCpsdino2011ws,		// Cadillacs & Dinosaurs (Unrivalled Version 2011 Set 1 20180213)
+	&BurnDrvTengaijs,			// Sengoku Blade - sengoku ace episode II (Easy Type 20190308)
 };
