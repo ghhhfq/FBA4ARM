@@ -6489,9 +6489,9 @@ struct BurnDriver BurnDrvkovshpp19 = {
 	448, 224, 4, 3
 };
 
-// FBA4DROID 三国战纪 乱世枭雄 群雄再起 金版 Knights of Valour Super Heroes Plus (Rerise of Heroes Gold 20190217)
+// FBA4DROID 三国战纪 乱世枭雄 群雄再起 金版 Knights of Valour Super Heroes Plus (Rerise of Heroes Gold 20190404)
 static struct BurnRomInfo kovshpqxzqjRomDesc[] = {
-	{ "m6001.rom",			0x300000, 0xe0c103f2, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
+	{ "m6001.rom",			0x300000, 0xcd97641b, 1 | BRF_PRG | BRF_ESS },  //  0-1 68K Code
 	{ "m6002.rom",			0x300000, 0x9debf14d, 1 | BRF_PRG | BRF_ESS },  //  0-2 68K Code
 
 	{ "t0600.rom",    		0x800000, 0x355eb28d, 2 | BRF_GRA },			//  1 Tile data
@@ -6510,7 +6510,7 @@ STD_ROM_FN(kovshpqxzqj)
 
 struct BurnDriver BurnDrvkovshpqxzqj = {
 	"kovshpqxzqj", "kovshp", "pgm", NULL, "2019",
-	"Knights of Valour Super Heroes Plus (Rerise of Heroes Gold 20190217)\0", "Imperfect Protection Emulation", "IGS", "PolyGameMaster",
+	"Knights of Valour Super Heroes Plus (Rerise of Heroes Gold 20190404)\0", "Imperfect Protection Emulation", "hack", "PolyGameMaster",
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE, 4, HARDWARE_IGS_PGM | HARDWARE_IGS_USE_ARM_CPU, GBF_SCRFIGHT, 0,
 	NULL, kovshpqxzqjRomInfo, kovshpqxzqjRomName, NULL, NULL, NULL, NULL, pgmInputInfo, kovshxasDIPInfo,

@@ -24882,7 +24882,7 @@ static struct BurnDriver* pDriver[] = {
 	&BurnDrvmslug5dg2,			// Metal Slug 5 (Enemies Enhanced Version 20190105)
 	&BurnDrvmslug5dg3,			// Metal Slug 5 (Enemies Resetting Version 20190101)
 	&BurnDrvkovshpp19,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Plus 20190105)
-	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190217)
+	&BurnDrvkovshpqxzqj,		// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes Gold 20190404)
 	&BurnDrvkovshp1v4x,			// Knights of Valour Super Heroes Plus (Incredible God of War 20190312)
 	&BurnDrvkovshpqxzq,			// Knights of Valour Super Heroes Plus / Sangoku Senki Super Heroes Plus (Rerise of Heroes 20190130)
 	&BurnDrvkov2pcthl,			// Knights of Valour 2 Plus - Nine Dragons (Heaven Route 20190120)
