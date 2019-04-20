@@ -14373,6 +14373,7 @@ static const struct GameConfig ConfigTable[] =
 	{ "captcommpzs"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommpwx"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "captcommr1dw" , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
+	{ "captcommpmy"  , CPS_B_21_BT3, mapper_CC63B , 0, NULL                },
 	{ "dinoxzb"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinojps"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
 	{ "dinowtw"      , CPS_B_21_QS2, mapper_CD63B , 0, dino_decode         },
@@ -22813,6 +22814,38 @@ struct BurnDriver BurnDrvCpsCaptcommr1dw = {
 	NULL, NULL, NULL, NULL,
 	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
 	NULL, Captcommr1dwRomInfo, Captcommr1dwRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
+	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
+	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
+};
+
+// GOTVG 名将 梦魇版 Captain Commando (Nightmare 20190316)
+static struct BurnRomInfo captcommpmyRomDesc[] = {
+	{ "mj.mj",    0x3024da, 0x6fa1af51, BRF_ESS | BRF_PRG | CPS1_68K_PROGRAM_NO_BYTESWAP },
+
+	{ "cc-5m.3a",      0x080000, 0x7261d8ba, BRF_GRA | CPS1_TILES },
+	{ "cc-7m.5a",      0x080000, 0x6a60f949, BRF_GRA | CPS1_TILES },
+	{ "cc-1m.4a",      0x080000, 0x00637302, BRF_GRA | CPS1_TILES },
+	{ "cc-3m.6a",      0x080000, 0xcc87cf61, BRF_GRA | CPS1_TILES },
+	{ "cc-6m.7a",      0x080000, 0x28718bed, BRF_GRA | CPS1_TILES },
+	{ "cc-8m.9a",      0x080000, 0xd4acc53a, BRF_GRA | CPS1_TILES },
+	{ "cc-2m.8a",      0x080000, 0x0c69f151, BRF_GRA | CPS1_TILES },
+	{ "cc-4m.10a",     0x080000, 0x1f9ebb97, BRF_GRA | CPS1_TILES },
+
+	{ "cc_09.11a",     0x010000, 0x698e8b58, BRF_PRG | CPS1_Z80_PROGRAM },
+
+	{ "cc_18.11c",     0x020000, 0x6de2c2db, BRF_SND | CPS1_OKIM6295_SAMPLES },
+	{ "cc_19.12c",     0x020000, 0xb99091ae, BRF_SND | CPS1_OKIM6295_SAMPLES },
+};
+
+STD_ROM_PICK(captcommpmy)
+STD_ROM_FN(captcommpmy)
+
+struct BurnDriver BurnDrvCpscaptcommpmy = {
+	"captcommpmy", "captcomm", NULL, NULL, "2019",
+	"Captain Commando (Nightmare 20190316)\0", NULL, "TouJingGaiErDeZei", "CPS1",
+	NULL, NULL, NULL, NULL,
+	BDF_GAME_WORKING | BDF_CLONE | BDF_HISCORE_SUPPORTED, 4, HARDWARE_CAPCOM_CPS1, GBF_SCRFIGHT, 0,
+	NULL, captcommpmyRomInfo, captcommpmyRomName, NULL, NULL, NULL, NULL, CaptcommInputInfo, CaptcommDIPInfo,
 	DrvInit, DrvExit, Cps1Frame, CpsRedraw, CpsAreaScan,
 	&CpsRecalcPal, 0x1000, 384, 224, 4, 3
 };
